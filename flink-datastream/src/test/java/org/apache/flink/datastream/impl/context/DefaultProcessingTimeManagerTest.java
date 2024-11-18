@@ -22,13 +22,18 @@ import org.apache.flink.runtime.state.VoidNamespace;
 import org.apache.flink.streaming.api.operators.KeyContext;
 import org.apache.flink.streaming.api.operators.TestInternalTimerService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DefaultProcessingTimeManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultProcessingTimeManagerTest {
     @Test
     void testCurrentProcessingTime() throws Exception {

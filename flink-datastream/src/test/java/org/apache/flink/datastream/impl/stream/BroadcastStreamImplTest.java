@@ -29,8 +29,11 @@ import org.apache.flink.datastream.impl.ExecutionEnvironmentImpl;
 import org.apache.flink.datastream.impl.TestingTransformation;
 import org.apache.flink.streaming.api.transformations.TwoInputTransformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link BroadcastStreamImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BroadcastStreamImplTest {
 
     private final StateDeclaration modeNoneStateDeclaration =

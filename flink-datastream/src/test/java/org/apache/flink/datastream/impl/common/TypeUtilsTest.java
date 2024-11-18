@@ -21,12 +21,17 @@ package org.apache.flink.datastream.impl.common;
 import org.apache.flink.api.common.typeinfo.utils.TypeUtils;
 import org.apache.flink.api.common.typeutils.base.BooleanSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link org.apache.flink.api.common.typeinfo.utils.TypeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeUtilsTest {
 
     @Test
