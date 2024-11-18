@@ -25,6 +25,8 @@ import org.apache.flink.metrics.util.TestHistogram;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableMap;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
@@ -38,6 +40,7 @@ import io.opentelemetry.sdk.metrics.internal.data.ImmutableHistogramData;
 import io.opentelemetry.sdk.metrics.internal.data.ImmutableSumData;
 import io.opentelemetry.sdk.resources.Resource;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +50,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link OpenTelemetryMetricAdapter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OpenTelemetryMetricAdapterTest {
 
     private static final OpenTelemetryMetricAdapter.CollectionMetadata METADATA =

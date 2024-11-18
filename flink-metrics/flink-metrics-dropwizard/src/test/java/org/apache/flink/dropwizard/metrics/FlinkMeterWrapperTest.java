@@ -21,13 +21,18 @@ package org.apache.flink.dropwizard.metrics;
 import org.apache.flink.metrics.Meter;
 import org.apache.flink.metrics.util.TestMeter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 /** Tests for the FlinkMeterWrapper. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FlinkMeterWrapperTest {
 
     private static final double DELTA = 0.0001;

@@ -31,7 +31,10 @@ import org.apache.flink.metrics.util.TestHistogram;
 import org.apache.flink.metrics.util.TestMeter;
 import org.apache.flink.metrics.util.TestMetricGroup;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -46,6 +49,8 @@ import java.util.concurrent.TimeoutException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the StatsDReporter. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StatsDReporterTest {
 
     @Test
