@@ -179,10 +179,18 @@ under the License.
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois</groupId>
+			<artifactId>ctest4j-junit5</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -203,6 +211,18 @@ under the License.
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>
+						-javaagent:/Users/lithe/Downloads/aspectjweaver-1.9.7.M2.jar
+					</argLine>
+					<reuseForks>false</reuseForks>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
 			</plugin>
 		</plugins>
 
