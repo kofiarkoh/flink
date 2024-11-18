@@ -24,7 +24,10 @@ import org.apache.flink.table.api.config.TableConfigOptions;
 import org.apache.flink.table.test.program.TestStep.TestKind;
 import org.apache.flink.table.utils.UserDefinedFunctions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.ZoneId;
 import java.util.Arrays;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TableTestProgram} and {@link TableTestProgramRunner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TableTestProgramRunnerTest {
 
     private static final String ID = "id";

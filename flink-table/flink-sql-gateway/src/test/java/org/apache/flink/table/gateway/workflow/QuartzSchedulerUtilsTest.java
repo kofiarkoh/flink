@@ -21,7 +21,10 @@ package org.apache.flink.table.gateway.workflow;
 import org.apache.flink.table.catalog.ObjectIdentifier;
 import org.apache.flink.table.gateway.workflow.scheduler.QuartzSchedulerUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.quartz.JobKey;
 
 import java.time.LocalDateTime;
@@ -39,6 +42,8 @@ import static org.apache.flink.table.gateway.workflow.scheduler.QuartzSchedulerU
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link QuartzSchedulerUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class QuartzSchedulerUtilsTest {
 
     @Test

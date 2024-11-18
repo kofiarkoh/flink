@@ -21,7 +21,10 @@ package org.apache.flink.table.gateway.rest.versioning;
 import org.apache.flink.runtime.rest.versioning.RestAPIVersion;
 import org.apache.flink.table.gateway.rest.util.SqlGatewayRestAPIVersion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,6 +34,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SqlGatewayRestAPIVersion}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlGatewayRestAPIVersionTest {
     @Test
     void testGetLatest() {

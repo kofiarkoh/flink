@@ -30,6 +30,9 @@ import org.apache.flink.table.types.logical.BigIntType;
 import org.apache.flink.table.types.logical.TimestampKind;
 import org.apache.flink.table.types.logical.TimestampType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -42,6 +45,8 @@ import java.util.List;
 import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
 /** Tests for {@link LogicalWindow} serialization and deserialization. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @Execution(CONCURRENT)
 class LogicalWindowSerdeTest {
 

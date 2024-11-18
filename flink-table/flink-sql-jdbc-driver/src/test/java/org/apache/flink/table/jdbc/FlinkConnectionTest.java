@@ -21,7 +21,10 @@ package org.apache.flink.table.jdbc;
 import org.apache.flink.table.client.gateway.Executor;
 import org.apache.flink.table.client.gateway.StatementResult;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.sql.SQLException;
 import java.util.Properties;
@@ -31,6 +34,8 @@ import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for {@link FlinkConnection}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkConnectionTest extends FlinkJdbcDriverTestBase {
 
     @Test

@@ -36,7 +36,10 @@ import org.apache.flink.table.planner.utils.TableTestUtil;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +47,8 @@ import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link MultipleInputNodeCreationProcessor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MultipleInputNodeCreationProcessorTest extends TableTestBase {
 
     private final BatchTableTestUtil batchUtil = batchTestUtil(TableConfig.getDefault());

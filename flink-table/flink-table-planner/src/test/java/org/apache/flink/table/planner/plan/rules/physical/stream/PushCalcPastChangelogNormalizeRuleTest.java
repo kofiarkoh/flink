@@ -26,14 +26,19 @@ import org.apache.flink.table.planner.factories.TableFactoryHarness;
 import org.apache.flink.table.planner.utils.StreamTableTestUtil;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.api.DataTypes.BIGINT;
 import static org.apache.flink.table.api.DataTypes.INT;
 import static org.apache.flink.table.api.DataTypes.STRING;
 
 /** Tests for {@link PushCalcPastChangelogNormalizeRule}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PushCalcPastChangelogNormalizeRuleTest extends TableTestBase {
 
     private StreamTableTestUtil util;

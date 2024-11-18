@@ -33,7 +33,10 @@ import org.apache.flink.table.utils.ExecutorMock;
 import org.apache.flink.table.utils.PlannerMock;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URL;
 import java.time.Duration;
@@ -43,6 +46,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StreamTableEnvironmentImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamTableEnvironmentImplTest {
     @Test
     void testAppendStreamDoesNotOverwriteTableConfig() {

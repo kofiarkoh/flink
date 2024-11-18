@@ -26,8 +26,11 @@ import org.apache.flink.table.client.gateway.StatementResult;
 import org.apache.flink.table.data.RowData;
 import org.apache.flink.util.CloseableIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Path;
@@ -48,6 +51,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for flink statement. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkStatementTest extends FlinkJdbcDriverTestBase {
     @TempDir private Path tempDir;
 

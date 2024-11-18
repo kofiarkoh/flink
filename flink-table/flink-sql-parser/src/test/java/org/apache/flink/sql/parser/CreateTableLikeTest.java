@@ -26,6 +26,8 @@ import org.apache.flink.sql.parser.ddl.SqlTableLike.SqlTableLikeOption;
 import org.apache.flink.sql.parser.error.SqlValidateException;
 import org.apache.flink.sql.parser.impl.FlinkSqlParserImpl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.SqlNode;
 import org.apache.calcite.sql.parser.SqlParseException;
@@ -33,6 +35,7 @@ import org.apache.calcite.sql.parser.SqlParser;
 import org.hamcrest.FeatureMatcher;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,6 +48,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.empty;
 
 /** Tests for parsing and validating {@link SqlTableLike} clause. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CreateTableLikeTest {
 
     @Test

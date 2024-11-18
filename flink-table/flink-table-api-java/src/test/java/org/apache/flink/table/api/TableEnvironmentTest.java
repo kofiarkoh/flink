@@ -28,7 +28,10 @@ import org.apache.flink.table.operations.ddl.CreateTableOperation;
 import org.apache.flink.table.operations.ddl.DropTableOperation;
 import org.apache.flink.table.utils.TableEnvironmentMock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Map;
 import java.util.Optional;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.entry;
 import static org.assertj.core.api.InstanceOfAssertFactories.type;
 
 /** Tests for {@link TableEnvironment}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TableEnvironmentTest {
 
     @Test

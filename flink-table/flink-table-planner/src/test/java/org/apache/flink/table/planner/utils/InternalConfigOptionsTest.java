@@ -28,6 +28,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameter;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.rel.RelNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -42,6 +44,8 @@ import static org.apache.flink.table.planner.utils.JavaScalaConversionUtil.toSca
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link InternalConfigOptions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @ExtendWith(ParameterizedTestExtension.class)
 class InternalConfigOptionsTest extends TableTestBase {
 

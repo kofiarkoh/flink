@@ -25,7 +25,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.table.runtime.operators.bundle.trigger.CountBundleTrigger;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -37,6 +40,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link MapBundleOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MapBundleOperatorTest {
 
     @Test

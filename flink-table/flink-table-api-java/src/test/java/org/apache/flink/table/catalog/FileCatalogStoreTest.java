@@ -22,9 +22,12 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.table.catalog.exceptions.CatalogException;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests for {@link FileCatalogStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileCatalogStoreTest {
 
     private static final String CATALOG_STORE_DIR_NAME = "dummy-catalog-store";

@@ -26,8 +26,11 @@ import org.apache.flink.table.catalog.CatalogTable;
 import org.apache.flink.table.catalog.ObjectIdentifier;
 import org.apache.flink.table.utils.CatalogManagerMocks;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.schema.Table;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,6 +40,8 @@ import static org.apache.flink.table.utils.CatalogManagerMocks.DEFAULT_DATABASE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DatabaseCalciteSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DatabaseCalciteSchemaTest {
 
     private static final String TABLE_NAME = "tab";

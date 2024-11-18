@@ -22,7 +22,10 @@ import org.apache.flink.table.planner.plan.nodes.exec.ExecNode;
 import org.apache.flink.table.planner.plan.nodes.exec.InputProperty;
 import org.apache.flink.table.planner.plan.nodes.exec.TestingBatchExecNode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -32,6 +35,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link InputPriorityGraphGenerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputPriorityGraphGeneratorTest {
 
     @Test

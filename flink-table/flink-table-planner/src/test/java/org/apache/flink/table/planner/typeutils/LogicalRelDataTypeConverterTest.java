@@ -51,8 +51,11 @@ import org.apache.flink.table.types.logical.VarCharType;
 import org.apache.flink.table.types.logical.YearMonthIntervalType;
 import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.rel.type.RelDataType;
 import org.apache.calcite.rel.type.RelDataTypeFactory;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -65,6 +68,8 @@ import java.util.stream.Stream;
 import static org.apache.flink.table.test.TableAssertions.assertThat;
 
 /** Tests for {@link LogicalRelDataTypeConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class LogicalRelDataTypeConverterTest {
 
     @ParameterizedTest

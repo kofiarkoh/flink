@@ -21,7 +21,10 @@ package org.apache.flink.table.planner.expressions;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.planner.expressions.utils.ScalarOperatorsTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -32,6 +35,8 @@ import java.time.ZoneOffset;
 import static org.apache.flink.table.api.Expressions.lit;
 
 /** Tests for {@code CAST} expression. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeConversionsTest extends ScalarOperatorsTestBase {
     @Test
     void testTimestampWithLocalTimeZoneToString() {

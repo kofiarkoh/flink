@@ -26,7 +26,10 @@ import org.apache.flink.table.planner.utils.TableTestBase;
 import org.apache.flink.table.types.DataType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -41,6 +44,8 @@ import static org.apache.flink.table.api.Expressions.row;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link org.apache.flink.table.api.TableEnvironment#fromValues}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ValuesTest extends TableTestBase {
 
     @Test

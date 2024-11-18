@@ -20,8 +20,11 @@ package org.apache.flink.table.codesplit;
 import org.apache.flink.core.testutils.FlinkMatchers;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.HamcrestCondition.matching;
 
 /** Tests for {@link JavaCodeSplitter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JavaCodeSplitterTest {
 
     @Test

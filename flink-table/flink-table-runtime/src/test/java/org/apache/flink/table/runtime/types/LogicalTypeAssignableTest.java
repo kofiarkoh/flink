@@ -49,6 +49,9 @@ import org.apache.flink.table.types.logical.VarCharType;
 import org.apache.flink.table.types.logical.YearMonthIntervalType;
 import org.apache.flink.table.types.logical.ZonedTimestampType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -60,6 +63,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PlannerTypeUtils#isAssignable(LogicalType, LogicalType)}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LogicalTypeAssignableTest {
 
     private static List<Object[]> testData() {

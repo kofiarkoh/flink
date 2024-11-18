@@ -17,7 +17,10 @@
 
 package org.apache.flink.table.codesplit;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 import java.util.Map;
@@ -26,6 +29,8 @@ import static org.apache.flink.table.codesplit.CodeSplitTestUtil.trimLines;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link BlockStatementSplitter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockStatementSplitterTest {
 
     private static final String GIVEN_WHILE_IF_BLOCK =

@@ -20,7 +20,10 @@ package org.apache.flink.table.api;
 
 import org.apache.flink.table.api.config.TableConfigOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.DateTimeException;
 import java.time.Duration;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TableConfig}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TableConfigTest {
 
     private static final TableConfig CONFIG_BY_METHOD = TableConfig.getDefault();

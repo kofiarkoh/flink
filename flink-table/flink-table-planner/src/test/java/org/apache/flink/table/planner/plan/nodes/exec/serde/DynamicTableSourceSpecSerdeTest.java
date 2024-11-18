@@ -57,6 +57,8 @@ import org.apache.flink.table.types.logical.TimestampType;
 import org.apache.flink.table.watermark.WatermarkEmitStrategy;
 import org.apache.flink.table.watermark.WatermarkParams;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.avatica.util.TimeUnit;
 import org.apache.calcite.rex.RexBuilder;
 import org.apache.calcite.sql.SqlIntervalQualifier;
@@ -64,6 +66,7 @@ import org.apache.calcite.sql.fun.SqlStdOperatorTable;
 import org.apache.calcite.sql.parser.SqlParserPos;
 import org.apache.calcite.sql.type.SqlTypeName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -91,6 +94,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
 /** Tests for {@link DynamicTableSourceSpec} serialization and deserialization. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @Execution(CONCURRENT)
 public class DynamicTableSourceSpecSerdeTest {
 

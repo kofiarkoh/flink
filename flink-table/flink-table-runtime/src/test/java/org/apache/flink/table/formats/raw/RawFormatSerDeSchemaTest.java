@@ -32,6 +32,9 @@ import org.apache.flink.table.types.DataType;
 import org.apache.flink.types.Row;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -61,6 +64,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 /** Tests for {@link RawFormatDeserializationSchema} {@link RawFormatSerializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RawFormatSerDeSchemaTest {
 
     static List<TestSpec> testData() {

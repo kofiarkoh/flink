@@ -27,8 +27,11 @@ import org.apache.flink.table.planner.hint.JoinStrategy;
 import org.apache.flink.table.planner.plan.nodes.exec.spec.LookupJoinHintTestUtil;
 import org.apache.flink.table.planner.plan.utils.LookupJoinUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.rel.hint.RelHint;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -38,6 +41,8 @@ import static org.apache.flink.table.planner.plan.nodes.exec.serde.JsonSerdeTest
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LookupJoinUtil.AsyncLookupOptions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncLookupOptionsTest {
 
     @Test

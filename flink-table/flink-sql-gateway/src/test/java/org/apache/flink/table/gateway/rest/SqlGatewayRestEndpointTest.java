@@ -26,7 +26,10 @@ import org.apache.flink.table.gateway.api.endpoint.SqlGatewayEndpointFactoryUtil
 import org.apache.flink.table.gateway.rest.util.SqlGatewayRestOptions;
 import org.apache.flink.util.ConfigurationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.gateway.api.endpoint.SqlGatewayEndpointFactoryUtils.getEndpointConfig;
 import static org.apache.flink.table.gateway.rest.SqlGatewayRestEndpointFactory.IDENTIFIER;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link SqlGatewayRestEndpoint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlGatewayRestEndpointTest {
 
     private static final String ADDRESS1 = "123.123.123.123";

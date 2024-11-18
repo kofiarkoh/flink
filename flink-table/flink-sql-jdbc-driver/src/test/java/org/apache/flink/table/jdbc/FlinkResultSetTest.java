@@ -32,7 +32,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.util.CloseableIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -50,6 +53,8 @@ import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for {@link FlinkResultSet}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkResultSetTest {
     private static final int RECORD_SIZE = 5000;
     private static final ResolvedSchema SCHEMA =

@@ -39,9 +39,12 @@ import org.apache.flink.table.utils.CatalogManagerMocks;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonNode;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectReader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 
 import java.util.Arrays;
@@ -63,6 +66,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
 /** Tests for {@link ContextResolvedTable} serialization and deserialization. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @Execution(CONCURRENT)
 public class ContextResolvedTableSerdeTest {
 

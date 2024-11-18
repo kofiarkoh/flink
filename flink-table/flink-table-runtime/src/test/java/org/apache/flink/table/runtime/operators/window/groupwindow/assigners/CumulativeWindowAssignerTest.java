@@ -24,7 +24,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.table.runtime.operators.window.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -34,6 +37,8 @@ import static org.assertj.core.api.HamcrestCondition.matching;
 import static org.hamcrest.Matchers.contains;
 
 /** Tests for {@link CumulativeWindowAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CumulativeWindowAssignerTest {
 
     private static final RowData ELEMENT = GenericRowData.of(StringData.fromString("String"));

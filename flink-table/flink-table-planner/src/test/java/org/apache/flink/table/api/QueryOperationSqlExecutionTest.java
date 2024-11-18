@@ -27,6 +27,8 @@ import org.apache.flink.table.test.program.TestStep.TestKind;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,6 +46,8 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for executing results of {@link QueryOperation#asSerializableString()}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MiniClusterExtension.class)
 public class QueryOperationSqlExecutionTest implements TableTestProgramRunner {

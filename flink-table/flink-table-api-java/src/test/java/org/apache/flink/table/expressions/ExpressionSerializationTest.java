@@ -36,6 +36,9 @@ import org.apache.flink.table.types.DataType;
 import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 import org.apache.flink.table.utils.FunctionLookupMock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -53,6 +56,8 @@ import static org.apache.flink.table.api.Expressions.timestampDiff;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for serializing {@link BuiltInFunctionDefinitions} into a SQL string. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExpressionSerializationTest {
 
     public static Stream<TestSpec> testData() {

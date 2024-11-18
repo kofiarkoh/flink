@@ -21,7 +21,10 @@ package org.apache.flink.table.runtime.operators.rank;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +33,8 @@ import static org.apache.flink.table.runtime.util.StreamRecordUtils.deleteRecord
 import static org.apache.flink.table.runtime.util.StreamRecordUtils.insertRecord;
 
 /** Tests for {@link AppendOnlyTopNFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AppendOnlyTopNFunctionTest extends TopNFunctionTestBase {
 
     @Override

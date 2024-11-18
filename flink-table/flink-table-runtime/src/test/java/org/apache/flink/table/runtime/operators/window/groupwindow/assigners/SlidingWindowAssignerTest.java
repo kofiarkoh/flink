@@ -23,7 +23,10 @@ import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.runtime.operators.window.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link SlidingWindowAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlidingWindowAssignerTest {
 
     private static final RowData ELEMENT = GenericRowData.of("String");

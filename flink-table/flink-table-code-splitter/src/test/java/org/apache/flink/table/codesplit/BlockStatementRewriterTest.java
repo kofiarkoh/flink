@@ -17,9 +17,14 @@
 
 package org.apache.flink.table.codesplit;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link BlockStatementRewriterTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockStatementRewriterTest extends CodeRewriterTestBase<BlockStatementRewriter> {
 
     public BlockStatementRewriterTest() {

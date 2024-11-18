@@ -33,7 +33,10 @@ import org.apache.flink.table.catalog.GenericInMemoryCatalogStore;
 import org.apache.flink.table.catalog.listener.CatalogListener1;
 import org.apache.flink.table.catalog.listener.CatalogListener2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -43,6 +46,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TableEnvironment} that require a planner. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EnvironmentTest {
 
     @Test

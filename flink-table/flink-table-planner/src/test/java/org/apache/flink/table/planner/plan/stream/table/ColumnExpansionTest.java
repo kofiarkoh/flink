@@ -23,8 +23,11 @@ import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.TableEnvironment;
 import org.apache.flink.table.api.config.TableConfigOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,6 +43,8 @@ import static org.apache.flink.table.api.config.TableConfigOptions.TABLE_COLUMN_
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TableConfigOptions#TABLE_COLUMN_EXPANSION_STRATEGY}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ColumnExpansionTest {
 
     private TableEnvironment tableEnv;

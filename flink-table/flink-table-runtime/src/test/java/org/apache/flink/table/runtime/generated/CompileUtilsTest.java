@@ -20,9 +20,12 @@ package org.apache.flink.table.runtime.generated;
 
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.codehaus.janino.ExpressionEvaluator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link CompileUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompileUtilsTest {
 
     @BeforeEach

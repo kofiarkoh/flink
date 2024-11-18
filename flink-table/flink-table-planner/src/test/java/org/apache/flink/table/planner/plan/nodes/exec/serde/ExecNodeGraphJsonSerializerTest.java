@@ -31,13 +31,18 @@ import org.apache.flink.table.planner.plan.nodes.exec.ExecNodeGraph;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ExecNodeGraphJsonSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecNodeGraphJsonSerializerTest {
 
     @Test

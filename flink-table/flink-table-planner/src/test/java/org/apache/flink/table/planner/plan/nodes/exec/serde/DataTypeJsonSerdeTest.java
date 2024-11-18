@@ -21,6 +21,9 @@ package org.apache.flink.table.planner.plan.nodes.exec.serde;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.DataType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
 /** Tests for {@link DataType} serialization and deserialization. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @Execution(CONCURRENT)
 public class DataTypeJsonSerdeTest {
 

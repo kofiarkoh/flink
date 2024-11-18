@@ -34,10 +34,13 @@ import org.apache.flink.table.utils.CatalogManagerMocks;
 import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.UserClassLoaderJarTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -70,6 +73,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /** Tests for {@link ResourceManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ResourceManagerTest {
     private static final UnresolvedIdentifier FULL_UNRESOLVED_IDENTIFIER1 =
             UnresolvedIdentifier.of(DEFAULT_CATALOG, DEFAULT_DATABASE, "test_udf1");

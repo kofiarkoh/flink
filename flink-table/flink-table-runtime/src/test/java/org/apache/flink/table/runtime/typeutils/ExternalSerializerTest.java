@@ -24,6 +24,10 @@ import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.DataType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +36,8 @@ import java.util.List;
 import java.util.Objects;
 
 /** Tests for {@link ExternalSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 abstract class ExternalSerializerTest<T> extends SerializerTestInstance<T> {
 
     @SuppressWarnings("unchecked")

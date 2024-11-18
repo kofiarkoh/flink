@@ -30,8 +30,11 @@ import org.apache.flink.table.module.ModuleManager;
 import org.apache.flink.table.resource.ResourceManager;
 import org.apache.flink.table.utils.CatalogManagerMocks;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URL;
 import java.util.Collections;
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link FunctionCatalog}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FunctionCatalogTest {
 
     private static final ScalarFunction FUNCTION_1 = new TestFunction1();

@@ -33,8 +33,11 @@ import org.apache.flink.table.planner.utils.Top3;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 
@@ -42,6 +45,8 @@ import static org.apache.flink.table.api.Expressions.$;
 import static org.apache.flink.table.api.Expressions.call;
 
 /** Tests for verifying name and description of stream sql operator name. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamOperatorNameTest extends OperatorNameTestBase {
 
     private StreamTableTestUtil util;

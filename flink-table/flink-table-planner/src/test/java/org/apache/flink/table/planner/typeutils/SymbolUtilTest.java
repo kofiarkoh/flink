@@ -22,10 +22,13 @@ import org.apache.flink.table.expressions.TimeIntervalUnit;
 import org.apache.flink.table.planner.typeutils.SymbolUtil.SerializableSymbol;
 import org.apache.flink.table.utils.DateTimeUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.avatica.util.TimeUnitRange;
 import org.apache.calcite.sql.SqlJsonQueryEmptyOrErrorBehavior;
 import org.apache.calcite.sql.fun.SqlTrimFunction;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.planner.typeutils.SymbolUtil.calciteToCommon;
 import static org.apache.flink.table.planner.typeutils.SymbolUtil.calciteToSerializable;
@@ -34,6 +37,8 @@ import static org.apache.flink.table.planner.typeutils.SymbolUtil.serializableTo
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SymbolUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SymbolUtilTest {
 
     @Test

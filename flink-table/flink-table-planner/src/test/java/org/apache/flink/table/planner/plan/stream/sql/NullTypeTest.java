@@ -25,11 +25,16 @@ import org.apache.flink.table.functions.ScalarFunction;
 import org.apache.flink.table.planner.utils.JavaStreamTableTestUtil;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for usages of {@link DataTypes#NULL()}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NullTypeTest extends TableTestBase {
 
     private final JavaStreamTableTestUtil util = javaStreamTestUtil();

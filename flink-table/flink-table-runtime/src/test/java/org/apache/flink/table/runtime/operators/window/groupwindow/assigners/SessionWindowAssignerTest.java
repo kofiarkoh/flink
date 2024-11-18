@@ -24,7 +24,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.runtime.operators.window.MergeCallback;
 import org.apache.flink.table.runtime.operators.window.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatcher;
 
 import java.time.Duration;
@@ -44,6 +47,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /** Tests for {@link SessionWindowAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SessionWindowAssignerTest {
 
     private static final RowData ELEMENT = GenericRowData.of("String");

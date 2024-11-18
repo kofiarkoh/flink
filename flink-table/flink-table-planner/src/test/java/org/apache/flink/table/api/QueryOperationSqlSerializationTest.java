@@ -29,7 +29,10 @@ import org.apache.flink.table.test.program.TableTestProgram;
 import org.apache.flink.table.test.program.TableTestProgramRunner;
 import org.apache.flink.table.test.program.TestStep.TestKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -43,6 +46,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for serialization of {@link org.apache.flink.table.operations.QueryOperation}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class QueryOperationSqlSerializationTest implements TableTestProgramRunner {
 

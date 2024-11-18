@@ -22,7 +22,13 @@ import org.apache.flink.table.legacy.api.TableSchema;
 import org.apache.flink.table.legacy.sources.TableSource;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Tests for {@link CsvTableSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CsvTableSourceTest extends TableSourceTestBase {
 
     @Override

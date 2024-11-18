@@ -28,7 +28,10 @@ import org.apache.flink.table.descriptors.DescriptorProperties;
 import org.apache.flink.table.factories.FactoryUtil;
 import org.apache.flink.table.types.DataType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link FileSystemTableFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSystemTableFactoryTest {
 
     private static final ResolvedSchema SCHEMA =

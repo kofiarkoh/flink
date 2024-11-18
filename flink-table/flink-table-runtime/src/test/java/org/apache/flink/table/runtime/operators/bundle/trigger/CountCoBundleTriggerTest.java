@@ -18,11 +18,16 @@
 
 package org.apache.flink.table.runtime.operators.bundle.trigger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link CountCoBundleTrigger}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CountCoBundleTriggerTest {
 
     @Test

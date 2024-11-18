@@ -26,7 +26,10 @@ import org.apache.flink.table.catalog.ResolvedSchema;
 import org.apache.flink.table.connector.sink.DynamicTableSink;
 import org.apache.flink.table.connector.sink.abilities.SupportsPartitioning;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -37,6 +40,8 @@ import static org.apache.flink.table.factories.utils.FactoryMocks.createTableSin
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PrintTableSinkFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrintSinkFactoryTest {
 
     private static final ResolvedSchema SCHEMA =

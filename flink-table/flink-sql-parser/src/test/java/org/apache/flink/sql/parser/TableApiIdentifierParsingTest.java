@@ -22,10 +22,13 @@ import org.apache.flink.sql.parser.impl.FlinkSqlParserImpl;
 import org.apache.flink.sql.parser.impl.ParseException;
 import org.apache.flink.sql.parser.validate.FlinkSqlConformance;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.SqlIdentifier;
 import org.apache.calcite.sql.parser.SqlAbstractParserImpl;
 import org.apache.calcite.util.SourceStringReader;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.of;
 
 /** Tests for parsing a Table API specific SqlIdentifier. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TableApiIdentifierParsingTest {
 
     private static final String ANTHROPOS_IN_GREEK_IN_UNICODE =

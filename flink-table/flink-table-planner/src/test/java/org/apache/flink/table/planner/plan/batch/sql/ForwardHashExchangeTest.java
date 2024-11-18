@@ -24,10 +24,15 @@ import org.apache.flink.table.api.config.OptimizerConfigOptions;
 import org.apache.flink.table.planner.utils.BatchTableTestUtil;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for ForwardHashExchangeProcessor. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ForwardHashExchangeTest extends TableTestBase {
 
     private BatchTableTestUtil util;

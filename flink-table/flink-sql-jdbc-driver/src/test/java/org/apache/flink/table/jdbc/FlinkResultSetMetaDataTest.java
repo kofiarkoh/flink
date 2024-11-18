@@ -25,7 +25,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.LogicalTypeFamily;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.sql.Array;
@@ -40,6 +43,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 /** Tests for {@link FlinkResultSetMetaData}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkResultSetMetaDataTest {
     @Test
     public void testResultSetMetaData() throws Exception {

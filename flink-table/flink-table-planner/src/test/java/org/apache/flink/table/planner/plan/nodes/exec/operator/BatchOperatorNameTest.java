@@ -30,11 +30,16 @@ import org.apache.flink.table.planner.utils.TestLegacyFilterableTableSource;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 
 /** Tests for verifying name and description of batch sql operator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchOperatorNameTest extends OperatorNameTestBase {
 
     @Override

@@ -21,8 +21,11 @@ package org.apache.flink.table.module;
 import org.apache.flink.table.api.ValidationException;
 import org.apache.flink.table.utils.ModuleMock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ModuleManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ModuleManagerTest {
 
     private ModuleManager manager;

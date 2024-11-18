@@ -27,7 +27,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.runtime.operators.bundle.KeyedMapBundleOperator;
 import org.apache.flink.table.runtime.operators.bundle.trigger.CountBundleTrigger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,8 @@ import static org.apache.flink.table.runtime.util.StreamRecordUtils.updateBefore
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ProcTimeMiniBatchDeduplicateKeepLastRowFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProcTimeMiniBatchDeduplicateKeepLastRowFunctionTest
         extends ProcTimeDeduplicateFunctionTestBase {
 

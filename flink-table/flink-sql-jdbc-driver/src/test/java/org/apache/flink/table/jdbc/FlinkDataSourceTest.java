@@ -18,7 +18,10 @@
 
 package org.apache.flink.table.jdbc;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.sql.Connection;
 import java.util.Properties;
@@ -26,6 +29,8 @@ import java.util.Properties;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** Tests for flink data source. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkDataSourceTest extends FlinkJdbcDriverTestBase {
 
     @Test

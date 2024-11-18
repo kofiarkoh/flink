@@ -21,12 +21,17 @@ import org.apache.flink.table.api.TableConfig;
 import org.apache.flink.table.planner.utils.BatchTableTestUtil;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.sql.SqlMatchRecognize;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link SqlMatchRecognize}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MatchRecognizeTest extends TableTestBase {
 
     private BatchTableTestUtil util;

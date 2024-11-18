@@ -21,6 +21,8 @@ package org.apache.flink.table.runtime.operators.window.tvf.slicing;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,6 +35,8 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SliceAssigners.WindowedSliceAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @ExtendWith(ParameterizedTestExtension.class)
 class WindowedSliceAssignerTest extends SliceAssignerTestBase {
 

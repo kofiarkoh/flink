@@ -22,7 +22,10 @@ import org.apache.flink.table.planner.plan.nodes.exec.spec.LookupJoinHintTestUti
 import org.apache.flink.table.planner.plan.utils.LookupJoinUtil;
 import org.apache.flink.table.runtime.operators.join.lookup.ResultRetryStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -30,6 +33,8 @@ import static org.apache.flink.table.planner.plan.nodes.exec.serde.JsonSerdeTest
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LookupJoinUtil.RetryLookupOptions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RetryLookupOptionsTest {
 
     @Test

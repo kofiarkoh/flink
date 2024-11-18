@@ -22,6 +22,8 @@ import org.apache.flink.sql.parser.ddl.SqlCreateTable;
 import org.apache.flink.sql.parser.ddl.SqlTableColumn.SqlRegularColumn;
 import org.apache.flink.sql.parser.impl.FlinkSqlParserImpl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.calcite.avatica.util.Casing;
 import org.apache.calcite.avatica.util.Quoting;
 import org.apache.calcite.rel.type.DelegatingTypeSystem;
@@ -52,6 +54,7 @@ import org.apache.calcite.test.MockSqlOperatorTable;
 import org.apache.calcite.test.catalog.MockCatalogReaderSimple;
 import org.apache.calcite.util.SourceStringReader;
 import org.apache.calcite.util.Util;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -68,6 +71,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.of;
 
 /** Tests for all the supported Flink DDL data types. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FlinkDDLDataTypeTest {
     private static final Fixture FIXTURE = new Fixture(TestFactory.INSTANCE.getTypeFactory());
     private static final String DDL_FORMAT =

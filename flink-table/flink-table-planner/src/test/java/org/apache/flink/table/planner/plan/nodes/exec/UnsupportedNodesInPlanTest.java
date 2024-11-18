@@ -23,11 +23,16 @@ import org.apache.flink.table.api.PlanReference;
 import org.apache.flink.table.api.TableEnvironment;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for deserialising invalid {@link org.apache.flink.table.api.CompiledPlan}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnsupportedNodesInPlanTest extends TableTestBase {
 
     @Test

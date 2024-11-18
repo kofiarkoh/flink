@@ -36,7 +36,10 @@ import org.apache.flink.table.catalog.listener.DropTableEvent;
 import org.apache.flink.table.utils.CatalogManagerMocks;
 import org.apache.flink.table.utils.ExpressionResolverMocks;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +58,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for {@link CatalogManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CatalogManagerTest {
     @Test
     void testDatabaseModificationEvent() throws Exception {

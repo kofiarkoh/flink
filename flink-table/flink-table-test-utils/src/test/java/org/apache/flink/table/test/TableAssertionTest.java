@@ -27,7 +27,10 @@ import org.apache.flink.table.types.DataType;
 import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.api.DataTypes.ARRAY;
 import static org.apache.flink.table.api.DataTypes.BOOLEAN;
@@ -39,6 +42,8 @@ import static org.apache.flink.table.test.TableAssertions.assertThat;
 import static org.apache.flink.table.test.TableAssertions.assertThatRows;
 
 /** Tests for {@link TableAssertions} assertions. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TableAssertionTest {
 
     @Test

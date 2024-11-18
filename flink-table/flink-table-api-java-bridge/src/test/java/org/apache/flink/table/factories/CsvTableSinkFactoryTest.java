@@ -29,6 +29,9 @@ import org.apache.flink.table.sinks.CsvTableSink;
 import org.apache.flink.table.sources.CsvTableSource;
 import org.apache.flink.util.TernaryBoolean;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -41,6 +44,8 @@ import static org.apache.flink.table.legacy.descriptors.Schema.SCHEMA;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for CsvTableSourceFactory and CsvTableSinkFactory. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CsvTableSinkFactoryTest {
 
     private static TableSchema testingSchema =

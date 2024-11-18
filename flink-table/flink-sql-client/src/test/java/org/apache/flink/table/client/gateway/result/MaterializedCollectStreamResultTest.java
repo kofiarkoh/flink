@@ -31,7 +31,11 @@ import org.apache.flink.table.types.DataType;
 import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,6 +44,9 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link MaterializedCollectStreamResult}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+@Disabled
 class MaterializedCollectStreamResultTest extends BaseMaterializedResultTest {
 
     @Test

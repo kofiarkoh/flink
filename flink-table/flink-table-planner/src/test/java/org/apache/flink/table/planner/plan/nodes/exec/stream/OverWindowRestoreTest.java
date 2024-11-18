@@ -23,11 +23,17 @@ import org.apache.flink.table.planner.plan.nodes.exec.ExecNodeMetadata;
 import org.apache.flink.table.planner.plan.nodes.exec.testutils.RestoreTestBase;
 import org.apache.flink.table.test.program.TableTestProgram;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
 /** Tests for verifying {@link StreamExecOverAggregate}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OverWindowRestoreTest extends RestoreTestBase {
     public OverWindowRestoreTest() {
         super(StreamExecOverAggregate.class);

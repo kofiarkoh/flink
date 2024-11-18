@@ -29,7 +29,10 @@ import org.apache.flink.table.expressions.CallExpression;
 import org.apache.flink.table.expressions.FieldReferenceExpression;
 import org.apache.flink.table.functions.BuiltInFunctionDefinitions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
@@ -37,6 +40,8 @@ import static org.apache.flink.table.expressions.ApiExpressionUtils.intervalOfMi
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for describing {@link Operation}s. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class QueryOperationTest {
 
     @Test

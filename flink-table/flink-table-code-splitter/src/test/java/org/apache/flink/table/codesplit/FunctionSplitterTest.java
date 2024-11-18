@@ -17,9 +17,14 @@
 
 package org.apache.flink.table.codesplit;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link FunctionSplitter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FunctionSplitterTest extends CodeRewriterTestBase<FunctionSplitter> {
 
     public FunctionSplitterTest() {

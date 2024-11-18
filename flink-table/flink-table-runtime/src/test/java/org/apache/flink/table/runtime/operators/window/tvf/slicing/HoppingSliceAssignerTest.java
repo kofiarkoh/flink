@@ -18,6 +18,9 @@
 
 package org.apache.flink.table.runtime.operators.window.tvf.slicing;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -30,6 +33,8 @@ import java.util.TimeZone;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SliceAssigners.HoppingSliceAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HoppingSliceAssignerTest extends SliceAssignerTestBase {
 
     @ParameterizedTest(name = "timezone = {0}")

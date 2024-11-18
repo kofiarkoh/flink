@@ -23,12 +23,17 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.ExecutionOptions;
 import org.apache.flink.streaming.api.transformations.StreamExchangeMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.planner.utils.StreamExchangeModeUtils.getBatchStreamExchangeMode;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StreamExchangeModeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamExchangeModeUtilsTest {
 
     @Test

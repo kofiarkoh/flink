@@ -33,7 +33,10 @@ import org.apache.flink.table.types.logical.MultisetType;
 import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.logical.VarCharType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,6 +50,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for {@link RowDataLocalTimeZoneConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class RowDataLocalTimeZoneConverterTest {
     @Test
     public void testCheckHasTimeZoneData() {

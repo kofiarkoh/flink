@@ -22,9 +22,14 @@ import org.apache.flink.connector.file.table.LegacyTableFactory;
 import org.apache.flink.table.planner.utils.JavaStreamTableTestUtil;
 import org.apache.flink.table.planner.utils.TableTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for usages of {@link LegacyTableFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LegacyTableFactoryTest extends TableTestBase {
 
     private final JavaStreamTableTestUtil util;

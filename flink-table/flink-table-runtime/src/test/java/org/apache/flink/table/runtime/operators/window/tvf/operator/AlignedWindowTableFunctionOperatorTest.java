@@ -30,6 +30,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTe
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -43,6 +45,8 @@ import static org.apache.flink.table.runtime.util.StreamRecordUtils.binaryRecord
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AlignedWindowTableFunctionOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @ExtendWith(ParameterizedTestExtension.class)
 class AlignedWindowTableFunctionOperatorTest extends WindowTableFunctionOperatorTestBase {
 

@@ -33,7 +33,10 @@ import org.apache.flink.table.types.logical.TimestampKind;
 import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 import org.apache.flink.table.utils.ExpressionResolverMocks;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -51,6 +54,8 @@ import static org.assertj.core.api.Assertions.fail;
 import static org.assertj.core.api.HamcrestCondition.matching;
 
 /** Tests for {@link Schema}, {@link DefaultSchemaResolver}, and {@link ResolvedSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SchemaResolutionTest {
 
     private static final String COMPUTED_SQL = "orig_ts - INTERVAL '60' MINUTE";

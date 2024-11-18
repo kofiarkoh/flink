@@ -38,8 +38,11 @@ import org.apache.flink.util.Preconditions;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.module.SimpleModule;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -94,6 +97,8 @@ import static org.apache.flink.table.api.DataTypes.YEAR;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ResultInfoSerializer} and {@link ResultInfoDeserializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResultInfoJsonSerDeTest {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     private static final Row testRow = initRow();
