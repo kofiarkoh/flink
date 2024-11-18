@@ -26,7 +26,10 @@ import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -52,6 +55,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the utility methods in {@link FutureUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FutureUtilsTest {
 
     @RegisterExtension

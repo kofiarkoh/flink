@@ -19,7 +19,10 @@ package org.apache.flink.core.classloading;
 
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Tests for the {@link ComponentClassLoader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ComponentClassLoaderTest {
 
     private static final String NON_EXISTENT_CLASS_NAME = "foo.Bar";

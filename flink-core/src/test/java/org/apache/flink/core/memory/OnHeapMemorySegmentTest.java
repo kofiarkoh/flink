@@ -20,6 +20,8 @@ package org.apache.flink.core.memory;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -28,6 +30,8 @@ import java.nio.ByteBuffer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link MemorySegment} in on-heap mode. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @ExtendWith(ParameterizedTestExtension.class)
 class OnHeapMemorySegmentTest extends MemorySegmentTestBase {
 

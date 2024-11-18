@@ -21,11 +21,16 @@ package org.apache.flink.util;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.util.StringValueUtils.WhitespaceTokenizer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link StringValueUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StringValueUtilsTest {
 
     @Test

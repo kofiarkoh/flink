@@ -22,7 +22,10 @@ import org.apache.flink.testutils.serialization.types.SerializationTestType;
 import org.apache.flink.testutils.serialization.types.SerializationTestTypeFactory;
 import org.apache.flink.testutils.serialization.types.Util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -34,6 +37,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the combination of {@link DataOutputSerializer} and {@link DataInputDeserializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataInputOutputSerializerTest {
 
     @Test

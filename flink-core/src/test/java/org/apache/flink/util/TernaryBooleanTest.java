@@ -18,7 +18,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.util.TernaryBoolean.FALSE;
 import static org.apache.flink.util.TernaryBoolean.TRUE;
@@ -26,6 +29,8 @@ import static org.apache.flink.util.TernaryBoolean.UNDEFINED;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TernaryBoolean} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TernaryBooleanTest {
 
     @Test

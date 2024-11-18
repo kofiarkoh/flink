@@ -18,7 +18,9 @@
 
 package org.apache.flink.configuration;
 
+
 import org.junit.jupiter.api.Test;
+
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -26,10 +28,16 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DelegatingConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DelegatingConfigurationTest {
 
     @Test

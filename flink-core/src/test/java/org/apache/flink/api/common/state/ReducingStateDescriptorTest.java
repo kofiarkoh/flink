@@ -26,11 +26,16 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ReducingStateDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ReducingStateDescriptorTest {
 
     @Test
