@@ -28,6 +28,9 @@ import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 import org.apache.flink.table.types.utils.TypeInfoDataTypeConverter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -39,6 +42,8 @@ import static org.apache.flink.table.types.utils.DataTypeFactoryMock.dummyRaw;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TypeInfoDataTypeConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeInfoDataTypeConverterTest {
 
     private static Stream<TestSpec> testData() {

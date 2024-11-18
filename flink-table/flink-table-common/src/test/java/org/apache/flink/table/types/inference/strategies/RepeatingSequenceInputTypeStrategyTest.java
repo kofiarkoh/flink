@@ -20,6 +20,10 @@ package org.apache.flink.table.types.inference.strategies;
 
 import org.apache.flink.table.types.inference.InputTypeStrategiesTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 import static org.apache.flink.table.api.DataTypes.INT;
@@ -28,6 +32,8 @@ import static org.apache.flink.table.types.inference.InputTypeStrategies.explici
 import static org.apache.flink.table.types.inference.InputTypeStrategies.repeatingSequence;
 
 /** Tests for {@link RepeatingSequenceInputTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RepeatingSequenceInputTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

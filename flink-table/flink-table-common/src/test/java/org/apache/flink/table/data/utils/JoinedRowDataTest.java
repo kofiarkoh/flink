@@ -23,11 +23,16 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.test.TableAssertions.assertThat;
 
 /** Tests for {@link JoinedRowData}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JoinedRowDataTest {
 
     @Test

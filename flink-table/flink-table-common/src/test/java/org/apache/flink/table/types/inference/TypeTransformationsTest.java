@@ -30,7 +30,10 @@ import org.apache.flink.table.types.DataType;
 import org.apache.flink.table.types.utils.DataTypeUtils;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -44,6 +47,8 @@ import static org.apache.flink.table.types.inference.TypeTransformations.toNulla
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for built-in {@link TypeTransformations}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeTransformationsTest {
 
     @Test

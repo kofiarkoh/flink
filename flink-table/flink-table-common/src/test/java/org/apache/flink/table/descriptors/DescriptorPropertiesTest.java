@@ -25,7 +25,10 @@ import org.apache.flink.table.legacy.api.TableColumn;
 import org.apache.flink.table.legacy.api.TableSchema;
 import org.apache.flink.table.types.LogicalTypeParserTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DescriptorProperties}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DescriptorPropertiesTest {
 
     private static final String ARRAY_KEY = "my-array";

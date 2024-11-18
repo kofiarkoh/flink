@@ -18,7 +18,10 @@
 
 package org.apache.flink.table.utils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -26,6 +29,8 @@ import java.util.Objects;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link org.apache.flink.table.utils.EncodingUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EncodingUtilsTest {
 
     @Test

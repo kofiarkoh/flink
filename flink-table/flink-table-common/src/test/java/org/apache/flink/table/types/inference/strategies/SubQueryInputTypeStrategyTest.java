@@ -21,9 +21,15 @@ package org.apache.flink.table.types.inference.strategies;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.inference.InputTypeStrategiesTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 /** Tests for {@link SubQueryInputTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubQueryInputTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

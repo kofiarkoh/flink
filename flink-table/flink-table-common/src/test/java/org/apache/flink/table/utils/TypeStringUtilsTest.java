@@ -25,12 +25,17 @@ import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.table.api.ValidationException;
 import org.apache.flink.table.legacy.utils.TypeStringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TypeStringUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeStringUtilsTest {
 
     @Test

@@ -21,7 +21,10 @@ package org.apache.flink.table.utils;
 import org.apache.flink.table.api.ValidationException;
 import org.apache.flink.table.catalog.IntervalFreshness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link IntervalFreshnessUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IntervalFreshnessUtilsTest {
 
     @Test

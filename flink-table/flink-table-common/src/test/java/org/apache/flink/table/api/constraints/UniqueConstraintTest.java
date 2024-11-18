@@ -21,7 +21,10 @@ package org.apache.flink.table.api.constraints;
 import org.apache.flink.table.legacy.api.constraints.Constraint;
 import org.apache.flink.table.legacy.api.constraints.UniqueConstraint;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,6 +32,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link UniqueConstraint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UniqueConstraintTest {
 
     @Test

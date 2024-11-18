@@ -52,6 +52,9 @@ import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 import org.apache.flink.table.types.utils.LogicalTypeDataTypeConverter;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -103,6 +106,8 @@ import static org.apache.flink.table.types.utils.DataTypeFactoryMock.dummyRaw;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DataTypes} and {@link LogicalTypeDataTypeConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataTypesTest {
 
     private static Stream<TestSpec> testData() {

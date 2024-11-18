@@ -23,6 +23,10 @@ import org.apache.flink.table.types.inference.strategies.SpecificTypeStrategies;
 import org.apache.flink.table.types.logical.LogicalTypeFamily;
 import org.apache.flink.table.types.logical.utils.LogicalTypeMerging;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -35,6 +39,8 @@ import static org.apache.flink.table.types.inference.TypeStrategies.varyingStrin
 import static org.apache.flink.table.types.inference.strategies.SpecificTypeStrategies.PERCENTILE;
 
 /** Tests for built-in {@link TypeStrategies}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeStrategiesTest extends TypeStrategiesTestBase {
 
     @Override

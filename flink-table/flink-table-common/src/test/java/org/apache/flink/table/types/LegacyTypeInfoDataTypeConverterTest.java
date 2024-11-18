@@ -31,6 +31,9 @@ import org.apache.flink.table.types.logical.TimestampType;
 import org.apache.flink.table.types.utils.LegacyTypeInfoDataTypeConverter;
 import org.apache.flink.table.typeutils.TimeIndicatorTypeInfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.of;
 
 /** Tests for {@link LegacyTypeInfoDataTypeConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LegacyTypeInfoDataTypeConverterTest {
 
     private static Stream<Arguments> typeInfo() {

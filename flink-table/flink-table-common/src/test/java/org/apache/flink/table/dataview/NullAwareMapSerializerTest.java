@@ -23,6 +23,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.common.typeutils.base.LongSerializer;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +34,8 @@ import java.util.Random;
 import java.util.TreeMap;
 
 /** Tests for {@link NullAwareMapSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NullAwareMapSerializerTest extends SerializerTestBase<Map<Long, String>> {
     @Override
     protected TypeSerializer<Map<Long, String>> createSerializer() {

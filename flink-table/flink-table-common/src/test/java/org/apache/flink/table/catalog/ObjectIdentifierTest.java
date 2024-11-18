@@ -20,12 +20,17 @@ package org.apache.flink.table.catalog;
 
 import org.apache.flink.table.api.TableException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ObjectIdentifier}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ObjectIdentifierTest {
 
     @Test

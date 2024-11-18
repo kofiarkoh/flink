@@ -38,8 +38,11 @@ import org.apache.flink.testutils.ClassLoaderUtils;
 import org.apache.flink.util.FlinkUserCodeClassLoaders;
 import org.apache.flink.util.MutableURLClassLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.AbstractThrowableAssert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -62,6 +65,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link FactoryUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FactoryUtilTest {
 
     @Test

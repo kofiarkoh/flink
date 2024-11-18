@@ -23,12 +23,17 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.test.RowDataAssert;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.test.TableAssertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ProjectedRowData}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProjectedRowDataTest {
 
     @Test

@@ -23,6 +23,10 @@ import org.apache.flink.table.types.inference.strategies.SubsequenceInputTypeStr
 import org.apache.flink.table.types.logical.LogicalTypeFamily;
 import org.apache.flink.table.types.logical.LogicalTypeRoot;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -34,6 +38,8 @@ import static org.apache.flink.table.types.inference.InputTypeStrategies.sequenc
 import static org.apache.flink.table.types.inference.InputTypeStrategies.varyingSequence;
 
 /** Tests for {@link SubsequenceInputTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubsequenceInputTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

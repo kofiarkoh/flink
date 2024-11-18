@@ -23,7 +23,10 @@ import org.apache.flink.table.api.ValidationException;
 import org.apache.flink.table.functions.ScalarFunction;
 import org.apache.flink.table.functions.ScalarFunctionDefinition;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -51,6 +54,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link org.apache.flink.table.expressions.Expression} and its sub-classes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExpressionTest {
 
     private static final ScalarFunction DUMMY_FUNCTION = new ScalarFunction() {

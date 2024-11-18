@@ -27,10 +27,16 @@ import org.apache.flink.table.types.logical.TimestampKind;
 import org.apache.flink.table.types.logical.TimestampType;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.math.BigDecimal;
 import java.util.stream.Stream;
 
 /** Tests for {@link OverTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OverTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     private static final DataType TIME_ATTRIBUTE_TYPE =

@@ -44,6 +44,9 @@ import org.apache.flink.table.types.logical.VarCharType;
 import org.apache.flink.table.types.logical.YearMonthIntervalType;
 import org.apache.flink.table.types.logical.utils.LogicalTypeCasts;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -56,6 +59,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LogicalTypeCasts}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @Execution(ExecutionMode.CONCURRENT)
 class LogicalTypeCastsTest {
 

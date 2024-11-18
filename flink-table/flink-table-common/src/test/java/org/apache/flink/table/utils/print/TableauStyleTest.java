@@ -30,7 +30,10 @@ import org.apache.flink.table.utils.DateTimeUtils;
 import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
@@ -45,6 +48,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TableauStyle}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TableauStyleTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 

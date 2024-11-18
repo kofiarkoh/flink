@@ -22,9 +22,15 @@ import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.inference.InputTypeStrategies;
 import org.apache.flink.table.types.inference.InputTypeStrategiesTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 /** Tests for {@link CommonCollectionInputTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CommonCollectionInputTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

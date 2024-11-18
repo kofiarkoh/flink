@@ -59,6 +59,9 @@ import org.apache.flink.table.types.logical.ZonedTimestampType;
 import org.apache.flink.table.types.logical.utils.LogicalTypeParser;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -73,6 +76,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link LogicalTypeParser}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class LogicalTypeParserTest {
 
     private static Stream<TestSpec> testData() {

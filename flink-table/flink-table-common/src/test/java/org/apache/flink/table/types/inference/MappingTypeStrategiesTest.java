@@ -20,6 +20,10 @@ package org.apache.flink.table.types.inference;
 
 import org.apache.flink.table.api.DataTypes;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -27,6 +31,8 @@ import java.util.stream.Stream;
 import static org.apache.flink.table.types.inference.TypeStrategies.explicit;
 
 /** Tests for {@link TypeStrategies#mapping(Map)}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MappingTypeStrategiesTest extends TypeStrategiesTestBase {
 
     @Override

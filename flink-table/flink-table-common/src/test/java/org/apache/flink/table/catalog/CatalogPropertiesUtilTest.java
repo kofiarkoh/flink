@@ -21,7 +21,10 @@ package org.apache.flink.table.catalog;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.Schema;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,6 +35,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for CatalogPropertiesUtil. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CatalogPropertiesUtilTest {
     @Test
     public void testCatalogModelSerde() {

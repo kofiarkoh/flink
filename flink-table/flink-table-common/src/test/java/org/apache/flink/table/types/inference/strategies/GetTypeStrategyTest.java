@@ -25,10 +25,16 @@ import org.apache.flink.table.types.inference.TypeStrategiesTestBase;
 import org.apache.flink.table.types.logical.BigIntType;
 import org.apache.flink.table.types.logical.StructuredType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.stream.Stream;
 
 /** Tests for {@link GetTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GetTypeStrategyTest extends TypeStrategiesTestBase {
 
     @Override

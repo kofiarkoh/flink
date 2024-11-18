@@ -33,7 +33,10 @@ import org.apache.flink.table.types.logical.DistinctType;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.StructuredType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DataTypeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataTypeUtilsTest {
 
     @Test

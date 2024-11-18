@@ -26,9 +26,15 @@ import org.apache.flink.table.types.logical.TimestampKind;
 import org.apache.flink.table.types.logical.TimestampType;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 /** Tests for {@link CurrentWatermarkTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CurrentWatermarkTypeStrategyTest extends TypeStrategiesTestBase {
 
     @Override

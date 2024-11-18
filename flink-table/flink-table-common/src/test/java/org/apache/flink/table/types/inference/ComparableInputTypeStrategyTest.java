@@ -33,6 +33,10 @@ import org.apache.flink.table.types.logical.DistinctType;
 import org.apache.flink.table.types.logical.StructuredType;
 import org.apache.flink.table.types.logical.StructuredType.StructuredComparison;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 import java.lang.reflect.Field;
@@ -44,6 +48,8 @@ import java.util.stream.Stream;
 import static java.util.Collections.singletonList;
 
 /** Tests for {@link ComparableTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ComparableInputTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

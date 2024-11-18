@@ -24,6 +24,9 @@ import org.apache.flink.table.types.logical.SymbolType;
 import org.apache.flink.table.types.utils.ClassDataTypeConverter;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.of;
 
 /** Tests for {@link ClassDataTypeConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ClassDataTypeConverterTest {
 
     private static Stream<Arguments> testData() {

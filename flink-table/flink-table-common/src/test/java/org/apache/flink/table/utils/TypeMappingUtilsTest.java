@@ -37,7 +37,10 @@ import org.apache.flink.table.types.utils.DataTypeUtils;
 import org.apache.flink.table.types.utils.TypeConversions;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -56,6 +59,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TypeMappingUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeMappingUtilsTest {
 
     @Test

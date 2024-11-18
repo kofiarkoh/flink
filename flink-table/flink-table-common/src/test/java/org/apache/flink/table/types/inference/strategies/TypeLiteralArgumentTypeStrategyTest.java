@@ -21,12 +21,18 @@ package org.apache.flink.table.types.inference.strategies;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.types.inference.InputTypeStrategiesTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 import static org.apache.flink.table.types.inference.InputTypeStrategies.TYPE_LITERAL;
 import static org.apache.flink.table.types.inference.InputTypeStrategies.sequence;
 
 /** Tests for {@link TypeLiteralArgumentTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TypeLiteralArgumentTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     @Override

@@ -23,9 +23,15 @@ import org.apache.flink.table.functions.BuiltInFunctionDefinitions;
 import org.apache.flink.table.types.inference.strategies.ItemAtIndexArgumentTypeStrategy;
 import org.apache.flink.table.types.utils.DataTypeFactoryMock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 /** Tests for {@link ItemAtIndexArgumentTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ItemAtIndexArgumentTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     private static final InputTypeStrategy ITEM_AT_INPUT_STRATEGY =

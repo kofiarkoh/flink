@@ -27,6 +27,10 @@ import org.apache.flink.table.types.logical.LogicalTypeRoot;
 import org.apache.flink.table.types.logical.TimestampKind;
 import org.apache.flink.table.types.utils.TypeConversions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.math.BigDecimal;
 import java.util.stream.Stream;
 
@@ -48,6 +52,8 @@ import static org.apache.flink.table.types.inference.strategies.SpecificInputTyp
 import static org.apache.flink.table.types.inference.strategies.SpecificInputTypeStrategies.percentageArray;
 
 /** Tests for built-in {@link InputTypeStrategies}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputTypeStrategiesTest extends InputTypeStrategiesTestBase {
 
     @Override

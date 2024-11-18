@@ -26,12 +26,18 @@ import org.apache.flink.table.types.inference.InputTypeStrategiesTestBase;
 import org.apache.flink.table.types.inference.InputTypeStrategy;
 import org.apache.flink.table.types.logical.SymbolType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.stream.Stream;
 
 import static org.apache.flink.table.types.inference.InputTypeStrategies.sequence;
 import static org.apache.flink.table.types.inference.InputTypeStrategies.symbol;
 
 /** Tests for {@link SymbolArgumentTypeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SymbolArgumentTypeStrategyTest extends InputTypeStrategiesTestBase {
 
     private static final DataType SYMBOL_TYPE = new AtomicDataType(new SymbolType<>());

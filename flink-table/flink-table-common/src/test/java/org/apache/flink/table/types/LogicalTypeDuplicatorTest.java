@@ -34,6 +34,9 @@ import org.apache.flink.table.types.logical.StructuredType;
 import org.apache.flink.table.types.logical.VarCharType;
 import org.apache.flink.table.types.logical.utils.LogicalTypeDuplicator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -45,6 +48,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LogicalTypeDuplicator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LogicalTypeDuplicatorTest {
 
     private static final LogicalTypeDuplicator DUPLICATOR = new LogicalTypeDuplicator();
