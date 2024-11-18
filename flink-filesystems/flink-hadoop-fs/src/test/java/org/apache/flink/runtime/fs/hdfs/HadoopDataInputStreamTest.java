@@ -20,10 +20,13 @@ package org.apache.flink.runtime.fs.hdfs;
 
 import org.apache.flink.core.memory.ByteArrayInputStreamWithPos;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.PositionedReadable;
 import org.apache.hadoop.fs.Seekable;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -37,6 +40,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 /** Tests for the {@link HadoopDataInputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopDataInputStreamTest {
 
     private FSDataInputStream verifyInputStream;

@@ -28,10 +28,13 @@ import org.apache.flink.runtime.fs.hdfs.HadoopFileSystem;
 import org.apache.flink.testutils.oss.OSSTestCredentials;
 
 import com.aliyun.oss.model.PartETag;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.aliyun.oss.AliyunOSSFileSystem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link OSSRecoverableMultipartUpload}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OSSRecoverableMultipartUploadTest {
 
     private static Path basePath;

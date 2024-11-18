@@ -20,11 +20,16 @@ package org.apache.flink.fs.gs;
 
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link GSFileSystemFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GSFileSystemFactoryTest {
 
     @Test

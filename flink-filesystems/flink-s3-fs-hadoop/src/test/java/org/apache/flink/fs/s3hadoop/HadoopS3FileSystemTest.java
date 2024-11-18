@@ -21,7 +21,10 @@ package org.apache.flink.fs.s3hadoop;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.runtime.util.HadoopConfigLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,6 +32,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for the S3 file system support via Hadoop's {@link
  * org.apache.hadoop.fs.s3a.S3AFileSystem}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopS3FileSystemTest {
 
     @Test

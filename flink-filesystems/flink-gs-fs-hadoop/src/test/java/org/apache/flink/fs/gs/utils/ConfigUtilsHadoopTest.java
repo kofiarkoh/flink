@@ -27,6 +27,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.shaded.guava32.com.google.common.collect.MapDifference;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Maps;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -40,6 +42,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test construction of Hadoop config in GSFileSystemFactory. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 @ExtendWith(ParameterizedTestExtension.class)
 class ConfigUtilsHadoopTest {
 

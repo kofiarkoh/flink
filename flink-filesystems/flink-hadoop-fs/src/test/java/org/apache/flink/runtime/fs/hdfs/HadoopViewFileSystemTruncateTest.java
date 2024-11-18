@@ -25,6 +25,8 @@ import org.apache.flink.core.fs.RecoverableWriter.ResumeRecoverable;
 import org.apache.flink.runtime.util.HadoopUtils;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.FileSystemTestHelper;
@@ -39,6 +41,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.BufferedReader;
@@ -51,6 +54,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Test for {@link org.apache.hadoop.fs.viewfs.ViewFileSystem} support. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopViewFileSystemTruncateTest {
 
     @TempDir static File tempFolder;
