@@ -32,13 +32,17 @@ import org.apache.flink.datastream.api.function.TwoOutputStreamProcessFunction;
 import org.apache.flink.datastream.impl.ExecutionEnvironmentImpl;
 import org.apache.flink.streaming.api.graph.StreamGraph;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test utils for steam. */
-public final class StreamTestUtils {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class StreamTestUtils {
     public static StreamGraph getStreamGraph(ExecutionEnvironment env) {
         assertThat(env).isInstanceOf(ExecutionEnvironmentImpl.class);
         ExecutionEnvironmentImpl envImpl = (ExecutionEnvironmentImpl) env;

@@ -40,7 +40,10 @@ import org.apache.flink.streaming.api.transformations.OneInputTransformation;
 import org.apache.flink.streaming.api.transformations.PartitionTransformation;
 import org.apache.flink.streaming.api.transformations.TwoInputTransformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KeyedPartitionStreamImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyedPartitionStreamImplTest {
 
     private final StateDeclaration modeIdenticalStateDeclaration =

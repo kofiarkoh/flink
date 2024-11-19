@@ -21,7 +21,10 @@ package org.apache.flink.datastream.impl.common;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-/** Mock {@link TimestampCollector}'s subclass for testing. */
+/**
+ * Mock {@link TimestampCollector}'s sub@ExtendWith(CTestJUnit5Extension.class) @CTestClass class
+ * for testing.
+ */
 public class TestingTimestampCollector<T> extends TimestampCollector<T> {
     private final Consumer<T> collectConsumer;
 

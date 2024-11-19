@@ -21,12 +21,17 @@ package org.apache.flink.datastream.impl.common;
 import org.apache.flink.api.common.typeinfo.TypeDescriptor;
 import org.apache.flink.api.common.typeinfo.TypeDescriptors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link org.apache.flink.api.common.typeinfo.descriptor.BasicTypeDescriptorImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BasicTypeDescriptorTest {
 
     @ParameterizedTest

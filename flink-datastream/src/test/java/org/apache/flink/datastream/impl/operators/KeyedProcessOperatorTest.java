@@ -27,7 +27,10 @@ import org.apache.flink.datastream.api.function.OneInputStreamProcessFunction;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KeyedProcessOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyedProcessOperatorTest {
     @Test
     void testProcessRecord() throws Exception {

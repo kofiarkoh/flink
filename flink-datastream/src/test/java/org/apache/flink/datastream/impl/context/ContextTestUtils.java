@@ -24,8 +24,12 @@ import org.apache.flink.runtime.operators.testutils.MockEnvironmentBuilder;
 import org.apache.flink.streaming.api.operators.StreamingRuntimeContext;
 import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test utils for things related to context. */
-public final class ContextTestUtils {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ContextTestUtils {
     public static StreamingRuntimeContext createStreamingRuntimeContext() {
         return new MockStreamingRuntimeContext(
                 false,
