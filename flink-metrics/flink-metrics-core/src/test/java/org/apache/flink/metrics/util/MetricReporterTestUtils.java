@@ -20,6 +20,10 @@ package org.apache.flink.metrics.util;
 
 import org.apache.flink.metrics.reporter.MetricReporterFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -28,6 +32,8 @@ import java.util.stream.StreamSupport;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test utils for metric reporters. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MetricReporterTestUtils {
 
     /**

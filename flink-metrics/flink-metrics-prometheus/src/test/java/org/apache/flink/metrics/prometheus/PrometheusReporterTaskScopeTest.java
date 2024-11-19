@@ -28,9 +28,12 @@ import org.apache.flink.metrics.util.TestMeter;
 import org.apache.flink.util.PortRange;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test for {@link PrometheusReporter} that registers several instances of the same metric for
  * different subtasks.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrometheusReporterTaskScopeTest {
     private static final String[] LABEL_NAMES = {"label1", "label2"};
     private static final String[] LABEL_VALUES_1 = new String[] {"value1_1", "value1_2"};

@@ -18,10 +18,15 @@
 
 package org.apache.flink.metrics.otel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Unit tests for {@link VariableNameUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VariableNameUtilTest {
 
     @Test

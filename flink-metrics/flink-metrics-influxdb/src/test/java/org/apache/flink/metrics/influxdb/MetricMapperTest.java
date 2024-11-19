@@ -26,8 +26,11 @@ import org.apache.flink.metrics.SimpleCounter;
 import org.apache.flink.metrics.util.TestHistogram;
 import org.apache.flink.metrics.util.TestMeter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.influxdb.dto.Point;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Instant;
 import java.util.HashMap;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test for {@link MetricMapper} checking that metrics are converted to InfluxDB client objects as
  * expected.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricMapperTest {
 
     private static final String NAME = "a-metric-name";

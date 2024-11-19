@@ -21,7 +21,10 @@ package org.apache.flink.metrics.influxdb;
 import org.apache.flink.metrics.MetricGroup;
 import org.apache.flink.metrics.util.TestMetricGroup;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.data.MapEntry.entry;
 
 /** Test for {@link MeasurementInfoProvider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MeasurementInfoProviderTest {
     private final MeasurementInfoProvider provider = new MeasurementInfoProvider();
 

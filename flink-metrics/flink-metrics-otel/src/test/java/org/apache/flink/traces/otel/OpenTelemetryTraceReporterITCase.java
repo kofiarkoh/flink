@@ -27,6 +27,8 @@ import org.apache.flink.util.TestLoggerExtension;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonNode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Integration tests for {@link OpenTelemetryTraceReporter}. */
 @ExtendWith({TestLoggerExtension.class})
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OpenTelemetryTraceReporterITCase extends OpenTelemetryTestBase {
 
     private OpenTelemetryTraceReporter reporter;

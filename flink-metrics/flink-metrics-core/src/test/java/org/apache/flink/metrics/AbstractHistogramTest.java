@@ -18,13 +18,19 @@
 
 package org.apache.flink.metrics;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
 /**
- * Abstract base class for testing {@link Histogram} and {@link HistogramStatistics}
- * implementations.
+ * Abstract base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing {@link
+ * Histogram} and {@link HistogramStatistics} implementations.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractHistogramTest {
     protected void testHistogram(int size, Histogram histogram) {
         HistogramStatistics statistics;

@@ -32,7 +32,10 @@ import com.codahale.metrics.ScheduledReporter;
 import com.codahale.metrics.SlidingWindowReservoir;
 import com.codahale.metrics.Snapshot;
 import com.codahale.metrics.Timer;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
 /** Tests for the DropwizardFlinkHistogramWrapper. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DropwizardFlinkHistogramWrapperTest extends AbstractHistogramTest {
 
     /** Tests the histogram functionality of the DropwizardHistogramWrapper. */

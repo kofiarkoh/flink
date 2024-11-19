@@ -32,6 +32,8 @@ import org.apache.flink.util.TestLoggerExtension;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonNode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link OpenTelemetryMetricReporter}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OpenTelemetryMetricReporterITCase extends OpenTelemetryTestBase {
 
     private static final long TIME_MS = 1234;

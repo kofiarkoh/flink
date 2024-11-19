@@ -20,9 +20,14 @@ package org.apache.flink.metrics.statsd;
 
 import org.apache.flink.metrics.util.MetricReporterTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for the {@link StatsDReporterFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StatsDReporterFactoryTest {
 
     @Test
