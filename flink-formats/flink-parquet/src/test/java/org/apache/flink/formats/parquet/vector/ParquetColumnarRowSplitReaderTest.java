@@ -58,6 +58,8 @@ import org.apache.flink.types.Row;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.parquet.example.data.Group;
 import org.apache.parquet.example.data.simple.SimpleGroupFactory;
@@ -66,6 +68,7 @@ import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.example.ExampleParquetWriter;
 import org.apache.parquet.schema.MessageType;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -90,6 +93,8 @@ import java.util.stream.IntStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ParquetColumnarRowSplitReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ParquetColumnarRowSplitReaderTest {
 
     private static final int FIELD_NUMBER = 34;

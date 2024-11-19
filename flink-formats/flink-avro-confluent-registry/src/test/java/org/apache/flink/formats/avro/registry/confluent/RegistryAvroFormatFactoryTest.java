@@ -37,8 +37,11 @@ import org.apache.flink.table.runtime.connector.source.ScanRuntimeProviderContex
 import org.apache.flink.table.runtime.typeutils.InternalTypeInfo;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema.Parser;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.Assert.assertThrows;
 
 /** Tests for the {@link RegistryAvroFormatFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RegistryAvroFormatFactoryTest {
 
     private static final ResolvedSchema SCHEMA =

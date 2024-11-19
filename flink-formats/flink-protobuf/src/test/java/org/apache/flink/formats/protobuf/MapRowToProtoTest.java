@@ -25,7 +25,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 
 import com.google.protobuf.ByteString;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +36,8 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 /** Test conversion of flink internal map data to proto data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MapRowToProtoTest {
     @Test
     public void testSimple() throws Exception {

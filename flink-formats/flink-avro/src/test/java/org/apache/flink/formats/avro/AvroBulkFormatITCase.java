@@ -41,11 +41,14 @@ import org.apache.flink.table.data.binary.BinaryRowData;
 import org.apache.flink.table.runtime.typeutils.RowDataSerializer;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.generic.GenericDatumWriter;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumWriter;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -62,6 +65,8 @@ import java.util.Random;
 import static org.apache.flink.formats.avro.AvroBulkFormatTestUtils.ROW_TYPE;
 
 /** IT cases for {@link AbstractAvroBulkFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroBulkFormatITCase extends SourceTestSuiteBase<RowData> {
 
     private static final RowDataSerializer SERIALIZER = new RowDataSerializer(ROW_TYPE);

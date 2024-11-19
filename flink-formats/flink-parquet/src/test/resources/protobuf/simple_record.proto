@@ -1,6 +1,11 @@
 syntax = "proto3";
 
 package org.apache.flink.formats.parquet.protobuf;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 message SimpleProtoRecord {
   string foo = 1;
   string bar = 2;

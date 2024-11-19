@@ -25,14 +25,19 @@ import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.formats.avro.generated.Address;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** Tests based on {@link TypeSerializerUpgradeTestBase} for the {@link AvroSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     public Collection<TestSpecification<?, ?>> createTestSpecifications(FlinkVersion flinkVersion)

@@ -30,7 +30,10 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.utils.DataTypeUtils;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,6 +57,8 @@ import static org.apache.flink.table.api.DataTypes.STRING;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link CanalJsonSerializationSchema} and {@link CanalJsonDeserializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CanalJsonSerDeSchemaTest {
 
     private static final DataType PHYSICAL_DATA_TYPE =

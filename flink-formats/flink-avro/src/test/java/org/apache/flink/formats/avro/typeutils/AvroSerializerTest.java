@@ -23,9 +23,15 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.formats.avro.generated.User;
 import org.apache.flink.formats.avro.utils.TestDataGenerator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Random;
 
 /** Tests for the {@link AvroSerializer} that test specific avro types. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializerTest extends SerializerTestBase<User> {
 
     @Override

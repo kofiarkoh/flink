@@ -41,6 +41,8 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.logical.TimestampType;
 import org.apache.flink.table.types.logical.VarCharType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector;
 import org.apache.hadoop.hive.ql.exec.vector.ListColumnVector;
@@ -55,6 +57,7 @@ import org.apache.orc.Reader;
 import org.apache.orc.RecordReader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -71,6 +74,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for the ORC BulkWriter write RowData with nested type. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OrcBulkRowDataWriterTest {
 
     @SuppressWarnings("FieldCanBeLocal")

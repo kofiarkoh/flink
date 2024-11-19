@@ -22,7 +22,10 @@ import org.apache.flink.formats.protobuf.testproto.TimestampTestOuterMulti;
 import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 
@@ -30,6 +33,8 @@ import static org.junit.Assert.assertEquals;
  * Test conversion of flink internal primitive data to proto timestamp data with multiple_files and
  * outer_classname options.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TimestampOuterMultiRowToProtoTest {
 
     @Test

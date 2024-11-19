@@ -39,10 +39,13 @@ import org.apache.flink.table.types.logical.DecimalType;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.ql.io.sarg.PredicateLeaf;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -61,6 +64,8 @@ import static org.apache.flink.table.utils.PartitionPathUtils.generatePartitionP
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link OrcColumnarRowInputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OrcColumnarRowInputFormatTest {
 
     /** Small batch size for test more boundary conditions. */

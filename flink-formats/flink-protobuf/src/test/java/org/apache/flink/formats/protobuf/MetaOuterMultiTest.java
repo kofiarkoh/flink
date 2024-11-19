@@ -25,7 +25,10 @@ import org.apache.flink.formats.protobuf.util.PbToRowTypeUtil;
 import org.apache.flink.table.runtime.typeutils.InternalTypeInfo;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * Test class for below case
@@ -33,6 +36,11 @@ import org.junit.Test;
  * <PRE>
  * syntax = "proto2";
  * package org.apache.flink.formats.protobuf.testproto;
+ * import edu.illinois.CTestJUnit5Extension;
+ *
+ * import org.junit.jupiter.api.extension.ExtendWith;
+ *
+ * import edu.illinois.CTestClass;
  * option java_package = "org.apache.flink.formats.protobuf.testproto";
  * option java_outer_classname = "SimpleTestOuterMultiProto";
  * option java_multiple_files = true;
@@ -41,6 +49,8 @@ import org.junit.Test;
  *
  * <p>It is valid proto definition.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MetaOuterMultiTest {
     @Test
     public void testSimple() throws Exception {

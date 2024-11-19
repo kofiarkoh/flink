@@ -26,7 +26,10 @@ import org.apache.flink.table.runtime.typeutils.InternalTypeInfo;
 import org.apache.flink.table.types.logical.RowType;
 
 import com.google.protobuf.ByteString;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
@@ -37,6 +40,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  * Test for huge proto definition, which may trigger some special optimizations such as code
  * splitting.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BigPbProtoToRowTest {
 
     @Test

@@ -26,7 +26,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 
 import com.google.protobuf.ByteString;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.formats.protobuf.ProtobufTestHelper.mapOf;
 import static org.junit.Assert.assertEquals;
@@ -36,6 +39,8 @@ import static org.junit.Assert.assertTrue;
  * Test conversion of null values from flink internal data to proto data. Proto data does not permit
  * null values in array/map data.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NullValueToProtoTest {
     @Test
     public void testSimple() throws Exception {

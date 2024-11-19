@@ -22,6 +22,8 @@ import org.apache.flink.formats.hadoop.bulk.AbstractFileCommitterTest;
 import org.apache.flink.formats.hadoop.bulk.HadoopFileCommitter;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +34,8 @@ import java.util.UUID;
 
 /** Tests the behaviors of {@link HadoopRenameFileCommitter} with local file system. */
 @ExtendWith(MiniClusterExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopRenameCommitterLocalFSITCase extends AbstractFileCommitterTest {
 
     @TempDir private static java.nio.file.Path tmpDir;

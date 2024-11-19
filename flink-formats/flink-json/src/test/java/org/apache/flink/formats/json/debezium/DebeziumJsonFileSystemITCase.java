@@ -25,7 +25,10 @@ import org.apache.flink.types.Row;
 import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.CollectionUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -42,6 +45,8 @@ import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test Filesystem connector with DebeziumJson. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DebeziumJsonFileSystemITCase extends StreamingTestBase {
 
     @RegisterExtension

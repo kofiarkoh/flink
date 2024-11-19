@@ -31,8 +31,11 @@ import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 import org.apache.flink.test.util.TestBaseUtils;
 import org.apache.flink.util.CollectionUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.util.Utf8;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -51,6 +54,8 @@ import static org.apache.flink.table.api.Expressions.$;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for interoperability with Avro types. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroTypesITCase extends AbstractTestBaseJUnit4 {
 
     private static final User USER_1 =

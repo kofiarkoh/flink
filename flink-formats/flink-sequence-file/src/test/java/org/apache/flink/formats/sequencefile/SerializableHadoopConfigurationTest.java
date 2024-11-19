@@ -18,10 +18,13 @@
 
 package org.apache.flink.formats.sequencefile;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -30,6 +33,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /** Tests for the {@link SerializableHadoopConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerializableHadoopConfigurationTest {
 
     private static final String TEST_KEY = "test-key";

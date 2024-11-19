@@ -19,7 +19,10 @@ package org.apache.flink.formats.json;
 
 import org.apache.flink.connector.testutils.formats.DummyInitializationContext;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -27,6 +30,8 @@ import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JsonSerDeSchemaTest {
     private static final JsonSerializationSchema<Event> SERIALIZATION_SCHEMA;
     private static final JsonDeserializationSchema<Event> DESERIALIZATION_SCHEMA;

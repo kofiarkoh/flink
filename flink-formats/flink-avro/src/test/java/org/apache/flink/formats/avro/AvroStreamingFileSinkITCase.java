@@ -30,6 +30,8 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.
 import org.apache.flink.streaming.api.functions.sink.filesystem.legacy.StreamingFileSink;
 import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.generic.GenericData;
@@ -40,6 +42,7 @@ import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.Timeout;
 
 import java.io.File;
@@ -58,6 +61,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Simple integration test case for writing bulk encoded files with the {@link StreamingFileSink}
  * with Avro.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroStreamingFileSinkITCase extends AbstractTestBaseJUnit4 {
 
     @Rule public final Timeout timeoutPerTest = Timeout.seconds(20);
@@ -180,7 +185,8 @@ public class AvroStreamingFileSinkITCase extends AbstractTestBaseJUnit4 {
         return results;
     }
 
-    private static class GenericTestDataCollection extends AbstractCollection<GenericRecord>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class GenericTestDataCollection extends AbstractCollection<GenericRecord>
             implements Serializable {
 
         @Override

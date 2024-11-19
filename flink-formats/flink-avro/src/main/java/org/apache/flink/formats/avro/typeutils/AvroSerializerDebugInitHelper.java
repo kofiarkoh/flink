@@ -21,7 +21,8 @@ package org.apache.flink.formats.avro.typeutils;
 import org.apache.flink.annotation.Internal;
 
 /**
- * Simple helper class to initialize the concurrency checks for tests.
+ * Simple helper @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to initialize the
+ * concurrency checks for tests.
  *
  * <p>The flag is automatically set to true when assertions are activated (tests) and can be set to
  * true manually in other tests as well;

@@ -29,7 +29,10 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.utils.DataTypeUtils;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,6 +59,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 /**
  * Tests for {@link DebeziumJsonSerializationSchema} and {@link DebeziumJsonDeserializationSchema}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DebeziumJsonSerDeSchemaTest {
 
     private static final DataType PHYSICAL_DATA_TYPE =

@@ -21,12 +21,17 @@ package org.apache.flink.formats.protobuf;
 import org.apache.flink.formats.protobuf.testproto.OneofTest;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /** Test conversion of proto one_of data to flink internal data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OneofProtoToRowTest {
     @Test
     public void testSimple() throws Exception {

@@ -18,10 +18,16 @@
 
 package org.apache.flink.formats.protobuf.table;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /** The test data store for protobuf SQL integration test only. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestProtobufTestStore {
     public static List<byte[]> sourcePbInputs = new ArrayList<>();
     public static List<byte[]> sinkResults = new ArrayList<>();

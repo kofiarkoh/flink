@@ -24,6 +24,8 @@ import org.apache.flink.formats.hadoop.bulk.committer.cluster.HDFSCluster;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.junit.jupiter.api.AfterAll;
@@ -38,6 +40,8 @@ import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
 /** Tests the behaviors of {@link HadoopRenameFileCommitter} with HDFS file system. */
 @ExtendWith(MiniClusterExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopRenameCommitterHDFSITCase extends AbstractFileCommitterTest {
 
     private static HDFSCluster hdfsCluster;

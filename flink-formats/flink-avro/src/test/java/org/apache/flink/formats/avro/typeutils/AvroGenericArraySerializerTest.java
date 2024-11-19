@@ -21,7 +21,13 @@ package org.apache.flink.formats.avro.typeutils;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.runtime.AbstractGenericArraySerializerTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for the {@link AvroSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroGenericArraySerializerTest extends AbstractGenericArraySerializerTest {
 
     @Override

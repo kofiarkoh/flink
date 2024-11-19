@@ -27,7 +27,10 @@ import org.apache.flink.core.fs.FileInputSplit;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link RowCsvInputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowCsvInputFormatTest {
 
     static final Path PATH = new Path("an/ignored/file/");

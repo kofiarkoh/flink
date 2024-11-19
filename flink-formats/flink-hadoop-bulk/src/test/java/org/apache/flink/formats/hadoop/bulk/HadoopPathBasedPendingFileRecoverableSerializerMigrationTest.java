@@ -21,8 +21,11 @@ package org.apache.flink.formats.hadoop.bulk;
 import org.apache.flink.formats.hadoop.bulk.HadoopPathBasedPartFileWriter.HadoopPathBasedPendingFileRecoverable;
 import org.apache.flink.formats.hadoop.bulk.HadoopPathBasedPartFileWriter.HadoopPathBasedPendingFileRecoverableSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the {@link HadoopPathBasedPendingFileRecoverableSerializer} that verify we can still
  * read the recoverable serialized by the previous versions.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopPathBasedPendingFileRecoverableSerializerMigrationTest {
 
     private static final int CURRENT_VERSION = 1;

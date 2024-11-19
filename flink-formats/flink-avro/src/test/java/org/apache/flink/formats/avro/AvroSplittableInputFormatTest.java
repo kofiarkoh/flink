@@ -28,11 +28,14 @@ import org.apache.flink.formats.avro.generated.Fixed16;
 import org.apache.flink.formats.avro.generated.Fixed2;
 import org.apache.flink.formats.avro.generated.User;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -53,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test the avro input format. (The testcase is mostly the getting started tutorial of avro)
  * http://avro.apache.org/docs/current/gettingstartedjava.html
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSplittableInputFormatTest {
 
     private File testFile;

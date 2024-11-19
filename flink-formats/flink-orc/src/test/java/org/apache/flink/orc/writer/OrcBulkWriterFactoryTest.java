@@ -23,10 +23,13 @@ import org.apache.flink.orc.data.Record;
 import org.apache.flink.orc.vector.RecordVectorizer;
 import org.apache.flink.orc.vector.Vectorizer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.Path;
 import org.apache.orc.MemoryManager;
 import org.apache.orc.OrcFile;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -37,6 +40,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the behavior of {@link OrcBulkWriterFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OrcBulkWriterFactoryTest {
 
     @Test

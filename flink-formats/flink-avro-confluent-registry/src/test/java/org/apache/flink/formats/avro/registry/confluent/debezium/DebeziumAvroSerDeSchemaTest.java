@@ -40,11 +40,14 @@ import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.SimpleUserCodeClassLoader;
 import org.apache.flink.util.UserCodeClassLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.confluent.kafka.schemaregistry.client.MockSchemaRegistryClient;
 import io.confluent.kafka.schemaregistry.client.SchemaRegistryClient;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,6 +68,8 @@ import static org.apache.flink.table.types.utils.TypeConversions.fromLogicalToDa
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DebeziumAvroDeserializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DebeziumAvroSerDeSchemaTest {
 
     private static final String SUBJECT = "testDebeziumAvro";

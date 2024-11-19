@@ -20,13 +20,18 @@ package org.apache.flink.formats.avro.typeutils;
 
 import org.apache.flink.api.common.typeutils.SerializerTestInstance;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.reflect.Nullable;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /** Tests for the {@link AvroSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializerEmptyArrayTest {
 
     @Test

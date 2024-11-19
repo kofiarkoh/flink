@@ -23,6 +23,8 @@ import org.apache.flink.orc.OrcColumnarRowSplitReader;
 import org.apache.flink.orc.OrcColumnarRowSplitReaderTest;
 import org.apache.flink.table.types.DataType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.orc.OrcFile;
 import org.apache.orc.TypeDescription;
@@ -31,6 +33,7 @@ import org.apache.orc.storage.ql.exec.vector.DoubleColumnVector;
 import org.apache.orc.storage.ql.exec.vector.LongColumnVector;
 import org.apache.orc.storage.ql.exec.vector.TimestampColumnVector;
 import org.apache.orc.storage.ql.exec.vector.VectorizedRowBatch;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -39,6 +42,8 @@ import java.util.Map;
 import java.util.stream.IntStream;
 
 /** Test for {@link OrcColumnarRowSplitReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OrcColumnarRowSplitReaderNoHiveTest extends OrcColumnarRowSplitReaderTest {
 
     @Override

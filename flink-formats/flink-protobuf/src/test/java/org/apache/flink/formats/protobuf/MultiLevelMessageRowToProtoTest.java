@@ -22,12 +22,17 @@ import org.apache.flink.formats.protobuf.testproto.MultipleLevelMessageTest;
 import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 /** Test conversion of flink internal nested row data to proto data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MultiLevelMessageRowToProtoTest {
     @Test
     public void testMultipleLevelMessage() throws Exception {

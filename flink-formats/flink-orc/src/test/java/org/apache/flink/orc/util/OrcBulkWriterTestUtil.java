@@ -20,6 +20,8 @@ package org.apache.flink.orc.util;
 
 import org.apache.flink.orc.data.Record;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.ql.exec.vector.BytesColumnVector;
 import org.apache.hadoop.hive.ql.exec.vector.LongColumnVector;
@@ -28,6 +30,7 @@ import org.apache.orc.CompressionKind;
 import org.apache.orc.OrcFile;
 import org.apache.orc.Reader;
 import org.apache.orc.RecordReader;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +40,9 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Util class for the OrcBulkWriter tests. */
+/** Util @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for the OrcBulkWriter tests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OrcBulkWriterTestUtil {
 
     public static final String USER_METADATA_KEY = "userKey";

@@ -24,8 +24,11 @@ import org.apache.flink.table.plan.stats.TableStats;
 import org.apache.flink.table.planner.utils.StatisticsReportTestBase;
 import org.apache.flink.table.types.DataType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -41,6 +44,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for statistics functionality in {@link CsvFormatFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CsvFormatStatisticsReportTest extends StatisticsReportTestBase {
 
     private static CsvFileFormatFactory.CsvBulkDecodingFormat csvBulkDecodingFormat;

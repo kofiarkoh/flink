@@ -31,6 +31,8 @@ import org.apache.flink.table.data.StringData;
 import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileConstants;
 import org.apache.avro.file.DataFileWriter;
@@ -40,6 +42,7 @@ import org.apache.avro.io.DatumWriter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -55,6 +58,8 @@ import static org.apache.flink.formats.avro.AvroBulkFormatTestUtils.ROW_TYPE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AbstractAvroBulkFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroBulkFormatTest {
 
     private static final List<RowData> TEST_DATA =

@@ -37,8 +37,11 @@ import org.apache.flink.test.junit5.InjectMiniCluster;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.apache.flink.test.util.TestBaseUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -52,6 +55,8 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 /** Tests for the {@link AvroInputFormat} reading Pojos. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroTypeExtractionTest {
 
     private static final int PARALLELISM = 4;

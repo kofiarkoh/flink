@@ -27,7 +27,10 @@ import org.apache.flink.table.planner.runtime.utils.BatchTestBase;
 import org.apache.flink.types.Row;
 import org.apache.flink.util.CloseableIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -40,6 +43,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 /** Integration SQL test for protobuf. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ProtobufSQLITCase extends BatchTestBase {
 
     private MapTest getProtoTestObject() {

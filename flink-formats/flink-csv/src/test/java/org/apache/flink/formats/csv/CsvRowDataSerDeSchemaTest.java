@@ -28,7 +28,10 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.types.Row;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -66,6 +69,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link CsvRowDataDeserializationSchema} and {@link CsvRowDataSerializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CsvRowDataSerDeSchemaTest {
 
     @Test
