@@ -30,7 +30,10 @@ import org.apache.flink.api.java.typeutils.RowTypeInfo;
 import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,6 +42,8 @@ import java.util.List;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link RowSerializer}. */
 @VisibleForTesting
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class RowSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Row, Row> {
 
     @Override

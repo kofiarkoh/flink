@@ -20,7 +20,10 @@ package org.apache.flink.core.io;
 
 import org.apache.flink.api.common.io.LocatableInputSplitAssigner;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Calendar;
 import java.util.HashSet;
@@ -30,6 +33,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocatableSplitAssignerTest {
 
     @Test

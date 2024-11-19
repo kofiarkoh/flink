@@ -20,7 +20,10 @@ package org.apache.flink.api.java.typeutils.runtime;
 
 import org.apache.flink.core.memory.DataInputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -29,6 +32,8 @@ import java.io.InputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link DataInputViewStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataInputViewStreamTest {
 
     @Test

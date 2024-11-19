@@ -24,13 +24,18 @@ import org.apache.flink.api.common.typeutils.TypeSerializerConditions;
 import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link ListSerializerSnapshot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ListSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<List<String>, List<String>> {
 
     private static final String SPEC_NAME = "list-serializer";

@@ -25,7 +25,10 @@ import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.util.clock.RelativeClock;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.time.Duration;
@@ -33,6 +36,8 @@ import java.time.Duration;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link WatermarkStrategy} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class WatermarkStrategyTest {
 
     @Test

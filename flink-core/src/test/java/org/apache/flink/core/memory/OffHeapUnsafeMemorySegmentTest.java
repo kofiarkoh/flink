@@ -20,6 +20,8 @@ package org.apache.flink.core.memory;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -31,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link MemorySegment} in off-heap mode using unsafe memory. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OffHeapUnsafeMemorySegmentTest extends MemorySegmentTestBase {
 
     OffHeapUnsafeMemorySegmentTest(int pageSize) {

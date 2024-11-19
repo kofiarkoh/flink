@@ -25,8 +25,11 @@ import org.apache.flink.core.memory.DataOutputSerializer;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.test.util.MigrationTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -45,8 +48,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** A test base for testing {@link TypeSerializer} upgrades. */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public abstract class TypeSerializerUpgradeTestBase<PreviousElementT, UpgradedElementT>
-        implements MigrationTest {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class TypeSerializerUpgradeTestBase<PreviousElementT, UpgradedElementT> implements MigrationTest {
 
     // ------------------------------------------------------------------------------
     //  APIs

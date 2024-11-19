@@ -28,13 +28,18 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.joda.time.LocalDate;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.HashSet;
 
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KryoWithCustomSerializersTest extends AbstractGenericTypeSerializerTest {
 
     @Test

@@ -29,7 +29,10 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests related to configuration snapshotting and reconfiguring for the {@link KryoSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KryoSerializerCompatibilityTest {
 
     /** Verifies that reconfiguration result is INCOMPATIBLE if data type has changed. */

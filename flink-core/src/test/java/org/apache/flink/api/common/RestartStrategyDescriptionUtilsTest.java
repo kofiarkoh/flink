@@ -21,8 +21,11 @@ package org.apache.flink.api.common;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.RestartStrategyOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -30,6 +33,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 /** Tests for {@link RestartStrategyDescriptionUtils} */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class RestartStrategyDescriptionUtilsTest {
 
     private Configuration configuration;

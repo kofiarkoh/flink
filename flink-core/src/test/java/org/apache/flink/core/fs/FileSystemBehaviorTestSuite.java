@@ -21,9 +21,12 @@ package org.apache.flink.core.fs;
 import org.apache.flink.core.fs.FileSystem.WriteMode;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Random;
@@ -33,7 +36,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Common tests for the behavior of {@link FileSystem} methods. */
-public abstract class FileSystemBehaviorTestSuite {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class FileSystemBehaviorTestSuite {
 
     private static final Random RND = new Random();
 

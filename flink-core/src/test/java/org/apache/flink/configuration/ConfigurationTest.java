@@ -21,8 +21,11 @@ package org.apache.flink.configuration;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -41,10 +44,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
- * This class contains test for the configuration package. In particular, the serialization of
- * {@link Configuration} objects is tested.
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains test for the
+ * configuration package. In particular, the serialization of {@link Configuration} objects is
+ * tested.
  */
 @SuppressWarnings("deprecation")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfigurationTest {
 
     private static final ConfigOption<String> STRING_OPTION =

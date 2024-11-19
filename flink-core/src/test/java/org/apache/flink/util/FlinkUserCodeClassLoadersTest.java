@@ -20,8 +20,11 @@ package org.apache.flink.util;
 
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for classloading and class loader utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FlinkUserCodeClassLoadersTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

@@ -23,6 +23,12 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PojoGenericTypeSerializerTest extends AbstractGenericTypeSerializerTest {
 
     @Override

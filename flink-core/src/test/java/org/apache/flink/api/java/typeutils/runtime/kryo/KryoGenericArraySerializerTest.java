@@ -22,6 +22,12 @@ import org.apache.flink.api.common.serialization.SerializerConfigImpl;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.runtime.AbstractGenericArraySerializerTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KryoGenericArraySerializerTest extends AbstractGenericArraySerializerTest {
     @Override
     protected <T> TypeSerializer<T> createComponentSerializer(Class<T> type) {

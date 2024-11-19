@@ -25,13 +25,18 @@ import org.apache.flink.api.common.functions.util.RuntimeUDFContext;
 import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests runtime context access from inside an RichInputFormat class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RichInputFormatTest {
 
     @Test

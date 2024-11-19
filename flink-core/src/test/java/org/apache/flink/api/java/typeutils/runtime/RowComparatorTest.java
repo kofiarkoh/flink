@@ -30,13 +30,18 @@ import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowComparatorTest extends ComparatorTestBase<Row> {
 
     private static final RowTypeInfo typeInfo =

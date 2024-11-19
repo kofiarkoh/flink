@@ -18,7 +18,10 @@
 
 package org.apache.flink.core.fs;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 
@@ -27,6 +30,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the {@link AutoCloseableRegistry}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AutoCloseableRegistryTest {
     @Test
     void testReverseOrderOfClosing() throws Exception {

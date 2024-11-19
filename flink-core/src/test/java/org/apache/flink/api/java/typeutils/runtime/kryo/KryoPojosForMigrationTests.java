@@ -22,12 +22,17 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /** POJOS needed for {@link KryoPojosForMigrationTests}. */
 @SuppressWarnings("WeakerAccess")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KryoPojosForMigrationTests {
 
     public abstract static class Animal {}

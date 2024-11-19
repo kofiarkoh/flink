@@ -21,10 +21,16 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.Instant;
 import java.util.Random;
 
 /** A test for the {@link InstantSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InstantSerializerTest extends SerializerTestBase<Instant> {
     @Override
     protected TypeSerializer<Instant> createSerializer() {

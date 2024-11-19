@@ -21,10 +21,16 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.FlinkVersion;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** A {@link TypeSerializerUpgradeTestBase} for BaseType Serializers. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BasicTypeSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     public Collection<TestSpecification<?, ?>> createTestSpecifications(FlinkVersion flinkVersion)

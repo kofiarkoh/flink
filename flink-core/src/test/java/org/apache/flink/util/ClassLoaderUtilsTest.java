@@ -18,7 +18,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,6 +37,8 @@ import java.util.jar.Manifest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that validate the {@link ClassLoaderUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ClassLoaderUtilsTest {
 
     @Test

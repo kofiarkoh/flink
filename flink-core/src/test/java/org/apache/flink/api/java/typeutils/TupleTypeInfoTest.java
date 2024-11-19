@@ -24,11 +24,16 @@ import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.tuple.Tuple1;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link TupleTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TupleTypeInfoTest extends TypeInformationTestBase<TupleTypeInfo<?>> {
 
     @Override

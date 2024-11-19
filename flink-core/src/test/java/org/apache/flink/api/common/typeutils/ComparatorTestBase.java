@@ -24,7 +24,10 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.core.memory.MemorySegmentFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -39,7 +42,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * @param <T>
  */
-public abstract class ComparatorTestBase<T> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ComparatorTestBase<T> {
 
     // Same as in the NormalizedKeySorter
     private static final int DEFAULT_MAX_NORMALIZED_KEY_LEN = 8;

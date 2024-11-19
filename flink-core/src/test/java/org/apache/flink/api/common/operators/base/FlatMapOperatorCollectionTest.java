@@ -31,7 +31,10 @@ import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -42,6 +45,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** The test for flat map operator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FlatMapOperatorCollectionTest implements Serializable {
 
     @Test

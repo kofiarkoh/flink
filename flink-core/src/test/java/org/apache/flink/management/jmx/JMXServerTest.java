@@ -18,9 +18,12 @@
 
 package org.apache.flink.management.jmx;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.management.InstanceNotFoundException;
 import javax.management.MBeanServer;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link JMXServer} functionality. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JMXServerTest {
 
     @BeforeEach
@@ -86,7 +91,8 @@ class JMXServerTest {
     }
 
     /** Test MBean Object. */
-    public static class TestObject implements TestObjectMBean {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestObject
+            implements TestObjectMBean {
         private final int foo = 1;
 
         @Override

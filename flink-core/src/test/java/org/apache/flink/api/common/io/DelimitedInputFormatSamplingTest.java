@@ -27,8 +27,11 @@ import org.apache.flink.testutils.TestFileUtils;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.IntValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -38,6 +41,8 @@ import java.nio.file.Path;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Fail.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DelimitedInputFormatSamplingTest {
 
     private static final String TEST_DATA1 =

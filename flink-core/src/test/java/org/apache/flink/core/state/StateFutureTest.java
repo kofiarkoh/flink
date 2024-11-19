@@ -23,7 +23,10 @@ import org.apache.flink.core.state.StateFutureImpl.AsyncFrameworkExceptionHandle
 import org.apache.flink.util.concurrent.ExecutorThreadFactory;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
@@ -37,6 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StateFuture} related implementations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateFutureTest {
     static AsyncFrameworkExceptionHandler exceptionHandler =
             (message, exception) -> {

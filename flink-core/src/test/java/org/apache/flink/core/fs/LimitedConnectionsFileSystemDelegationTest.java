@@ -20,7 +20,10 @@ package org.apache.flink.core.fs;
 
 import org.apache.flink.core.fs.FileSystem.WriteMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -41,6 +44,8 @@ import static org.mockito.Mockito.when;
  * Tests that the method delegation works properly the {@link LimitedConnectionsFileSystem} and its
  * created input and output streams.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LimitedConnectionsFileSystemDelegationTest {
 
     @TempDir public File tempFolder;

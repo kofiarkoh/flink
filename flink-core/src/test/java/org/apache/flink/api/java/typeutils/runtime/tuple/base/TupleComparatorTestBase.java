@@ -23,9 +23,15 @@ import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.java.typeutils.runtime.TupleComparator;
 import org.apache.flink.api.java.typeutils.runtime.TupleSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-public abstract class TupleComparatorTestBase<T extends Tuple> extends ComparatorTestBase<T> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TupleComparatorTestBase<
+                T extends Tuple>
+        extends ComparatorTestBase<T> {
 
     @Override
     protected void deepEquals(String message, T should, T is) {

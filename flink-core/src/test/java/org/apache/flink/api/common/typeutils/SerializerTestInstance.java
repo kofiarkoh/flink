@@ -20,12 +20,16 @@ package org.apache.flink.api.common.typeutils;
 
 import org.apache.flink.testutils.DeeplyEqualsChecker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public abstract class SerializerTestInstance<T> extends SerializerTestBase<T> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SerializerTestInstance<T>
+        extends SerializerTestBase<T> {
 
     private final TypeSerializer<T> serializer;
 

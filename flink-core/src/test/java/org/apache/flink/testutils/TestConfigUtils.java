@@ -26,7 +26,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/** Utility class to help test the Flink configuration. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to help test the Flink
+ * configuration.
+ */
 public final class TestConfigUtils {
 
     public static Configuration loadGlobalConf(String[] keys, String[] values, File tempDir)

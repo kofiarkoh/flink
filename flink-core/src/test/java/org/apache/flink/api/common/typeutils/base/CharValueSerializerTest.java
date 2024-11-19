@@ -22,9 +22,15 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.types.CharValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Random;
 
 /** A test for the {@link CharValueSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CharValueSerializerTest extends SerializerTestBase<CharValue> {
 
     @Override

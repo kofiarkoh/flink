@@ -18,6 +18,12 @@
 
 package org.apache.flink.types.parser;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BooleanParserTest extends ParserTestBase<Boolean> {
 
     @Override

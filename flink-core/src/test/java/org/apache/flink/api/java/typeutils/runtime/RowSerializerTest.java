@@ -31,12 +31,17 @@ import org.apache.flink.types.Row;
 import org.apache.flink.types.RowKind;
 import org.apache.flink.types.RowUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Objects;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowSerializerTest {
 
     @Test
@@ -223,7 +228,8 @@ class RowSerializerTest {
         return row;
     }
 
-    private class RowSerializerTestInstance extends SerializerTestInstance<Row> {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class RowSerializerTestInstance
+            extends SerializerTestInstance<Row> {
 
         RowSerializerTestInstance(TypeSerializer<Row> serializer, Row... testData) {
             super(serializer, Row.class, -1, testData);

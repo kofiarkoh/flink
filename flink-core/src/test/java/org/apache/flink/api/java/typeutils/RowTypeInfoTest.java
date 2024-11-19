@@ -22,7 +22,10 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeutils.CompositeType.FlatFieldDescriptor;
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link RowTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowTypeInfoTest extends TypeInformationTestBase<RowTypeInfo> {
     private static final TypeInformation<?>[] typeList =
             new TypeInformation<?>[] {

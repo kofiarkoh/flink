@@ -20,6 +20,12 @@ package org.apache.flink.types.parser;
 
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class QuotedStringValueParserTest extends ParserTestBase<StringValue> {
 
     @Override

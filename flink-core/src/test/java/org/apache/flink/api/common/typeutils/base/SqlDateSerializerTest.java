@@ -21,9 +21,15 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.sql.Date;
 
 /** A test for the {@link SqlDateSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlDateSerializerTest extends SerializerTestBase<Date> {
 
     @Override

@@ -18,13 +18,18 @@
 
 package org.apache.flink.core.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Tests for {@link ByteArrayInputStreamWithPos}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ByteArrayInputStreamWithPosTest {
 
     private final byte[] data = new byte[] {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};

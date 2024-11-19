@@ -23,7 +23,10 @@ import org.apache.flink.core.testutils.CheckedThread;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link OutputFormatBase}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OutputFormatBaseTest {
 
     private static final Duration DEFAULT_MAX_CONCURRENT_REQUESTS_TIMEOUT =

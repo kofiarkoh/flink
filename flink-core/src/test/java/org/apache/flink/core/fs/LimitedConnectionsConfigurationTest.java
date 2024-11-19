@@ -23,7 +23,10 @@ import org.apache.flink.configuration.CoreOptions;
 import org.apache.flink.core.fs.LimitedConnectionsFileSystem.ConnectionLimitingSettings;
 import org.apache.flink.testutils.TestFileSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -33,6 +36,8 @@ import static org.apache.flink.configuration.ConfigurationUtils.getIntConfigOpti
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that validate that the configuration for limited FS connections are properly picked up. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LimitedConnectionsConfigurationTest {
 
     @TempDir public File tempDir;

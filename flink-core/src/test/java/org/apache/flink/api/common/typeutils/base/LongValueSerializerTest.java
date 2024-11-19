@@ -22,9 +22,15 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.types.LongValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Random;
 
 /** A test for the {@link LongValueSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LongValueSerializerTest extends SerializerTestBase<LongValue> {
 
     @Override

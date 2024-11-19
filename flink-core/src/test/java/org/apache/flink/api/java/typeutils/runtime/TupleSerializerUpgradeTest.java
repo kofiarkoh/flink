@@ -27,12 +27,17 @@ import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.tuple.Tuple3;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** {@link TupleSerializer} upgrade test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TupleSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<
                 Tuple3<String, String, Integer>, Tuple3<String, String, Integer>> {

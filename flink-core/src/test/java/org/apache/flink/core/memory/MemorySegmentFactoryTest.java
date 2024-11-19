@@ -17,13 +17,18 @@
 
 package org.apache.flink.core.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static java.lang.System.arraycopy;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** {@link MemorySegmentFactory} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemorySegmentFactoryTest {
 
     @Test

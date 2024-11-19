@@ -34,7 +34,10 @@ import org.apache.flink.types.NullValue;
 import org.apache.flink.types.ShortValue;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -43,6 +46,8 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 /** Test specifications for {@link BasicTypeSerializerUpgradeTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BasicTypeSerializerUpgradeTestSpecifications {
     // ----------------------------------------------------------------------------------------------
     // Specification for "big-dec-serializer"

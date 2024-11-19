@@ -30,7 +30,10 @@ import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +43,8 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Checks the GenericDataSourceBase operator for both Rich and non-Rich input formats. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GenericDataSourceBaseTest implements java.io.Serializable {
 
     @Test

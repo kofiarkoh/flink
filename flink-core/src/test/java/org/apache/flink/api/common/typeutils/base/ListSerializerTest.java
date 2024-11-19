@@ -21,6 +21,10 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -28,6 +32,8 @@ import java.util.List;
 import java.util.Random;
 
 /** A test for the {@link ListSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ListSerializerTest extends SerializerTestBase<List<Long>> {
 
     @Override

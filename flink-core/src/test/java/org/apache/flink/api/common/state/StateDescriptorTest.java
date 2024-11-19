@@ -30,7 +30,10 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.core.testutils.CheckedThread;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.time.Duration;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Fail.fail;
 
 /** Tests for the common/shared functionality of {@link StateDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateDescriptorTest {
 
     // ------------------------------------------------------------------------
@@ -282,7 +287,8 @@ class StateDescriptorTest {
         }
     }
 
-    private static class OtherTestStateDescriptor<T> extends StateDescriptor<State, T> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class OtherTestStateDescriptor<T> extends StateDescriptor<State, T> {
 
         private static final long serialVersionUID = 1L;
 

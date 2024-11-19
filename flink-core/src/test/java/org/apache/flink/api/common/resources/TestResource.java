@@ -18,9 +18,15 @@
 
 package org.apache.flink.api.common.resources;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.math.BigDecimal;
 
 /** Test implementation for {@link Resource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestResource extends Resource<TestResource> {
 
     public static final String NAME = "TestResource";

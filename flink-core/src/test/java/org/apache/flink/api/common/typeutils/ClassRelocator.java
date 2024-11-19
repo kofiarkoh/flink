@@ -40,9 +40,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * A class relocator for testing, this will take a given root class, reload it in a new {@link
- * ClassLoader}, and thereby path inner definer classes that have the {@link RelocateClass}
- * annotation to have a different name.
+ * A @ExtendWith(CTestJUnit5Extension.class) @CTestClass class relocator for testing, this will take
+ * a given root class, reload it in a new {@link ClassLoader}, and thereby path inner definer
+ * classes that have the {@link RelocateClass} annotation to have a different name.
  */
 public final class ClassRelocator {
 

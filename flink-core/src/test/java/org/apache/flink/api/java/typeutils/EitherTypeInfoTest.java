@@ -22,7 +22,13 @@ import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link EitherTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EitherTypeInfoTest extends TypeInformationTestBase<EitherTypeInfo<?, ?>> {
 
     @Override

@@ -20,11 +20,16 @@ package org.apache.flink.api.common.state;
 
 import org.apache.flink.api.common.typeinfo.TypeDescriptors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ListStateDeclaration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ListStateDeclarationTest {
 
     @Test

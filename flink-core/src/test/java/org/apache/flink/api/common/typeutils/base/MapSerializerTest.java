@@ -21,6 +21,10 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +32,8 @@ import java.util.Random;
 import java.util.TreeMap;
 
 /** A test for the {@link MapSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MapSerializerTest extends SerializerTestBase<Map<Long, String>> {
 
     @Override

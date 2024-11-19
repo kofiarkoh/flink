@@ -18,7 +18,10 @@
 
 package org.apache.flink.configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * This class verifies that the Unmodifiable Configuration class overrides all setter methods in
  * Configuration.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnmodifiableConfigurationTest {
 
     @Test

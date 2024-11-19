@@ -18,7 +18,10 @@
 
 package org.apache.flink.configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +31,8 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link CoreOptions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CoreOptionsTest {
     @Test
     void testGetParentFirstLoaderPatterns() {

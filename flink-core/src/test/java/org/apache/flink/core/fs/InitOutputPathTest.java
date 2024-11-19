@@ -25,8 +25,11 @@ import org.apache.flink.core.testutils.CheckedThread;
 import org.apache.flink.core.testutils.OneShotLatch;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import sun.misc.Unsafe;
 
@@ -44,6 +47,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** A test validating that the initialization of local output paths is properly synchronized. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InitOutputPathTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

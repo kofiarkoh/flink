@@ -20,7 +20,10 @@ package org.apache.flink.types.parser;
 
 import org.apache.flink.configuration.ConfigConstants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -29,7 +32,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** */
-public abstract class ParserTestBase<T> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ParserTestBase<T> {
 
     public abstract String[] getValidTestValues();
 

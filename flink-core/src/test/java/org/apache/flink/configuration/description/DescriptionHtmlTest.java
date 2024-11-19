@@ -18,13 +18,18 @@
 
 package org.apache.flink.configuration.description;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.description.LinkElement.link;
 import static org.apache.flink.configuration.description.TextElement.text;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link Description} and formatting with {@link HtmlFormatter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DescriptionHtmlTest {
     @Test
     void testDescriptionWithLink() {

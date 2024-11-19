@@ -21,7 +21,10 @@ package org.apache.flink.core.plugin;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link DirectoryBasedPluginFinder}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DirectoryBasedPluginFinderTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

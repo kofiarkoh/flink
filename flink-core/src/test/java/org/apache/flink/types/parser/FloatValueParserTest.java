@@ -20,6 +20,12 @@ package org.apache.flink.types.parser;
 
 import org.apache.flink.types.FloatValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FloatValueParserTest extends ParserTestBase<FloatValue> {
 
     @Override

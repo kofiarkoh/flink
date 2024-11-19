@@ -18,7 +18,10 @@
 
 package org.apache.flink.core.fs;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.URI;
@@ -27,6 +30,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link Path} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PathTest {
 
     @Test

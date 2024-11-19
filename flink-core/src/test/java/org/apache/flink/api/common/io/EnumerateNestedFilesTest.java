@@ -26,9 +26,12 @@ import org.apache.flink.testutils.TestFileUtils;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.IntValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -37,6 +40,8 @@ import java.io.IOException;
 import static org.apache.flink.configuration.ConfigurationUtils.getBooleanConfigOption;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EnumerateNestedFilesTest {
 
     @TempDir private static java.nio.file.Path tempDir;

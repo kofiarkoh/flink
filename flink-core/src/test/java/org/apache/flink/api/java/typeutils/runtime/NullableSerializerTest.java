@@ -23,13 +23,17 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link NullableSerializer}. */
-abstract class NullableSerializerTest extends SerializerTestBase<Integer> {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class NullableSerializerTest
+        extends SerializerTestBase<Integer> {
     private static final TypeSerializer<Integer> originalSerializer = IntSerializer.INSTANCE;
 
     private TypeSerializer<Integer> nullableSerializer;
@@ -81,7 +85,8 @@ abstract class NullableSerializerTest extends SerializerTestBase<Integer> {
 
     abstract boolean isPaddingNullValue();
 
-    static final class NullableSerializerWithPaddingTest extends NullableSerializerTest {
+    static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class NullableSerializerWithPaddingTest extends NullableSerializerTest {
 
         @Override
         boolean isPaddingNullValue() {
@@ -89,7 +94,8 @@ abstract class NullableSerializerTest extends SerializerTestBase<Integer> {
         }
     }
 
-    static final class NullableSerializerWithoutPaddingTest extends NullableSerializerTest {
+    static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class NullableSerializerWithoutPaddingTest extends NullableSerializerTest {
 
         @Override
         boolean isPaddingNullValue() {

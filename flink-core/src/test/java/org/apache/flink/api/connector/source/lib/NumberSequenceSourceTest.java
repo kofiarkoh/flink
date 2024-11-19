@@ -31,7 +31,10 @@ import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.util.SimpleUserCodeClassLoader;
 import org.apache.flink.util.UserCodeClassLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +43,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the {@link NumberSequenceSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NumberSequenceSourceTest {
 
     @Test

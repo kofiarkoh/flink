@@ -18,7 +18,10 @@
 
 package org.apache.flink.core.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -27,6 +30,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Verifies interoperability between heap and off-heap modes of {@link MemorySegment}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CrossSegmentTypeTest {
 
     private static final long BYTE_ARRAY_BASE_OFFSET =

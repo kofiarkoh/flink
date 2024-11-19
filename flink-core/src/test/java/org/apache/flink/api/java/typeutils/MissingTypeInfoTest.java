@@ -21,6 +21,12 @@ package org.apache.flink.api.java.typeutils;
 import org.apache.flink.api.common.functions.InvalidTypesException;
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MissingTypeInfoTest extends TypeInformationTestBase<MissingTypeInfo> {
     private static final String functionName = "foobar";
     private static final InvalidTypesException testException =
