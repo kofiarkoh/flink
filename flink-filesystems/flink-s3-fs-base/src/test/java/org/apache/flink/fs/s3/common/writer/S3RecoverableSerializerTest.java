@@ -19,7 +19,10 @@
 package org.apache.flink.fs.s3.common.writer;
 
 import com.amazonaws.services.s3.model.PartETag;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +31,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link S3RecoverableSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class S3RecoverableSerializerTest {
 
     private final S3RecoverableSerializer serializer = S3RecoverableSerializer.INSTANCE;

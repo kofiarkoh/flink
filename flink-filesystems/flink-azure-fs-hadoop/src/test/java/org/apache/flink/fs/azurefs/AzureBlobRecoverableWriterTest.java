@@ -24,8 +24,11 @@ import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -33,6 +36,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests for the {@link AzureBlobRecoverableWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AzureBlobRecoverableWriterTest extends AbstractRecoverableWriterTest {
 
     /** The cached file system instance. */

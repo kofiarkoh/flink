@@ -24,7 +24,10 @@ import org.apache.flink.core.testutils.TestContainerExtension;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.Bucket;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.BufferedReader;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * {@code MinioTestContainerTest} tests some basic functionality provided by {@link
  * MinioTestContainer}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MinioTestContainerTest {
 
     private static final String DEFAULT_BUCKET_NAME = "test-bucket";

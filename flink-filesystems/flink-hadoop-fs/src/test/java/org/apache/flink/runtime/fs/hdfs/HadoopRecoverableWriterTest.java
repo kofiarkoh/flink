@@ -28,6 +28,8 @@ import org.apache.flink.runtime.util.HadoopUtils;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
 import org.apache.hadoop.hdfs.protocol.BlockListAsLongs;
@@ -40,6 +42,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -52,6 +55,8 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 /** Tests for the {@link HadoopRecoverableWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopRecoverableWriterTest extends AbstractRecoverableWriterTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

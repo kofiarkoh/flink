@@ -22,7 +22,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.util.HadoopUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * configuration and the environment variables.
  */
 @SuppressWarnings("deprecation")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopConfigLoadingTest {
 
     private static final String IN_CP_CONFIG_KEY = "cp_conf_key";

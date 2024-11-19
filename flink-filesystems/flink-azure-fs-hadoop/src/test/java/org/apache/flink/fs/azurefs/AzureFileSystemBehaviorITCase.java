@@ -31,9 +31,12 @@ import org.apache.flink.util.StringUtils;
 import com.microsoft.azure.credentials.ApplicationTokenCredentials;
 import com.microsoft.azure.credentials.AzureTokenCredentials;
 import com.microsoft.azure.management.Azure;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** An implementation of the {@link FileSystemBehaviorTestSuite} for Azure based file system. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AzureFileSystemBehaviorITCase extends FileSystemBehaviorTestSuite {
 
     private static final String CONTAINER = System.getenv("ARTIFACTS_AZURE_CONTAINER");
@@ -63,8 +68,8 @@ class AzureFileSystemBehaviorITCase extends FileSystemBehaviorTestSuite {
     /**
      * Azure Blob Storage defaults to https only storage accounts, tested in the base class.
      *
-     * <p>This nested class repeats the tests with http support, but only if a best effort check on
-     * https support succeeds.
+     * <p>This nested @ExtendWith(CTestJUnit5Extension.class) @CTestClass class repeats the tests
+     * with http support, but only if a best effort check on https support succeeds.
      */
     static class HttpSupportAzureFileSystemBehaviorITCase extends AzureFileSystemBehaviorITCase {
         @BeforeAll

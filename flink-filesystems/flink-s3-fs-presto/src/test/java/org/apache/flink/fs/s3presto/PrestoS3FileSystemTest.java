@@ -29,7 +29,10 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.facebook.presto.hive.s3.PrestoS3FileSystem;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Field;
 import java.net.URI;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for the S3 file system support via Presto's PrestoS3FileSystem. These tests do not
  * actually read from or write to S3.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrestoS3FileSystemTest {
 
     @Test

@@ -24,9 +24,12 @@ import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.fs.s3.common.FlinkS3FileSystem;
 import org.apache.flink.testutils.s3.S3TestCredentials;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.URI;
@@ -37,6 +40,8 @@ import static org.apache.flink.fs.s3.common.AbstractS3FileSystemFactory.PART_UPL
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link org.apache.flink.core.fs.RecoverableWriter} of the Presto S3 FS. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrestoS3RecoverableWriterTest {
 
     // ----------------------- S3 general configuration -----------------------

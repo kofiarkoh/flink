@@ -21,6 +21,10 @@ package org.apache.flink.runtime.fs.hdfs;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.fs.UnsupportedFileSystemSchemeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.net.URI;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -33,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  */
 // this class is only instantiated via reflection
 @SuppressWarnings("unused")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HadoopFreeTests {
 
     public static void test() throws Exception {

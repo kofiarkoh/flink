@@ -22,7 +22,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.LimitedConnectionsFileSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URI;
 
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test that the Hadoop file system wrapper correctly picks up connection limiting settings for the
  * correct file systems.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LimitedConnectionsConfigurationTest {
 
     @Test

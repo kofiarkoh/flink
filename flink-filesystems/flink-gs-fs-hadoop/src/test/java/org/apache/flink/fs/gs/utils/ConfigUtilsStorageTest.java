@@ -24,6 +24,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTe
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
 import com.google.auth.oauth2.GoogleCredentials;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -38,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test construction of Storage instance in GSFileSystemFactory. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfigUtilsStorageTest {
 
     /* The test case description. */

@@ -25,13 +25,18 @@ import org.apache.flink.core.fs.FileSystemKind;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.testutils.oss.OSSTestCredentials;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
 
 /** An implementation of the {@link FileSystemBehaviorTestSuite} for the OSS file system. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopOSSFileSystemBehaviorITCase extends FileSystemBehaviorTestSuite {
     private static final String TEST_DATA_DIR = "tests-" + UUID.randomUUID();
 

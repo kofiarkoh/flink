@@ -23,9 +23,12 @@ import org.apache.flink.core.fs.RecoverableFsDataOutputStream;
 import org.apache.flink.core.fs.local.AbstractRecoverableFsDataOutputStreamTest;
 import org.apache.flink.core.fs.local.LocalRecoverableFsDataOutputStreamTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
@@ -37,6 +40,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /** Unit tests for {@link AzureBlobFsRecoverableDataOutputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AzureBlobFsRecoverableDataOutputStreamTest
         extends AbstractRecoverableFsDataOutputStreamTest {
 
