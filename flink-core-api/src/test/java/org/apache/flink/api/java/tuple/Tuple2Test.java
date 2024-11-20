@@ -20,12 +20,17 @@ package org.apache.flink.api.java.tuple;
 
 import org.apache.flink.types.NullFieldException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link Tuple2}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class Tuple2Test {
 
     @Test
