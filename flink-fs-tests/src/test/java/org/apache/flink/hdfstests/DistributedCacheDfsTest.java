@@ -32,12 +32,15 @@ import org.apache.flink.test.util.MiniClusterWithClientResource;
 import org.apache.flink.util.NetUtils;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.DataInputStream;
@@ -54,6 +57,8 @@ import static org.junit.Assert.assertTrue;
  * Tests for distributing files with {@link org.apache.flink.api.common.cache.DistributedCache} via
  * HDFS.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DistributedCacheDfsTest extends TestLogger {
 
     private static final String testFileContent =

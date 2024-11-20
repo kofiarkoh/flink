@@ -183,6 +183,11 @@ under the License.
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois</groupId>
+			<artifactId>ctest4j-junit5</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
