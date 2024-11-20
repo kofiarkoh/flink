@@ -36,10 +36,13 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 
 import java.time.Duration;
@@ -66,6 +69,8 @@ import static org.mockito.ArgumentMatchers.anyLong;
  * NotPatternITCase}, {@link SameElementITCase} for more specific tests.
  */
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NFAITCase extends TestLogger {
 
     private SharedBuffer<Event> sharedBuffer;

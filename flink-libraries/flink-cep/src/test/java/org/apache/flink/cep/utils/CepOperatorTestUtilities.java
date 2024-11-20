@@ -30,10 +30,16 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.List;
 import java.util.Map;
 
 /** Utility methods for creating test {@link CepOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CepOperatorTestUtilities {
 
     private static class TestKeySelector implements KeySelector<Event, Integer> {

@@ -21,10 +21,15 @@ package org.apache.flink.cep.nfa.sharedbuffer;
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.runtime.state.heap.TestDuplicateSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link org.apache.flink.cep.nfa.sharedbuffer.Lockable.LockableTypeSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class LockableTypeSerializerTest {
 
     /** This tests that {@link Lockable.LockableTypeSerializer#duplicate()} works as expected. */

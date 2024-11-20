@@ -33,10 +33,15 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.graph.StreamConfig;
 import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for bootstrap transformations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class StateBootstrapTransformationTest extends AbstractTestBaseJUnit4 {
 
     @Test

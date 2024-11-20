@@ -34,6 +34,10 @@ import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 import org.apache.flink.test.util.MiniClusterWithClientResource;
 import org.apache.flink.util.AbstractID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -46,7 +50,8 @@ import java.util.stream.Collectors;
 import static org.apache.flink.runtime.execution.ExecutionState.RUNNING;
 
 /** A test base that includes utilities for taking a savepoint. */
-public abstract class SavepointTestBase extends AbstractTestBaseJUnit4 {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SavepointTestBase
+        extends AbstractTestBaseJUnit4 {
 
     public String takeSavepoint(StreamExecutionEnvironment executionEnvironment) {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

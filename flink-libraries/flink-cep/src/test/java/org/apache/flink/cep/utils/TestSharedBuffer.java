@@ -33,6 +33,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.cep.configuration.SharedBufferCacheConfig;
 import org.apache.flink.cep.nfa.sharedbuffer.SharedBuffer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -89,7 +93,8 @@ public class TestSharedBuffer<V> extends SharedBuffer<V> {
                 new MockKeyedStateStore(), typeSerializer, sharedBufferCacheConfig);
     }
 
-    private static class MockKeyedStateStore implements KeyedStateStore {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MockKeyedStateStore
+            implements KeyedStateStore {
 
         private long stateWrites = 0;
         private long stateReads = 0;

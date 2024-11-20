@@ -36,8 +36,11 @@ import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,6 +48,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /** Test for operator list state input format. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ListStateInputFormatTest {
     private static ListStateDescriptor<Integer> descriptor =
             new ListStateDescriptor<>("state", Types.INT);

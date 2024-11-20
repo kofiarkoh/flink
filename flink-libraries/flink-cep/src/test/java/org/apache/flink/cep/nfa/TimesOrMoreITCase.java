@@ -26,7 +26,10 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -42,6 +45,8 @@ import static org.apache.flink.cep.utils.NFAUtils.compile;
 
 /** Tests for {@link Pattern#timesOrMore(int)}. */
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TimesOrMoreITCase extends TestLogger {
 
     @Parameterized.Parameter public Duration time;

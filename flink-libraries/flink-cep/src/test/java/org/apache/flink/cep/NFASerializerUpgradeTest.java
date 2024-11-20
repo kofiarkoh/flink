@@ -33,13 +33,18 @@ import org.apache.flink.cep.nfa.sharedbuffer.SharedBufferNode;
 import org.apache.flink.cep.nfa.sharedbuffer.SharedBufferNodeSerializer;
 import org.apache.flink.test.util.MigrationTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 /** Migration tests for NFA-related serializers. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NFASerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     // we dropped support for old versions and only test against versions since 1.20.

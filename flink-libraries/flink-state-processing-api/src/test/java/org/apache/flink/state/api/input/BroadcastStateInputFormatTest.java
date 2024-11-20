@@ -34,14 +34,19 @@ import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 import org.apache.flink.streaming.util.TwoInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 /** Test for operator broadcast state input format. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BroadcastStateInputFormatTest {
     private static MapStateDescriptor<Integer, Integer> descriptor =
             new MapStateDescriptor<>("state", Types.INT, Types.INT);

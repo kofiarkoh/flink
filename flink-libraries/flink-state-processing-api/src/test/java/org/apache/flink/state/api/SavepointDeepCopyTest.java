@@ -36,9 +36,12 @@ import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -60,6 +63,8 @@ import static org.junit.Assert.assertThat;
 
 /** Test the savepoint deep copy. */
 @RunWith(value = Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointDeepCopyTest extends AbstractTestBaseJUnit4 {
 
     private static final MemorySize FILE_STATE_SIZE_THRESHOLD = new MemorySize(1);

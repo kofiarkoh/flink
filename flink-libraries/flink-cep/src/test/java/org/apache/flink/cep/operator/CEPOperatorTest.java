@@ -54,10 +54,13 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
 
@@ -82,6 +85,8 @@ import static org.mockito.Mockito.validateMockitoUsage;
 import static org.mockito.Mockito.verify;
 
 /** Tests for {@link CepOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CEPOperatorTest extends TestLogger {
 
     @Rule public TemporaryFolder tempFolder = new TemporaryFolder();

@@ -26,11 +26,16 @@ import org.apache.flink.runtime.state.StateBackendLoader;
 import org.apache.flink.state.api.utils.CustomStateBackendFactory;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the savepoint writer. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SavepointWriterTest {
 
     @Test

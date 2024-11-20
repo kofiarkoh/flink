@@ -43,7 +43,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +66,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Test cases for {@link CepRuntimeContext}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CepRuntimeContextTest extends TestLogger {
 
     @Test

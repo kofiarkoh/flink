@@ -18,10 +18,15 @@
 
 package org.apache.flink.state.api.input;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Test of the buffering collector. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BufferingCollectorTest {
 
     @Test

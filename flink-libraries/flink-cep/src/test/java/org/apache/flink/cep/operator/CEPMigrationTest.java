@@ -36,7 +36,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.OperatorSnapshotUtil;
 import org.apache.flink.test.util.MigrationTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -57,6 +60,8 @@ import static org.junit.Assert.assertTrue;
  * write*()} method on the corresponding Flink release-* branch.
  */
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CEPMigrationTest implements MigrationTest {
 
     private final FlinkVersion migrateVersion;

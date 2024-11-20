@@ -42,8 +42,11 @@ import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -58,7 +61,8 @@ import java.util.stream.Collectors;
 import static org.apache.flink.state.api.utils.SavepointTestBase.waitForAllRunningOrSomeTerminal;
 
 /** IT case for reading state. */
-public abstract class SavepointReaderITTestBase extends AbstractTestBaseJUnit4 {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SavepointReaderITTestBase
+        extends AbstractTestBaseJUnit4 {
     static final String UID = "stateful-operator";
 
     static final String LIST_NAME = "list";

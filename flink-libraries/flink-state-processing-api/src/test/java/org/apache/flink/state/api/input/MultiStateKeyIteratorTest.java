@@ -56,8 +56,11 @@ import org.apache.flink.runtime.state.ttl.TtlTimeProvider;
 import org.apache.flink.runtime.state.ttl.mock.MockRestoreOperation;
 import org.apache.flink.runtime.state.ttl.mock.MockStateBackend;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -73,6 +76,8 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /** Test for the multi-state key iterator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MultiStateKeyIteratorTest {
     private static final List<ValueStateDescriptor<Integer>> descriptors;
 

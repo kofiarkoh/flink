@@ -28,13 +28,17 @@ import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.time.TimerService;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 /** Test harness for setting up {@link NFA}. */
-public final class NFATestHarness {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class NFATestHarness {
 
     private final SharedBuffer<Event> sharedBuffer;
     private final NFA<Event> nfa;
@@ -120,7 +124,8 @@ public final class NFATestHarness {
     }
 
     /** Builder for {@link NFATestHarness} that encapsulates {@link Pattern}. */
-    public static class NFATestHarnessBuilderPattern extends NFATestHarnessBuilderBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class NFATestHarnessBuilderPattern extends NFATestHarnessBuilderBase {
 
         private final Pattern<Event, ?> pattern;
         private boolean timeoutHandling = false;
@@ -148,7 +153,8 @@ public final class NFATestHarness {
     }
 
     /** Builder for {@link NFATestHarness} that encapsulates {@link NFA}. */
-    public static class NFATestHarnessBuilderNFA extends NFATestHarnessBuilderBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class NFATestHarnessBuilderNFA
+            extends NFATestHarnessBuilderBase {
 
         private final NFA<Event> nfa;
         private NFAState nfaState;
@@ -175,7 +181,8 @@ public final class NFATestHarness {
      * Common builder, which can be used independent if we start with {@link Pattern} or {@link
      * NFA}. Enables to provide custom services like {@link SharedBuffer} etc.
      */
-    public abstract static class NFATestHarnessBuilderBase {
+    public abstract static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class NFATestHarnessBuilderBase {
 
         SharedBuffer<Event> sharedBuffer =
                 TestSharedBuffer.createTestBuffer(Event.createTypeSerializer());

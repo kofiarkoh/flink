@@ -49,6 +49,10 @@ import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -276,7 +280,8 @@ public class WindowReaderOperator<S extends State, KEY, IN, W extends Window, OU
         }
     }
 
-    private class PerWindowKeyedStateStore extends DefaultKeyedStateStore {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class PerWindowKeyedStateStore
+            extends DefaultKeyedStateStore {
 
         W window;
 

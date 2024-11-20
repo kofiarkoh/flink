@@ -28,11 +28,16 @@ import org.apache.flink.state.api.input.splits.PrioritizedOperatorSubtaskStateIn
 import org.apache.flink.state.api.utils.CustomStateBackendFactory;
 import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** Tests for the stream operator context builder. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class StreamOperatorContextBuilderTest {
 
     private static final Logger LOG =
