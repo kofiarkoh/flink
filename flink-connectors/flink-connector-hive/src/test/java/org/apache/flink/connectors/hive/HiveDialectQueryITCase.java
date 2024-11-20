@@ -1134,7 +1134,9 @@ public class HiveDialectQueryITCase {
         public void close() throws HiveException {}
     }
 
-    private static class QTest {
+    private static @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class QTest {
         final List<String> statements;
         final List<String> results;
         final boolean sortResults;

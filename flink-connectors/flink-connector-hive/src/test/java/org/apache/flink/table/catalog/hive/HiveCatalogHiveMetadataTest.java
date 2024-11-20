@@ -74,6 +74,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Test for HiveCatalog on Hive metadata. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveCatalogHiveMetadataTest extends HiveCatalogMetadataTestBase {
 
     @BeforeAll

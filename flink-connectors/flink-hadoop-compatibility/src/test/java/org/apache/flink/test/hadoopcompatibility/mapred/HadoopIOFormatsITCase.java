@@ -35,6 +35,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTe
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
@@ -64,6 +66,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
 // As a result, the test case cannot be set to batch runtime mode and should not run with the
 // adaptive scheduler.
 @Category(FailsWithAdaptiveScheduler.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HadoopIOFormatsITCase extends JavaProgramTestBase {
 
     private static final int NUM_PROGRAMS = 2;

@@ -51,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 /** Test for {@link HiveCatalog} created by {@link HiveCatalogFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogFactoryTest extends TestLogger {
 
     private static final URL CONF_DIR =

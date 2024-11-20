@@ -21,7 +21,10 @@ package org.apache.flink.connector.file.src.assigners;
 import org.apache.flink.connector.file.src.FileSourceSplit;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.util.Calendar;
@@ -33,6 +36,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link LocalityAwareSplitAssigner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalityAwareSplitAssignerTest {
 
     private static final Path TEST_PATH =

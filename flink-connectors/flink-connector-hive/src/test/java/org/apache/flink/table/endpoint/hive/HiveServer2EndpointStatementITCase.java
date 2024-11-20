@@ -186,7 +186,9 @@ public class HiveServer2EndpointStatementITCase extends AbstractSqlGatewayStatem
         return DataTypes.ROW(fields);
     }
 
-    private static class HiveTestParameters extends TestParameters {
+    private static @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class HiveTestParameters extends TestParameters {
 
         private final boolean resetEnvironment;
 

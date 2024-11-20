@@ -29,6 +29,8 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveConfUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveConfUtilsTest {
     private static final String HIVE_SITE_CONTENT =
             "<?xml version=\"1.0\"?>\n"

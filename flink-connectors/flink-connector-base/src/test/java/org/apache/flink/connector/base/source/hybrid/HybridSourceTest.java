@@ -33,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link HybridSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HybridSourceTest {
 
     @Test

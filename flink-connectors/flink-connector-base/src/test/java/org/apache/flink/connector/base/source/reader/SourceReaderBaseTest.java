@@ -71,6 +71,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** A unit test class for {@link SourceReaderBase}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceReaderBaseTest extends SourceReaderTestBase<MockSourceSplit> {
 
     private static final Logger LOG = LoggerFactory.getLogger(SourceReaderBaseTest.class);

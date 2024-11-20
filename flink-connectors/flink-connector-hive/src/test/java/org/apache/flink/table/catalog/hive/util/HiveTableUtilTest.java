@@ -36,6 +36,8 @@ import static org.apache.flink.table.expressions.ApiExpressionUtils.valueLiteral
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for HiveTableUtil. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveTableUtilTest {
 
     private static final HiveShim hiveShim =

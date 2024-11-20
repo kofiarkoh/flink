@@ -40,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /** Test for timeout functionalities of {@link AsyncSinkWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterTimeoutTest {
 
     private final ExecutorService executorService = Executors.newFixedThreadPool(5);

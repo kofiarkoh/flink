@@ -23,7 +23,10 @@ import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.utils.JoinedRowData;
 import org.apache.flink.types.RowKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +34,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** Tests for {@link JoinedRowData}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EnrichedRowDataTest {
 
     @Test

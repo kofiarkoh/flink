@@ -29,8 +29,11 @@ import org.apache.flink.connector.file.src.util.RecordAndPosition;
 import org.apache.flink.core.fs.FSDataInputStream;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.DataOutputStream;
@@ -47,10 +50,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Fail.fail;
 
 /**
- * Base class for adapters, as used by {@link StreamFormatAdapterTest} and {@link
- * FileRecordFormatAdapterTest}.
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for adapters, as used by {@link
+ * StreamFormatAdapterTest} and {@link FileRecordFormatAdapterTest}.
  */
-abstract class AdapterTestBase<FormatT> {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AdapterTestBase<FormatT> {
 
     @TempDir public static java.nio.file.Path tmpDir;
 
@@ -293,7 +296,8 @@ abstract class AdapterTestBase<FormatT> {
     //  Test Mocks and Stubs
     // ------------------------------------------------------------------------
 
-    private static class CloseTestingInputStream extends FSDataInputStream {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CloseTestingInputStream
+            extends FSDataInputStream {
 
         boolean closed;
 

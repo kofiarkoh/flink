@@ -29,6 +29,8 @@ import static org.apache.flink.connector.base.sink.writer.AsyncSinkWriterTestUti
 import static org.apache.flink.connector.base.sink.writer.AsyncSinkWriterTestUtils.getTestState;
 
 /** Test class for {@link AsyncSinkWriterStateSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterStateSerializerTest {
 
     @Test

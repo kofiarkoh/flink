@@ -41,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link HybridSourceSplitEnumerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HybridSourceSplitEnumeratorTest {
 
     private static final int SUBTASK0 = 0;

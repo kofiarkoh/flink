@@ -31,8 +31,11 @@ import org.apache.flink.streaming.api.functions.sink.legacy.SinkFunction;
 import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 import org.apache.flink.table.catalog.ObjectIdentifier;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -48,6 +51,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BatchPartitionCommitterSink}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchPartitionCommitterSinkTest {
     private final FileSystemFactory fileSystemFactory = FileSystem::get;
 

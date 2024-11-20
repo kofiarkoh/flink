@@ -21,13 +21,18 @@ package org.apache.flink.connector.file.sink;
 import org.apache.flink.connector.file.sink.utils.FileSinkTestUtils;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the serialization and deserialization for {@link FileSinkCommittable}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileCommittableSerializerTest {
 
     @Test

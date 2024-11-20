@@ -46,6 +46,8 @@ import java.util.function.Supplier;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link HybridSourceReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HybridSourceReaderTest {
 
     @Test

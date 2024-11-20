@@ -96,6 +96,8 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 /** Tests {@link HiveTableSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveTableSourceITCase extends BatchAbstractTestBase {
 
     private static HiveCatalog hiveCatalog;
@@ -1091,7 +1093,9 @@ public class HiveTableSourceITCase extends BatchAbstractTestBase {
         return tableEnv;
     }
 
-    /** A sub-class of HiveTableSource to test vector reader switch. */
+    /** A sub-@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class of HiveTableSource to test vector reader switch. */
     private static class TestConfigSource extends HiveTableSource {
         private final boolean inferParallelism;
 
@@ -1116,7 +1120,9 @@ public class HiveTableSourceITCase extends BatchAbstractTestBase {
         }
     }
 
-    // A sub-class of HiveCatalog to test list partitions by filter.
+    // A sub-@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class of HiveCatalog to test list partitions by filter.
     private static class TestPartitionFilterCatalog extends HiveCatalog {
 
         private boolean fallback = false;

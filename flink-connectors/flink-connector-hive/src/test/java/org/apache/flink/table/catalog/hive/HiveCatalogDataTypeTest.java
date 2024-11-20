@@ -49,6 +49,8 @@ import static org.apache.flink.table.catalog.hive.util.Constants.IDENTIFIER;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for data type mappings in HiveCatalog. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogDataTypeTest {
 
     private static HiveCatalog catalog;

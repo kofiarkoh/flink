@@ -145,7 +145,9 @@ public class FlinkEmbeddedHiveRunner extends BlockJUnit4ClassRunner {
     }
 
     /**
-     * Traverses the test class annotations. Will inject a HiveShell in the test case that envelopes
+     * Traverses the test @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class annotations. Will inject a HiveShell in the test case that envelopes
      * the HiveServer.
      */
     private HiveShellContainer createHiveServerContainer(

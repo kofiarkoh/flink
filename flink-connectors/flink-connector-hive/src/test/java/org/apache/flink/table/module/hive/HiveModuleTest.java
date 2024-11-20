@@ -42,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Test for {@link HiveModule}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveModuleTest {
 
     @Rule public final LegacyRowResource usesLegacyRows = LegacyRowResource.INSTANCE;

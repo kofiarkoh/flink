@@ -23,8 +23,11 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.core.fs.local.LocalFileSystem;
 import org.apache.flink.table.catalog.ObjectIdentifier;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -38,6 +41,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link FileSystemCommitter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSystemCommitterTest {
 
     private static final String SUCCESS_FILE_NAME = "_SUCCESS";

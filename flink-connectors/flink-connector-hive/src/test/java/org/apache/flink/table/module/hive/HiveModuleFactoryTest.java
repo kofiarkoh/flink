@@ -28,6 +28,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveModuleFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveModuleFactoryTest {
     @Test
     public void test() {

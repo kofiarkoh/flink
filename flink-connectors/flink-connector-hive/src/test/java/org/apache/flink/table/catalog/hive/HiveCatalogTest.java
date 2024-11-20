@@ -58,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for HiveCatalog. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogTest {
 
     ResolvedSchema resolvedSchema =

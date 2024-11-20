@@ -44,6 +44,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for HiveOutputFormatFactory. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveOutputFormatFactoryTest {
 
     private static final String TEST_URI_SCHEME = "testscheme";

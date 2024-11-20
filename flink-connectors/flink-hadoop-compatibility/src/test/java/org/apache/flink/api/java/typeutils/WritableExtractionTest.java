@@ -23,9 +23,12 @@ import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparator;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Fail.fail;
 
 /** Tests for the type extraction of {@link Writable}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WritableExtractionTest {
 
     @Test

@@ -28,8 +28,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assumptions.assumeThat;
 
-/** Base class for testing HiveCatalog. */
-public abstract class HiveCatalogMetadataTestBase extends CatalogTestBase {
+/** Base @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class for testing HiveCatalog. */
+public abstract @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class HiveCatalogMetadataTestBase extends CatalogTestBase {
 
     // ------ table and column stats ------
 

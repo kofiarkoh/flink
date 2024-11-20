@@ -44,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests to verify operator's parallelism of {@link HiveTableSink} enabled auto-compaction. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveTableCompactSinkParallelismTest {
     /**
      * Represents the parallelism doesn't need to be checked, it should follow the setting of planer

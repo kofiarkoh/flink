@@ -56,9 +56,12 @@ import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.apache.flink.testutils.junit.SharedObjectsExtension;
 import org.apache.flink.testutils.junit.SharedReference;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -337,7 +340,8 @@ public class FileSinkCompactionSwitchITCase {
         }
     }
 
-    private static class CountingTestSource extends RichParallelSourceFunction<Integer>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CountingTestSource
+            extends RichParallelSourceFunction<Integer>
             implements CheckpointListener, CheckpointedFunction {
 
         private final String latchId;

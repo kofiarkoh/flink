@@ -60,6 +60,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveTableFactory}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveTableFactoryTest {
     private static HiveCatalog catalog;
 

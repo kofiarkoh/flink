@@ -26,6 +26,8 @@ import org.apache.flink.testutils.junit.FailsWithAdaptiveScheduler;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,6 +42,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
 // As a result, the test case cannot be set to batch runtime mode and should not run with the
 // adaptive scheduler.
 @Category(FailsWithAdaptiveScheduler.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HadoopMapredITCase extends JavaProgramTestBase {
 
     protected String textPath;

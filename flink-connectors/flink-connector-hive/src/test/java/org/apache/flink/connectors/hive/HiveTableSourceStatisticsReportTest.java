@@ -43,6 +43,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for statistics functionality in {@link HiveTableSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveTableSourceStatisticsReportTest extends StatisticsReportTestBase {
 
     private static HiveCatalog hiveCatalog;

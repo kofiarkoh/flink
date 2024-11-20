@@ -46,6 +46,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** IT case for the {@link Source} with a coordinator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CoordinatedSourceITCase extends AbstractTestBase {
 
     @Test

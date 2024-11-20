@@ -21,11 +21,16 @@ package org.apache.flink.hadoopcompatibility;
 import org.apache.flink.util.AbstractParameterToolTest;
 import org.apache.flink.util.ParameterTool;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 /** Tests for the {@link HadoopUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopUtilsTest extends AbstractParameterToolTest {
 
     @Test

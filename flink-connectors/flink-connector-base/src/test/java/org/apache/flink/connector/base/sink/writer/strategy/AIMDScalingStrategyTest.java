@@ -23,6 +23,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Test class for {@link AIMDScalingStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AIMDScalingStrategyTest {
 
     @Test

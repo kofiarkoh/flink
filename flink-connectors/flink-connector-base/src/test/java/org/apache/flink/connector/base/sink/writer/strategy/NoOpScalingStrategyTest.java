@@ -22,6 +22,8 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test class for {@link NoOpScalingStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NoOpScalingStrategyTest {
     @Test
     void testScaleUpNoOp() {

@@ -60,6 +60,8 @@ import static org.apache.flink.table.factories.FactoryUtil.CONNECTOR;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link HiveSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveSourceTest {
 
     private static HiveCatalog hiveCatalog;

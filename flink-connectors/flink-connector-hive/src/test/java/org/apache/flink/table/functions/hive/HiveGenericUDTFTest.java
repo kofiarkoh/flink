@@ -52,6 +52,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveGenericUDTF}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveGenericUDTFTest {
     private static HiveShim hiveShim = HiveShimLoader.loadHiveShim(HiveShimLoader.getHiveVersion());
 

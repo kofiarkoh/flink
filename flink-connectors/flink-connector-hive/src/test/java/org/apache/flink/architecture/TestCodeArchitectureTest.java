@@ -37,6 +37,8 @@ import java.util.regex.Pattern;
             TestCodeArchitectureTest.IncludeHiveImportOption.class,
             ImportOptions.ExcludeShadedImportOption.class
         })
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestCodeArchitectureTest {
 
     @ArchTest

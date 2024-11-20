@@ -32,7 +32,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,6 +45,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BatchFileWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchFileWriterTest extends AbstractCompactTestBase {
     private final String[] columnNames = new String[] {"a", "b", "c"};
     private FileSystemFactory fsFactory = FileSystem::get;

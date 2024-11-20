@@ -53,6 +53,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for HiveCatalog on generic metadata. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveCatalogGenericMetadataTest extends HiveCatalogMetadataTestBase {
 
     TestSchemaResolver resolver = new TestSchemaResolver();

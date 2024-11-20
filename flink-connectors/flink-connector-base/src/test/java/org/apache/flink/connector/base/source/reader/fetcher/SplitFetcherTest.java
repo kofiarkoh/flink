@@ -46,6 +46,8 @@ import static org.apache.flink.test.util.TestUtils.waitUntil;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link SplitFetcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitFetcherTest {
 
     @Test

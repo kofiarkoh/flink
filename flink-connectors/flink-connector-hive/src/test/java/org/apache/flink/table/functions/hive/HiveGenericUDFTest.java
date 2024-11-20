@@ -55,6 +55,8 @@ import static org.apache.flink.table.HiveVersionTestUtil.HIVE_310_OR_LATER;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveGenericUDF}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveGenericUDFTest {
     private static final HiveShim hiveShim =
             HiveShimLoader.loadHiveShim(HiveShimLoader.getHiveVersion());

@@ -60,6 +60,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link HiveServer2EndpointFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveServer2EndpointFactoryTest {
 
     private final MockedSqlGatewayService service = new MockedSqlGatewayService();

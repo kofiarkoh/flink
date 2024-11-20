@@ -102,6 +102,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link ThriftObjectConversions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ThriftObjectConversionsTest {
 
     @Test

@@ -32,7 +32,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +48,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BatchCompactOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchCompactOperatorTest extends AbstractCompactTestBase {
 
     @Test

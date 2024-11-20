@@ -22,12 +22,17 @@ import org.apache.flink.connector.file.src.FileSourceSplit;
 import org.apache.flink.connector.file.src.testutils.TestingFileSystem;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 /** Unit tests for the {@link BlockSplittingRecursiveEnumerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockSplittingRecursiveEnumeratorTest extends NonSplittingRecursiveEnumeratorTest {
 
     @Test

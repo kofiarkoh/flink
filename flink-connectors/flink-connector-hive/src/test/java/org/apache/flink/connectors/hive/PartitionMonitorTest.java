@@ -48,6 +48,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ContinuousHiveSplitEnumerator.PartitionMonitor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PartitionMonitorTest {
 
     private ContinuousHiveSplitEnumerator.PartitionMonitor<Long> partitionMonitor;

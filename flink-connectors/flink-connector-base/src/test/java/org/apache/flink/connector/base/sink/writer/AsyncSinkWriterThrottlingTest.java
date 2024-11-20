@@ -33,6 +33,8 @@ import java.util.List;
 import java.util.Queue;
 
 /** Test class for rate limiting functionalities of {@link AsyncSinkWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterThrottlingTest {
 
     @Test

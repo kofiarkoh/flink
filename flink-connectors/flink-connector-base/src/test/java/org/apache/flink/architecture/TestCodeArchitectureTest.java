@@ -33,6 +33,8 @@ import com.tngtech.archunit.junit.ArchTests;
             ImportOptions.ExcludeScalaImportOption.class,
             ImportOptions.ExcludeShadedImportOption.class
         })
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestCodeArchitectureTest {
 
     @ArchTest

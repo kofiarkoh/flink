@@ -113,7 +113,9 @@ public class HiveShimV120 extends HiveShimV111 {
     public ColumnStatisticsData toHiveDateColStats(
             CatalogColumnStatisticsDataDate flinkDateColStats) {
         try {
-            Class dateStatsClz =
+            @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+Class dateStatsClz =
                     Class.forName("org.apache.hadoop.hive.metastore.api.DateColumnStatsData");
             Object dateStats = dateStatsClz.getDeclaredConstructor().newInstance();
             dateStatsClz.getMethod("clear").invoke(dateStats);
@@ -176,7 +178,9 @@ public class HiveShimV120 extends HiveShimV111 {
                     ColumnStatisticsData.class
                             .getDeclaredMethod("getDateStats")
                             .invoke(hiveDateColStats);
-            Class dateStatsClz = dateStats.getClass();
+            @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+Class dateStatsClz = dateStats.getClass();
             boolean isSetNumDv = (boolean) dateStatsClz.getMethod("isSetNumDVs").invoke(dateStats);
             boolean isSetNumNull =
                     (boolean) dateStatsClz.getMethod("isSetNumNulls").invoke(dateStats);

@@ -23,9 +23,14 @@ import org.apache.flink.api.common.typeutils.SerializerTestInstance;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.api.java.typeutils.WritableTypeInfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for the {@link WritableSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WritableSerializerTest {
 
     @Test

@@ -20,7 +20,10 @@ package org.apache.flink.connector.file.sink.compactor;
 
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -28,7 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /** Test base for compact operators. */
-abstract class AbstractCompactTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AbstractCompactTestBase {
 
     public static final int TARGET_SIZE = 9;
 

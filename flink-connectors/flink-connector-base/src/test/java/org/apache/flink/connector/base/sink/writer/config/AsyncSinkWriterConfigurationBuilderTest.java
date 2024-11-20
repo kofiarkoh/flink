@@ -25,6 +25,8 @@ import static org.apache.flink.connector.base.sink.writer.config.AsyncSinkWriter
 import static org.apache.flink.connector.base.sink.writer.config.AsyncSinkWriterConfiguration.DEFAULT_REQUEST_TIMEOUT_MS;
 
 /** Tests for {@link AsyncSinkWriterConfiguration#builder()}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterConfigurationBuilderTest {
     @Test
     void testBuilderSetsValueForTimeoutAndFailOnTimeout() {

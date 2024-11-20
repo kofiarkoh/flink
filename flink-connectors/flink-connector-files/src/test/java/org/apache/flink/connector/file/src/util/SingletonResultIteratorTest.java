@@ -18,13 +18,18 @@
 
 package org.apache.flink.connector.file.src.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link SingletonResultIterator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SingletonResultIteratorTest {
 
     @Test

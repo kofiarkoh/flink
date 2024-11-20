@@ -47,6 +47,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link org.apache.flink.table.planner.utils.FlinkTypeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkTypeUtilsTest {
     static Stream<LogicalType> testInternalToRelType() {
         return Stream.of(

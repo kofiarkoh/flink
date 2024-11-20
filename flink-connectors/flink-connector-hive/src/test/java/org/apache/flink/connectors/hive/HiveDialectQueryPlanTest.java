@@ -36,6 +36,8 @@ import static org.apache.flink.table.planner.utils.TableTestUtil.readFromResourc
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test hive query plan. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveDialectQueryPlanTest {
 
     private static HiveCatalog hiveCatalog;

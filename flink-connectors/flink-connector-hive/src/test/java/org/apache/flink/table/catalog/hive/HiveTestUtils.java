@@ -69,6 +69,8 @@ import static org.apache.flink.connectors.hive.HiveOptions.TABLE_EXEC_HIVE_INFER
 import static org.apache.flink.table.api.config.ExecutionConfigOptions.TABLE_EXEC_RESOURCE_DEFAULT_PARALLELISM;
 
 /** Test utils for Hive connector. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveTestUtils {
     private static final String HIVE_WAREHOUSE_URI_FORMAT =
             "jdbc:derby:;databaseName=%s;create=true";

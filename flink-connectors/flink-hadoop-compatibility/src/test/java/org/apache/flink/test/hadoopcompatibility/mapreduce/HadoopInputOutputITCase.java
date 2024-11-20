@@ -27,8 +27,11 @@ import org.apache.flink.test.util.JavaProgramTestBase;
 import org.apache.flink.testutils.junit.FailsWithAdaptiveScheduler;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.test.util.TestBaseUtils.compareResultsByLinesInMemory;
 import static org.assertj.core.api.Assumptions.assumeThat;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
 // As a result, the test case cannot be set to batch runtime mode and should not run with the
 // adaptive scheduler.
 @Category(FailsWithAdaptiveScheduler.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopInputOutputITCase extends JavaProgramTestBase {
 
     private String textPath;

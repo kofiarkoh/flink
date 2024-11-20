@@ -61,6 +61,8 @@ import static org.apache.flink.table.data.StringData.fromString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for HiveSourceDynamicFileEnumerator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveSourceDynamicFileEnumeratorTest {
 
     @Test

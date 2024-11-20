@@ -32,6 +32,8 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailboxImpl;
  * <p>However, care must be taken to ensure deadlocks do not form in the test code, since we are
  * artificially allowing multiple mailbox threads, when only one is supposed to exist.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestSinkInitContextAnyThreadMailbox extends TestSinkInitContext {
     @Override
     public MailboxExecutor getMailboxExecutor() {

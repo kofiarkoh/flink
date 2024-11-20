@@ -31,6 +31,8 @@ import org.apache.flink.streaming.api.windowing.assigners.GlobalWindows;
 import org.apache.flink.test.util.MultipleProgramsTestBase;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.JobConf;
@@ -49,6 +51,8 @@ import static org.apache.flink.test.util.TestBaseUtils.compareResultsByLinesInMe
 
 /** IT cases for the {@link HadoopReducerWrappedFunction}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopReduceFunctionITCase extends MultipleProgramsTestBase {
 
     @TestTemplate

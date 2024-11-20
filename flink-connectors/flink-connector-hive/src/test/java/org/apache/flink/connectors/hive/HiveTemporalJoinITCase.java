@@ -47,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * 3.1.1. To run this test, please use mvn command: mvn test -Phive-3.1.1
  * -Dtest=org.apache.flink.connectors.hive.HiveTemporalJoinITCase
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveTemporalJoinITCase extends TableTestBase {
 
     private static TableEnvironment tableEnv;

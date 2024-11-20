@@ -75,6 +75,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * IT case for HiveCatalog. TODO: move to flink-connector-hive-test end-to-end test module once it's
  * setup
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogUdfITCase extends AbstractTestBaseJUnit4 {
 
     @Rule public TemporaryFolder tempFolder = new TemporaryFolder();

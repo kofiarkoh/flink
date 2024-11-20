@@ -28,6 +28,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests the FatalExceptionClassifier of the Async Sink Writer. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FatalExceptionClassifierTest {
 
     private static Integer nullReference;

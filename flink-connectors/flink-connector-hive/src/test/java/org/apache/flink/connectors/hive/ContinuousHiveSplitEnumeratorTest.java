@@ -43,6 +43,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link ContinuousHiveSplitEnumerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ContinuousHiveSplitEnumeratorTest {
 
     @Test

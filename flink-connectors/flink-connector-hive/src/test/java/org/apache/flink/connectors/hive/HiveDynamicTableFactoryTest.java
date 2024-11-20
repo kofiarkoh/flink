@@ -55,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link HiveDynamicTableFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveDynamicTableFactoryTest {
 
     private static TableEnvironment tableEnv;

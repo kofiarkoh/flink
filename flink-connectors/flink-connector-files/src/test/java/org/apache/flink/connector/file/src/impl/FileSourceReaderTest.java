@@ -24,7 +24,10 @@ import org.apache.flink.connector.file.src.reader.TextLineInputFormat;
 import org.apache.flink.connector.testutils.source.reader.TestingReaderContext;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -33,6 +36,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link FileSourceReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSourceReaderTest {
 
     @TempDir private static java.nio.file.Path tmpDir;

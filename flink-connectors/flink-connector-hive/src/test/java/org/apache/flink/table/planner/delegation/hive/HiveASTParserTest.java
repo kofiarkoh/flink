@@ -29,6 +29,8 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the AST parser. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveASTParserTest {
 
     private static final HiveConf hiveConf = HiveTestUtils.createHiveConf();

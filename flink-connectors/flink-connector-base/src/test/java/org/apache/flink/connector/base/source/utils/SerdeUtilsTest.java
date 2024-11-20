@@ -33,6 +33,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link SerdeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerdeUtilsTest {
 
     private static final int READER0 = 0;

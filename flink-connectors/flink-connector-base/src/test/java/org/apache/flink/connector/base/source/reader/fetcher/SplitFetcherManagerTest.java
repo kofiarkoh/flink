@@ -48,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Unit tests for the {@link SplitFetcherManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitFetcherManagerTest {
 
     @Test

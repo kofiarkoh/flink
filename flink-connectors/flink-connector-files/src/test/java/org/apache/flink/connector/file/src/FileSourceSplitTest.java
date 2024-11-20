@@ -20,11 +20,16 @@ package org.apache.flink.connector.file.src;
 
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for the {@link FileSourceSplit}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSourceSplitTest {
 
     @Test

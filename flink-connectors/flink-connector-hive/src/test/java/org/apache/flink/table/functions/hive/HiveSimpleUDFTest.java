@@ -47,6 +47,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveSimpleUDF}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveSimpleUDFTest {
     private static HiveShim hiveShim = HiveShimLoader.loadHiveShim(HiveShimLoader.getHiveVersion());
 

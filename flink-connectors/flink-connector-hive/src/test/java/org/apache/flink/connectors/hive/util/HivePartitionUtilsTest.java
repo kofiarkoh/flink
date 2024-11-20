@@ -37,6 +37,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HivePartitionUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HivePartitionUtilsTest {
 
     @Rule public final TemporaryFolder temporaryFolder = new TemporaryFolder();

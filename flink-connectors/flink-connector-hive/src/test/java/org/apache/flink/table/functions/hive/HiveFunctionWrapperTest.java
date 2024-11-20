@@ -35,6 +35,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveFunctionWrapper}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveFunctionWrapperTest {
 
     @TempDir private static File tempFolder;

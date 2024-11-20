@@ -34,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** The unit test for {@link FutureCompletingBlockingQueue}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FutureCompletingBlockingQueueTest {
 
     private static final int DEFAULT_CAPACITY = 2;

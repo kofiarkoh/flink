@@ -50,6 +50,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Unit Tests the functionality of AsyncSinkWriter without any assumptions of what a concrete
  * implementation might do.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterTest {
 
     private final List<Integer> res = new ArrayList<>();

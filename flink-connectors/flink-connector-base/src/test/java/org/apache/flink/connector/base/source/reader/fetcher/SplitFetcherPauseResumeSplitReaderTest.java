@@ -53,6 +53,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests {@link SplitFetcher} integration to pause or resume {@link SplitReader} based on {@link
  * SourceReader} output.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitFetcherPauseResumeSplitReaderTest {
 
     /**
@@ -204,7 +206,8 @@ class SplitFetcherPauseResumeSplitReaderTest {
         }
     }
 
-    private static class SteppingSourceReaderTestHarness {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class SteppingSourceReaderTestHarness {
         private final MockSteppingSplitFetcherManager<int[], MockSourceSplit> fetcherManager;
         private final MockSourceReader sourceReader;
 

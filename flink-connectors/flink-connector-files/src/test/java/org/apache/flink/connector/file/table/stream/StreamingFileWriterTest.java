@@ -35,8 +35,11 @@ import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -59,6 +62,8 @@ import static org.apache.flink.connector.file.table.FileSystemConnectorOptions.S
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link StreamingFileWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamingFileWriterTest {
 
     private final OutputFileConfig outputFileConfig = OutputFileConfig.builder().build();

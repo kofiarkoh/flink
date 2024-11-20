@@ -45,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /** Test for {@link HiveGenericUDAF}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveGenericUDAFTest {
     @Test
     public void testUDAFMin() throws Exception {

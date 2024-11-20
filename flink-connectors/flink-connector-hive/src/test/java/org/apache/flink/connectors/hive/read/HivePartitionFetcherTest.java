@@ -49,6 +49,8 @@ import static org.apache.flink.connectors.hive.HiveOptions.STREAMING_SOURCE_PART
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for hive partition fetch implementations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HivePartitionFetcherTest {
 
     @Test
