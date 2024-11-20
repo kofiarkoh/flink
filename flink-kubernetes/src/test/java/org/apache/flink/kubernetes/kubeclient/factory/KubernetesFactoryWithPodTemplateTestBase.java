@@ -32,12 +32,15 @@ import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.EnvVarBuilder;
 import io.fabric8.kubernetes.api.model.LocalObjectReference;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.Toleration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -47,7 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * nodeSelector, tolerations, env, init container, sidecar container, volumes from pod template
  * should be kept after all decorators.
  */
-public abstract class KubernetesFactoryWithPodTemplateTestBase extends KubernetesTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class KubernetesFactoryWithPodTemplateTestBase extends KubernetesTestBase {
 
     private static final String ENTRY_POINT_CLASS =
             KubernetesSessionClusterEntrypoint.class.getCanonicalName();

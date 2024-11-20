@@ -20,7 +20,13 @@ package org.apache.flink.kubernetes.kubeclient.resources;
 
 import org.apache.flink.util.FlinkException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Kubernetes too old resource version exception. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTooOldResourceVersionException extends FlinkException {
 
     private static final long serialVersionUID = 1L;

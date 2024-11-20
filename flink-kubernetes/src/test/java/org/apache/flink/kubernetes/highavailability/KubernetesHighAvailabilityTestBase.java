@@ -35,8 +35,11 @@ import org.apache.flink.util.ExecutorUtils;
 import org.apache.flink.util.concurrent.ExecutorThreadFactory;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -45,7 +48,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/** Base class for high availability unit tests with a configured testing Kubernetes client. */
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for high availability unit tests
+ * with a configured testing Kubernetes client.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesHighAvailabilityTestBase {
     private static final String CLUSTER_ID = "leader-test-cluster";
 

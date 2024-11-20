@@ -24,6 +24,8 @@ import org.apache.flink.kubernetes.kubeclient.services.HeadlessClusterIPService;
 import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.ConfigMap;
 import io.fabric8.kubernetes.api.model.LoadBalancerIngress;
 import io.fabric8.kubernetes.api.model.LoadBalancerStatus;
@@ -49,6 +51,7 @@ import io.fabric8.mockwebserver.dsl.MockServerExpectation;
 import io.fabric8.mockwebserver.dsl.ReturnOrWebsocketable;
 import io.fabric8.mockwebserver.dsl.TimesOnceableOrHttpHeaderable;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -60,9 +63,12 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * Base class for {@link KubernetesClusterDescriptorTest} and {@link
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link
+ * KubernetesClusterDescriptorTest} and {@link
  * org.apache.flink.kubernetes.kubeclient.Fabric8FlinkKubeClientTest}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesClientTestBase extends KubernetesTestBase {
 
     protected static final int REST_PORT = 9021;

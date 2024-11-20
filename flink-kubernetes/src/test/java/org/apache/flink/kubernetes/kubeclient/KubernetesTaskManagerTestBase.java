@@ -28,11 +28,17 @@ import org.apache.flink.runtime.clusterframework.TaskExecutorProcessSpec;
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessUtils;
 import org.apache.flink.runtime.externalresource.ExternalResourceUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 /** Base test class for the TaskManager side. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTaskManagerTestBase extends KubernetesPodTestBase {
 
     protected static final int RPC_PORT = 12345;

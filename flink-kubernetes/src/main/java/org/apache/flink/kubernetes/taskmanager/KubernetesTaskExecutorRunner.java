@@ -28,12 +28,17 @@ import org.apache.flink.runtime.util.JvmShutdownSafeguard;
 import org.apache.flink.runtime.util.SignalHandler;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /** This class is the executable entry point for running a TaskExecutor in a Kubernetes pod. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTaskExecutorRunner {
 
     protected static final Logger LOG = LoggerFactory.getLogger(KubernetesTaskExecutorRunner.class);

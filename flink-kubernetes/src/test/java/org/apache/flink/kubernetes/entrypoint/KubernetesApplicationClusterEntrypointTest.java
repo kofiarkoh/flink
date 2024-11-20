@@ -22,9 +22,12 @@ import org.apache.flink.client.cli.ArtifactFetchOptions;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +36,8 @@ import java.io.File;
 import java.nio.file.Path;
 
 /** Tests for {@link KubernetesApplicationClusterEntrypointTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesApplicationClusterEntrypointTest {
     private static final Logger LOG =
             LoggerFactory.getLogger(KubernetesApplicationClusterEntrypointTest.class);

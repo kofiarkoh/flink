@@ -33,7 +33,10 @@ import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.within;
 
 /** General tests for the {@link KubernetesJobManagerParameters}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesJobManagerParametersTest extends KubernetesTestBase {
 
     private static final double JOB_MANAGER_CPU = 2.0;

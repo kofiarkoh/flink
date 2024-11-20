@@ -25,9 +25,12 @@ import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesTaskManagerTestBase;
 import org.apache.flink.kubernetes.utils.Constants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.Pod;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
@@ -36,6 +39,8 @@ import static org.apache.flink.kubernetes.utils.Constants.CONFIG_FILE_LOGBACK_NA
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link KubernetesTaskManagerFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesTaskManagerFactoryTest extends KubernetesTaskManagerTestBase {
 
     private Pod resultPod;

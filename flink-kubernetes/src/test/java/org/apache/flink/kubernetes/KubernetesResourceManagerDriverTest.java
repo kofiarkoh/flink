@@ -37,9 +37,12 @@ import org.apache.flink.runtime.resourcemanager.active.ResourceManagerDriverTest
 import org.apache.flink.runtime.testutils.CommonTestUtils;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.ResourceRequirements;
 import io.fabric8.kubernetes.client.KubernetesClientException;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link KubernetesResourceManagerDriver}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesResourceManagerDriverTest
         extends ResourceManagerDriverTestBase<KubernetesWorkerNode> {
 
@@ -353,7 +358,8 @@ class KubernetesResourceManagerDriverTest
         return new Context();
     }
 
-    private class Context extends ResourceManagerDriverTestBase<KubernetesWorkerNode>.Context {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class Context
+            extends ResourceManagerDriverTestBase<KubernetesWorkerNode>.Context {
         private final KubernetesPod previousAttemptPod =
                 new TestingKubernetesPod(CLUSTER_ID + "-taskmanager-1-1");
 

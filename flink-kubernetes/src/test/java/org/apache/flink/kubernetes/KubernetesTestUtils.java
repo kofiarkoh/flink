@@ -26,6 +26,10 @@ import org.apache.flink.runtime.clusterframework.TaskExecutorProcessUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.io.Files;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -34,6 +38,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** Utilities for the Kubernetes tests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTestUtils {
 
     public static void createTemporyFile(String data, File directory, String fileName)

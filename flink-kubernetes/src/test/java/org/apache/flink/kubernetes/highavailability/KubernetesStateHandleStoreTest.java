@@ -35,9 +35,12 @@ import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.FunctionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.client.KubernetesClientException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -56,6 +59,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link KubernetesStateHandleStore} operations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesStateHandleStoreTest extends KubernetesHighAvailabilityTestBase {
 
     private static final String PREFIX = "test-prefix-";

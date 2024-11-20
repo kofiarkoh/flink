@@ -26,7 +26,10 @@ import org.apache.flink.runtime.leaderelection.LeaderElectionException;
 import org.apache.flink.runtime.leaderelection.LeaderInformation;
 import org.apache.flink.runtime.leaderelection.LeaderInformationRegister;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -37,6 +40,8 @@ import static org.apache.flink.kubernetes.utils.Constants.LEADER_SESSION_ID_KEY;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link KubernetesLeaderElectionDriver}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesLeaderElectionDriverTest extends KubernetesHighAvailabilityTestBase {
 
     @Test

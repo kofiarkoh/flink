@@ -25,6 +25,10 @@ import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 import org.apache.flink.runtime.clusterframework.ContaineredTaskManagerParameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,6 +42,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  * A utility class helps parse, verify, and manage the Kubernetes side parameters that are used for
  * constructing the TaskManager Pod.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTaskManagerParameters extends AbstractKubernetesParameters {
 
     private final String podName;

@@ -18,14 +18,19 @@
 
 package org.apache.flink.kubernetes.kubeclient.resources;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Toleration;
 import io.fabric8.kubernetes.api.model.TolerationBuilder;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
 /** Represent Toleration resource in kubernetes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesToleration extends KubernetesResource<Toleration> {
 
     private static final Logger LOG = LoggerFactory.getLogger(KubernetesToleration.class);

@@ -18,10 +18,15 @@
 
 package org.apache.flink.kubernetes;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.Pod;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Utilities for the Kubernetes tests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class VolumeTestUtils {
 
     public static boolean podHasVolume(Pod pod, String volumeName) {

@@ -22,12 +22,17 @@ import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesTaskManagerTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Pod;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link InitTaskManagerDecorator} decorating service account. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InitTaskManagerDecoratorAccountTest extends KubernetesTaskManagerTestBase {
 
     private static final String SERVICE_ACCOUNT_NAME = "service-test";

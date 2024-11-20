@@ -25,11 +25,16 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.DeploymentOptions;
 import org.apache.flink.kubernetes.executors.KubernetesSessionClusterExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link KubernetesClusterClientFactory} discovery. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesClusterClientFactoryTest {
 
     @Test

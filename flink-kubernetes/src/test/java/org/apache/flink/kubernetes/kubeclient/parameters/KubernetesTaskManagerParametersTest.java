@@ -28,7 +28,10 @@ import org.apache.flink.runtime.clusterframework.ContaineredTaskManagerParameter
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessSpec;
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
 /** General tests for the {@link KubernetesTaskManagerParameters}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesTaskManagerParametersTest extends KubernetesTestBase {
 
     private static final int TASK_MANAGER_MEMORY = 1024;
