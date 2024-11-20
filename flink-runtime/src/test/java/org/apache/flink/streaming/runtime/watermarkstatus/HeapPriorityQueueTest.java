@@ -18,7 +18,10 @@
 
 package org.apache.flink.streaming.runtime.watermarkstatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -32,6 +35,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HeapPriorityQueue}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HeapPriorityQueueTest {
     private static final HeapPriorityQueue.PriorityComparator<TestElement>
             TEST_ELEMENT_PRIORITY_COMPARATOR =

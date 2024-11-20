@@ -25,11 +25,17 @@ import org.apache.flink.api.common.state.StateDescriptor;
 import org.apache.flink.api.common.typeutils.base.LongSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 /** Test suite for {@link TtlAggregatingState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlAggregatingStateTestContext
         extends TtlMergingStateTestContext.TtlIntegerMergingStateTestContext<
                 TtlAggregatingState<?, String, Integer, Long, String>, Integer, String> {

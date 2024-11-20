@@ -24,12 +24,16 @@ import org.apache.flink.runtime.rest.handler.async.OperationResult;
 import org.apache.flink.runtime.rest.handler.job.AsynchronousJobOperationKey;
 import org.apache.flink.util.function.TriFunction;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 
 /** Utility functions used in tests. */
-final class SavepointTestUtilities {
+final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SavepointTestUtilities {
 
     /**
      * Returns a function which, when called, sets the provided reference to the {@link

@@ -26,7 +26,10 @@ import org.apache.flink.runtime.clusterframework.types.ResourceID;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.runtime.metrics.groups.UnregisteredMetricGroups;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -35,6 +38,8 @@ import static org.apache.flink.configuration.CheckpointingOptions.FILE_MERGING_E
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TaskExecutorFileMergingManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskExecutorFileMergingManagerTest {
     @Test
     public void testCheckpointScope(@TempDir java.nio.file.Path testBaseDir) throws IOException {

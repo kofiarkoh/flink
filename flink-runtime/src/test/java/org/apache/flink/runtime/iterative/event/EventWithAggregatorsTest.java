@@ -25,8 +25,11 @@ import org.apache.flink.types.LongValue;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -36,6 +39,8 @@ import java.util.Map;
 import java.util.Set;
 
 /** Tests for {@link IterationEventWithAggregators}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class EventWithAggregatorsTest {
 
     private ClassLoader cl = ClassLoader.getSystemClassLoader();

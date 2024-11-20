@@ -39,9 +39,12 @@ import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.util.ExecutorUtils;
 import org.apache.flink.util.IterableUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
@@ -58,6 +61,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DefaultExecutionDeployer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionDeployerTest {
 
     private ScheduledExecutorService executor;

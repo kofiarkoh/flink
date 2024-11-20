@@ -24,12 +24,17 @@ import org.apache.flink.runtime.rest.messages.EmptyRequestBody;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AbstractMetricsHeaders}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractMetricsHeadersTest {
 
     private AbstractMetricsHeaders<EmptyMessageParameters> metricsHandlerHeaders;

@@ -22,9 +22,12 @@ import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.core.memory.MemorySegmentFactory;
 import org.apache.flink.runtime.operators.testutils.DummyInvokable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 import java.util.Random;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.data.Offset.offset;
 
 /** Test reading and writing primitive types to {@link MemorySegment}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemorySegmentSimpleTest {
 
     public static final long RANDOM_SEED = 643196033469871L;

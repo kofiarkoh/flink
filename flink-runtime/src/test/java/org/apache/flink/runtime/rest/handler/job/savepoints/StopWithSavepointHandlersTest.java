@@ -42,8 +42,11 @@ import org.apache.flink.runtime.webmonitor.retriever.GatewayRetriever;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -65,6 +68,8 @@ import static org.assertj.core.api.Assertions.fail;
  *
  * <p>Shamelessly copied from {@link SavepointHandlersTest}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StopWithSavepointHandlersTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10);

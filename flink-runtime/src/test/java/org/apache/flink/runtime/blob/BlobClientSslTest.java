@@ -23,15 +23,23 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.SecurityOptions;
 import org.apache.flink.runtime.net.SSLUtilsTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-/** This class contains unit tests for the {@link BlobClient} with ssl enabled. */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains unit tests for the {@link
+ * BlobClient} with ssl enabled.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobClientSslTest extends BlobClientTest {
 
     /** The instance of the SSL BLOB server used during the tests. */

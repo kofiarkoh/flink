@@ -32,7 +32,10 @@ import org.apache.flink.testutils.serialization.types.SerializationTestType;
 import org.apache.flink.testutils.serialization.types.SerializationTestTypeFactory;
 import org.apache.flink.testutils.serialization.types.Util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -48,6 +51,8 @@ import static org.apache.flink.runtime.io.network.api.writer.RecordWriterTest.ve
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link BroadcastRecordWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BroadcastRecordWriterTest {
 
     /**

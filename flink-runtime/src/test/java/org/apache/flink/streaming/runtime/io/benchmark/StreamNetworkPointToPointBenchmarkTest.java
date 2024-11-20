@@ -18,9 +18,14 @@
 
 package org.apache.flink.streaming.runtime.io.benchmark;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link StreamNetworkPointToPointBenchmark}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamNetworkPointToPointBenchmarkTest {
     @Test
     void test() throws Exception {

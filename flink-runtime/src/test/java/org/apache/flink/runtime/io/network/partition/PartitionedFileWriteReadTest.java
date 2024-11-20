@@ -28,7 +28,10 @@ import org.apache.flink.runtime.io.network.buffer.FreeingBufferRecycler;
 import org.apache.flink.runtime.io.network.buffer.NetworkBuffer;
 import org.apache.flink.util.IOUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests for writing and reading {@link PartitionedFile} with {@link PartitionedFileWriter} and
  * {@link PartitionedFileReader}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionedFileWriteReadTest {
     private @TempDir Path tempPath;
 

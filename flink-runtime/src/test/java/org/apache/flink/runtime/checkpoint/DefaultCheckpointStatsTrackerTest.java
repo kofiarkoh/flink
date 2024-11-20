@@ -33,7 +33,10 @@ import org.apache.flink.traces.SpanBuilder;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -53,6 +56,8 @@ import java.util.stream.Collectors;
 import static java.util.Collections.singletonMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultCheckpointStatsTrackerTest {
 
     @RegisterExtension

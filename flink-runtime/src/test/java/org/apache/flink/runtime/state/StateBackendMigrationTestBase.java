@@ -46,9 +46,12 @@ import org.apache.flink.runtime.testutils.statemigration.TestType;
 import org.apache.flink.util.IOUtils;
 import org.apache.flink.util.StateMigrationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -75,7 +78,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * are either compatible or requiring state migration after restoring the state backends.
  */
 @SuppressWarnings("serial")
-public abstract class StateBackendMigrationTestBase<B extends StateBackend> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class StateBackendMigrationTestBase<B extends StateBackend> {
 
     protected abstract B getStateBackend() throws Exception;
 

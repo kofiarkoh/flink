@@ -20,7 +20,10 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.runtime.checkpoint.metadata.CheckpointMetadata;
 import org.apache.flink.runtime.checkpoint.metadata.MetadataV3Serializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -32,6 +35,8 @@ import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link Checkpoints} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointsTest {
 
     @Test

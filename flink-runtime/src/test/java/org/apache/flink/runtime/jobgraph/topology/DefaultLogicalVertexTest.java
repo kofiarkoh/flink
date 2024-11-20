@@ -26,8 +26,11 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.util.IterableUtils;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -44,6 +47,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /** Unit tests for {@link DefaultLogicalVertex}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultLogicalVertexTest extends TestLogger {
 
     private JobVertex upstreamJobVertex;

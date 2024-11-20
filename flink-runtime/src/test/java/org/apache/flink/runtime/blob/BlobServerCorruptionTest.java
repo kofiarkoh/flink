@@ -23,7 +23,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.HighAvailabilityOptions;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -34,6 +37,8 @@ import java.nio.file.Path;
  *
  * <p>Successful GET requests are tested in conjunction wit the PUT requests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobServerCorruptionTest {
 
     @TempDir private Path tempDir;

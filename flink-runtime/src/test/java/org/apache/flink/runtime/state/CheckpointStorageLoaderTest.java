@@ -32,10 +32,13 @@ import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.DynamicCodeLoadingException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.HamcrestCondition.matching;
 
 /** This test validates that checkpoint storage is properly loaded from configuration. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointStorageLoaderTest {
 
     private final Logger LOG = LoggerFactory.getLogger(CheckpointStorageLoaderTest.class);

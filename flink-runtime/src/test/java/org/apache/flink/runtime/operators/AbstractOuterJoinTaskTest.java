@@ -36,7 +36,10 @@ import org.apache.flink.runtime.operators.testutils.InfiniteIntTupleIterator;
 import org.apache.flink.runtime.operators.testutils.UniformIntTupleGenerator;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +48,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-abstract class AbstractOuterJoinTaskTest
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AbstractOuterJoinTaskTest
         extends BinaryOperatorTestBase<
                 FlatJoinFunction<
                         Tuple2<Integer, Integer>,

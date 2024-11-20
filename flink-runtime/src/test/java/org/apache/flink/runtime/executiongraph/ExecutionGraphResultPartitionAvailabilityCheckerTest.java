@@ -23,7 +23,10 @@ import org.apache.flink.runtime.io.network.partition.ResultPartitionID;
 import org.apache.flink.runtime.io.network.partition.TestingJobMasterPartitionTracker;
 import org.apache.flink.runtime.jobgraph.IntermediateResultPartitionID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +36,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ExecutionGraphResultPartitionAvailabilityChecker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionGraphResultPartitionAvailabilityCheckerTest {
 
     @Test

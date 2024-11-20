@@ -21,6 +21,12 @@ package org.apache.flink.runtime.operators;
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FullOuterJoinTaskTest extends AbstractOuterJoinTaskTest {
 
     FullOuterJoinTaskTest(ExecutionConfig config) {

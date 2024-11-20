@@ -32,8 +32,11 @@ import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.topology.VertexID;
 import org.apache.flink.runtime.util.ResourceCounter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,6 +53,8 @@ import java.util.stream.IntStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SlotSharingSlotAllocator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotSharingSlotAllocatorTest {
 
     private static final FreeSlotFunction TEST_FREE_SLOT_FUNCTION = (a, c, t) -> {};

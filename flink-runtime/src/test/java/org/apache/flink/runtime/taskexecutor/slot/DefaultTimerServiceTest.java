@@ -21,7 +21,10 @@ package org.apache.flink.runtime.taskexecutor.slot;
 import org.apache.flink.core.testutils.ManuallyTriggeredScheduledExecutorService;
 import org.apache.flink.runtime.clusterframework.types.AllocationID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Map;
 import java.util.UUID;
@@ -31,6 +34,8 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DefaultTimerService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultTimerServiceTest {
     /** Tests that all registered timeouts can be unregistered. */
     @Test

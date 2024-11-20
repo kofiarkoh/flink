@@ -47,7 +47,10 @@ import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nullable;
@@ -89,6 +92,8 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests to verify state assignment operation. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateAssignmentOperationTest {
 
     @RegisterExtension

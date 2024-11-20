@@ -38,7 +38,10 @@ import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.TernaryBoolean;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -53,6 +56,8 @@ import static org.mockito.Mockito.when;
  * This test validates that the checkpoint settings serialize correctly in the presence of
  * user-defined objects.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointSettingsSerializableTest {
 
     @RegisterExtension

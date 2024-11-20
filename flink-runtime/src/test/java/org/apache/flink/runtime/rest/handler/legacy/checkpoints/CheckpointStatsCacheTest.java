@@ -22,13 +22,18 @@ import org.apache.flink.runtime.checkpoint.AbstractCheckpointStats;
 import org.apache.flink.runtime.checkpoint.CheckpointStatsStatus;
 import org.apache.flink.runtime.rest.handler.job.checkpoints.CheckpointStatsCache;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /** Tests for the CheckpointStatsCache. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointStatsCacheTest {
 
     @Test

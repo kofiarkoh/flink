@@ -31,6 +31,8 @@ import org.apache.flink.runtime.scheduler.adaptive.AdaptiveSchedulerFactory;
 import org.apache.flink.runtime.scheduler.adaptivebatch.AdaptiveBatchSchedulerFactory;
 import org.apache.flink.util.TestLoggerExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -43,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DefaultSlotPoolServiceSchedulerFactory}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultSlotPoolServiceSchedulerFactoryTest {
 
     @Test

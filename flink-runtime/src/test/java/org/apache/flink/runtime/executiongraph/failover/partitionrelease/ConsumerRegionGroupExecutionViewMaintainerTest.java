@@ -21,8 +21,11 @@ package org.apache.flink.runtime.executiongraph.failover.partitionrelease;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingExecutionVertex;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingPipelinedRegion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for {@link ConsumerRegionGroupExecutionView} and {@link
  * ConsumerRegionGroupExecutionViewMaintainer}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConsumerRegionGroupExecutionViewMaintainerTest {
 
     private TestingSchedulingPipelinedRegion producerRegion;

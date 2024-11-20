@@ -22,6 +22,10 @@ import org.apache.flink.metrics.Metric;
 import org.apache.flink.metrics.MetricGroup;
 import org.apache.flink.runtime.metrics.util.TestReporter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.util.ArrayList;
@@ -33,6 +37,8 @@ import static java.util.Collections.unmodifiableList;
  * Reporter that collects added and removed metrics so that it can be verified in the test (e.g.
  * that the configured delimiter is applied correctly when generating the metric identifier).
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CollectingMetricsReporter extends TestReporter {
 
     @Nullable private final CharacterFilter characterFilter;

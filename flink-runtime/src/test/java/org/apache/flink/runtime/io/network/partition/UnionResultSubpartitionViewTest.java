@@ -21,8 +21,11 @@ package org.apache.flink.runtime.io.network.partition;
 import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.runtime.io.network.util.TestBufferFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -34,6 +37,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link UnionResultSubpartitionView}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnionResultSubpartitionViewTest {
 
     private UnionResultSubpartitionView view;

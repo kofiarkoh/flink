@@ -22,7 +22,10 @@ import org.apache.flink.runtime.io.network.netty.NettyPartitionRequestListener;
 import org.apache.flink.runtime.io.network.partition.consumer.InputChannelID;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +33,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test case for {@link PartitionRequestListenerManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionRequestListenerManagerTest extends TestLogger {
     /** Test add listener to {@link PartitionRequestListenerManager}. */
     @Test

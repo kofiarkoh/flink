@@ -21,12 +21,17 @@ package org.apache.flink.runtime.scheduler.benchmark.e2e;
 import org.apache.flink.runtime.scheduler.DefaultScheduler;
 import org.apache.flink.runtime.scheduler.benchmark.JobConfiguration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * The benchmark of scheduling tasks in a STREAMING/BATCH job. The related method is {@link
  * DefaultScheduler#startScheduling}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SchedulingAndDeployingBenchmarkTest {
 
     @Test

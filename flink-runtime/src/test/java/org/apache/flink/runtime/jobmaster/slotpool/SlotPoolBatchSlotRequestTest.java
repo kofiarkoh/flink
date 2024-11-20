@@ -30,9 +30,12 @@ import org.apache.flink.util.clock.Clock;
 import org.apache.flink.util.clock.ManualClock;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -50,6 +53,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for batch slot requests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotPoolBatchSlotRequestTest {
 
     private static final ResourceProfile resourceProfile = ResourceProfile.fromResources(1.0, 1024);

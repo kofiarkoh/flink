@@ -27,13 +27,18 @@ import org.apache.flink.api.common.typeutils.base.LongSerializer;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.runtime.state.ttl.TtlStateFactory.TtlSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
 /** State migration test for {@link TtlSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<TtlValue<String>, TtlValue<String>> {
 

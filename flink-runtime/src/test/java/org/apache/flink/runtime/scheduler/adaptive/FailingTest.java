@@ -30,7 +30,10 @@ import org.apache.flink.runtime.scheduler.exceptionhistory.ExceptionHistoryEntry
 import org.apache.flink.runtime.scheduler.exceptionhistory.RootExceptionHistoryEntry;
 import org.apache.flink.runtime.scheduler.exceptionhistory.TestingAccessExecution;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,6 +45,8 @@ import static org.apache.flink.runtime.scheduler.adaptive.WaitingForResourcesTes
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link Failing} state of the {@link AdaptiveScheduler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FailingTest {
 
     private static final Logger log = LoggerFactory.getLogger(FailingTest.class);

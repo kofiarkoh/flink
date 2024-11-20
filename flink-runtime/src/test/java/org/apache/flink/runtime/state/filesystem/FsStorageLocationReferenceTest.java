@@ -22,7 +22,10 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the encoding / decoding of storage location references. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FsStorageLocationReferenceTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(FsStorageLocationReferenceTest.class);

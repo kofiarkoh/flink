@@ -47,6 +47,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -59,7 +61,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(ParameterizedTestExtension.class)
-public abstract class BinaryOperatorTestBase<S extends Function, IN, OUT>
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class BinaryOperatorTestBase<
+                S extends Function, IN, OUT>
         implements TaskContext<S, OUT> {
 
     protected static final int PAGE_SIZE = 32 * 1024;

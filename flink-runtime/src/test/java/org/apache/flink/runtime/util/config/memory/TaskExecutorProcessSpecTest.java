@@ -23,13 +23,18 @@ import org.apache.flink.api.common.resources.ExternalResource;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessSpec;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TaskExecutorProcessSpec}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorProcessSpecTest {
     private static final String EXTERNAL_RESOURCE_NAME = "gpu";
 

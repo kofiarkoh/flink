@@ -18,12 +18,15 @@
 
 package org.apache.flink.runtime.security.token.hadoop;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.security.Credentials;
 import org.apache.hadoop.security.token.Token;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Clock;
@@ -47,7 +50,8 @@ class HadoopFSDelegationTokenProviderITCase {
     final Text tokenService1 = new Text("TEST_TOKEN_SERVICE1");
     final Text tokenService2 = new Text("TEST_TOKEN_SERVICE2");
 
-    private class TestDelegationToken extends Token<TestHadoopDelegationTokenIdentifier> {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestDelegationToken
+            extends Token<TestHadoopDelegationTokenIdentifier> {
 
         private long newExpiration;
 

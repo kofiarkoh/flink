@@ -41,7 +41,10 @@ import org.apache.flink.runtime.state.v2.adaptor.AsyncKeyedStateBackendAdaptor;
 import org.apache.flink.runtime.state.v2.internal.InternalAggregatingState;
 import org.apache.flink.runtime.state.v2.internal.InternalReducingState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -51,6 +54,8 @@ import java.util.HashSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AsyncKeyedStateBackendAdaptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AsyncKeyedStateBackendAdaptorTest {
 
     @Test

@@ -23,11 +23,16 @@ import org.apache.flink.runtime.jobgraph.JobGraphTestUtils;
 import org.apache.flink.streaming.api.graph.ExecutionPlan;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class StandaloneExecutionPlanStoreTest {
 
     /** Tests that all operations work and don't change the state. */

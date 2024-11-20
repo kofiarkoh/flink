@@ -23,8 +23,11 @@ import org.apache.flink.streaming.api.functions.source.legacy.SourceFunction;
 import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.util.NetUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.EOFException;
 import java.io.OutputStreamWriter;
@@ -34,6 +37,8 @@ import java.net.Socket;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SocketTextStreamFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SocketTextStreamFunctionTest {
 
     private static final String LOCALHOST = "127.0.0.1";

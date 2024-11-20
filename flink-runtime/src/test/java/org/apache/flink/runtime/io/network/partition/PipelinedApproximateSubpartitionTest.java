@@ -23,6 +23,8 @@ import org.apache.flink.runtime.io.network.NettyShuffleEnvironment;
 import org.apache.flink.runtime.io.network.NettyShuffleEnvironmentBuilder;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -36,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PipelinedApproximateSubpartition}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PipelinedApproximateSubpartitionTest extends PipelinedSubpartitionTest {
     private static final int BUFFER_SIZE = 4 * Integer.BYTES;
 

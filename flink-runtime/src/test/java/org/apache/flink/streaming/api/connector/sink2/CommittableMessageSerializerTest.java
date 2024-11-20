@@ -18,12 +18,17 @@
 
 package org.apache.flink.streaming.api.connector.sink2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CommittableMessageSerializerTest {
 
     private static final CommittableMessageSerializer<Integer> SERIALIZER =

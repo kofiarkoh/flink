@@ -26,10 +26,13 @@ import org.apache.flink.runtime.rest.messages.EmptyResponseBody;
 import org.apache.flink.util.ConfigurationException;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -43,6 +46,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the multipart functionality of the {@link RestClient}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestClientMultipartTest {
 
     @TempDir private static Path tempDir;

@@ -29,9 +29,12 @@ import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Matcher;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,6 +64,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /** Tests for the {@link HeartbeatManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HeartbeatManagerTest extends TestLogger {
 
     @ClassRule

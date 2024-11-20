@@ -49,8 +49,11 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -62,6 +65,8 @@ import java.util.function.Consumer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the restart behaviour of the {@link ExecutionGraph}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionGraphRestartTest {
 
     private static final int NUM_TASKS = 31;

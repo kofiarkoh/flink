@@ -18,9 +18,12 @@ limitations under the License.
 
 package org.apache.flink.runtime.source.coordinator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.CountDownLatch;
@@ -35,6 +38,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /** Unit tests for ExecutorNotifier. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExecutorNotifierTest {
     private ScheduledExecutorService workerExecutor;
     private ExecutorService executorToNotify;

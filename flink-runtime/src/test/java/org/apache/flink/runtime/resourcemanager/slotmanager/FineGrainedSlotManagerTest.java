@@ -40,7 +40,10 @@ import org.apache.flink.runtime.taskexecutor.TestingTaskExecutorGateway;
 import org.apache.flink.runtime.taskexecutor.TestingTaskExecutorGatewayBuilder;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.time.Duration;
@@ -58,6 +61,8 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests of {@link FineGrainedSlotManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FineGrainedSlotManagerTest extends FineGrainedSlotManagerTestBase {
 
     private static final ResourceProfile LARGE_SLOT_RESOURCE_PROFILE =

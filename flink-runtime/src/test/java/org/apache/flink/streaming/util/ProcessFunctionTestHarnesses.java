@@ -35,9 +35,18 @@ import org.apache.flink.streaming.api.operators.co.CoProcessOperator;
 import org.apache.flink.streaming.api.operators.co.KeyedCoProcessOperator;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 
-/** Utility class facilitating creation of test harnesses for various kinds of process functions. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class facilitating creation of test
+ * harnesses for various kinds of process functions.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ProcessFunctionTestHarnesses {
 
     /**

@@ -25,7 +25,10 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.runtime.testutils.statemigration.TestType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test suit for {@link StateSerializerProvider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateSerializerProviderTest {
 
     // --------------------------------------------------------------------------------

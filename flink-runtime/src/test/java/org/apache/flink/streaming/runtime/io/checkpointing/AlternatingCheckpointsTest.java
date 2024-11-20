@@ -44,7 +44,10 @@ import org.apache.flink.util.clock.Clock;
 import org.apache.flink.util.clock.ManualClock;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -70,6 +73,8 @@ import static org.apache.flink.runtime.state.CheckpointStorageLocationReference.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Timing out aligned checkpoints tests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AlternatingCheckpointsTest {
 
     private final ClockWithDelayedActions clock = new ClockWithDelayedActions();

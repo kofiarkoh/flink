@@ -20,11 +20,16 @@ package org.apache.flink.runtime.resourcemanager.slotmanager;
 import org.apache.flink.runtime.clusterframework.types.ResourceProfile;
 import org.apache.flink.runtime.util.ResourceCounter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link BiDirectionalResourceToRequirementMapping}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BiDirectionalResourceToRequirementMappingTest {
 
     @Test

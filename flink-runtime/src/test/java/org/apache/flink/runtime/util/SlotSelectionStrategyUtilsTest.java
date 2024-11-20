@@ -25,11 +25,16 @@ import org.apache.flink.runtime.jobmaster.slotpool.LocationPreferenceSlotSelecti
 import org.apache.flink.runtime.jobmaster.slotpool.PreviousAllocationSlotSelectionStrategy;
 import org.apache.flink.runtime.jobmaster.slotpool.SlotSelectionStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link SlotSelectionStrategyUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotSelectionStrategyUtilsTest {
 
     @Test

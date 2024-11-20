@@ -21,9 +21,12 @@ package org.apache.flink.runtime.rpc;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.testutils.ManuallyTriggeredScheduledExecutorService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.Callable;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the RpcEndpoint, its self gateways and MainThreadExecutor scheduling command. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RpcEndpointTest {
 
     private static RpcService rpcService = null;
@@ -230,7 +235,8 @@ class RpcEndpointTest {
         CompletableFuture<Boolean> queryIsRunningFlag();
     }
 
-    private static final class RunningStateTestingEndpoint extends RpcEndpoint
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class RunningStateTestingEndpoint extends RpcEndpoint
             implements RunningStateTestingEndpointGateway {
         private final CountDownLatch onStopCalled;
         private final CompletableFuture<Void> stopFuture;

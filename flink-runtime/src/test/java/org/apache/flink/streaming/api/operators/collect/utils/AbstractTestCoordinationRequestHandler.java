@@ -29,6 +29,10 @@ import org.apache.flink.streaming.api.operators.collect.CollectCoordinationRespo
 import org.apache.flink.streaming.api.operators.collect.CollectSinkFunction;
 import org.apache.flink.util.OptionalFailure;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,8 +48,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A {@link CoordinationRequestHandler} to test fetching SELECT query results. */
-public abstract class AbstractTestCoordinationRequestHandler<T>
-        implements CoordinationRequestHandler {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractTestCoordinationRequestHandler<T> implements CoordinationRequestHandler {
 
     protected static final int BATCH_SIZE = 3;
 

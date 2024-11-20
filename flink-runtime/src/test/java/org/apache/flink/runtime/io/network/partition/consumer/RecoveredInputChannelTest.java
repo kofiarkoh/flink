@@ -25,13 +25,18 @@ import org.apache.flink.runtime.io.network.api.CheckpointBarrier;
 import org.apache.flink.runtime.io.network.partition.ResultPartitionID;
 import org.apache.flink.runtime.io.network.partition.ResultSubpartitionIndexSet;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.checkpoint.CheckpointOptions.unaligned;
 import static org.apache.flink.runtime.state.CheckpointStorageLocationReference.getDefault;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link RecoveredInputChannel}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RecoveredInputChannelTest {
 
     @Test

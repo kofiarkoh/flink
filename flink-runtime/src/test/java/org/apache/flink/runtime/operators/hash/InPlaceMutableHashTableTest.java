@@ -44,7 +44,10 @@ import org.apache.flink.util.MutableObjectIterator;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Ordering;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.EOFException;
 import java.util.ArrayList;
@@ -59,6 +62,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InPlaceMutableHashTableTest extends MutableHashTableTestBase {
 
     private static final long RANDOM_SEED = 58723953465322L;

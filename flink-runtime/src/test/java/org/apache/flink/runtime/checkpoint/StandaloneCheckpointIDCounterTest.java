@@ -18,10 +18,17 @@
 
 package org.apache.flink.runtime.checkpoint;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * Unit tests for the {@link StandaloneCheckpointIDCounter}. The tests are inherited from the test
- * base class {@link CheckpointIDCounterTestBase}.
+ * base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class {@link
+ * CheckpointIDCounterTestBase}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StandaloneCheckpointIDCounterTest extends CheckpointIDCounterTestBase {
 
     @Override

@@ -46,12 +46,15 @@ import org.apache.flink.util.IOUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -73,6 +76,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 /**
  * Tests that check how the {@link TaskManagerRunner} behaves when encountering startup problems.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerRunnerStartupTest {
 
     private static final String LOCAL_HOST = "localhost";

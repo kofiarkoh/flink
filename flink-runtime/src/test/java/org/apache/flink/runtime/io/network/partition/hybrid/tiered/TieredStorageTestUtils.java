@@ -18,10 +18,16 @@
 
 package org.apache.flink.runtime.io.network.partition.hybrid.tiered;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.nio.ByteBuffer;
 import java.util.Random;
 
 /** Test utils for the tiered storage. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TieredStorageTestUtils {
 
     public static ByteBuffer generateRandomData(int dataSize, Random random) {

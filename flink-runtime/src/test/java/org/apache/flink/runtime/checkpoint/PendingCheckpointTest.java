@@ -42,7 +42,10 @@ import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -70,6 +73,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for the {@link PendingCheckpoint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PendingCheckpointTest {
 
     private static final List<Execution> ACK_TASKS = new ArrayList<>();

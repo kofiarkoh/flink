@@ -44,8 +44,11 @@ import org.apache.flink.runtime.state.filemerging.FileMergingOperatorStreamState
 import org.apache.flink.runtime.state.filemerging.SegmentFileStateHandle;
 import org.apache.flink.runtime.state.filesystem.FileMergingCheckpointStateOutputStream;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -67,7 +70,8 @@ import static org.apache.flink.runtime.state.filesystem.AbstractFsCheckpointStor
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FileMergingSnapshotManager}. */
-public abstract class FileMergingSnapshotManagerTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class FileMergingSnapshotManagerTestBase {
 
     final String tmId = "Testing";
 

@@ -20,7 +20,10 @@ package org.apache.flink.runtime.util;
 
 import org.apache.flink.shaded.guava32.com.google.common.util.concurrent.ThreadFactoryBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -32,6 +35,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RunnablesTest {
 
     private static final int TIMEOUT_MS = 100;

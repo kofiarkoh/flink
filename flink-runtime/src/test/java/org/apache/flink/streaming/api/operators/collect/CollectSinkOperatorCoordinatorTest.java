@@ -29,7 +29,10 @@ import org.apache.flink.types.Row;
 import org.apache.flink.util.NetUtils;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -48,6 +51,8 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link CollectSinkOperatorCoordinator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CollectSinkOperatorCoordinatorTest {
 
     private static final TypeSerializer<Row> serializer =

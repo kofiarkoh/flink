@@ -31,7 +31,10 @@ import org.apache.flink.util.MathUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.primitives.UnsignedBytes;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -51,7 +54,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Testbase for implementations of {@link InternalPriorityQueue}. */
-public abstract class InternalPriorityQueueTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class InternalPriorityQueueTestBase {
 
     protected static final KeyGroupRange KEY_GROUP_RANGE = new KeyGroupRange(0, 2);
     protected static final KeyExtractorFunction<TestElement> KEY_EXTRACTOR_FUNCTION =
@@ -398,7 +402,8 @@ public abstract class InternalPriorityQueueTestBase {
      * Serializer for {@link TestElement}. The serialization format produced by this serializer
      * allows lexicographic ordering by {@link TestElement#getPriority}.
      */
-    protected static class TestElementSerializer extends TypeSerializer<TestElement> {
+    protected static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestElementSerializer
+            extends TypeSerializer<TestElement> {
 
         private static final int REVISION = 1;
 
@@ -481,7 +486,8 @@ public abstract class InternalPriorityQueueTestBase {
             return new Snapshot(getRevision());
         }
 
-        public static class Snapshot implements TypeSerializerSnapshot<TestElement> {
+        public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class Snapshot
+                implements TypeSerializerSnapshot<TestElement> {
 
             private int revision;
 
@@ -543,7 +549,8 @@ public abstract class InternalPriorityQueueTestBase {
     }
 
     /** Comparator for test elements, operating on the serialized bytes of the elements. */
-    protected static class TestElementComparator implements Comparator<TestElement> {
+    protected static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestElementComparator
+            implements Comparator<TestElement> {
 
         @Override
         public int compare(TestElement o1, TestElement o2) {

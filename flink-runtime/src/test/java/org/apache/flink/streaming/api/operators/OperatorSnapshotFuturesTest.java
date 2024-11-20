@@ -32,7 +32,10 @@ import org.apache.flink.runtime.state.SnapshotResult;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.runtime.testutils.ExceptionallyDoneFuture;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.RunnableFuture;
@@ -43,6 +46,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 /** Tests for {@link OperatorSnapshotFutures}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorSnapshotFuturesTest {
 
     @Test

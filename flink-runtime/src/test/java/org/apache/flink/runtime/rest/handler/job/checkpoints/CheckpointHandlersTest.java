@@ -45,8 +45,11 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -61,6 +64,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /** Test for {@link CheckpointHandlers}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointHandlersTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10);

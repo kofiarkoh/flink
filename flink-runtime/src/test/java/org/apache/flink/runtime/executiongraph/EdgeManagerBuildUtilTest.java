@@ -28,8 +28,11 @@ import org.apache.flink.runtime.scheduler.strategy.ConsumerVertexGroup;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -50,6 +53,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * vertices for pattern of both {@link DistributionPattern#POINTWISE} and {@link
  * DistributionPattern#ALL_TO_ALL}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EdgeManagerBuildUtilTest {
     @RegisterExtension
     static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =

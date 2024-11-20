@@ -26,7 +26,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.TestHarnessUtil;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,6 +40,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link MapPartitionOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MapPartitionOperatorTest {
 
     private static final String RECORD = "TEST";

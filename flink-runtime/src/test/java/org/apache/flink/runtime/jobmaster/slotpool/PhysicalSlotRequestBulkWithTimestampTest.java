@@ -20,13 +20,18 @@ package org.apache.flink.runtime.jobmaster.slotpool;
 
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PhysicalSlotRequestBulkWithTimestamp}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PhysicalSlotRequestBulkWithTimestampTest {
 
     private final ManualClock clock = new ManualClock();

@@ -23,7 +23,10 @@ import org.apache.flink.runtime.executiongraph.TestingComponentMainThreadExecuto
 import org.apache.flink.runtime.jobmaster.SlotRequestId;
 import org.apache.flink.runtime.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -34,6 +37,8 @@ import java.util.concurrent.TimeoutException;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DeclarativeSlotPoolBridge} interactions. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotPoolInteractionsTest {
 
     private static final Duration fastTimeout = Duration.ofMillis(1L);

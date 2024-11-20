@@ -30,9 +30,12 @@ import org.apache.flink.runtime.io.network.partition.ResultSubpartitionView;
 import org.apache.flink.runtime.io.network.partition.consumer.BufferOrEvent;
 import org.apache.flink.types.IntValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,6 +45,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SingleRecordWriter} and {@link MultipleRecordWriters}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RecordWriterDelegateTest {
 
     private static final int recordSize = 8;

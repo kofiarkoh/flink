@@ -36,8 +36,11 @@ import org.apache.flink.runtime.source.event.AddSplitEvent;
 import org.apache.flink.runtime.source.event.ReaderRegistrationEvent;
 import org.apache.flink.util.concurrent.ExecutorThreadFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -49,7 +52,7 @@ import java.util.function.Supplier;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** The test base for SourceCoordinator related tests. */
-abstract class SourceCoordinatorTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SourceCoordinatorTestBase {
 
     protected static final String OPERATOR_NAME = "TestOperator";
     protected static final OperatorID TEST_OPERATOR_ID = new OperatorID(1234L, 5678L);

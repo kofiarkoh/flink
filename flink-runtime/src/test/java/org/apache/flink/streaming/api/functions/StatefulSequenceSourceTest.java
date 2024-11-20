@@ -26,7 +26,10 @@ import org.apache.flink.streaming.api.operators.StreamSource;
 import org.apache.flink.streaming.util.AbstractStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.BlockingSourceContext;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashSet;
 import java.util.List;
@@ -37,6 +40,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StatefulSequenceSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StatefulSequenceSourceTest {
 
     @Test

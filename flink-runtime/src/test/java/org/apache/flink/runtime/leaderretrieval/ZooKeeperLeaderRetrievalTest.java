@@ -39,9 +39,12 @@ import org.apache.flink.runtime.zookeeper.ZooKeeperExtension;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -58,6 +61,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the ZooKeeper based leader election and retrieval. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperLeaderRetrievalTest {
 
     private static final RpcSystem RPC_SYSTEM = RpcSystem.load();

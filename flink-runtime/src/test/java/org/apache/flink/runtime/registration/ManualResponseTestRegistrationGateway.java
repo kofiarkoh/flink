@@ -21,12 +21,18 @@ package org.apache.flink.runtime.registration;
 import org.apache.flink.runtime.rpc.TestingGatewayBase;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /** Mock gateway for {@link RegistrationResponse}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ManualResponseTestRegistrationGateway extends TestingGatewayBase
         implements TestRegistrationGateway {
 

@@ -25,7 +25,10 @@ import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.function.BiConsumerWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** {@link ChannelStateWriteRequestExecutorImpl} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChannelStateWriteRequestExecutorImplTest {
 
     private static final JobID JOB_ID = new JobID();

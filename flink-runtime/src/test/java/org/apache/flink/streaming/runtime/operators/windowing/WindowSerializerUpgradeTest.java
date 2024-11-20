@@ -26,7 +26,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.streaming.api.windowing.windows.GlobalWindow;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,6 +38,8 @@ import java.util.Collection;
  * A {@link TypeSerializerUpgradeTestBase} for {@link TimeWindow.Serializer} and {@link
  * GlobalWindow.Serializer}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WindowSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     public Collection<TestSpecification<?, ?>> createTestSpecifications(FlinkVersion flinkVersion)

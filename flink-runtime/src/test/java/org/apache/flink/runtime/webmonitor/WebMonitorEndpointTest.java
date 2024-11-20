@@ -29,7 +29,10 @@ import org.apache.flink.runtime.rest.handler.legacy.metrics.VoidMetricFetcher;
 import org.apache.flink.runtime.util.TestingFatalErrorHandler;
 import org.apache.flink.util.ExecutorUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.UUID;
@@ -39,6 +42,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /** Tests for the {@link WebMonitorEndpoint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WebMonitorEndpointTest {
 
     @Test

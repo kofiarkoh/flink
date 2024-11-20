@@ -28,12 +28,17 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion;
 import org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link UnionSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnionSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<
                 TaggedUnion<String, Long>, TaggedUnion<String, Long>> {

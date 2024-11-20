@@ -25,7 +25,10 @@ import org.apache.flink.runtime.checkpoint.SavepointType;
 import org.apache.flink.runtime.io.network.api.CheckpointBarrier;
 import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests the {@link EventSerializer} functionality for serializing {@link CheckpointBarrier
  * checkpoint barriers}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointSerializationTest {
 
     private static final byte[] STORAGE_LOCATION_REF =

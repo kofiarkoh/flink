@@ -26,7 +26,10 @@ import org.apache.flink.runtime.leaderelection.LeaderInformation;
 import org.apache.flink.runtime.rest.util.NoOpFatalErrorHandler;
 import org.apache.flink.runtime.zookeeper.ZooKeeperExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nonnull;
@@ -36,6 +39,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Integration tests for the {@link ZooKeeperUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperUtilsWriteLeaderInformationTest {
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();
 

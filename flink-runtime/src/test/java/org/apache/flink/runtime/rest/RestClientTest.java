@@ -42,8 +42,11 @@ import org.apache.flink.shaded.netty4.io.netty.channel.SelectStrategy;
 import org.apache.flink.shaded.netty4.io.netty.channel.SelectStrategyFactory;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -68,6 +71,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.InstanceOfAssertFactories.THROWABLE;
 
 /** Tests for {@link RestClient}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestClientTest {
 
     @RegisterExtension

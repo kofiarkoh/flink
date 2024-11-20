@@ -41,7 +41,10 @@ import org.apache.flink.util.clock.SystemClock;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -61,6 +64,8 @@ import static org.apache.flink.runtime.concurrent.ComponentMainThreadExecutorSer
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DeclarativeSlotPoolService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeclarativeSlotPoolServiceTest {
 
     private static final JobID jobId = new JobID();

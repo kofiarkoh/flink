@@ -30,7 +30,10 @@ import org.apache.flink.runtime.scheduler.strategy.ConsumedPartitionGroup;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Tests for building {@link DistributionPattern#POINTWISE} connections in {@link
  * VertexInputInfoComputationUtils#computeVertexInputInfoForPointwise}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PointwisePatternTest {
     @RegisterExtension
     static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =

@@ -18,10 +18,15 @@
 
 package org.apache.flink.runtime.checkpoint;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointStatsStatusTest {
 
     /** Tests the getters of each status. */

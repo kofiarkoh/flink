@@ -26,8 +26,11 @@ import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.OutputStreamAndPath;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.IOException;
@@ -37,6 +40,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FsSegmentDataInputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FsSegmentDataInputStreamTest {
 
     @Rule public final TemporaryFolder tmp = new TemporaryFolder();

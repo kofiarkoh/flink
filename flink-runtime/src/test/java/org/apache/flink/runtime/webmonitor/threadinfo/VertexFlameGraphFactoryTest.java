@@ -24,8 +24,11 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.messages.ThreadInfoSample;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link VertexFlameGraphFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VertexFlameGraphFactoryTest {
     /** Tests that lambda class names are cleaned up inside the stack traces. */
     @Test

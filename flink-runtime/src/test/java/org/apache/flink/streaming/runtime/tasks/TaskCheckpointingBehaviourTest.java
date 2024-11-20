@@ -93,7 +93,10 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.MailboxDefaultAction;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -112,6 +115,8 @@ import static org.mockito.Mockito.mock;
  * checks correct working of different policies how tasks deal with checkpoint failures (fail task,
  * decline checkpoint and continue).
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskCheckpointingBehaviourTest {
 
     private static final OneShotLatch IN_CHECKPOINT_LATCH = new OneShotLatch();

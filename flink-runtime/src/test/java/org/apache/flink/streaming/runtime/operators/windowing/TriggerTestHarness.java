@@ -47,11 +47,17 @@ import org.apache.flink.streaming.api.windowing.triggers.TriggerResult;
 import org.apache.flink.streaming.api.windowing.windows.Window;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 /** Utility for testing {@link Trigger} behaviour. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TriggerTestHarness<T, W extends Window> {
 
     private static final Integer KEY = 1;
@@ -358,8 +364,9 @@ public class TriggerTestHarness<T, W extends Window> {
         }
     }
 
-    private static class TestOnMergeContext<K, W extends Window> extends TestTriggerContext<K, W>
-            implements Trigger.OnMergeContext {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestOnMergeContext<
+                    K, W extends Window>
+            extends TestTriggerContext<K, W> implements Trigger.OnMergeContext {
 
         private final Collection<W> mergedWindows;
 

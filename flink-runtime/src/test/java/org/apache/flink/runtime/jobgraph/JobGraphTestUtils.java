@@ -20,9 +20,15 @@ package org.apache.flink.runtime.jobgraph;
 
 import org.apache.flink.runtime.testtasks.NoOpInvokable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 
 /** Utilities for creating {@link JobGraph JobGraphs} for testing purposes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobGraphTestUtils {
 
     public static JobGraph emptyJobGraph() {

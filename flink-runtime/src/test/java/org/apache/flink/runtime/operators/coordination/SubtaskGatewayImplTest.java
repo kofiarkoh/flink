@@ -25,7 +25,10 @@ import org.apache.flink.runtime.operators.coordination.util.IncompleteFuturesTra
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,6 +39,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link SubtaskGatewayImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubtaskGatewayImplTest {
 
     @Test

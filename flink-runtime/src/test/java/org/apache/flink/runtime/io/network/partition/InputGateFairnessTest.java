@@ -38,7 +38,10 @@ import org.apache.flink.runtime.throughput.ThroughputCalculator;
 import org.apache.flink.util.clock.SystemClock;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests verifying fairness in input gates. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class InputGateFairnessTest {
 
     @Test

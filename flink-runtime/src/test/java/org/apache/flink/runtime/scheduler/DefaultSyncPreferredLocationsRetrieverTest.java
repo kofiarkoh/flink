@@ -22,7 +22,10 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -32,6 +35,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DefaultSyncPreferredLocationsRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultSyncPreferredLocationsRetrieverTest {
     private static final JobVertexID JV1 = new JobVertexID();
     private static final ExecutionVertexID EV11 = new ExecutionVertexID(JV1, 0);

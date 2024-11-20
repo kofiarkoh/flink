@@ -65,6 +65,9 @@ import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.Reference;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
 
@@ -85,6 +88,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.mockito.Mockito.mock;
 
 /** Simple environment setup for task executor task. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskSubmissionTestEnvironment implements AutoCloseable {
 
     private final HeartbeatServices heartbeatServices = new HeartbeatServicesImpl(1000L, 1000L);

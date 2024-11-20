@@ -29,8 +29,11 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DefaultExecutionGraphCache}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionGraphCacheTest {
 
     private static ExecutionGraphInfo expectedExecutionGraphInfo;
@@ -275,7 +280,8 @@ class DefaultExecutionGraphCacheTest {
      * {@link RestfulGateway} implementation which counts the number of {@link #requestJob(JobID,
      * Duration)} calls.
      */
-    private static class CountingRestfulGateway extends TestingRestfulGateway {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CountingRestfulGateway
+            extends TestingRestfulGateway {
 
         private final JobID expectedJobId;
 

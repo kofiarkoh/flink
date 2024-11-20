@@ -19,14 +19,19 @@ package org.apache.flink.runtime.metrics.groups;
 
 import org.apache.flink.api.common.JobID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.metrics.NoOpMetricRegistry.INSTANCE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link TaskManagerMetricGroup} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerMetricGroupTest {
     private static final JobID JOB_ID = new JobID();
     private static final String JOB_NAME = "test job";

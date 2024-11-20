@@ -28,7 +28,10 @@ import org.apache.flink.streaming.runtime.operators.sink.committables.Committabl
 import org.apache.flink.streaming.runtime.operators.sink.committables.CommittableCollectorSerializer;
 import org.apache.flink.streaming.runtime.operators.sink.committables.SinkV1CommittableDeserializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -39,6 +42,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GlobalCommitterSerializerTest {
 
     private static final int SUBTASK_ID = 0;

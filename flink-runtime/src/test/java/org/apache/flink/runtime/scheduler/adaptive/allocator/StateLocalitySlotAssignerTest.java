@@ -26,8 +26,11 @@ import org.apache.flink.runtime.scheduler.adaptive.allocator.JobInformation.Vert
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.KeyGroupRangeAssignment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +46,8 @@ import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
 /** {@link StateLocalitySlotAssigner} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateLocalitySlotAssignerTest {
 
     @Test

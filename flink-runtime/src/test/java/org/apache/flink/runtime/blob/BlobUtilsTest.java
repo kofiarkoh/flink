@@ -27,7 +27,10 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.Reference;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link BlobUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobUtilsTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(BlobUtilsTest.class);

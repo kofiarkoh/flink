@@ -21,7 +21,10 @@ package org.apache.flink.runtime.blob;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.SecurityOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,6 +32,8 @@ import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Testing a {@link BlobServer} would fail with improper SSL config. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobServerSslTest {
 
     @Test

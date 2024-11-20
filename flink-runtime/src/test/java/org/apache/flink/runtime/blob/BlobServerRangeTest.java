@@ -21,7 +21,10 @@ package org.apache.flink.runtime.blob;
 import org.apache.flink.configuration.BlobServerOptions;
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests to ensure that the BlobServer properly starts on a specified range of available ports. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobServerRangeTest {
 
     @TempDir private Path tempDir;

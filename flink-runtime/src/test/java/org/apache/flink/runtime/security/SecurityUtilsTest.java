@@ -31,8 +31,11 @@ import org.apache.flink.runtime.security.modules.TestSecurityModuleFactory;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.AfterClass;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +47,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link SecurityUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SecurityUtilsTest {
 
     @AfterClass

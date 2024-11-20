@@ -22,13 +22,18 @@ import org.apache.flink.runtime.deployment.ResultPartitionDeploymentDescriptor;
 import org.apache.flink.runtime.shuffle.PartitionDescriptorBuilder;
 import org.apache.flink.runtime.shuffle.ShuffleDescriptor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link AbstractPartitionTracker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractPartitionTrackerTest {
 
     @Test

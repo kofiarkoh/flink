@@ -31,7 +31,10 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailbox;
 import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailboxImpl;
 import org.apache.flink.streaming.util.CollectorOutput;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link MailboxWatermarkProcessor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MailboxWatermarkProcessorTest {
 
     @Test

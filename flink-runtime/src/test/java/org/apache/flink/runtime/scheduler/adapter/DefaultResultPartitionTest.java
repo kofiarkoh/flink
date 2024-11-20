@@ -25,8 +25,11 @@ import org.apache.flink.runtime.scheduler.strategy.ConsumerVertexGroup;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.runtime.scheduler.strategy.ResultPartitionState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,6 +42,8 @@ import static org.apache.flink.runtime.io.network.partition.ResultPartitionType.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link DefaultResultPartition}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultResultPartitionTest {
 
     private static final TestResultPartitionStateSupplier resultPartitionState =

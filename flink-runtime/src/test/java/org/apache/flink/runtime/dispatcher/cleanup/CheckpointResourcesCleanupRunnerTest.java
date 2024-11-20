@@ -43,7 +43,10 @@ import org.apache.flink.util.SerializedThrowable;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Objects;
@@ -61,6 +64,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * {@code CheckpointResourcesCleanupRunnerTest} tests the {@link CheckpointResourcesCleanupRunner}
  * implementation.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointResourcesCleanupRunnerTest {
 
     private static final Duration TIMEOUT_FOR_REQUESTS = Duration.ofMillis(0);

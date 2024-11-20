@@ -24,7 +24,10 @@ import org.apache.flink.runtime.event.AbstractEvent;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/** {@link ResultPartition} class for testing purposes. */
+/**
+ * {@link ResultPartition} @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing
+ * purposes.
+ */
 public class TestingResultPartition extends ResultPartition {
     private final CreateSubpartitionView createSubpartitionViewFunction;
 

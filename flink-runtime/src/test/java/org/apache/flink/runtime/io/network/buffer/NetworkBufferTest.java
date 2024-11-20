@@ -22,7 +22,10 @@ import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.core.memory.MemorySegmentFactory;
 import org.apache.flink.runtime.io.network.netty.NettyBufferPool;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -30,6 +33,8 @@ import java.nio.ByteOrder;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link NetworkBuffer} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NetworkBufferTest extends AbstractByteBufTest {
 
     /** Upper limit for the max size that is sufficient for all the tests. */

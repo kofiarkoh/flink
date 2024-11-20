@@ -62,9 +62,12 @@ import org.apache.flink.util.ExceptionUtils;
 
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
@@ -83,6 +86,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the interaction between the {@link DefaultDispatcherRunner} and ZooKeeper. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperDefaultDispatcherRunnerTest {
 
     private static final Logger LOG =

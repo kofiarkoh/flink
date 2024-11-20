@@ -30,7 +30,10 @@ import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.BiConsumerWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.util.Collection;
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test suits for {@link SimpleExecutionSlotAllocator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SimpleExecutionSlotAllocatorTest {
 
     private static final ResourceProfile RESOURCE_PROFILE = ResourceProfile.fromResources(3, 5);

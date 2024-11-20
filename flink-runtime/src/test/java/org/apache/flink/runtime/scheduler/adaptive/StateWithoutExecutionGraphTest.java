@@ -22,7 +22,10 @@ import org.apache.flink.api.common.JobStatus;
 import org.apache.flink.runtime.failure.FailureEnricherUtils;
 import org.apache.flink.util.FlinkException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +33,8 @@ import org.slf4j.LoggerFactory;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link StateWithoutExecutionGraph} state. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateWithoutExecutionGraphTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(CreatedTest.class);

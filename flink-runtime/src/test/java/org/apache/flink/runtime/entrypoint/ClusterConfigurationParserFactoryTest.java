@@ -21,7 +21,10 @@ package org.apache.flink.runtime.entrypoint;
 import org.apache.flink.runtime.entrypoint.parser.CommandLineParser;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Properties;
 
@@ -32,6 +35,8 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the {@link ClusterConfigurationParserFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClusterConfigurationParserFactoryTest extends TestLogger {
 
     private static final CommandLineParser<ClusterConfiguration> commandLineParser =

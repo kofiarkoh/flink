@@ -26,6 +26,9 @@ import org.apache.flink.runtime.entrypoint.ClusterEntrypoint;
 import org.apache.flink.runtime.entrypoint.StandaloneSessionClusterEntrypoint;
 import org.apache.flink.util.ParameterTool;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +39,8 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /** A {@link Dispatcher} instance running in a separate JVM. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherProcess extends TestJvmProcess {
 
     private static final Logger LOG = LoggerFactory.getLogger(DispatcherProcess.class);

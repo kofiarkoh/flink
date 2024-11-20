@@ -129,6 +129,8 @@ import org.apache.flink.util.InstantiationUtil;
 import org.apache.flink.util.TestLoggerExtension;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -182,6 +184,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link JobMaster}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobMasterTest {
 
     private static final TestingInputSplit[] EMPTY_TESTING_INPUT_SPLITS = new TestingInputSplit[0];

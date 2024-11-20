@@ -33,7 +33,10 @@ import org.apache.flink.testutils.junit.SharedObjectsExtension;
 import org.apache.flink.testutils.junit.SharedReference;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobTaskVertexTest {
 
     @RegisterExtension final SharedObjectsExtension sharedObjects = SharedObjectsExtension.create();

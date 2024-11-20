@@ -22,11 +22,16 @@ import org.apache.flink.runtime.io.network.api.writer.ChannelSelector;
 import org.apache.flink.runtime.io.network.api.writer.RoundRobinChannelSelector;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** This class checks the functionality of the {@link RoundRobinChannelSelector} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultChannelSelectorTest {
 
     /** This test checks the channel selection. */

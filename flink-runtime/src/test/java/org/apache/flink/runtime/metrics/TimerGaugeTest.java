@@ -30,13 +30,18 @@ import org.apache.flink.metrics.View;
 import org.apache.flink.util.clock.ManualClock;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TimerGauge}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimerGaugeTest {
     private static final long SLEEP = 10;
     private static final long UPDATE_INTERVAL_MILLIS =

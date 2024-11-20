@@ -28,6 +28,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -42,6 +44,8 @@ import java.util.List;
  * HashMapStateBackend}.
  */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HashMapStateBackendTest extends StateBackendTestBase<HashMapStateBackend> {
 
     @TempDir private static java.nio.file.Path tempFolder;

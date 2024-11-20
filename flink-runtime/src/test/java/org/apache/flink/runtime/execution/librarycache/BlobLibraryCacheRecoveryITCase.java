@@ -31,9 +31,12 @@ import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 import org.apache.flink.util.FlinkUserCodeClassLoaders;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -55,6 +58,8 @@ import static org.junit.Assert.assertNotNull;
 
 /** Integration test for {@link BlobLibraryCacheManager}. */
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BlobLibraryCacheRecoveryITCase extends TestLogger {
 
     @Rule public TemporaryFolder temporaryFolder = new TemporaryFolder();

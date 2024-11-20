@@ -35,7 +35,10 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.SteppingMailboxProcessor
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -51,6 +54,8 @@ import static org.apache.flink.streaming.util.AbstractStreamOperatorTestHarness.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test processing files during rescaling. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ContinuousFileProcessingRescalingTest {
 
     private final int maxParallelism = 10;

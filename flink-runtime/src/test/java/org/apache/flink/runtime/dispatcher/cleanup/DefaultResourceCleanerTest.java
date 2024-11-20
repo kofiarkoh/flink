@@ -27,6 +27,8 @@ import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.concurrent.RetryStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -46,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@code DefaultResourceCleanerTest} tests {@link DefaultResourceCleaner}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultResourceCleanerTest {
 
     // runs with retry utilizes the ComponentMainThreadExecutor which adds concurrency despite using

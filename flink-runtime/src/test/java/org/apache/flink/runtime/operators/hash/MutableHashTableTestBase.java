@@ -45,7 +45,10 @@ import org.apache.flink.runtime.operators.testutils.types.StringPairPairComparat
 import org.apache.flink.runtime.operators.testutils.types.StringPairSerializer;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,7 +57,7 @@ import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-abstract class MutableHashTableTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MutableHashTableTestBase {
 
     protected static final long RANDOM_SEED = 76518743207143L;
 

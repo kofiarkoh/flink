@@ -20,7 +20,10 @@ package org.apache.flink.streaming.api.operators;
 
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,8 @@ import static org.apache.flink.streaming.api.operators.MapPartitionIterator.DEFA
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link MapPartitionIterator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MapPartitionIteratorTest {
 
     private static final String RECORD = "TEST";

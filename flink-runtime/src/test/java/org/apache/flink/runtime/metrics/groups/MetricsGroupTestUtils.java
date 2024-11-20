@@ -22,7 +22,16 @@ import org.apache.flink.metrics.MetricGroup;
 import org.apache.flink.metrics.groups.OperatorIOMetricGroup;
 import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 
-/** Util class to create metric groups for SinkV2 tests. */
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+/**
+ * Util @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to create metric groups for SinkV2
+ * tests.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MetricsGroupTestUtils {
 
     public static InternalSinkWriterMetricGroup mockWriterMetricGroup() {

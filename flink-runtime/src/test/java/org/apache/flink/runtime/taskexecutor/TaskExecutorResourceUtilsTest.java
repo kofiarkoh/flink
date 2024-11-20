@@ -26,12 +26,17 @@ import org.apache.flink.configuration.IllegalConfigurationException;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.configuration.TaskManagerOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test suite for {@link TaskExecutorResourceUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorResourceUtilsTest {
     private static final double CPU_CORES = 1.0;
     private static final MemorySize TASK_HEAP = MemorySize.ofMebiBytes(1);

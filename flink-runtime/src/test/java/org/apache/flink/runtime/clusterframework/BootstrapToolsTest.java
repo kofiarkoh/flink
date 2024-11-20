@@ -28,7 +28,10 @@ import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -42,6 +45,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link BootstrapTools}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BootstrapToolsTest {
 
     @TempDir private static java.nio.file.Path temporaryFolder;

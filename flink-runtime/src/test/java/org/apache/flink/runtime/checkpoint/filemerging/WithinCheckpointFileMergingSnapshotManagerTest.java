@@ -22,7 +22,10 @@ import org.apache.flink.runtime.state.CheckpointedStateScope;
 import org.apache.flink.runtime.state.filemerging.SegmentFileStateHandle;
 import org.apache.flink.util.function.BiFunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -30,6 +33,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link WithinCheckpointFileMergingSnapshotManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class WithinCheckpointFileMergingSnapshotManagerTest
         extends FileMergingSnapshotManagerTestBase {
     @Override

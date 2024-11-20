@@ -20,12 +20,17 @@ package org.apache.flink.runtime.checkpoint;
 
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CheckpointStatsSnapshotTest {
 
     /** Tests that the snapshot is actually serializable. */

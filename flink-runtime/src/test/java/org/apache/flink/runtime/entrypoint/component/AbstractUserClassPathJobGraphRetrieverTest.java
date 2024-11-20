@@ -25,8 +25,11 @@ import org.apache.flink.util.FileUtilsTest;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.function.FunctionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -39,6 +42,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link AbstractUserClassPathJobGraphRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractUserClassPathJobGraphRetrieverTest extends TestLogger {
 
     @Rule public final TemporaryFolder temporaryFolder = new TemporaryFolder();

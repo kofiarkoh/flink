@@ -21,6 +21,8 @@ package org.apache.flink.runtime.rest.messages.job.savepoints;
 import org.apache.flink.runtime.rest.messages.RestRequestMarshallingTestBase;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
@@ -29,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the un/marshalling of the {@link SavepointDisposalRequest}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SavepointDisposalRequestTest
         extends RestRequestMarshallingTestBase<SavepointDisposalRequest> {
 

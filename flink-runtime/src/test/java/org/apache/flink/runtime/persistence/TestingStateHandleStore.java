@@ -137,7 +137,10 @@ public class TestingStateHandleStore<T extends Serializable>
         return new Builder<>();
     }
 
-    /** Builder class for {@link TestingStateHandleStore}. */
+    /**
+     * Builder @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link
+     * TestingStateHandleStore}.
+     */
     public static class Builder<T extends Serializable> {
 
         private BiFunctionWithException<String, T, RetrievableStateHandle<T>, Exception>

@@ -20,6 +20,8 @@ package org.apache.flink.runtime.rest.messages;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
@@ -28,6 +30,8 @@ import java.util.Random;
 
 /** Test for (un)marshalling of the {@link ResourceProfileInfo}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceProfileInfoTest extends RestResponseMarshallingTestBase<ResourceProfileInfo> {
 
     private static final Random random = new Random();

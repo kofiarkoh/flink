@@ -21,7 +21,10 @@ package org.apache.flink.runtime.checkpoint.metadata;
 import org.apache.flink.runtime.checkpoint.MasterState;
 import org.apache.flink.runtime.checkpoint.OperatorState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.Random;
@@ -29,6 +32,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Simple tests for the {@link CheckpointMetadata} data holder class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointMetadataTest {
 
     @Test

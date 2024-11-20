@@ -34,6 +34,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * These tests verify that {@link EvictingWindowOperator} correctly interacts with the other
  * windowing components: {@link WindowAssigner}, {@link Trigger}. {@link
@@ -41,6 +45,8 @@ import org.apache.flink.util.OutputTag;
  *
  * <p>These tests document the implicit contract that exists between the windowing components.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EvictingWindowOperatorContractTest extends WindowOperatorContractTest {
 
     protected <W extends Window, OUT>

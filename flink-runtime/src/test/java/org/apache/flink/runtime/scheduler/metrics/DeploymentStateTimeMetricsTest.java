@@ -23,7 +23,10 @@ import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.runtime.jobgraph.JobType;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -31,6 +34,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.apache.flink.runtime.scheduler.metrics.StateTimeMetricTest.enable;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeploymentStateTimeMetricsTest {
 
     private static final MetricOptions.JobStatusMetricsSettings settings =

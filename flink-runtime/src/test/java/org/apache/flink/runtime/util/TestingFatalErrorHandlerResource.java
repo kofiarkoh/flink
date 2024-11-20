@@ -20,6 +20,9 @@ package org.apache.flink.runtime.util;
 
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -33,7 +36,8 @@ import javax.annotation.Nullable;
  * @deprecated Continue using {@link TestingFatalErrorHandlerExtension} with Junit5 tests
  */
 @Deprecated
-public final class TestingFatalErrorHandlerResource implements TestRule {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class TestingFatalErrorHandlerResource implements TestRule {
 
     @Nullable private TestingFatalErrorHandler testingFatalErrorHandler;
 

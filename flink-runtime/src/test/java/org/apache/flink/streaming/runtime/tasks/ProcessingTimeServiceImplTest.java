@@ -21,9 +21,12 @@ package org.apache.flink.streaming.runtime.tasks;
 import org.apache.flink.core.testutils.OneShotLatch;
 import org.apache.flink.util.concurrent.NeverCompleteFuture;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
@@ -36,6 +39,8 @@ import java.util.concurrent.TimeoutException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ProcessingTimeServiceImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProcessingTimeServiceImplTest {
 
     private static final Duration TESTING_TIMEOUT = Duration.ofSeconds(10L);

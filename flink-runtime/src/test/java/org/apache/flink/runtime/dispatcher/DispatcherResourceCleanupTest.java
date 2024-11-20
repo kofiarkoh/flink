@@ -59,6 +59,8 @@ import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.core.IsInstanceOf;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -67,6 +69,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.TemporaryFolder;
 
@@ -94,6 +97,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.fail;
 
 /** Tests the resource cleanup by the {@link Dispatcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherResourceCleanupTest extends TestLogger {
 
     @ClassRule public static TemporaryFolder temporaryFolder = new TemporaryFolder();

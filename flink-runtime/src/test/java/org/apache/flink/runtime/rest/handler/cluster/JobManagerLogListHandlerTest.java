@@ -30,10 +30,13 @@ import org.apache.flink.runtime.webmonitor.TestingDispatcherGateway;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -50,6 +53,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link JobManagerLogListHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerLogListHandlerTest {
 
     private static HandlerRequest<EmptyRequestBody> testRequest;

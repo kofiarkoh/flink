@@ -27,6 +27,8 @@ import org.apache.flink.runtime.util.EnvironmentInformation;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestTemplate;
@@ -55,6 +57,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * BoundedBlockingSubpartitionWriteReadTest}.
  */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BoundedBlockingSubpartitionTest extends SubpartitionTestBase {
 
     private static final String tempDir = EnvironmentInformation.getTemporaryFileDirectory();

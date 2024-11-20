@@ -18,10 +18,13 @@
 
 package org.apache.flink.runtime.security.token.hadoop;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.security.Credentials;
 import org.apache.hadoop.security.token.Token;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -29,6 +32,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /** Test for {@link HadoopDelegationTokenConverter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HadoopDelegationTokenConverterTest {
 
     @Test

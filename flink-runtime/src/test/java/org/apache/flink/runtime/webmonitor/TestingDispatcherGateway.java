@@ -46,6 +46,10 @@ import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.TriFunction;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.Duration;
 import java.util.Collection;
 import java.util.Collections;
@@ -55,8 +59,8 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /** Testing implementation of the {@link DispatcherGateway}. */
-public final class TestingDispatcherGateway extends TestingRestfulGateway
-        implements DispatcherGateway {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestingDispatcherGateway
+        extends TestingRestfulGateway implements DispatcherGateway {
 
     static final Function<ExecutionPlan, CompletableFuture<Acknowledge>> DEFAULT_SUBMIT_FUNCTION =
             jobGraph -> CompletableFuture.completedFuture(Acknowledge.get());
@@ -282,7 +286,8 @@ public final class TestingDispatcherGateway extends TestingRestfulGateway
     }
 
     /** Builder for the {@link TestingDispatcherGateway}. */
-    public static final class Builder extends TestingRestfulGateway.AbstractBuilder<Builder> {
+    public static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class Builder
+            extends TestingRestfulGateway.AbstractBuilder<Builder> {
 
         private Function<ExecutionPlan, CompletableFuture<Acknowledge>> submitFunction;
         private TriFunction<JobID, String, Throwable, CompletableFuture<Acknowledge>>

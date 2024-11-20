@@ -21,12 +21,17 @@ package org.apache.flink.runtime.io.network.partition.hybrid.tiered.netty;
 import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link NettyPayload}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyPayloadTest {
 
     @Test

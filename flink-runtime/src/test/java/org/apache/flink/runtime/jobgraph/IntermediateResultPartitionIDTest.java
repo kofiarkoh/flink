@@ -22,13 +22,18 @@ import org.apache.flink.runtime.io.network.netty.NettyBufferPool;
 
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /** Tests for {@link IntermediateResultPartitionID}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IntermediateResultPartitionIDTest {
     private static final NettyBufferPool ALLOCATOR = new NettyBufferPool(1);
 

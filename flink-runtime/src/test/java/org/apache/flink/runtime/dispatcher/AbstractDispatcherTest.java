@@ -36,17 +36,22 @@ import org.apache.flink.runtime.testutils.CommonTestUtils;
 import org.apache.flink.runtime.util.TestingFatalErrorHandlerResource;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 import org.junit.rules.TestName;
 
 import java.time.Duration;
 
 /** Abstract test for the {@link Dispatcher} component. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractDispatcherTest extends TestLogger {
 
     static TestingRpcService rpcService;

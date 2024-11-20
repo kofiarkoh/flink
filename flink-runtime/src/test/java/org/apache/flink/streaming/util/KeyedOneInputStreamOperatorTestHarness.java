@@ -30,10 +30,16 @@ import org.apache.flink.streaming.api.operators.OneInputStreamOperator;
 import org.apache.flink.streaming.api.operators.SimpleOperatorFactory;
 import org.apache.flink.streaming.api.operators.StreamOperatorFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * Extension of {@link OneInputStreamOperatorTestHarness} that allows the operator to get a {@link
  * KeyedStateBackend}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyedOneInputStreamOperatorTestHarness<K, IN, OUT>
         extends OneInputStreamOperatorTestHarness<IN, OUT> {
 

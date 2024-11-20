@@ -26,8 +26,11 @@ import org.apache.flink.shaded.netty4.io.netty.channel.ChannelOption;
 import org.apache.flink.shaded.netty4.io.netty.channel.epoll.Epoll;
 import org.apache.flink.shaded.netty4.io.netty.channel.epoll.EpollChannelOption;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import jdk.net.ExtendedSocketOptions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.util.Map;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests for {@link NettyClient}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyClientTest {
     @Test
     void testSetKeepaliveOptionWithNioConfigurable() throws Exception {

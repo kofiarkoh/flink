@@ -19,11 +19,16 @@ package org.apache.flink.streaming.runtime.partitioner;
 
 import org.apache.flink.api.java.tuple.Tuple;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link GlobalPartitioner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GlobalPartitionerTest extends StreamPartitionerTest {
 
     @Override

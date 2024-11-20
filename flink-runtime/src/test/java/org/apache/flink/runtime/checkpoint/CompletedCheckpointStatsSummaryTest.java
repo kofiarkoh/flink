@@ -21,7 +21,10 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.core.execution.SavepointFormatType;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +35,8 @@ import static org.assertj.core.data.Offset.offset;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CompletedCheckpointStatsSummaryTest {
 
     /** Tests simple updates of the completed checkpoint stats. */

@@ -24,7 +24,10 @@ import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.KeyGroupRange;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -37,6 +40,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link KvStateLocationRegistry}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KvStateLocationRegistryTest {
 
     /** Simple test registering/unregistering state and looking it up again. */

@@ -25,7 +25,10 @@ import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.OptionalFailure;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -35,6 +38,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link StringifiedAccumulatorResult}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StringifiedAccumulatorResultTest {
 
     @Test

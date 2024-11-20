@@ -35,6 +35,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTe
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -45,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unaligned checkpoints cancellation test. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnalignedCheckpointsCancellationTest {
     private final List<RuntimeEvent> events;
     private final boolean expectTriggerCheckpoint;

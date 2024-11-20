@@ -24,11 +24,16 @@ import org.apache.flink.runtime.rest.util.RestMapperUtils;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the savepoint request bodies. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointHandlerRequestBodyTest {
 
     @Test

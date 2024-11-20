@@ -62,8 +62,9 @@ import java.util.concurrent.Future;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * This class contains integration tests for the adaptive scheduler which start a {@link
- * org.apache.flink.runtime.minicluster.MiniCluster} per test case.
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains integration tests for the
+ * adaptive scheduler which start a {@link org.apache.flink.runtime.minicluster.MiniCluster} per
+ * test case.
  */
 public class AdaptiveSchedulerClusterITCase {
 

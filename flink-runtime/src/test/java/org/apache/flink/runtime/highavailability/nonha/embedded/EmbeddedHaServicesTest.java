@@ -27,9 +27,12 @@ import org.apache.flink.runtime.util.LeaderRetrievalUtils;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 
 import java.util.UUID;
@@ -43,6 +46,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 /** Tests for the {@link EmbeddedHaServices}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class EmbeddedHaServicesTest extends TestLogger {
 
     private static final String ADDRESS = "foobar";

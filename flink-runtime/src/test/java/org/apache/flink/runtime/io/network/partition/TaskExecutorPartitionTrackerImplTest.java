@@ -34,7 +34,10 @@ import org.apache.flink.runtime.taskexecutor.partition.ClusterPartitionReport;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -47,6 +50,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TaskExecutorPartitionTrackerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorPartitionTrackerImplTest {
 
     @Test

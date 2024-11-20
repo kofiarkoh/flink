@@ -22,10 +22,16 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.testutils.serialization.types.SerializationTestType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Random;
 
 /** A large {@link SerializationTestType}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class LargeObjectType implements SerializationTestType {
 
     private static final int MIN_LEN = 12 * 1000 * 1000;

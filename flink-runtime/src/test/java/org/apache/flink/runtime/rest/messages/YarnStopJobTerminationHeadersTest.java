@@ -20,11 +20,16 @@ package org.apache.flink.runtime.rest.messages;
 
 import org.apache.flink.runtime.rest.HttpMethodWrapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link YarnStopJobTerminationHeaders}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class YarnStopJobTerminationHeadersTest {
 
     // instance under test

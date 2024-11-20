@@ -20,12 +20,17 @@ package org.apache.flink.streaming.api.operators.util;
 
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PausableRelativeClockTest {
     private static final long TIME_STEP = 14;
 

@@ -21,13 +21,18 @@ package org.apache.flink.runtime.executiongraph;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.testutils.ClassLoaderUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Simple test for the {@link ErrorInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ErrorInfoTest {
 
     @Test

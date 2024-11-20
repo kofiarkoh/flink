@@ -25,7 +25,10 @@ import org.apache.flink.streaming.runtime.streamrecord.RecordAttributes;
 import org.apache.flink.streaming.runtime.streamrecord.StreamElement;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * logic of {@link StatusWatermarkValve}. The behaviours that a series of input calls to the valve
  * is trying to test is explained as inline comments within the tests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StatusWatermarkValveTest {
 
     /**

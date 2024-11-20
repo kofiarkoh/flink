@@ -17,13 +17,18 @@
 
 package org.apache.flink.runtime.io.network.api.writer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.checkpoint.InflightDataRescalingDescriptorUtil.mappings;
 import static org.apache.flink.runtime.checkpoint.InflightDataRescalingDescriptorUtil.to;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests to(@link SubtaskStateMapper). */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubtaskStateMapperTest {
 
     @Test

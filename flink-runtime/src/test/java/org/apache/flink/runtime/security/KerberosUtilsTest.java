@@ -18,13 +18,18 @@
 
 package org.apache.flink.runtime.security;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.security.auth.login.AppConfigurationEntry;
 
 import static org.junit.Assert.assertNotNull;
 
 /** Tests for the {@link KerberosUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KerberosUtilsTest {
 
     @Test

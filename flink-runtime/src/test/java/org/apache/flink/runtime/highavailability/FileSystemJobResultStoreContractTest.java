@@ -21,6 +21,9 @@ package org.apache.flink.runtime.highavailability;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -30,6 +33,8 @@ import java.io.IOException;
  * Tests for the {@link FileSystemJobResultStore} implementation of the {@link JobResultStore}'s
  * contracts.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSystemJobResultStoreContractTest implements JobResultStoreContractTest {
     @TempDir File temporaryFolder;
 

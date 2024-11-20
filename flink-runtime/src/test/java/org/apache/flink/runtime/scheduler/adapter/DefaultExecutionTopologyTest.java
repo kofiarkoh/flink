@@ -42,8 +42,11 @@ import org.apache.flink.util.IterableUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -64,6 +67,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link DefaultExecutionTopology}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionTopologyTest {
     @RegisterExtension
     private static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =

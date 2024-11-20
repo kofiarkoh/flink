@@ -27,8 +27,11 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -57,6 +60,8 @@ import static org.apache.flink.runtime.blob.TestingBlobHelpers.checkFilesExist;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A few tests for the cleanup of {@link PermanentBlobCache} and {@link TransientBlobCache}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobCacheCleanupTest {
 
     @TempDir private Path tempDir;

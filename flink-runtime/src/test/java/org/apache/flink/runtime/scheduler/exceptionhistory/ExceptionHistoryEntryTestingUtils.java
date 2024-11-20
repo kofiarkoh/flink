@@ -20,13 +20,22 @@ package org.apache.flink.runtime.scheduler.exceptionhistory;
 
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 
 import static org.apache.flink.runtime.scheduler.exceptionhistory.ExceptionHistoryEntry.ArchivedTaskManagerLocation.fromTaskManagerLocation;
 
-/** A utility class to matches {@link ExceptionHistoryEntry} instances for testing. */
+/**
+ * A utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to matches {@link
+ * ExceptionHistoryEntry} instances for testing.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExceptionHistoryEntryTestingUtils {
 
     public static boolean matchesGlobalFailure(

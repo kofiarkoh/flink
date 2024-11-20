@@ -22,12 +22,17 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.plugable.SerializationDelegate;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link KeyGroupStreamPartitioner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyGroupStreamPartitionerTest {
 
     private KeyGroupStreamPartitioner<Tuple2<String, Integer>, String> keyGroupPartitioner;

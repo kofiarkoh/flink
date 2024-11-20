@@ -26,10 +26,13 @@ import org.apache.flink.testutils.TestFileSystem;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.function.FunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.BufferedWriter;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link FileSystemBlobStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSystemBlobStoreTest {
 
     private FileSystemBlobStore testInstance;

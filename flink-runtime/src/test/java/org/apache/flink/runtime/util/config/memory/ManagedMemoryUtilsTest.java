@@ -24,8 +24,11 @@ import org.apache.flink.configuration.TaskManagerOptions;
 import org.apache.flink.configuration.UnmodifiableConfiguration;
 import org.apache.flink.core.memory.ManagedMemoryUseCase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ManagedMemoryUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ManagedMemoryUtilsTest {
 
     private static final double DELTA = 0.000001;

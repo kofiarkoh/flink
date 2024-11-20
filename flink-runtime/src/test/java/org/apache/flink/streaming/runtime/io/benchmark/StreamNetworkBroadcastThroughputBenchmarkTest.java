@@ -18,9 +18,15 @@
 
 package org.apache.flink.streaming.runtime.io.benchmark;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * Tests for various network benchmarks based on {@link StreamNetworkBroadcastThroughputBenchmark}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamNetworkBroadcastThroughputBenchmarkTest extends StreamNetworkThroughputBenchmarkTest {
     @Override
     protected StreamNetworkThroughputBenchmark createBenchmark() {

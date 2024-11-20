@@ -29,7 +29,10 @@ import org.apache.flink.runtime.asyncprocessing.StateRequestContainer;
 import org.apache.flink.runtime.asyncprocessing.StateRequestType;
 import org.apache.flink.runtime.mailbox.SyncMailboxExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +43,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests for {@link AbstractAggregatingState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractAggregatingStateTest extends AbstractKeyedStateTestBase {
     static class SumAggregator implements AggregateFunction<Integer, Integer, Integer> {
         private final int init;

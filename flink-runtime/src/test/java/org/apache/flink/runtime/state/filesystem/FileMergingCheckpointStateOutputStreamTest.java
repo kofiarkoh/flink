@@ -31,9 +31,12 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.filemerging.SegmentFileStateHandle;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.DataInputStream;
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Test cases for {@link FileMergingCheckpointStateOutputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileMergingCheckpointStateOutputStreamTest {
     @Rule public final TemporaryFolder tempDir = new TemporaryFolder();
 

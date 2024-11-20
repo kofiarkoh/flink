@@ -30,8 +30,11 @@ import org.apache.flink.runtime.rest.messages.job.metrics.MetricCollectionRespon
 import org.apache.flink.runtime.webmonitor.TestingDispatcherGateway;
 import org.apache.flink.runtime.webmonitor.retriever.GatewayRetriever;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -41,7 +44,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test base class for subclasses of {@link AbstractMetricsHandler}. */
-abstract class MetricsHandlerTestBase<T extends AbstractMetricsHandler> {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MetricsHandlerTestBase<
+        T extends AbstractMetricsHandler> {
 
     private static final String TEST_METRIC_NAME = "test_counter";
 

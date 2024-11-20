@@ -46,9 +46,12 @@ import org.apache.flink.streaming.runtime.tasks.TestSubtaskCheckpointCoordinator
 import org.apache.flink.streaming.runtime.tasks.mailbox.MailboxDefaultAction;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -66,6 +69,8 @@ import static org.apache.flink.util.Preconditions.checkState;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the behaviors of the {@link CheckpointedInputGate}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnalignedCheckpointsTest {
 
     private static final long DEFAULT_CHECKPOINT_ID = 0L;

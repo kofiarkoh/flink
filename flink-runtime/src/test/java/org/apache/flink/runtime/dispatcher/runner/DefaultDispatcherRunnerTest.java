@@ -26,9 +26,12 @@ import org.apache.flink.runtime.util.TestingFatalErrorHandler;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -42,6 +45,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /** Tests for the {@link DefaultDispatcherRunner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultDispatcherRunnerTest extends TestLogger {
 
     private TestingLeaderElection leaderElection;

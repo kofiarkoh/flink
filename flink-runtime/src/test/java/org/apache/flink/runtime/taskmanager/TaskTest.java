@@ -56,10 +56,13 @@ import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.WrappingRuntimeException;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import javax.annotation.Nonnull;
@@ -100,6 +103,8 @@ import static org.mockito.Mockito.when;
  * Tests for the Task, which make sure that correct state transitions happen, and failures are
  * correctly handled.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskTest extends TestLogger {
     private static final String RESTORE_EXCEPTION_MSG = "TestExceptionInRestore";
 

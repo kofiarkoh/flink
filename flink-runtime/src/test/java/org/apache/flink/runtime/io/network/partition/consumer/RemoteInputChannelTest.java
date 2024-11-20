@@ -65,7 +65,10 @@ import org.apache.flink.util.ExceptionUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nullable;
@@ -109,6 +112,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for the {@link RemoteInputChannel}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RemoteInputChannelTest {
     @RegisterExtension
     private static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_EXTENSION =
@@ -2001,7 +2006,8 @@ class RemoteInputChannelTest {
         }
     }
 
-    private static final class TestingExceptionConnectionManager extends TestingConnectionManager {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestingExceptionConnectionManager extends TestingConnectionManager {
         @Override
         public PartitionRequestClient createPartitionRequestClient(ConnectionID connectionId)
                 throws IOException {
@@ -2034,7 +2040,8 @@ class RemoteInputChannelTest {
         }
     }
 
-    private static final class TestVerifyConnectionManager extends TestingConnectionManager {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestVerifyConnectionManager extends TestingConnectionManager {
         private final PartitionRequestClient client;
 
         TestVerifyConnectionManager(TestingPartitionRequestClient client) {

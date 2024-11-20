@@ -36,7 +36,10 @@ import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.BiConsumerWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -60,6 +63,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test suite for {@link SlotSharingExecutionSlotAllocator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotSharingExecutionSlotAllocatorTest {
     private static final Duration ALLOCATION_TIMEOUT = Duration.ofMillis(100L);
     private static final ResourceProfile RESOURCE_PROFILE = ResourceProfile.fromResources(3, 5);

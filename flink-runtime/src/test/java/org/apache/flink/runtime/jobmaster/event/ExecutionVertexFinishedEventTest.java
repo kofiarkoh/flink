@@ -27,7 +27,10 @@ import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 import org.apache.flink.util.function.BiFunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.util.Arrays;
@@ -39,6 +42,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ExecutionVertexFinishedEvent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionVertexFinishedEventTest {
 
     @Test

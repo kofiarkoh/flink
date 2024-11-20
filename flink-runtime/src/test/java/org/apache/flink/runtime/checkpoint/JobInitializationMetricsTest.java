@@ -21,7 +21,10 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.runtime.checkpoint.JobInitializationMetrics.SumMaxDuration;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,6 +32,8 @@ import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobInitializationMetricsTest {
 
     @Test

@@ -25,8 +25,11 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.Tiered
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.TieredStoragePartitionId;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.TieredStorageSubpartitionId;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -41,6 +44,8 @@ import static org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.S
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link RemoteStorageScanner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RemoteStorageScannerTest {
 
     private static final TieredStoragePartitionId DEFAULT_PARTITION_ID =

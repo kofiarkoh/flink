@@ -35,8 +35,11 @@ import org.apache.flink.runtime.source.event.NoMoreSplitsEvent;
 import org.apache.flink.runtime.source.event.RequestSplitEvent;
 import org.apache.flink.runtime.source.event.SourceEventWrapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -54,6 +57,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Unit tests for {@link SourceCoordinator} when it is enabled to handle concurrent execution
  * attempts.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceCoordinatorConcurrentAttemptsTest extends SourceCoordinatorTestBase {
 
     private boolean enumeratorSupportsHandleExecutionAttemptSourceEvent;

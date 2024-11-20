@@ -40,7 +40,10 @@ import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -55,6 +58,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LocalInputPreferredSlotSharingStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalInputPreferredSlotSharingStrategyTest extends AbstractSlotSharingStrategyTest {
 
     @RegisterExtension

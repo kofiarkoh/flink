@@ -23,6 +23,9 @@ import org.apache.flink.configuration.ExternalizedCheckpointRetention;
 import org.apache.flink.configuration.ReadableConfig;
 import org.apache.flink.core.execution.CheckpointingMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for configuring {@link CheckpointConfig} via {@link
  * CheckpointConfig#configure(ReadableConfig)}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CheckpointConfigFromConfigurationTest {
 
     private static Stream<TestSpec<?>> specs() {

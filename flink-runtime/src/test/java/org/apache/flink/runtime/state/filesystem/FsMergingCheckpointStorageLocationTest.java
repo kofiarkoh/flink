@@ -32,8 +32,11 @@ import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 import org.apache.flink.runtime.state.CheckpointedStateScope;
 import org.apache.flink.runtime.state.filemerging.SegmentFileStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -53,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link FsMergingCheckpointStorageLocation}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FsMergingCheckpointStorageLocationTest {
     @TempDir File tmpFolder;
 

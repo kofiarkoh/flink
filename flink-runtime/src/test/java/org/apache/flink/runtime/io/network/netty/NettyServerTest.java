@@ -22,7 +22,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.NetUtils;
 import org.apache.flink.util.PortRange;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.util.Arrays;
@@ -31,6 +34,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link NettyServer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyServerTest {
 
     @Test

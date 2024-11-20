@@ -23,12 +23,17 @@ import org.apache.flink.runtime.checkpoint.CheckpointRetentionPolicy;
 import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobCheckpointingSettingsTest {
 
     /** Tests that the settings are actually serializable. */

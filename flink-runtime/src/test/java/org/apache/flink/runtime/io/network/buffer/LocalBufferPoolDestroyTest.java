@@ -20,7 +20,10 @@ package org.apache.flink.runtime.io.network.buffer;
 
 import org.apache.flink.runtime.execution.CancelTaskException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,6 +32,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the destruction of a {@link LocalBufferPool}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalBufferPoolDestroyTest {
     @Test
     void testRequestAfterDestroy() {

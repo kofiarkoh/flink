@@ -25,10 +25,13 @@ import org.apache.flink.shaded.netty4.io.netty.util.CharsetUtil;
 import org.apache.flink.shaded.netty4.io.netty.util.IllegalReferenceCountException;
 import org.apache.flink.shaded.netty4.io.netty.util.internal.PlatformDependent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -74,7 +77,7 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  *
  * <p>Copy from netty 4.1.32.Final.
  */
-abstract class AbstractByteBufTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AbstractByteBufTest {
 
     private static final int CAPACITY = 4096; // Must be even
     private static final int BLOCK_SIZE = 128;

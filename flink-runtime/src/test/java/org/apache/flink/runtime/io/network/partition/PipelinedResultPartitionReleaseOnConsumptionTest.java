@@ -19,7 +19,10 @@ package org.apache.flink.runtime.io.network.partition;
 
 import org.apache.flink.runtime.io.network.buffer.UnpooledBufferPool;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -27,6 +30,8 @@ import java.nio.ByteBuffer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link PipelinedResultPartitionReleaseOnConsumptionTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PipelinedResultPartitionReleaseOnConsumptionTest {
 
     @Test

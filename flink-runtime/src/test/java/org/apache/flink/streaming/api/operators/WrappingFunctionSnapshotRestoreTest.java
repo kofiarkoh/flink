@@ -32,7 +32,10 @@ import org.apache.flink.streaming.api.checkpoint.ListCheckpointed;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -41,6 +44,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test snapshot state with {@link WrappingFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WrappingFunctionSnapshotRestoreTest {
 
     @Test
@@ -107,7 +112,8 @@ class WrappingFunctionSnapshotRestoreTest {
         testHarness.close();
     }
 
-    static class WrappingTestFun extends WrappingFunction<MapFunction<Integer, Integer>>
+    static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class WrappingTestFun
+            extends WrappingFunction<MapFunction<Integer, Integer>>
             implements MapFunction<Integer, Integer> {
 
         private static final long serialVersionUID = 1L;
@@ -122,7 +128,8 @@ class WrappingFunctionSnapshotRestoreTest {
         }
     }
 
-    static class InnerTestFun extends AbstractRichFunction
+    static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class InnerTestFun
+            extends AbstractRichFunction
             implements MapFunction<Integer, Integer>, CheckpointedFunction {
 
         private static final long serialVersionUID = 1L;
@@ -163,7 +170,8 @@ class WrappingFunctionSnapshotRestoreTest {
         }
     }
 
-    static class InnerTestFunList extends AbstractRichFunction
+    static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class InnerTestFunList
+            extends AbstractRichFunction
             implements MapFunction<Integer, Integer>, ListCheckpointed<Integer> {
 
         private static final long serialVersionUID = 1L;

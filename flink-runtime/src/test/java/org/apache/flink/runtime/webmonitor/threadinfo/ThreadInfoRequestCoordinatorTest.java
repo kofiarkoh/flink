@@ -27,11 +27,14 @@ import org.apache.flink.runtime.util.JvmUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableSet;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -57,6 +60,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link ThreadInfoRequestCoordinator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ThreadInfoRequestCoordinatorTest {
 
     private static final Duration REQUEST_TIMEOUT = Duration.ofMillis(100);

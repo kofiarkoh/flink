@@ -21,7 +21,13 @@ package org.apache.flink.runtime.state;
 import org.apache.flink.api.common.typeinfo.IntegerTypeInfo;
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link IntegerTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VoidNamespaceTypeInfoTest extends TypeInformationTestBase<VoidNamespaceTypeInfo> {
 
     @Override

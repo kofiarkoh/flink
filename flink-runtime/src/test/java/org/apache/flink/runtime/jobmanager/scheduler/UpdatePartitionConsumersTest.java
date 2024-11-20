@@ -43,9 +43,12 @@ import org.apache.flink.testutils.executor.TestExecutorResource;
 import org.apache.flink.util.IterableUtils;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -60,6 +63,8 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the updating of consumers depending on the producers result. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class UpdatePartitionConsumersTest extends TestLogger {
 
     @ClassRule

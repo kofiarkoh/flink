@@ -18,8 +18,11 @@
 
 package org.apache.flink.runtime.io.network.partition;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * @see PipelinedSubpartitionTest
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PipelinedApproximateSubpartitionWithReadViewTest
         extends PipelinedSubpartitionWithReadViewTest {
 

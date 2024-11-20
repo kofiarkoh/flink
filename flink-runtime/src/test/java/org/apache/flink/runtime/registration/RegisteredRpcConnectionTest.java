@@ -24,9 +24,12 @@ import org.apache.flink.runtime.rpc.RpcService;
 import org.apache.flink.runtime.rpc.TestingRpcService;
 import org.apache.flink.types.Either;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.LoggerFactory;
 
 import java.util.UUID;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for RegisteredRpcConnection, validating the successful, failure and close behavior. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RegisteredRpcConnectionTest {
 
     private TestingRpcService rpcService;

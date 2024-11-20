@@ -29,6 +29,9 @@ import org.apache.flink.runtime.taskmanager.LocalTaskManagerLocation;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -44,6 +47,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.apache.flink.runtime.concurrent.ComponentMainThreadExecutorServiceAdapter.forMainThread;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeclarativeSlotPoolBridgePreferredAllocationsTest {
 
     @ValueSource(booleans = {true, false})

@@ -32,6 +32,10 @@ import org.apache.flink.runtime.state.heap.HeapPriorityQueueSetFactory;
 import org.apache.flink.runtime.state.v2.internal.InternalKeyedState;
 import org.apache.flink.util.function.FunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 import java.io.IOException;
@@ -40,7 +44,12 @@ import java.util.concurrent.RunnableFuture;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-/** This class contains test utils of {@link StateBackend} */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains test utils of {@link
+ * StateBackend}
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class StateBackendTestUtils {
 
     /** Create an AbstractStateBackend supporting apply the snapshot result. */

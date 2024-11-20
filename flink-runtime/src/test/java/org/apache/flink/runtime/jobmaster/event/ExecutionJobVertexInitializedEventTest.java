@@ -24,7 +24,10 @@ import org.apache.flink.runtime.executiongraph.JobVertexInputInfo;
 import org.apache.flink.runtime.jobgraph.IntermediateDataSetID;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -34,6 +37,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ExecutionJobVertexInitializedEvent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionJobVertexInitializedEventTest {
 
     @Test

@@ -24,6 +24,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtensi
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -33,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that the {@link JobExceptionsInfoWithHistory} can be marshalled and unmarshalled. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobExceptionsInfoWithHistoryTest
         extends RestResponseMarshallingTestBase<JobExceptionsInfoWithHistory> {
     @Override

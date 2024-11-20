@@ -29,6 +29,10 @@ import org.apache.flink.runtime.rpc.FatalErrorHandler;
 import org.apache.flink.runtime.rpc.RpcService;
 import org.apache.flink.streaming.api.graph.ExecutionPlan;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collection;
 
 /**
@@ -36,6 +40,8 @@ import java.util.Collection;
  * providing a factory method usually used for {@link
  * org.apache.flink.runtime.jobmaster.JobMasterServiceLeadershipRunner} creations.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingJobMasterServiceLeadershipRunnerFactory extends TestingJobManagerRunnerFactory
         implements JobManagerRunnerFactory {
 

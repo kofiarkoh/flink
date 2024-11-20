@@ -33,6 +33,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.StateMigrationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -51,7 +53,7 @@ import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** State TTL base test suite. */
 @ExtendWith(ParameterizedTestExtension.class)
-public abstract class TtlStateTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TtlStateTestBase {
     protected static final long TTL = 100;
     private static final int INC_CLEANUP_ALL_KEYS =
             ((CopyOnWriteStateMap.DEFAULT_CAPACITY >> 1)

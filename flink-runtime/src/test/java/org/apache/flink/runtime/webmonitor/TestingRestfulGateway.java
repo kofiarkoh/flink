@@ -419,7 +419,8 @@ public class TestingRestfulGateway implements RestfulGateway {
     }
 
     /**
-     * Abstract builder class for {@link TestingRestfulGateway} and its subclasses.
+     * Abstract builder @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link
+     * TestingRestfulGateway} and its subclasses.
      *
      * @param <T> type of sub class
      */

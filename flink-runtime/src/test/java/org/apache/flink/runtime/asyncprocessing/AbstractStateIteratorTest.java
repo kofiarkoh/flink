@@ -24,7 +24,10 @@ import org.apache.flink.core.state.StateFutureUtils;
 import org.apache.flink.runtime.mailbox.SyncMailboxExecutor;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -38,6 +41,8 @@ import static org.junit.jupiter.api.Assertions.fail;
  * The tests for {@link AbstractStateIterator} which facilitate the basic partial loading of state
  * asynchronous iterators.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractStateIteratorTest {
 
     @Test

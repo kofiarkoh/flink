@@ -44,8 +44,11 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -64,6 +67,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Test for {@link SavepointHandlers}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SavepointHandlersTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10);

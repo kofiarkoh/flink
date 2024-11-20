@@ -40,8 +40,11 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.TimeUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -55,6 +58,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TaskManagerRunner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerRunnerTest {
 
     @TempDir private Path temporaryFolder;

@@ -26,15 +26,20 @@ import org.apache.flink.runtime.leaderretrieval.LeaderRetrievalListener;
 import org.apache.flink.runtime.leaderretrieval.LeaderRetrievalService;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 /** Tests for the {@link StandaloneHaServices}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class StandaloneHaServicesTest extends TestLogger {
 
     private final String dispatcherAddress = "dispatcher";

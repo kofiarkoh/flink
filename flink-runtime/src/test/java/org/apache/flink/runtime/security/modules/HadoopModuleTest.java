@@ -23,8 +23,11 @@ import org.apache.flink.configuration.SecurityOptions;
 import org.apache.flink.core.testutils.ManuallyTriggeredScheduledExecutorService;
 import org.apache.flink.runtime.security.SecurityConfiguration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.security.UserGroupInformation;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedStatic;
 
 import java.io.IOException;
@@ -38,6 +41,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Test for {@link HadoopModule}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopModuleTest {
     @Test
     public void startTGTRenewalShouldScheduleRenewalWithKeytab() throws IOException {

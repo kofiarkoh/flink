@@ -37,8 +37,11 @@ import org.apache.flink.runtime.rest.messages.JobVertexIdPathParameter;
 import org.apache.flink.runtime.rest.messages.JobVertexMessageParameters;
 import org.apache.flink.runtime.webmonitor.TestingRestfulGateway;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -56,6 +59,8 @@ import static org.apache.flink.runtime.rest.messages.JobVertexBackPressureInfo.V
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link JobVertexBackPressureHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobVertexBackPressureHandlerTest {
 
     /** Job ID for which back pressure stats exist. */

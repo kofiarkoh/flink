@@ -33,8 +33,11 @@ import org.apache.flink.util.function.TriFunctionWithException;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -51,6 +54,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TaskSlotTable}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskSlotTableImplTest {
 
     @RegisterExtension

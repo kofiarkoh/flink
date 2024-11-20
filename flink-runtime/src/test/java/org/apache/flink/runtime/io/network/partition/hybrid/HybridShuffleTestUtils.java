@@ -21,6 +21,10 @@ package org.apache.flink.runtime.io.network.partition.hybrid;
 import org.apache.flink.runtime.io.network.partition.hybrid.index.FileDataIndexRegionHelper;
 import org.apache.flink.runtime.io.network.partition.hybrid.index.TestingFileDataIndexRegion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +32,8 @@ import static org.apache.flink.runtime.io.network.partition.hybrid.index.Testing
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test utils for hybrid shuffle mode. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HybridShuffleTestUtils {
     public static final int MEMORY_SEGMENT_SIZE = 128;
 

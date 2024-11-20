@@ -22,6 +22,10 @@ import org.apache.flink.api.java.tuple.Tuple2;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -32,6 +36,8 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 /** Test suite for collection methods of {@link TtlMapState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlMapStateAllEntriesTestContext
         extends TtlMapStateTestContext<Map<Integer, String>, Set<Map.Entry<Integer, String>>> {
 

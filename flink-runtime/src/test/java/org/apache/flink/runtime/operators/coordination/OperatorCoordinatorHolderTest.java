@@ -46,9 +46,12 @@ import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.collections.iterators.IteratorChain;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -72,6 +75,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * A test that ensures the before/after conditions around event sending and checkpoint are met.
  * concurrency
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorCoordinatorHolderTest {
 
     private final GlobalFailureHandler globalFailureHandler = (t) -> globalFailure = t;
@@ -610,8 +615,8 @@ class OperatorCoordinatorHolderTest {
     //   test implementations
     // ------------------------------------------------------------------------
 
-    private static final class FutureCompletedInstantlyTestCoordinator
-            extends CheckpointEventOrderTestBaseCoordinator {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class FutureCompletedInstantlyTestCoordinator extends CheckpointEventOrderTestBaseCoordinator {
 
         private final ReentrantLock lock = new ReentrantLock(true);
         private final Condition condition = lock.newCondition();
@@ -708,8 +713,8 @@ class OperatorCoordinatorHolderTest {
         }
     }
 
-    private abstract static class CheckpointEventOrderTestBaseCoordinator
-            implements OperatorCoordinator, Runnable {
+    private abstract static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class CheckpointEventOrderTestBaseCoordinator implements OperatorCoordinator, Runnable {
 
         private final Thread coordinatorThread;
 

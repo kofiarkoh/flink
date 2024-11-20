@@ -36,11 +36,16 @@ import org.apache.flink.types.Record;
 import org.apache.flink.types.Value;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CoGroupTaskTest extends DriverTestBase<CoGroupFunction<Record, Record, Record>> {
     private static final long SORT_MEM = 3 * 1024 * 1024;
 

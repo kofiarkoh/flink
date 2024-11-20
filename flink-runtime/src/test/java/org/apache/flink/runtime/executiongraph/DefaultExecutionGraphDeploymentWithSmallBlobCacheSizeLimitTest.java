@@ -47,8 +47,11 @@ import org.apache.flink.runtime.util.NoOpGroupCache;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.function.FunctionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -66,6 +69,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * even the size limit of {@link BlobCacheSizeTracker} in {@link PermanentBlobCache} is set to the
  * minimum value.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionGraphDeploymentWithSmallBlobCacheSizeLimitTest
         extends DefaultExecutionGraphDeploymentWithBlobCacheTest {
 

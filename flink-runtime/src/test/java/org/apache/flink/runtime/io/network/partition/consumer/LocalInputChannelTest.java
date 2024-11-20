@@ -55,7 +55,10 @@ import org.apache.flink.util.function.CheckedSupplier;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.stubbing.Answer;
 
 import java.io.IOException;
@@ -88,6 +91,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for the {@link LocalInputChannel}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalInputChannelTest {
 
     @Test
@@ -667,7 +672,8 @@ class LocalInputChannelTest {
     // ---------------------------------------------------------------------------------------------
 
     /** Returns the configured number of buffers for each channel in a random order. */
-    private static class TestPartitionProducerBufferSource implements TestProducerSource {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestPartitionProducerBufferSource implements TestProducerSource {
 
         private final int bufferSize;
 

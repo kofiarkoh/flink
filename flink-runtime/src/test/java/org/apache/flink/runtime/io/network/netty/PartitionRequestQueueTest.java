@@ -47,9 +47,12 @@ import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 import org.apache.flink.shaded.netty4.io.netty.buffer.Unpooled;
 import org.apache.flink.shaded.netty4.io.netty.channel.embedded.EmbeddedChannel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -64,6 +67,8 @@ import static org.apache.flink.runtime.io.network.partition.PartitionTestUtils.c
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PartitionRequestQueue}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionRequestQueueTest {
 
     private static final int BUFFER_SIZE = 1024 * 1024;

@@ -25,11 +25,16 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link EventTimeTrigger}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EventTimeTriggerTest {
 
     /** Verify that state of separate windows does not leak into other windows. */

@@ -20,7 +20,10 @@ package org.apache.flink.runtime.net;
 
 import org.apache.flink.util.NetUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedStatic;
 
 import java.io.IOException;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mockStatic;
 
 /** Tests for the network utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConnectionUtilsTest {
 
     @Test

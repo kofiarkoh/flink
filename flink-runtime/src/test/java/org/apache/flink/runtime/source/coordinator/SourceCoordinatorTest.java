@@ -47,7 +47,10 @@ import org.apache.flink.runtime.source.event.RequestSplitEvent;
 import org.apache.flink.runtime.source.event.SourceEventWrapper;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -73,6 +76,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link SourceCoordinator}. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceCoordinatorTest extends SourceCoordinatorTestBase {
 
     @Test
@@ -634,7 +639,8 @@ class SourceCoordinatorTest extends SourceCoordinatorTestBase {
     //  test mocks
     // ------------------------------------------------------------------------
 
-    private static final class ClassLoaderTestEnumerator
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ClassLoaderTestEnumerator
             implements SplitEnumerator<MockSourceSplit, Set<MockSourceSplit>> {
 
         final CompletableFuture<ClassLoader> threadClassLoader = new CompletableFuture<>();

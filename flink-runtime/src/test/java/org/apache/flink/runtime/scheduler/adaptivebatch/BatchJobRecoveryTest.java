@@ -94,6 +94,8 @@ import org.apache.flink.util.concurrent.ScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -132,6 +134,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 /** Test for batch job recovery. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchJobRecoveryTest {
 
     private final Duration previousWorkerRecoveryTimeout = Duration.ofSeconds(1);

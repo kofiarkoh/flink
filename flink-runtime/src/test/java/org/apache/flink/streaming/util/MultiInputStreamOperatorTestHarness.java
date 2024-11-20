@@ -26,6 +26,10 @@ import org.apache.flink.streaming.runtime.streamrecord.RecordAttributes;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * A test harness for testing a {@link MultipleInputStreamOperator}.
  *
@@ -33,6 +37,8 @@ import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
  * and watermarks into the operator. {@link java.util.Deque}s containing the emitted elements and
  * watermarks can be retrieved. you are free to modify these.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MultiInputStreamOperatorTestHarness<OUT>
         extends AbstractStreamOperatorTestHarness<OUT> {
 

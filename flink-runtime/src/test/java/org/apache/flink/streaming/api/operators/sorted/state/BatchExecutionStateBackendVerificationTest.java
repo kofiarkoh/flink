@@ -25,7 +25,10 @@ import org.apache.flink.runtime.state.CheckpointStreamFactory;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.memory.MemCheckpointStreamFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests that verify an exception is thrown in methods that are not supported in the BATCH runtime
  * mode.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchExecutionStateBackendVerificationTest {
 
     private static final LongSerializer LONG_SERIALIZER = new LongSerializer();

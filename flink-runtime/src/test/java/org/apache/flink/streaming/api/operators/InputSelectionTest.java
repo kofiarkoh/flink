@@ -19,12 +19,17 @@ package org.apache.flink.streaming.api.operators;
 
 import org.apache.flink.streaming.api.operators.InputSelection.Builder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link InputSelection}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputSelectionTest {
     @Test
     void testIsInputSelected() {
@@ -138,7 +143,7 @@ class InputSelectionTest {
     }
 
     /** Tests for {@link Builder}. */
-    static class BuilderTest {
+    static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class BuilderTest {
 
         @Test
         void testSelect() {

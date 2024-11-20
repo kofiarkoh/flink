@@ -54,10 +54,13 @@ import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.function.SupplierWithException;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -77,6 +80,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link JobMasterServiceLeadershipRunner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobMasterServiceLeadershipRunnerTest {
 
     private static final Duration TESTING_TIMEOUT = Duration.ofSeconds(10);

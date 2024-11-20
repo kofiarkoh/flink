@@ -22,7 +22,10 @@ import org.apache.flink.runtime.io.network.partition.ResultPartitionType;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingExecutionVertex;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingTopology;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -30,6 +33,8 @@ import java.util.HashSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link RestartAllFailoverStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestartAllFailoverStrategyTest {
 
     @Test

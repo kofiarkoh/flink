@@ -36,7 +36,10 @@ import org.apache.flink.util.function.RunnableWithException;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -50,6 +53,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ZooKeeperLeaderElectionDriver}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperLeaderElectionDriverTest {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

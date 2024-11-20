@@ -22,12 +22,18 @@ import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
 import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.createExecutionAttemptId;
 
 /** The test task that creates an idle (sleeping) thread. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IdleTestTask implements SampleableTask {
 
     private final ExecutionAttemptID executionAttemptID = createExecutionAttemptId();

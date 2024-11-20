@@ -18,12 +18,18 @@
 
 package org.apache.flink.runtime.scheduler.strategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Strategy test utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StrategyTestUtil {
 
     static void assertLatestScheduledVerticesAreEqualTo(

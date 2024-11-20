@@ -41,7 +41,10 @@ import org.apache.flink.runtime.testutils.MiniClusterResourceConfiguration;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -190,7 +193,8 @@ class TaskExecutorITCase {
     }
 
     /** Blocking invokable which is controlled by a static field. */
-    public static class BlockingOperator extends TestingAbstractInvokables.Receiver {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class BlockingOperator
+            extends TestingAbstractInvokables.Receiver {
         private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
         public BlockingOperator(Environment environment) {

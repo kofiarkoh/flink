@@ -44,6 +44,8 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -65,6 +67,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link JobSubmitHandler}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobSubmitHandlerTest {
 
     @Parameters(name = "SSL enabled: {0}")

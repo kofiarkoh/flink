@@ -27,7 +27,10 @@ import org.apache.flink.api.common.typeutils.base.MapSerializer;
 import org.apache.flink.api.common.typeutils.base.MapSerializerSnapshot;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 import java.util.Map;
@@ -35,6 +38,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link TtlAwareSerializerSnapshotWrapper}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TtlAwareSerializerSnapshotWrapperTest {
     @Test
     public void testValueStateTtlAwareSerializerSnapshot() {

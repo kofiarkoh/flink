@@ -31,7 +31,10 @@ import org.apache.flink.streaming.api.operators.SourceOperatorFactory;
 import org.apache.flink.streaming.runtime.streamrecord.LatencyMarker;
 import org.apache.flink.streaming.util.SourceOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the emission of latency markers by {@link SourceOperator} operators. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorLatencyMetricsTest {
 
     private static final long MAX_PROCESSING_TIME = 100L;

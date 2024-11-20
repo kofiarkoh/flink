@@ -36,10 +36,13 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -67,6 +70,8 @@ import static org.junit.Assert.fail;
  * Tests for {@link DefaultExecutionPlanStore} with {@link TestingExecutionPlanStoreWatcher}, {@link
  * TestingStateHandleStore}, and {@link TestingExecutionPlanListener}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultExecutionPlanStoreTest extends TestLogger {
 
     private final ExecutionPlan testingExecutionPlan = JobGraphTestUtils.emptyJobGraph();

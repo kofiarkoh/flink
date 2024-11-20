@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -26,6 +29,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Tests for the shared resource acquisition and initialization through the {@link MemoryManager}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemoryManagerSharedResourcesTest {
 
     @Test

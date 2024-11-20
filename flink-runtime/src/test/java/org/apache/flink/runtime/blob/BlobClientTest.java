@@ -24,9 +24,12 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -52,7 +55,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
-/** This class contains unit tests for the {@link BlobClient}. */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains unit tests for the {@link
+ * BlobClient}.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobClientTest {
 
     /** The buffer size used during the tests in bytes. */

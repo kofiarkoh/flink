@@ -17,7 +17,10 @@
 
 package org.apache.flink.runtime.io.network.partition;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.NoSuchElementException;
 
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.fail;
  * <p>Note that some tests make use of the {@link java.lang.Integer.IntegerCache} for improved
  * readability.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrioritizedDequeTest {
 
     @Test

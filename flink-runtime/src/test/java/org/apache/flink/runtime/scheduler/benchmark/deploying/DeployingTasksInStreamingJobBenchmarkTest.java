@@ -21,12 +21,17 @@ package org.apache.flink.runtime.scheduler.benchmark.deploying;
 import org.apache.flink.runtime.executiongraph.Execution;
 import org.apache.flink.runtime.scheduler.benchmark.JobConfiguration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * The benchmark of deploying tasks in a STREAMING job. The related method is {@link
  * Execution#deploy}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeployingTasksInStreamingJobBenchmarkTest {
 
     @Test

@@ -24,8 +24,11 @@ import org.apache.flink.core.security.FlinkSecurityManager;
 import org.apache.flink.runtime.testutils.TestJvmProcess;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
@@ -68,7 +71,8 @@ class FlinkSecurityManagerITCase {
         }
     }
 
-    private static final class ForcedJVMExitProcess extends TestJvmProcess {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ForcedJVMExitProcess extends TestJvmProcess {
 
         private final Class<?> entryPointName;
 

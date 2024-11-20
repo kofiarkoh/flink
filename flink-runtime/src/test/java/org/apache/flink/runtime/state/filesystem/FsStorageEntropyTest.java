@@ -28,7 +28,10 @@ import org.apache.flink.runtime.state.CheckpointStateOutputStream;
 import org.apache.flink.runtime.state.CheckpointedStateScope;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests verifying that the FsStorage passes the entropy injection option to the FileSystem for
  * state payload files, but not for metadata files.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FsStorageEntropyTest {
 
     static final String ENTROPY_MARKER = "__ENTROPY__";

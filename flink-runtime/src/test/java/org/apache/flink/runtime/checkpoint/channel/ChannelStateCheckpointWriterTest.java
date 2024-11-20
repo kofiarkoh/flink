@@ -32,7 +32,10 @@ import org.apache.flink.runtime.state.memory.MemCheckpointStreamFactory.MemoryCh
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -65,6 +68,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** {@link ChannelStateCheckpointWriter} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChannelStateCheckpointWriterTest {
     private static final RunnableWithException NO_OP_RUNNABLE = () -> {};
     private final Random random = new Random();

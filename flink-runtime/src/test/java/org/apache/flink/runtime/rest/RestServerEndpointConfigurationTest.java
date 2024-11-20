@@ -23,7 +23,10 @@ import org.apache.flink.configuration.RestOptions;
 import org.apache.flink.configuration.WebOptions;
 import org.apache.flink.util.ConfigurationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -31,6 +34,8 @@ import java.io.File;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link RestServerEndpointConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestServerEndpointConfigurationTest {
 
     private static final String ADDRESS = "123.123.123.123";

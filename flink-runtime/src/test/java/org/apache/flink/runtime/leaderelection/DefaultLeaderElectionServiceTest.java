@@ -27,7 +27,10 @@ import org.apache.flink.util.function.RunnableWithException;
 import org.apache.flink.util.function.ThrowingConsumer;
 import org.apache.flink.util.function.TriConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.Arrays;
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DefaultLeaderElectionService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultLeaderElectionServiceTest {
 
     @RegisterExtension

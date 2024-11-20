@@ -42,7 +42,10 @@ import org.apache.flink.shaded.netty4.io.netty.channel.ChannelOutboundHandlerAda
 import org.apache.flink.shaded.netty4.io.netty.channel.ChannelPromise;
 import org.apache.flink.shaded.netty4.io.netty.channel.embedded.EmbeddedChannel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.stubbing.Answer;
 
 import java.io.IOException;
@@ -65,6 +68,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ClientTransportErrorHandlingTest {
     private static final ConnectionID CONNECTION_ID =
             new ConnectionID(ResourceID.generate(), new InetSocketAddress("localhost", 0), 0);

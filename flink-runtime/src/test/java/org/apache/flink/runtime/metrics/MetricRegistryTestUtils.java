@@ -19,7 +19,13 @@ package org.apache.flink.runtime.metrics;
 
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test utilities for the metric registries. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MetricRegistryTestUtils {
 
     private static volatile MetricRegistryConfiguration defaultConfiguration;

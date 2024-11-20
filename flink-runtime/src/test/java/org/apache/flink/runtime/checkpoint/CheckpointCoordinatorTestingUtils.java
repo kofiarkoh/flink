@@ -68,7 +68,10 @@ import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -99,6 +102,8 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.spy;
 
 /** Testing utils for checkpoint coordinator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CheckpointCoordinatorTestingUtils {
 
     public static OperatorStateHandle generatePartitionableStateHandle(

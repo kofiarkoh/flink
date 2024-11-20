@@ -27,8 +27,11 @@ import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -46,6 +49,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link TaskLocalStateStoreImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskLocalStateStoreImplTest {
 
     protected @TempDir Path temporaryFolder;

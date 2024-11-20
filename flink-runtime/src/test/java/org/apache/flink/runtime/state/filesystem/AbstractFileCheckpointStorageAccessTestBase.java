@@ -32,7 +32,10 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.memory.MemoryBackendCheckpointStorageAccess;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -52,7 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Test base for file-system-based checkoint storage, such as the {@link
  * MemoryBackendCheckpointStorageAccess} and the {@link FsCheckpointStorageAccess}.
  */
-public abstract class AbstractFileCheckpointStorageAccessTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractFileCheckpointStorageAccessTestBase {
 
     @TempDir protected java.nio.file.Path tmp;
 

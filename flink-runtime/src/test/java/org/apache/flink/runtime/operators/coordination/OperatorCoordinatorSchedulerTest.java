@@ -62,9 +62,12 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nullable;
@@ -89,6 +92,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Tests for the integration of the {@link OperatorCoordinator} with the scheduler, to ensure the
  * relevant actions are leading to the right method invocations on the coordinator.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorCoordinatorSchedulerTest {
 
     private final JobVertexID testVertexId = new JobVertexID();
@@ -983,7 +988,8 @@ class OperatorCoordinatorSchedulerTest {
 
     private static final class TestException extends Exception {}
 
-    private static final class CoordinatorThatFailsInStart extends TestingOperatorCoordinator {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class CoordinatorThatFailsInStart extends TestingOperatorCoordinator {
 
         public CoordinatorThatFailsInStart(Context context) {
             super(context);

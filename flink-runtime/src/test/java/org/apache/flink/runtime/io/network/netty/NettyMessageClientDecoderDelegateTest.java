@@ -34,9 +34,12 @@ import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 import org.apache.flink.shaded.netty4.io.netty.channel.embedded.EmbeddedChannel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -51,6 +54,8 @@ import static org.apache.flink.runtime.io.network.partition.InputChannelTestUtil
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the client side message decoder. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyMessageClientDecoderDelegateTest {
 
     private static final int BUFFER_SIZE = 1024;

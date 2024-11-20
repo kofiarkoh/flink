@@ -23,6 +23,8 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.rest.messages.job.metrics.IOMetricsInfo;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
@@ -36,6 +38,8 @@ import static org.apache.flink.runtime.rest.messages.JobVertexTaskManagersInfo.T
 
 /** Tests that the {@link JobVertexTaskManagersInfo} can be marshalled and unmarshalled. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobVertexTaskManagersInfoTest
         extends RestResponseMarshallingTestBase<JobVertexTaskManagersInfo> {
     @Override

@@ -33,7 +33,10 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -45,6 +48,8 @@ import static org.apache.flink.runtime.jobgraph.DistributionPattern.ALL_TO_ALL;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link DefaultOperatorCoordinatorHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultOperatorCoordinatorHandlerTest {
     @RegisterExtension
     private static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_EXTENSION =

@@ -28,12 +28,18 @@ import org.apache.flink.runtime.state.changelog.ChangelogStateBackendHandle.Chan
 import org.apache.flink.runtime.state.changelog.SequenceNumber;
 import org.apache.flink.runtime.state.changelog.inmemory.InMemoryChangelogStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 /** Test utils for changelog * */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ChangelogTestUtils {
 
     public static ChangelogStateBackendHandle createChangelogStateBackendHandle() {

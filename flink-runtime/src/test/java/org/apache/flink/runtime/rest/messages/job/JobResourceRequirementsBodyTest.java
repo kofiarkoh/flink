@@ -23,6 +23,8 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.rest.messages.RestRequestMarshallingTestBase;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,6 +36,8 @@ import static org.assertj.core.api.HamcrestCondition.matching;
 
 /** Tests for the marshalling of {@link JobResourceRequirementsBody}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobResourceRequirementsBodyTest
         extends RestRequestMarshallingTestBase<JobResourceRequirementsBody> {
     @Override

@@ -29,8 +29,11 @@ import org.apache.flink.util.function.BiFunctionWithException;
 import org.apache.flink.util.function.FunctionWithException;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.URI;
@@ -46,6 +49,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /** Tests for the {@link FileStateHandle}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileStateHandleTest {
 
     private static final String TEST_SCHEME = "test";

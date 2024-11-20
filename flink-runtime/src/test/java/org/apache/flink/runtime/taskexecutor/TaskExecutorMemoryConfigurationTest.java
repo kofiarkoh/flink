@@ -21,7 +21,10 @@ package org.apache.flink.runtime.taskexecutor;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.MemorySize;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.TaskManagerOptions.FRAMEWORK_HEAP_MEMORY;
 import static org.apache.flink.configuration.TaskManagerOptions.FRAMEWORK_OFF_HEAP_MEMORY;
@@ -39,6 +42,8 @@ import static org.apache.flink.configuration.TaskManagerOptions.TASK_OFF_HEAP_ME
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the initialization of TaskExecutorMemoryConfiguration. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorMemoryConfigurationTest {
 
     @Test

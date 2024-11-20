@@ -31,6 +31,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.CheckedSupplier;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -50,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests how the {@link DeclarativeSlotPoolBridge} completes slot requests. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeclarativeSlotPoolBridgeRequestCompletionTest {
 
     private static final Duration TIMEOUT = SlotPoolUtils.TIMEOUT;

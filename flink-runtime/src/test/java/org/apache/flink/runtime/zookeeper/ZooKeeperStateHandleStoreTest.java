@@ -39,8 +39,11 @@ import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.KeeperException;
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.data.Stat;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -69,6 +72,8 @@ import static org.mockito.Mockito.when;
  *   <li>Correct ordering of ZooKeeper and state handle operations
  * </ul>
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperStateHandleStoreTest {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

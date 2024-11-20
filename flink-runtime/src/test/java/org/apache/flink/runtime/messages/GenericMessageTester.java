@@ -22,6 +22,10 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.api.common.JobStatus;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
@@ -32,6 +36,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class GenericMessageTester {
 
     public static void testMessageInstance(Serializable instance) throws Exception {

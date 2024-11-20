@@ -30,7 +30,10 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.testutils.EmptyStreamStateHandle;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * {@code StopWithSavepointTerminationHandlerImplTest} tests {@link
  * StopWithSavepointTerminationHandlerImpl}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StopWithSavepointTerminationHandlerImplTest {
 
     private static final Logger log =

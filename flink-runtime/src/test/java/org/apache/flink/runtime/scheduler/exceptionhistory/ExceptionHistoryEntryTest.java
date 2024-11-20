@@ -24,7 +24,10 @@ import org.apache.flink.runtime.failure.FailureEnricherUtils;
 import org.apache.flink.runtime.taskmanager.LocalTaskManagerLocation;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.Map;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** {@code ExceptionHistoryEntryTest} tests the creation of {@link ExceptionHistoryEntry}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExceptionHistoryEntryTest {
 
     @Test

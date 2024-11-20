@@ -35,7 +35,10 @@ import org.apache.flink.testutils.TestingUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.channel.Channel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.stubbing.Answer;
 
 import javax.annotation.Nullable;
@@ -60,6 +63,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CancelPartitionRequestTest {
 
     /**

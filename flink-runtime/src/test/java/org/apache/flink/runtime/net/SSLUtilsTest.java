@@ -29,7 +29,10 @@ import org.apache.flink.shaded.netty4.io.netty.handler.ssl.JdkSslContext;
 import org.apache.flink.shaded.netty4.io.netty.handler.ssl.OpenSsl;
 import org.apache.flink.shaded.netty4.io.netty.handler.ssl.SslHandler;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -56,6 +59,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link SSLUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SSLUtilsTest {
 
     private static final String TRUST_STORE_PATH =

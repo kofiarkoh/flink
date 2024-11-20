@@ -23,11 +23,16 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KeyAndValueSerializer} in {@link KeyedSortPartitionOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyAndValueSerializerTest extends SerializerTestBase<Tuple2<byte[], Integer>> {
 
     private static final int DEFAULT_KEY_LENGTH = 4;

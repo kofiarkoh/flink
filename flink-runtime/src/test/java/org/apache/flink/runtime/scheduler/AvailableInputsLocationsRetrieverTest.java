@@ -23,7 +23,10 @@ import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 
@@ -31,6 +34,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AvailableInputsLocationsRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvailableInputsLocationsRetrieverTest {
     private static final ExecutionVertexID EV1 = createRandomExecutionVertexId();
     private static final ExecutionVertexID EV2 = createRandomExecutionVertexId();

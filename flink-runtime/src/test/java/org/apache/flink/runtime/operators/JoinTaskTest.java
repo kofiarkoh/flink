@@ -33,7 +33,10 @@ import org.apache.flink.types.Record;
 import org.apache.flink.types.Value;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JoinTaskTest extends DriverTestBase<FlatJoinFunction<Record, Record, Record>> {
 
     private static final long HASH_MEM = 6 * 1024 * 1024;

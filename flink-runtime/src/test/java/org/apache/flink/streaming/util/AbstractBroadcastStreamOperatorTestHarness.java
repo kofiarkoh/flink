@@ -23,8 +23,16 @@ import org.apache.flink.streaming.api.operators.TwoInputStreamOperator;
 import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
-/** Base class for broadcast stream operator test harnesses. */
-public abstract class AbstractBroadcastStreamOperatorTestHarness<IN1, IN2, OUT>
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for broadcast stream operator test
+ * harnesses.
+ */
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractBroadcastStreamOperatorTestHarness<IN1, IN2, OUT>
         extends AbstractStreamOperatorTestHarness<OUT> {
 
     public AbstractBroadcastStreamOperatorTestHarness(

@@ -20,10 +20,14 @@ package org.apache.flink.runtime.rest.messages;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for the {@link DashboardConfiguration}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DashboardConfigurationTest extends RestResponseMarshallingTestBase<DashboardConfiguration> {
 
     @Override

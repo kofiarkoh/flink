@@ -39,7 +39,10 @@ import org.apache.flink.streaming.runtime.tasks.TestSubtaskCheckpointCoordinator
 import org.apache.flink.streaming.util.MockStreamTask;
 import org.apache.flink.streaming.util.MockStreamTaskBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the behaviors of the {@link
  * org.apache.flink.streaming.runtime.io.checkpointing.InputProcessorUtil}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputProcessorUtilTest {
 
     @Test

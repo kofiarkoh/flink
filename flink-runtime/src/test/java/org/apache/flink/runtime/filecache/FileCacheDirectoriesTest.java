@@ -30,10 +30,13 @@ import org.apache.flink.runtime.testutils.DirectScheduledExecutorService;
 import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.ByteArrayInputStream;
@@ -55,6 +58,8 @@ import static org.junit.Assert.assertTrue;
  * Tests that {@link FileCache} can read zipped directories from BlobServer and properly cleans them
  * after.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileCacheDirectoriesTest {
 
     private static final String testFileContent =

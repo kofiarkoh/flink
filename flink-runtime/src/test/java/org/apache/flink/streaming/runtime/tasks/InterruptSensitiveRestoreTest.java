@@ -80,7 +80,10 @@ import org.apache.flink.streaming.api.graph.StreamConfig;
 import org.apache.flink.streaming.api.operators.StreamSource;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -104,6 +107,8 @@ import static org.mockito.Mockito.mock;
  * <p>In practice, reading from HDFS is interrupt sensitive: The HDFS code frequently deadlocks or
  * livelocks if it is interrupted.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InterruptSensitiveRestoreTest {
 
     private static final OneShotLatch IN_RESTORE_LATCH = new OneShotLatch();
@@ -300,7 +305,8 @@ class InterruptSensitiveRestoreTest {
     // ------------------------------------------------------------------------
 
     @SuppressWarnings("serial")
-    private static class InterruptLockingStateHandle implements TestStreamStateHandle {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class InterruptLockingStateHandle implements TestStreamStateHandle {
 
         private static final long serialVersionUID = 1L;
 

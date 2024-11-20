@@ -26,9 +26,15 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.runtime.testutils.statemigration.TestType.IncompatibleTestTypeSerializer.IncompatibleTestTypeSerializerSnapshot;
 import org.apache.flink.runtime.testutils.statemigration.TestType.ReconfigurationRequiringTestTypeSerializer.ReconfigurationRequiringTestTypeSerializerSnapshot;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 
 /** Snapshot class for {@link TestType.V1TestTypeSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class V1TestTypeSerializerSnapshot implements TypeSerializerSnapshot<TestType> {
 
     @Override

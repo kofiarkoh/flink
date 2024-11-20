@@ -22,9 +22,14 @@ import org.apache.flink.api.common.eventtime.Watermark;
 import org.apache.flink.api.common.eventtime.WatermarkGenerator;
 import org.apache.flink.api.common.eventtime.WatermarkOutput;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
-final class OnPeriodicTestWatermarkGenerator<T> implements WatermarkGenerator<T> {
+final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class OnPeriodicTestWatermarkGenerator<T>
+        implements WatermarkGenerator<T> {
 
     @Nullable private Long lastTimestamp;
 

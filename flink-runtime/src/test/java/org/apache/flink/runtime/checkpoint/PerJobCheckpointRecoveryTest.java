@@ -23,7 +23,10 @@ import org.apache.flink.core.execution.RecoveryClaimMode;
 import org.apache.flink.runtime.state.SharedStateRegistry;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Tests related to {@link PerJobCheckpointRecoveryFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PerJobCheckpointRecoveryTest {
 
     @Test

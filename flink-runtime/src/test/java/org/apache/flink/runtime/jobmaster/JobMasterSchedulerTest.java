@@ -42,7 +42,10 @@ import org.apache.flink.runtime.shuffle.ShuffleMaster;
 import org.apache.flink.streaming.api.graph.ExecutionPlan;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
 
@@ -53,6 +56,8 @@ import java.util.concurrent.ScheduledExecutorService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobMasterSchedulerTest {
 
     private static final TestingRpcServiceExtension TESTING_RPC_SERVICE_EXTENSION =

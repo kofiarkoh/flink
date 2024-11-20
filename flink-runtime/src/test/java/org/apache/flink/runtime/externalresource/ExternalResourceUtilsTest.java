@@ -27,8 +27,11 @@ import org.apache.flink.core.plugin.PluginManager;
 import org.apache.flink.core.plugin.TestingPluginManager;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.collections.IteratorUtils;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -48,6 +51,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link ExternalResourceUtils} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExternalResourceUtilsTest extends TestLogger {
 
     private static final String RESOURCE_NAME_1 = "foo";

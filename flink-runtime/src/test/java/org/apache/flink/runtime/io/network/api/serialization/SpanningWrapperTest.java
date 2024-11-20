@@ -22,7 +22,10 @@ import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.CloseableIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -36,6 +39,8 @@ import static org.apache.flink.runtime.io.network.api.serialization.SpillingAdap
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link SpanningWrapper} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SpanningWrapperTest {
 
     private static final Random random = new Random();

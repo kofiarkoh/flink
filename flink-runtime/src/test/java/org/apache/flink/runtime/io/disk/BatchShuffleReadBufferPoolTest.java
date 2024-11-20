@@ -20,8 +20,11 @@ package org.apache.flink.runtime.io.disk;
 import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.core.testutils.CheckedThread;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link BatchShuffleReadBufferPool}. */
 @Timeout(value = 60)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchShuffleReadBufferPoolTest {
 
     @Test

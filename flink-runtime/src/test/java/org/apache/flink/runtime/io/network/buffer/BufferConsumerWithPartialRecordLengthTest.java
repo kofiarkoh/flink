@@ -20,8 +20,11 @@ package org.apache.flink.runtime.io.network.buffer;
 
 import org.apache.flink.runtime.io.network.partition.PrioritizedDeque;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 
@@ -32,6 +35,8 @@ import static org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link BufferConsumerWithPartialRecordLength}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferConsumerWithPartialRecordLengthTest {
     private static final int BUFFER_INT_SIZE = 4;
     private static final int BUFFER_SIZE = BUFFER_INT_SIZE * Integer.BYTES;

@@ -26,10 +26,13 @@ import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.FlinkException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -49,6 +52,8 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the {@link FileJobGraphRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileJobGraphRetrieverTest {
 
     @Rule public final TemporaryFolder temporaryFolder = new TemporaryFolder();

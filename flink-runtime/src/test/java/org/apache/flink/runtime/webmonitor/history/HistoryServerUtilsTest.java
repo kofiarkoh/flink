@@ -22,7 +22,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.HistoryServerOptions;
 import org.apache.flink.configuration.SecurityOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -33,6 +36,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link HistoryServerUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HistoryServerUtilsTest {
 
     private static final String HOSTNAME = "foobar";

@@ -21,7 +21,10 @@ package org.apache.flink.runtime.checkpoint.hooks;
 import org.apache.flink.core.io.SimpleVersionedSerializer;
 import org.apache.flink.runtime.checkpoint.MasterTriggerRestoreHook;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -34,6 +37,8 @@ import java.util.concurrent.Executor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the MasterHooks utility class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MasterHooksTest {
 
     // ------------------------------------------------------------------------

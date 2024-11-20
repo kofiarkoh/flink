@@ -21,8 +21,11 @@ package org.apache.flink.runtime.state;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -34,6 +37,8 @@ import java.util.EnumMap;
 import java.util.UUID;
 
 /** Unit tests for {@link IncrementalLocalKeyedStateHandle}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IncrementalLocalKeyedStateHandleTest {
 
     @Test

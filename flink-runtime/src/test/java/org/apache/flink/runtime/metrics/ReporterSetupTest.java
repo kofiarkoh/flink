@@ -28,7 +28,10 @@ import org.apache.flink.runtime.metrics.scope.ScopeFormat;
 import org.apache.flink.runtime.metrics.util.TestReporter;
 import org.apache.flink.testutils.junit.extensions.ContextClassLoaderExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.List;
@@ -38,6 +41,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ReporterSetup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ReporterSetupTest {
 
     @RegisterExtension
@@ -56,10 +61,12 @@ class ReporterSetupTest {
                     .build();
 
     /** TestReporter1 class only for type differentiation. */
-    public static class TestReporter1 extends TestReporter {}
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter1
+            extends TestReporter {}
 
     /** TestReporter2 class only for type differentiation. */
-    public static class TestReporter2 extends TestReporter {}
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter2
+            extends TestReporter {}
 
     /** Verifies that a reporter can be configured with all it's arguments being forwarded. */
     @Test
@@ -162,7 +169,8 @@ class ReporterSetupTest {
     }
 
     /** Reporter that exposes whether open() was called. */
-    public static class TestReporter11 extends TestReporter {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter11
+            extends TestReporter {
         public static boolean wasOpened = false;
 
         @Override
@@ -172,7 +180,8 @@ class ReporterSetupTest {
     }
 
     /** Reporter that exposes whether open() was called. */
-    public static class TestReporter12 extends TestReporter {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter12
+            extends TestReporter {
         public static boolean wasOpened = false;
 
         @Override
@@ -182,7 +191,8 @@ class ReporterSetupTest {
     }
 
     /** Reporter that exposes whether open() was called. */
-    public static class TestReporter13 extends TestReporter {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter13
+            extends TestReporter {
         public static boolean wasOpened = false;
 
         @Override

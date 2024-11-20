@@ -21,7 +21,10 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 
 import java.util.HashMap;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PendingCheckpointStatsTest {
 
     /** Tests reporting of subtask stats. */

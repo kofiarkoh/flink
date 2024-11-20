@@ -24,6 +24,10 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.core.memory.DataOutputSerializer;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -33,7 +37,7 @@ import java.util.stream.Stream;
  * FixedLengthByteKeyComparatorTest}, {@link FixedLengthKeyAndValueSerializerTest}, and {@link
  * VariableLengthKeyAndValueSerializerTest}.
  */
-final class SerializerComparatorTestData {
+final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SerializerComparatorTestData {
     @SuppressWarnings("unchecked")
     static Tuple2<byte[], StreamRecord<Integer>>[] getOrderedIntTestData() {
         IntSerializer intSerializer = new IntSerializer();

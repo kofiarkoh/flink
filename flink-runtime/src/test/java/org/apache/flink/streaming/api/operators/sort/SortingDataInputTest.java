@@ -29,7 +29,10 @@ import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.runtime.io.DataInputStatus;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>These are rather simple unit tests. See also {@link LargeSortingDataInputITCase} for more
  * thorough tests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SortingDataInputTest {
     @Test
     void simpleFixedLengthKeySorting() throws Exception {

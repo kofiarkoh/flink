@@ -18,13 +18,17 @@
 
 package org.apache.flink.runtime.checkpoint.channel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Base class which contains all tests which should be implemented for every implementation of
- * {@link InputChannelRecoveredStateHandler}.
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class which contains all tests which
+ * should be implemented for every implementation of {@link InputChannelRecoveredStateHandler}.
  */
-abstract class RecoveredChannelStateHandlerTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class RecoveredChannelStateHandlerTest {
 
     @Test
     abstract void testRecycleBufferBeforeRecoverWasCalled() throws Exception;

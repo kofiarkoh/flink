@@ -35,6 +35,8 @@ import org.apache.flink.shaded.netty4.io.netty.handler.codec.string.StringDecode
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.string.StringEncoder;
 import org.apache.flink.shaded.netty4.io.netty.handler.ssl.SslHandler;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -54,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the SSL connection between Netty Server and Client used for the data plane. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyClientServerSslTest {
 
     @Parameter private String sslProvider;

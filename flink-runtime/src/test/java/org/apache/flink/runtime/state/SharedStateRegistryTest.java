@@ -40,7 +40,10 @@ import org.apache.flink.runtime.state.filesystem.AbstractFsCheckpointStorageAcce
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -59,6 +62,8 @@ import static org.apache.flink.runtime.state.ChangelogTestUtils.createDummyChang
 import static org.apache.flink.runtime.state.ChangelogTestUtils.createDummyIncrementalStateHandle;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SharedStateRegistryTest {
     private static final String RESTORED_STATE_ID = "restored-state";
 
@@ -381,7 +386,8 @@ class SharedStateRegistryTest {
                 RecoveryClaimMode.DEFAULT);
     }
 
-    private static class TestSharedState implements TestStreamStateHandle {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestSharedState
+            implements TestStreamStateHandle {
         private static final long serialVersionUID = 4468635881465159780L;
 
         private SharedStateRegistryKey key;

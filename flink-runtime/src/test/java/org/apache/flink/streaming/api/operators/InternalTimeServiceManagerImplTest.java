@@ -18,11 +18,16 @@
 
 package org.apache.flink.streaming.api.operators;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link InternalTimeServiceManagerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InternalTimeServiceManagerImplTest {
 
     /** This test fixes some constants, because changing them can harm backwards compatibility. */

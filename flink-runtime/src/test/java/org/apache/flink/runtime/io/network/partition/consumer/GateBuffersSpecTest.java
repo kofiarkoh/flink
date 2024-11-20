@@ -20,6 +20,9 @@ package org.apache.flink.runtime.io.network.partition.consumer;
 
 import org.apache.flink.runtime.io.network.partition.ResultPartitionType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -31,6 +34,8 @@ import static org.apache.flink.runtime.io.network.partition.consumer.InputGateSp
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link GateBuffersSpec}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GateBuffersSpecTest {
 
     private static ResultPartitionType[] parameters() {

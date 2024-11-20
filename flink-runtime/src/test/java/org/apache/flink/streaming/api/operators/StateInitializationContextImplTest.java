@@ -63,8 +63,11 @@ import org.apache.flink.streaming.runtime.tasks.ProcessingTimeService;
 import org.apache.flink.streaming.runtime.tasks.StreamTaskCancellationContext;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -83,6 +86,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link StateInitializationContextImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateInitializationContextImplTest {
 
     static final int NUM_HANDLES = 10;
@@ -347,7 +352,8 @@ class StateInitializationContextImplTest {
         }
     }
 
-    static final class ByteStateHandleCloseChecking extends ByteStreamStateHandle {
+    static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ByteStateHandleCloseChecking extends ByteStreamStateHandle {
 
         private static final long serialVersionUID = -6201941296931334140L;
 

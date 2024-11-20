@@ -29,7 +29,10 @@ import org.apache.flink.runtime.source.event.AddSplitEvent;
 import org.apache.flink.runtime.source.event.IsProcessingBacklogEvent;
 import org.apache.flink.runtime.source.event.ReaderRegistrationEvent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -43,6 +46,8 @@ import static org.apache.flink.runtime.source.coordinator.CoordinatorTestUtils.v
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link SourceCoordinatorContext}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceCoordinatorContextTest extends SourceCoordinatorTestBase {
 
     @Test

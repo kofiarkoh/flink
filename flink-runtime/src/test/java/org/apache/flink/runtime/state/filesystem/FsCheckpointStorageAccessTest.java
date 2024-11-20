@@ -34,7 +34,10 @@ import org.apache.flink.runtime.state.filesystem.FsCheckpointStreamFactory.FsChe
 import org.apache.flink.testutils.TestFileSystem;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -49,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 /** Tests for the {@link FsCheckpointStorageAccess}, which implements the checkpoint storage. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FsCheckpointStorageAccessTest extends AbstractFileCheckpointStorageAccessTestBase {
 
     private static final int FILE_SIZE_THRESHOLD = 1024;
@@ -321,8 +326,8 @@ class FsCheckpointStorageAccessTest extends AbstractFileCheckpointStorageAccessT
                 .isInstanceOf(FsCheckpointStateToolset.class);
     }
 
-    private static final class TestDuplicatingFileSystem extends TestFileSystem
-            implements PathsCopyingFileSystem {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestDuplicatingFileSystem extends TestFileSystem implements PathsCopyingFileSystem {
 
         @Override
         public boolean canCopyPaths(Path source, Path destination) throws IOException {

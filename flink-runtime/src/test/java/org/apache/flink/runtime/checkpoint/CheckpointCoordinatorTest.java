@@ -88,8 +88,11 @@ import org.apache.flink.util.function.TriFunctionWithException;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 import org.mockito.verification.VerificationMode;
@@ -152,6 +155,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for the checkpoint coordinator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointCoordinatorTest {
 
     @RegisterExtension

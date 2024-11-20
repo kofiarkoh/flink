@@ -18,13 +18,18 @@
 
 package org.apache.flink.streaming.runtime.io.benchmark;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for various network benchmarks based on {@link StreamNetworkThroughputBenchmark}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamNetworkThroughputBenchmarkTest {
 
     protected StreamNetworkThroughputBenchmark createBenchmark() {

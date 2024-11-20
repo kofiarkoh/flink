@@ -29,7 +29,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.time.Duration;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.HamcrestCondition.matching;
 
 /** Tests for {@link TimestampsAndWatermarksOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimestampsAndWatermarksOperatorTest {
 
     private static final long AUTO_WATERMARK_INTERVAL = 50L;

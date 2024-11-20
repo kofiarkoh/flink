@@ -21,12 +21,17 @@ package org.apache.flink.runtime.state.v2;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.runtime.asyncprocessing.StateRequestType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /** Tests for {@link AbstractListState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractListStateTest extends AbstractKeyedStateTestBase {
 
     @Test

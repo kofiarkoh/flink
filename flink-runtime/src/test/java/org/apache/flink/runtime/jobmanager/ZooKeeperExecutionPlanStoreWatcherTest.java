@@ -36,8 +36,11 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.recipes.cache.PathChildrenCache;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -46,6 +49,8 @@ import java.nio.file.Path;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ZooKeeperExecutionPlanStoreWatcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperExecutionPlanStoreWatcherTest {
 
     @RegisterExtension

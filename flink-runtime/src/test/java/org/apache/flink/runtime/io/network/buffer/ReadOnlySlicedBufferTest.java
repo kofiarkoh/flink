@@ -26,8 +26,11 @@ import org.apache.flink.runtime.io.network.netty.NettyBufferPool;
 
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -35,6 +38,8 @@ import java.nio.ByteBuffer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ReadOnlySlicedNetworkBuffer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ReadOnlySlicedBufferTest {
     private static final int BUFFER_SIZE = 1024;
     private static final int DATA_SIZE = 10;

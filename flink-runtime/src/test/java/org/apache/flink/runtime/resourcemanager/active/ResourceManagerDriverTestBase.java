@@ -30,6 +30,8 @@ import org.apache.flink.util.concurrent.ScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -45,7 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Common test cases for implementations of {@link ResourceManagerDriver}. */
 @ExtendWith(TestLoggerExtension.class)
-public abstract class ResourceManagerDriverTestBase<WorkerType extends ResourceIDRetrievable> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class ResourceManagerDriverTestBase<WorkerType extends ResourceIDRetrievable> {
 
     protected static final long TIMEOUT_SEC = 5L;
     protected static final long TIMEOUT_SHOULD_NOT_HAPPEN_MS = 10;
@@ -158,7 +161,10 @@ public abstract class ResourceManagerDriverTestBase<WorkerType extends ResourceI
 
     protected abstract Context createContext();
 
-    /** This class provides a self-contained context for each test case. */
+    /**
+     * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class provides a self-contained
+     * context for each test case.
+     */
     protected abstract class Context {
         protected final Configuration flinkConfig = new Configuration();
         protected final TestingResourceEventHandler.Builder<WorkerType>

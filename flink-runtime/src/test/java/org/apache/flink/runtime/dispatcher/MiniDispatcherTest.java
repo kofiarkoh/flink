@@ -47,6 +47,8 @@ import org.apache.flink.runtime.util.TestingFatalErrorHandlerResource;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -54,6 +56,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import javax.annotation.Nullable;
@@ -71,6 +74,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the {@link MiniDispatcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MiniDispatcherTest extends TestLogger {
 
     private static final Duration timeout = Duration.ofSeconds(10L);

@@ -28,7 +28,10 @@ import org.apache.flink.runtime.slots.ResourceRequirements;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -42,6 +45,8 @@ import java.util.function.Consumer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DefaultDeclareResourceRequirementServiceConnectionManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultDeclareResourceRequirementServiceConnectionManagerTest {
 
     private final ManuallyTriggeredScheduledExecutorService scheduledExecutor =

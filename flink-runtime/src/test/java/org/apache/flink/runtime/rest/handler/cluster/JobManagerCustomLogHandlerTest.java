@@ -26,9 +26,12 @@ import org.apache.flink.runtime.rest.messages.cluster.JobManagerCustomLogHeaders
 import org.apache.flink.runtime.webmonitor.TestingDispatcherGateway;
 import org.apache.flink.testutils.TestingUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -43,6 +46,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link JobManagerCustomLogHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerCustomLogHandlerTest {
 
     private static final String FORBIDDEN_FILENAME = "forbidden";

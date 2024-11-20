@@ -19,7 +19,8 @@
 package org.apache.flink.runtime.operators.testutils;
 
 /**
- * Utility class for keeping track of matches in join operator tests.
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for keeping track of matches in
+ * join operator tests.
  *
  * @see MatchRemovingJoiner
  */

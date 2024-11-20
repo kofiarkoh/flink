@@ -40,6 +40,8 @@ import org.apache.flink.util.TestLoggerExtension;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -69,6 +71,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link SessionDispatcherLeaderProcess}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SessionDispatcherLeaderProcessTest {
 
     private static final JobGraph JOB_GRAPH = JobGraphTestUtils.emptyJobGraph();

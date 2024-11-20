@@ -24,12 +24,17 @@ import org.apache.flink.util.jackson.JacksonMapperFactory;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.module.SimpleModule;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SerializedThrowableSerializer} and {@link SerializedThrowableDeserializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerializedThrowableSerializerTest {
 
     private ObjectMapper objectMapper;

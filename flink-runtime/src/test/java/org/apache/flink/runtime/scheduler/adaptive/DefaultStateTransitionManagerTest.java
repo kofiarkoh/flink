@@ -23,7 +23,10 @@ import org.apache.flink.core.testutils.ScheduledTask;
 import org.apache.flink.runtime.scheduler.adaptive.DefaultStateTransitionManager.Idling;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -44,6 +47,8 @@ import static org.apache.flink.runtime.scheduler.adaptive.DefaultStateTransition
 import static org.apache.flink.runtime.scheduler.adaptive.DefaultStateTransitionManager.Transitioning;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultStateTransitionManagerTest {
 
     @Test

@@ -21,6 +21,10 @@ package org.apache.flink.runtime.state;
 import org.apache.flink.runtime.checkpoint.TaskStateSnapshot;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -31,6 +35,8 @@ import java.util.TreeMap;
 import java.util.function.LongPredicate;
 
 /** Test implementation of a {@link TaskLocalStateStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestTaskLocalStateStore implements TaskLocalStateStore {
 
     private final SortedMap<Long, TaskStateSnapshot> taskStateSnapshotsByCheckpointID;

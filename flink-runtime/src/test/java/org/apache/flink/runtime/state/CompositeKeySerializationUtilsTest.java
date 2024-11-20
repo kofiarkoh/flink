@@ -27,11 +27,16 @@ import org.apache.flink.core.memory.DataOutputSerializer;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.core.memory.DataOutputViewStreamWrapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for guarding {@link CompositeKeySerializationUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompositeKeySerializationUtilsTest {
 
     @Test

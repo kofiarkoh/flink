@@ -24,7 +24,10 @@ import org.apache.flink.runtime.jobmaster.TestingLogicalSlotBuilder;
 import org.apache.flink.runtime.jobmaster.slotpool.TestingPhysicalSlotPayload;
 import org.apache.flink.runtime.scheduler.TestingPhysicalSlot;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link SharedSlot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SharedSlotTest {
 
     @Test

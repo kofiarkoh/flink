@@ -26,7 +26,10 @@ import org.apache.flink.metrics.MetricType;
 import org.apache.flink.metrics.util.TestCounter;
 import org.apache.flink.metrics.util.TestMeter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
@@ -38,6 +41,8 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Execution(ExecutionMode.CONCURRENT)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultMetricFilterTest {
 
     private static final Counter COUNTER = new TestCounter();

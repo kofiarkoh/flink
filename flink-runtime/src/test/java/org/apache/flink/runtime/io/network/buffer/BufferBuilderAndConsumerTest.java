@@ -20,7 +20,10 @@ package org.apache.flink.runtime.io.network.buffer;
 
 import org.apache.flink.core.memory.MemorySegment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link BufferBuilder}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferBuilderAndConsumerTest {
     private static final int BUFFER_INT_SIZE = 10;
     private static final int BUFFER_SIZE = BUFFER_INT_SIZE * Integer.BYTES;

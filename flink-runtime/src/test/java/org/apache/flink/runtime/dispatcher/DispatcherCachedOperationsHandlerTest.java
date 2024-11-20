@@ -32,8 +32,11 @@ import org.apache.flink.runtime.rest.handler.job.AsynchronousJobOperationKey;
 import org.apache.flink.runtime.rest.messages.TriggerId;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -48,6 +51,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /** Tests for the {@link DispatcherCachedOperationsHandler} component. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherCachedOperationsHandlerTest extends TestLogger {
 
     private static final Duration TIMEOUT = Duration.ofMinutes(10);

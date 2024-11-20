@@ -25,12 +25,17 @@ import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** Migration tests for {@link StreamElementSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamElementSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<StreamElement, StreamElement> {
 

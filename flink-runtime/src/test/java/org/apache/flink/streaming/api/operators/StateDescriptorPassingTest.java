@@ -44,7 +44,10 @@ import org.apache.flink.util.Collector;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.serializers.JavaSerializer;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.time.Duration;
@@ -57,6 +60,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * <p>The tests use an arbitrary generic type to validate the behavior.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateDescriptorPassingTest {
 
     @Test

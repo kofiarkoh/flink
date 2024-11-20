@@ -36,7 +36,10 @@ import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.QuadConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -51,6 +54,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DefaultSlotStatusSyncer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultSlotStatusSyncerTest {
     private static final Duration TASK_MANAGER_REQUEST_TIMEOUT = Duration.ofSeconds(10);
     private static final TaskExecutorConnection TASK_EXECUTOR_CONNECTION =

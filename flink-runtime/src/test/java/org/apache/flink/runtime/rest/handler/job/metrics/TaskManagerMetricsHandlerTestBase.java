@@ -22,10 +22,16 @@ import org.apache.flink.runtime.instance.InstanceID;
 import org.apache.flink.runtime.metrics.dump.QueryScopeInfo;
 import org.apache.flink.runtime.rest.messages.taskmanager.TaskManagerIdPathParameter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.Map;
 
 /** Tests for {@link TaskManagerMetricsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerMetricsHandlerTestBase extends MetricsHandlerTestBase<TaskManagerMetricsHandler> {
 
     private static final String TEST_TASK_MANAGER_ID = new InstanceID().toString();

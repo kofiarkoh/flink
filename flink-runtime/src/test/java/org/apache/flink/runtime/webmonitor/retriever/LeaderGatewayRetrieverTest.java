@@ -26,7 +26,10 @@ import org.apache.flink.runtime.rpc.TestingRpcGateway;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -35,6 +38,8 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test cases for the {@link LeaderGatewayRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LeaderGatewayRetrieverTest {
 
     /** Tests that the gateway retrieval is retried in case of a failure. */

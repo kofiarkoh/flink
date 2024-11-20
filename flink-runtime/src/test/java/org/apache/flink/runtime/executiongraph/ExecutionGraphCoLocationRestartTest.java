@@ -39,7 +39,10 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.FlinkException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.concurrent.CompletableFuture;
@@ -50,6 +53,8 @@ import static org.apache.flink.api.common.JobStatus.FINISHED;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that co-location constraints work as expected in the case of task restarts. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionGraphCoLocationRestartTest {
 
     @RegisterExtension

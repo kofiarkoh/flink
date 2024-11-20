@@ -33,9 +33,12 @@ import org.apache.flink.runtime.shuffle.PartitionDescriptorBuilder;
 import org.apache.flink.runtime.util.EnvironmentInformation;
 import org.apache.flink.runtime.util.NettyShuffleDescriptorBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.concurrent.Executors;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ResultPartitionFactory}. */
 @SuppressWarnings("StaticVariableUsedBeforeInitialization")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResultPartitionFactoryTest {
 
     private static final String tempDir = EnvironmentInformation.getTemporaryFileDirectory();

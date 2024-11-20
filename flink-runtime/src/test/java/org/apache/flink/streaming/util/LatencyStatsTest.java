@@ -29,7 +29,10 @@ import org.apache.flink.runtime.metrics.groups.UnregisteredMetricGroups;
 import org.apache.flink.runtime.metrics.util.TestingMetricRegistry;
 import org.apache.flink.streaming.runtime.streamrecord.LatencyMarker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,8 @@ import java.util.function.Consumer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link LatencyStats}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LatencyStatsTest {
 
     private static final OperatorID OPERATOR_ID = new OperatorID();

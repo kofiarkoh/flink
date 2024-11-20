@@ -26,14 +26,19 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JavaType;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.module.SimpleModule;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SerializedValueSerializer} and {@link SerializedValueDeserializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerializedValueSerializerTest {
 
     private ObjectMapper objectMapper;

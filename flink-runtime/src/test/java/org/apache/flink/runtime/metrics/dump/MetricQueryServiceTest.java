@@ -31,10 +31,13 @@ import org.apache.flink.runtime.metrics.groups.TaskManagerMetricGroup;
 import org.apache.flink.runtime.metrics.groups.UnregisteredMetricGroups;
 import org.apache.flink.runtime.rpc.TestingRpcService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.List;
@@ -44,6 +47,8 @@ import java.util.stream.LongStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link MetricQueryService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricQueryServiceTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(1);

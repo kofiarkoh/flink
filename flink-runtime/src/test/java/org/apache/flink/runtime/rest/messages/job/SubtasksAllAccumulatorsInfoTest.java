@@ -22,6 +22,8 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.rest.messages.RestResponseMarshallingTestBase;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ import java.util.List;
 
 /** Tests (un)marshalling of the {@link SubtasksAllAccumulatorsInfo}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubtasksAllAccumulatorsInfoTest
         extends RestResponseMarshallingTestBase<SubtasksAllAccumulatorsInfo> {
     @Override

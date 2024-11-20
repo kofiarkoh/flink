@@ -48,6 +48,10 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.time.Duration;
@@ -68,6 +72,8 @@ import static org.apache.flink.runtime.checkpoint.TaskStateSnapshot.serializeTas
  * A testing utility, that simulates the desired interactions with {@link JobMasterGateway} RPC.
  * This is useful for light-weight e2e tests, eg. simulating specific fail-over scenario.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobMasterTester implements Closeable {
 
     private static final Duration TIMEOUT = Duration.ofMinutes(1);

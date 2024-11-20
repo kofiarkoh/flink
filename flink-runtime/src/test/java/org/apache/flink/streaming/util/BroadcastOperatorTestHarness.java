@@ -22,6 +22,10 @@ import org.apache.flink.api.common.state.BroadcastState;
 import org.apache.flink.api.common.state.MapStateDescriptor;
 import org.apache.flink.streaming.api.operators.co.CoBroadcastWithNonKeyedOperator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * A test harness for testing a {@link CoBroadcastWithNonKeyedOperator}.
  *
@@ -29,6 +33,8 @@ import org.apache.flink.streaming.api.operators.co.CoBroadcastWithNonKeyedOperat
  * and watermarks into the operator. {@link java.util.Deque}s containing the emitted elements and
  * watermarks can be retrieved. They are safe to be modified.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BroadcastOperatorTestHarness<IN1, IN2, OUT>
         extends AbstractBroadcastStreamOperatorTestHarness<IN1, IN2, OUT> {
 

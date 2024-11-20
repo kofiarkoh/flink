@@ -40,7 +40,10 @@ import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -52,6 +55,8 @@ import java.util.function.Supplier;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Test for {@link AsyncExecutionController}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncExecutionControllerTest {
     AsyncExecutionController<String> aec;
     AtomicInteger output;

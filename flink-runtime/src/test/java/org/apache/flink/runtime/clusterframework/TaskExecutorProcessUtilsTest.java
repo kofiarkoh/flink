@@ -30,7 +30,10 @@ import org.apache.flink.configuration.TaskManagerOptions;
 import org.apache.flink.runtime.resourcemanager.WorkerResourceSpec;
 import org.apache.flink.runtime.util.config.memory.ProcessMemoryUtilsTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TaskExecutorProcessUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorProcessUtilsTest extends ProcessMemoryUtilsTestBase<TaskExecutorProcessSpec> {
 
     private static final MemorySize TASK_HEAP_SIZE = MemorySize.parse("100m");

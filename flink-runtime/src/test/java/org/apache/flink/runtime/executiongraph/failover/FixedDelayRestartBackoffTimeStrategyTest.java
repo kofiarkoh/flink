@@ -18,11 +18,16 @@
 
 package org.apache.flink.runtime.executiongraph.failover;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link FixedDelayRestartBackoffTimeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FixedDelayRestartBackoffTimeStrategyTest {
 
     private final Exception failure = new Exception();

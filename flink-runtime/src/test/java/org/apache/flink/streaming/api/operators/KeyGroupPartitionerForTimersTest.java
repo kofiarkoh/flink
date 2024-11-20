@@ -22,7 +22,13 @@ import org.apache.flink.runtime.state.KeyGroupPartitioner;
 import org.apache.flink.runtime.state.KeyGroupPartitionerTestBase;
 import org.apache.flink.runtime.state.VoidNamespace;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test of {@link KeyGroupPartitioner} for timers. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyGroupPartitionerForTimersTest
         extends KeyGroupPartitionerTestBase<TimerHeapInternalTimer<Integer, VoidNamespace>> {
 

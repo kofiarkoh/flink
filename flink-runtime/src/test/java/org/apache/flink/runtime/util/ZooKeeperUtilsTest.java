@@ -24,11 +24,16 @@ import org.apache.flink.configuration.HighAvailabilityOptions;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.flink.shaded.curator5.org.apache.curator.retry.ExponentialBackoffRetry;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ZooKeeperUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperUtilsTest {
 
     @Test

@@ -26,8 +26,11 @@ import org.apache.flink.runtime.io.network.buffer.NetworkBufferPool;
 import org.apache.flink.runtime.io.network.partition.ResultPartition;
 import org.apache.flink.runtime.io.network.partition.ResultPartitionBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -35,6 +38,8 @@ import java.util.HashSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test of different implementation of {@link ResultSubpartitionRecoveredStateHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResultSubpartitionRecoveredStateHandlerTest extends RecoveredChannelStateHandlerTest {
     private static final int preAllocatedSegments = 3;
     private NetworkBufferPool networkBufferPool;

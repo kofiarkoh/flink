@@ -34,7 +34,10 @@ import org.apache.flink.util.SerializedThrowable;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -45,6 +48,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DefaultJobMasterServiceProcess}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultJobMasterServiceProcessTest {
     private static final JobID jobId = new JobID();
     private static final Function<Throwable, ArchivedExecutionGraph>

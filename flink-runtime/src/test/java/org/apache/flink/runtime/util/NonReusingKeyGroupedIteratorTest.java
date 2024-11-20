@@ -24,8 +24,11 @@ import org.apache.flink.types.Record;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Test for the safe key grouped iterator, which advances in windows containing the same key and
  * provides a sub-iterator over the records with the same key.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NonReusingKeyGroupedIteratorTest {
 
     private MutableObjectIterator<Record> sourceIter; // the iterator that provides the input

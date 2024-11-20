@@ -28,7 +28,10 @@ import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.concurrent.ScheduledExecutorService;
@@ -44,6 +47,8 @@ import static org.mockito.Mockito.verify;
  * Tests that the {@link JobVertex#finalizeOnMaster(FinalizeOnMasterContext)} is called properly and
  * only when the execution graph reaches the successful final state.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FinalizeOnMasterTest {
 
     @RegisterExtension

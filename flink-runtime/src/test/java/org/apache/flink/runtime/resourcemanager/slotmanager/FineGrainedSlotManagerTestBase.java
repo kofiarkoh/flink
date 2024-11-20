@@ -42,6 +42,9 @@ import org.apache.flink.util.concurrent.ScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -56,8 +59,11 @@ import java.util.concurrent.TimeoutException;
 
 import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 
-/** Base class for the tests of {@link FineGrainedSlotManager}. */
-abstract class FineGrainedSlotManagerTestBase {
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for the tests of {@link
+ * FineGrainedSlotManager}.
+ */
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class FineGrainedSlotManagerTestBase {
     @RegisterExtension
     static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =
             TestingUtils.defaultExecutorExtension();
@@ -142,7 +148,10 @@ abstract class FineGrainedSlotManagerTestBase {
                 .withThrowableOfType(TimeoutException.class);
     }
 
-    /** This class provides a self-contained context for each test case. */
+    /**
+     * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class provides a self-contained
+     * context for each test case.
+     */
     protected class Context {
         private final ResourceManagerId resourceManagerId = ResourceManagerId.generate();
         private final ResourceTracker resourceTracker = new DefaultResourceTracker();

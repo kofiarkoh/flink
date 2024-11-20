@@ -42,8 +42,11 @@ import org.apache.flink.runtime.state.StateBackend;
 import org.apache.flink.runtime.state.heap.HeapPriorityQueueElement;
 import org.apache.flink.runtime.state.v2.internal.InternalKeyedState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -59,6 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests for the common/shared functionality of {@link AbstractKeyedState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractKeyedStateTestBase {
 
     @SuppressWarnings({"rawtypes"})

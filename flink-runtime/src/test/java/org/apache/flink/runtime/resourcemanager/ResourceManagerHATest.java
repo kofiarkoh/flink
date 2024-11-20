@@ -21,7 +21,10 @@ package org.apache.flink.runtime.resourcemanager;
 import org.apache.flink.runtime.leaderelection.LeaderInformation;
 import org.apache.flink.runtime.leaderelection.TestingLeaderElection;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -30,6 +33,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** ResourceManager HA test, including grant leadership and revoke leadership. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceManagerHATest {
 
     @Test

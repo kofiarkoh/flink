@@ -21,10 +21,16 @@ package org.apache.flink.runtime.clusterframework.types;
 import org.apache.flink.annotation.VisibleForTesting;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collection;
 import java.util.Collections;
 
 /** Testing utils for {@link SlotProfile}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SlotProfileTestingUtils {
 
     /** Returns a slot profile that has no requirements. */

@@ -34,8 +34,11 @@ import org.apache.flink.runtime.scheduler.ClusterDatasetCorruptedException;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.types.IntValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,6 +46,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 /** Integration tests for reusing persisted intermediate dataset */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobIntermediateDatasetReuseTest {
 
     private static final Logger LOG =

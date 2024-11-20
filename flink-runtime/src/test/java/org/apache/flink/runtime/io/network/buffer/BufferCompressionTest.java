@@ -26,6 +26,8 @@ import org.apache.flink.runtime.io.network.api.serialization.EventSerializer;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -39,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link BufferCompressor} and {@link BufferDecompressor}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferCompressionTest {
 
     private static final int BUFFER_SIZE = 4 * 1024 * 1024;

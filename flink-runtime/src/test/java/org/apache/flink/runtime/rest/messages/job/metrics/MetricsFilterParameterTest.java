@@ -18,12 +18,17 @@
 
 package org.apache.flink.runtime.rest.messages.job.metrics;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link MetricsFilterParameter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricsFilterParameterTest {
 
     private MetricsFilterParameter metricsFilterParameter;

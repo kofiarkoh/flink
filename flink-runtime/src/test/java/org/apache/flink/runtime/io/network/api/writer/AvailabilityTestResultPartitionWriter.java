@@ -20,12 +20,18 @@ package org.apache.flink.runtime.io.network.api.writer;
 
 import org.apache.flink.runtime.io.network.partition.MockResultPartitionWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.CompletableFuture;
 
 /**
  * A specific result partition writer implementation only used to control the output availability
  * state in tests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvailabilityTestResultPartitionWriter extends MockResultPartitionWriter {
 
     /** This state is only valid in the first call of {@link #isAvailable()}. */

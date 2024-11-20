@@ -41,9 +41,12 @@ import org.apache.flink.runtime.operators.testutils.DummyCheckpointInvokable;
 import org.apache.flink.streaming.runtime.io.MockInputGate;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -56,6 +59,8 @@ import static org.apache.flink.streaming.runtime.io.checkpointing.UnalignedCheck
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the behavior of aligned checkpoints. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AlignedCheckpointsTest {
 
     protected static final int PAGE_SIZE = 512;

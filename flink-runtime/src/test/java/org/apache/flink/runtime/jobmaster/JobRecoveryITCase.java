@@ -31,7 +31,10 @@ import org.apache.flink.runtime.testutils.MiniClusterResourceConfiguration;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -107,7 +110,8 @@ class JobRecoveryITCase {
     }
 
     /** Receiver which fails once before successfully completing. */
-    public static final class FailingOnceReceiver extends TestingAbstractInvokables.Receiver {
+    public static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class FailingOnceReceiver extends TestingAbstractInvokables.Receiver {
 
         private static volatile boolean failed = false;
 

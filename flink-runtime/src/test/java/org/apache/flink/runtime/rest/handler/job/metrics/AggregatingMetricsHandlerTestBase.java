@@ -36,8 +36,11 @@ import org.apache.flink.runtime.webmonitor.retriever.GatewayRetriever;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -55,7 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.within;
 
 /** Test base for handlers that extend {@link AbstractAggregatingMetricsHandler}. */
-abstract class AggregatingMetricsHandlerTestBase<
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AggregatingMetricsHandlerTestBase<
         H extends AbstractAggregatingMetricsHandler<P>,
         P extends AbstractAggregatedMetricsParameters<?>> {
 

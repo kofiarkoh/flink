@@ -35,8 +35,11 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -47,6 +50,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link JobExecutionResultHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobExecutionResultHandlerTest {
 
     private static final JobID TEST_JOB_ID = new JobID();

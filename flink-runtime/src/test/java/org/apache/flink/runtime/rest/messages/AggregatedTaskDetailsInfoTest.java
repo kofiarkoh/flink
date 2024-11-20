@@ -23,6 +23,8 @@ import org.apache.flink.runtime.rest.messages.job.SubtaskExecutionAttemptDetails
 import org.apache.flink.runtime.rest.messages.job.metrics.IOMetricsInfo;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -35,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link AggregatedTaskDetailsInfo}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AggregatedTaskDetailsInfoTest
         extends RestResponseMarshallingTestBase<AggregatedTaskDetailsInfo> {
     @Override

@@ -29,8 +29,11 @@ import org.apache.flink.runtime.operators.coordination.OperatorCoordinator;
 import org.apache.flink.runtime.operators.coordination.RecreateOnResetOperatorCoordinator;
 import org.apache.flink.runtime.source.event.ReaderRegistrationEvent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link SourceCoordinatorProvider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceCoordinatorProviderTest {
 
     private static final OperatorID OPERATOR_ID = new OperatorID(1234L, 5678L);

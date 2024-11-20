@@ -46,6 +46,10 @@ import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 import org.apache.flink.streaming.util.MockOutput;
 import org.apache.flink.streaming.util.MockStreamConfig;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -53,8 +57,13 @@ import java.util.List;
 
 import static org.apache.flink.util.Preconditions.checkState;
 
-/** Helper class for testing {@link SourceOperator}. */
+/**
+ * Helper @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing {@link
+ * SourceOperator}.
+ */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SourceOperatorTestContext implements AutoCloseable {
 
     public static final int SUBTASK_INDEX = 1;

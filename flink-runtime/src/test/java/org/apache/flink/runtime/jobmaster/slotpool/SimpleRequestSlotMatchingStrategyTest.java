@@ -25,6 +25,8 @@ import org.apache.flink.util.TestLoggerExtension;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterators;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -36,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SimpleRequestSlotMatchingStrategy}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SimpleRequestSlotMatchingStrategyTest {
 
     @Test

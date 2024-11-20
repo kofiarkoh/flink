@@ -24,9 +24,12 @@ import org.apache.flink.core.security.token.DelegationTokenReceiver;
 import org.apache.flink.core.testutils.ManuallyTriggeredScheduledExecutorService;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Clock;
 import java.time.ZoneId;
@@ -47,6 +50,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Test for {@link DelegationTokenManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultDelegationTokenManagerTest {
 
     @BeforeEach

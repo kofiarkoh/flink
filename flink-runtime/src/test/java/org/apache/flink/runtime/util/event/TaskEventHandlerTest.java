@@ -23,11 +23,19 @@ import org.apache.flink.runtime.event.task.IntegerTaskEvent;
 import org.apache.flink.runtime.event.task.StringTaskEvent;
 import org.apache.flink.runtime.io.network.api.TaskEventHandler;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** This class contains unit tests for the {@link TaskEventHandler}. */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains unit tests for the {@link
+ * TaskEventHandler}.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskEventHandlerTest {
     /** A test implementation of an {@link EventListener}. */
     private static class TestEventListener implements EventListener<TaskEvent> {

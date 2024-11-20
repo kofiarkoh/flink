@@ -21,7 +21,10 @@ package org.apache.flink.runtime.security.contexts;
 import org.apache.flink.runtime.security.SecurityConfiguration;
 import org.apache.flink.runtime.security.SecurityContextInitializeException;
 
-/** Test security context factory class to test out linkage error circumstances. */
+/**
+ * Test security context factory @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to test
+ * out linkage error circumstances.
+ */
 public class LinkageErrorSecurityContextFactory implements SecurityContextFactory {
 
     @Override

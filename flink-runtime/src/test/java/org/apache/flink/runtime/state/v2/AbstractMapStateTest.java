@@ -22,12 +22,17 @@ import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.asyncprocessing.StateRequestType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /** Tests for {@link AbstractMapState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractMapStateTest extends AbstractKeyedStateTestBase {
 
     @Test

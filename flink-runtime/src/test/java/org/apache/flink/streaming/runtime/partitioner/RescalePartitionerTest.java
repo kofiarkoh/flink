@@ -39,7 +39,10 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.HashMap;
@@ -54,6 +57,8 @@ import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link RescalePartitioner}. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RescalePartitionerTest extends StreamPartitionerTest {
 
     @RegisterExtension

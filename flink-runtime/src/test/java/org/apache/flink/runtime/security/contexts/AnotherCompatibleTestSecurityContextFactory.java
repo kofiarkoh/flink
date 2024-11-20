@@ -21,12 +21,18 @@ package org.apache.flink.runtime.security.contexts;
 import org.apache.flink.runtime.security.SecurityConfiguration;
 import org.apache.flink.runtime.security.SecurityContextInitializeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.Callable;
 
 /**
- * Test security context factory class that is always compatible. For use in testing the fallback
- * behaviour of security contexts.
+ * Test security context factory @ExtendWith(CTestJUnit5Extension.class) @CTestClass class that is
+ * always compatible. For use in testing the fallback behaviour of security contexts.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AnotherCompatibleTestSecurityContextFactory implements SecurityContextFactory {
 
     @Override

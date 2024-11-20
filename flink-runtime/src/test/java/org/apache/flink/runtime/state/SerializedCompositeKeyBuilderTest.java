@@ -24,8 +24,11 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.core.memory.DataInputDeserializer;
 import org.apache.flink.core.memory.DataOutputSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -34,6 +37,8 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for @{@link SerializedCompositeKeyBuilder}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerializedCompositeKeyBuilderTest {
 
     private final DataOutputSerializer dataOutputSerializer = new DataOutputSerializer(128);

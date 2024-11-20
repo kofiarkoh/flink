@@ -31,13 +31,18 @@ import org.apache.flink.runtime.metrics.MetricRegistryTestUtils;
 import org.apache.flink.runtime.metrics.ReporterSetup;
 import org.apache.flink.runtime.metrics.util.TestReporter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the registration of groups and metrics on a {@link MetricGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricGroupRegistrationTest {
     /** Verifies that group methods instantiate the correct metric with the given name. */
     @Test
@@ -93,7 +98,8 @@ class MetricGroupRegistrationTest {
     }
 
     /** Reporter that exposes the last name and metric instance it was notified of. */
-    public static class TestReporter1 extends TestReporter {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestReporter1
+            extends TestReporter {
 
         public static Metric lastPassedMetric;
         public static String lastPassedName;

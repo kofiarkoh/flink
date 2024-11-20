@@ -23,7 +23,13 @@ import org.apache.flink.runtime.state.StateBackend;
 import org.apache.flink.runtime.state.ttl.mock.MockCheckpointStorage;
 import org.apache.flink.runtime.state.ttl.mock.MockStateBackend;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test suite for mock state TTL. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MockTtlStateTest extends TtlStateTestBase {
 
     @Override

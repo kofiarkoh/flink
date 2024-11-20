@@ -24,11 +24,16 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KeyAndValueSerializer}, which verify variable length keys. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VariableLengthKeyAndValueSerializerTest
         extends SerializerTestBase<Tuple2<byte[], StreamRecord<String>>> {
 

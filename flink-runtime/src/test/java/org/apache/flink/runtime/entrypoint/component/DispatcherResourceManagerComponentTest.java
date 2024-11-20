@@ -29,7 +29,10 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -41,6 +44,8 @@ import static org.apache.flink.core.testutils.FlinkMatchers.willNotComplete;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the {@link DispatcherResourceManagerComponent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherResourceManagerComponentTest extends TestLogger {
 
     @Test

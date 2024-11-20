@@ -25,7 +25,10 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.ShutdownHookUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests the logic of {@link FileChannelManagerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileChannelManagerImplTest {
     private static final Logger LOG = LoggerFactory.getLogger(FileChannelManagerImplTest.class);
 
@@ -166,7 +171,8 @@ class FileChannelManagerImplTest {
     }
 
     /** The {@link FileChannelManagerCleanupRunner} instance running in a separate JVM process. */
-    private static class FileChannelManagerTestProcess extends TestJvmProcess {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class FileChannelManagerTestProcess extends TestJvmProcess {
         private final boolean callerHasHook;
         private final String tmpDirectories;
         private final String signalFilePath;
@@ -195,7 +201,10 @@ class FileChannelManagerImplTest {
         }
     }
 
-    /** The entry point class to test the file channel manager cleanup with shutdown hook. */
+    /**
+     * The entry point @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to test the file
+     * channel manager cleanup with shutdown hook.
+     */
     private static class FileChannelManagerCleanupRunner {
 
         public static void main(String[] args) throws Exception {

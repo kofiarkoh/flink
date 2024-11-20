@@ -48,6 +48,8 @@ import org.apache.flink.util.function.ThrowingConsumer;
 
 import org.apache.flink.shaded.guava32.com.google.common.io.Closer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -74,6 +76,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link SequentialChannelStateReaderImpl} Test. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SequentialChannelStateReaderImplTest {
 
     @Parameters(

@@ -24,9 +24,12 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -75,6 +78,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * <p>Most successful GET requests are tested in conjunction wit the PUT requests by {@link
  * BlobCachePutTest}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobCacheGetTest {
 
     @TempDir private Path tempDir;

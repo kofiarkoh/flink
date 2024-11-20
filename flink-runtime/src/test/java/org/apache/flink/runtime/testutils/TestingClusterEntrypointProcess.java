@@ -31,6 +31,9 @@ import org.apache.flink.runtime.util.SignalHandler;
 import org.apache.flink.util.IOUtils;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +44,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /** A testing {@link ClusterEntrypoint} instance running in a separate JVM. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingClusterEntrypointProcess extends TestJvmProcess {
 
     private final File markerFile;

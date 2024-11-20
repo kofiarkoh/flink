@@ -120,9 +120,12 @@ import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.jackson.JacksonMapperFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -169,6 +172,8 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link AdaptiveScheduler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AdaptiveSchedulerTest {
 
     private static final Duration DEFAULT_TIMEOUT = Duration.ofHours(1);
@@ -2701,7 +2706,8 @@ public class AdaptiveSchedulerTest {
         }
     }
 
-    private static class ExceptionHistoryTester {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ExceptionHistoryTester {
         private final ComponentMainThreadExecutor mainThreadExecutor;
         private BiConsumer<AdaptiveScheduler, List<ExecutionAttemptID>> testLogic =
                 (scheduler, attempts) -> {};

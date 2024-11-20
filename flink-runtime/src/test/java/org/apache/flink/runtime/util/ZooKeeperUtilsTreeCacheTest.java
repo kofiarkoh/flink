@@ -30,10 +30,13 @@ import org.apache.flink.shaded.curator5.org.apache.curator.framework.recipes.cac
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.recipes.cache.TreeCacheListener;
 import org.apache.flink.shaded.guava32.com.google.common.io.Closer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.curator.test.TestingServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
@@ -45,6 +48,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
  * Tests for {@link ZooKeeperUtils#createTreeCache(CuratorFramework, String,
  * org.apache.flink.util.function.RunnableWithException)}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperUtilsTreeCacheTest {
 
     private static final String PARENT_PATH = "/foo";

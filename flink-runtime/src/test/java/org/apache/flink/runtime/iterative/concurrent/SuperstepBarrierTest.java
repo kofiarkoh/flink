@@ -22,7 +22,10 @@ import org.apache.flink.runtime.event.TaskEvent;
 import org.apache.flink.runtime.iterative.event.AllWorkersDoneEvent;
 import org.apache.flink.runtime.iterative.event.TerminationEvent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Random;
 
@@ -30,6 +33,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for {@link SuperstepBarrier}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SuperstepBarrierTest {
 
     @Test

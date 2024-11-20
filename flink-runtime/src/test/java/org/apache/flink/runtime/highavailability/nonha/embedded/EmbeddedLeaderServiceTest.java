@@ -21,13 +21,18 @@ package org.apache.flink.runtime.highavailability.nonha.embedded;
 import org.apache.flink.runtime.concurrent.ManuallyTriggeredScheduledExecutorService;
 import org.apache.flink.runtime.leaderelection.LeaderElection;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link EmbeddedLeaderService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EmbeddedLeaderServiceTest {
 
     /**

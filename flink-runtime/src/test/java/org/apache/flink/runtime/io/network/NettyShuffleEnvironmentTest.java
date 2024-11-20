@@ -54,9 +54,12 @@ import org.apache.flink.runtime.throughput.BufferDebloatConfiguration;
 import org.apache.flink.runtime.util.EnvironmentInformation;
 import org.apache.flink.runtime.util.NettyShuffleDescriptorBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -78,6 +81,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /** Various tests for the {@link NettyShuffleEnvironment} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyShuffleEnvironmentTest {
 
     private static final String tempDir = EnvironmentInformation.getTemporaryFileDirectory();

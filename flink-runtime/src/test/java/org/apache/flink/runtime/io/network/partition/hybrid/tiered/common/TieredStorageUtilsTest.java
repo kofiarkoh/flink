@@ -23,7 +23,10 @@ import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 import org.apache.flink.runtime.io.network.partition.BufferReaderWriterUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 import java.util.Collections;
@@ -31,6 +34,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TieredStorageUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TieredStorageUtilsTest {
 
     @Test

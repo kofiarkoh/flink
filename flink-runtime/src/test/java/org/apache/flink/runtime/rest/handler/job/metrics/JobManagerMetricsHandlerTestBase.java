@@ -20,10 +20,16 @@ package org.apache.flink.runtime.rest.handler.job.metrics;
 
 import org.apache.flink.runtime.metrics.dump.QueryScopeInfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.Map;
 
 /** Tests for {@link JobManagerMetricsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerMetricsHandlerTestBase extends MetricsHandlerTestBase<JobManagerMetricsHandler> {
 
     @Override

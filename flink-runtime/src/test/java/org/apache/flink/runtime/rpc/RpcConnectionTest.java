@@ -23,7 +23,10 @@ import org.apache.flink.configuration.RpcOptions;
 import org.apache.flink.runtime.rpc.exceptions.RpcConnectionException;
 import org.apache.flink.runtime.taskexecutor.TaskExecutorGateway;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * This test validates that the RPC service gives a good message when it cannot connect to an
  * RpcEndpoint.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RpcConnectionTest {
 
     @Test

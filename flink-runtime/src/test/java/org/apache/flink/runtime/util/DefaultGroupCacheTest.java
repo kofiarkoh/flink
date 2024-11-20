@@ -28,7 +28,10 @@ import org.apache.flink.runtime.shuffle.UnknownShuffleDescriptor;
 
 import org.apache.flink.shaded.guava32.com.google.common.base.Ticker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicLong;
@@ -36,6 +39,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DefaultGroupCache}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultGroupCacheTest {
     private final Duration expireTimeout = Duration.ofSeconds(10);
 

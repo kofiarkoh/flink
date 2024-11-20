@@ -23,9 +23,14 @@ import org.apache.flink.streaming.api.functions.source.legacy.FileMonitoringFunc
 import org.apache.flink.streaming.api.functions.source.legacy.SourceFunction;
 import org.apache.flink.streaming.api.watermark.Watermark;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for the {@link FileMonitoringFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileMonitoringFunctionTest {
 
     @Test

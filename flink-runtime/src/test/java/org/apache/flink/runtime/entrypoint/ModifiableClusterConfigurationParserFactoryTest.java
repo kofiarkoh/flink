@@ -21,7 +21,10 @@ package org.apache.flink.runtime.entrypoint;
 import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.runtime.entrypoint.parser.CommandLineParser;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 import java.util.Properties;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link ModifiableClusterConfigurationParserFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ModifiableClusterConfigurationParserFactoryTest {
 
     private static final CommandLineParser<ModifiableClusterConfiguration> commandLineParser =

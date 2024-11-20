@@ -36,7 +36,10 @@ import org.apache.flink.streaming.api.operators.ProcessOperator;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -50,6 +53,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link AbstractStreamOperatorTestHarness}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractStreamOperatorTestHarnessTest {
 
     @Test
@@ -121,8 +126,8 @@ class AbstractStreamOperatorTestHarnessTest {
         verify(typeSerializer, times(1)).copy(eq(probe));
     }
 
-    private static class SideOutputTypeInformationTestFunction
-            extends ProcessFunction<Integer, Integer> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class SideOutputTypeInformationTestFunction extends ProcessFunction<Integer, Integer> {
         private final OutputTag<Integer> outputTag;
 
         SideOutputTypeInformationTestFunction(OutputTag<Integer> outputTag) {

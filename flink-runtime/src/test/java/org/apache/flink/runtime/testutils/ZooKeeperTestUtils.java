@@ -25,8 +25,11 @@ import org.apache.flink.configuration.RpcOptions;
 import org.apache.flink.configuration.StateBackendOptions;
 import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.curator.test.InstanceSpec;
 import org.apache.curator.test.TestingServer;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,6 +40,8 @@ import java.util.Map;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /** ZooKeeper test utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ZooKeeperTestUtils {
 
     private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperTestUtils.class);

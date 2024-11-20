@@ -28,8 +28,11 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Iterator;
 import java.util.List;
@@ -44,6 +47,8 @@ import static org.apache.flink.runtime.jobgraph.topology.DefaultLogicalVertexTes
 import static org.junit.Assert.assertEquals;
 
 /** Unit tests for {@link DefaultLogicalTopology}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultLogicalTopologyTest extends TestLogger {
 
     private JobGraph jobGraph;

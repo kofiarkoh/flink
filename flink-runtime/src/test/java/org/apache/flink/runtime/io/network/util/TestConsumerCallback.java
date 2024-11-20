@@ -22,6 +22,10 @@ import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.runtime.event.AbstractEvent;
 import org.apache.flink.runtime.io.network.buffer.Buffer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
@@ -32,7 +36,8 @@ public interface TestConsumerCallback {
 
     void onEvent(AbstractEvent event);
 
-    public static class CountingCallback implements TestConsumerCallback {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CountingCallback
+            implements TestConsumerCallback {
 
         private final AtomicInteger numberOfReadBuffers = new AtomicInteger();
 

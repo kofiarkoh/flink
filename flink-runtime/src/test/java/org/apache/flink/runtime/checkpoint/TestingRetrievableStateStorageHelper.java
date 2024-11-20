@@ -21,6 +21,10 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.runtime.persistence.RetrievableStateStorageHelper;
 import org.apache.flink.runtime.state.RetrievableStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.Serializable;
 
 /**
@@ -28,7 +32,8 @@ import java.io.Serializable;
  *
  * @param <T> type of the element to store
  */
-public final class TestingRetrievableStateStorageHelper<T extends Serializable>
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class TestingRetrievableStateStorageHelper<T extends Serializable>
         implements RetrievableStateStorageHelper<T> {
 
     @Override

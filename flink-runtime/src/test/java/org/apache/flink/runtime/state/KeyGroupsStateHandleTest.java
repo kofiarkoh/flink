@@ -20,14 +20,19 @@ package org.apache.flink.runtime.state;
 
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A test for {@link KeyGroupsStateHandle} */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyGroupsStateHandleTest {
 
     @Test

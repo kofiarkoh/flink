@@ -26,9 +26,15 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FixedLengthByteKeyAndValueComparator} in {@link KeyedSortPartitionOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FixedLengthByteKeyAndValueComparatorTest extends ComparatorTestBase<Tuple2<byte[], Integer>> {
 
     @Override

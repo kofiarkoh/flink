@@ -21,8 +21,11 @@ package org.apache.flink.runtime.operators.coordination;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.jobgraph.OperatorID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -34,6 +37,8 @@ import java.util.concurrent.CountDownLatch;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link RecreateOnResetOperatorCoordinator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RecreateOnResetOperatorCoordinatorTest {
 
     private static final OperatorID OPERATOR_ID = new OperatorID(1234L, 5678L);

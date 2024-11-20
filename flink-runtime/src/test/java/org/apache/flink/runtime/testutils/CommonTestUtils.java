@@ -35,6 +35,9 @@ import org.apache.flink.util.FileUtils;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,7 +65,12 @@ import static java.lang.String.format;
 import static org.apache.flink.util.Preconditions.checkState;
 import static org.junit.jupiter.api.Assertions.fail;
 
-/** This class contains auxiliary methods for unit tests. */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains auxiliary methods for
+ * unit tests.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CommonTestUtils {
 
     private static final Logger LOG = LoggerFactory.getLogger(CommonTestUtils.class);

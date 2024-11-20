@@ -40,6 +40,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtensi
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.CheckedSupplier;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -71,6 +73,8 @@ import static org.mockito.Mockito.when;
  * @see PipelinedSubpartitionWithReadViewTest
  */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PipelinedSubpartitionTest extends SubpartitionTestBase {
 
     /** Executor service for concurrent produce/consume tests. */
