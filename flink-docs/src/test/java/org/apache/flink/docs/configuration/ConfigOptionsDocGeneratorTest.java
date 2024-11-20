@@ -37,7 +37,10 @@ import org.apache.flink.docs.configuration.data.TestCommonOptions;
 import org.apache.flink.docs.util.ConfigurationOptionLocator;
 import org.apache.flink.docs.util.OptionsClassLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
 
 /** Tests for the {@link ConfigOptionsDocGenerator}. */
 @SuppressWarnings("unused")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfigOptionsDocGeneratorTest {
 
     public static class TestConfigGroup {
