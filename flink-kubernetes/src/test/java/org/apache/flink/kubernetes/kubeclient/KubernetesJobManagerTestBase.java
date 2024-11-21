@@ -27,7 +27,13 @@ import org.apache.flink.configuration.RestOptions;
 import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.kubeclient.parameters.KubernetesJobManagerParameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Base test class for the JobManager side. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesJobManagerTestBase extends KubernetesPodTestBase {
 
     protected static final double JOB_MANAGER_CPU = 2.0;

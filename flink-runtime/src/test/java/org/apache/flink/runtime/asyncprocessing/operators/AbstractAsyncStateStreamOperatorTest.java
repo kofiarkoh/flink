@@ -40,7 +40,10 @@ import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -50,6 +53,8 @@ import static org.apache.flink.runtime.state.StateBackendTestUtils.buildAsyncSta
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Basic tests for {@link AbstractAsyncStateStreamOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractAsyncStateStreamOperatorTest {
 
     protected KeyedOneInputStreamOperatorTestHarness<Integer, Tuple2<Integer, String>, String>
@@ -315,7 +320,8 @@ public class AbstractAsyncStateStreamOperatorTest {
     }
 
     /** A simple testing operator. */
-    private static class TestOperator extends AbstractAsyncStateStreamOperator<String>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestOperator
+            extends AbstractAsyncStateStreamOperator<String>
             implements OneInputStreamOperator<Tuple2<Integer, String>, String>,
                     Triggerable<Integer, VoidNamespace> {
 
@@ -390,7 +396,8 @@ public class AbstractAsyncStateStreamOperatorTest {
         }
     }
 
-    private static class TestOperatorWithDirectAsyncProcess extends TestOperator {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestOperatorWithDirectAsyncProcess extends TestOperator {
 
         TestOperatorWithDirectAsyncProcess(ElementOrder elementOrder) {
             super(elementOrder);

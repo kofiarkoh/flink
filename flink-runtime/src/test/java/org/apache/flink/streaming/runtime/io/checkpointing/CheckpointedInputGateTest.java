@@ -52,8 +52,11 @@ import org.apache.flink.util.clock.SystemClock;
 
 import org.apache.flink.shaded.guava32.com.google.common.io.Closer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -65,6 +68,8 @@ import static org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link CheckpointedInputGate} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointedInputGateTest {
     private final HashMap<Integer, Integer> channelIndexToSequenceNumber = new HashMap<>();
 
@@ -397,7 +402,8 @@ class CheckpointedInputGateTest {
         return checkpointedInputGate;
     }
 
-    private static class ResumeCountingConnectionManager extends TestingConnectionManager {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ResumeCountingConnectionManager extends TestingConnectionManager {
         private int numResumed;
 
         @Override

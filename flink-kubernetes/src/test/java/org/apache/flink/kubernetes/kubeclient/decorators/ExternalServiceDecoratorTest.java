@@ -23,11 +23,14 @@ import org.apache.flink.kubernetes.kubeclient.KubernetesJobManagerTestBase;
 import org.apache.flink.kubernetes.kubeclient.services.HeadlessClusterIPService;
 import org.apache.flink.kubernetes.utils.Constants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.HasMetadata;
 import io.fabric8.kubernetes.api.model.Service;
 import io.fabric8.kubernetes.api.model.ServicePort;
 import io.fabric8.kubernetes.api.model.ServicePortBuilder;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -38,6 +41,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link ExternalServiceDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExternalServiceDecoratorTest extends KubernetesJobManagerTestBase {
 
     private ExternalServiceDecorator externalServiceDecorator;

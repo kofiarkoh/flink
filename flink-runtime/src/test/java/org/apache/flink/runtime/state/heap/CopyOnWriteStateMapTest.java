@@ -29,7 +29,10 @@ import org.apache.flink.runtime.state.StateSnapshotTransformer;
 import org.apache.flink.runtime.state.StateTransformationFunction;
 import org.apache.flink.runtime.state.internal.InternalKvState.StateIncrementalVisitor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -49,6 +52,8 @@ import static org.assertj.core.api.HamcrestCondition.matching;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 
 /** Test for {@link CopyOnWriteStateMap}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CopyOnWriteStateMapTest {
 
     /** Testing the basic map operations. */

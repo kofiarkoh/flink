@@ -18,8 +18,11 @@
 
 package org.apache.flink.formats.parquet.utils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +33,8 @@ import static org.apache.flink.util.InstantiationUtil.deserializeObject;
 import static org.apache.flink.util.InstantiationUtil.serializeObject;
 
 /** Test for {@link SerializableConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerializableConfigurationTest {
 
     @Test

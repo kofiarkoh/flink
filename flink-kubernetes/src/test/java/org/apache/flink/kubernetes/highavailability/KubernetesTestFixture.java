@@ -28,6 +28,10 @@ import org.apache.flink.kubernetes.kubeclient.resources.KubernetesException;
 import org.apache.flink.kubernetes.kubeclient.resources.KubernetesLeaderElector;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +44,8 @@ import static org.apache.flink.kubernetes.kubeclient.resources.KubernetesLeaderE
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test fixture for Kubernetes tests that sets up a mock {@link FlinkKubeClient}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesTestFixture {
     private static final long TIMEOUT = 30L * 1000L;
 

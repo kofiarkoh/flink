@@ -38,7 +38,10 @@ import org.apache.flink.runtime.operators.testutils.UniformIntTupleGenerator;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CombineTaskTest
         extends UnaryOperatorTestBase<
                 RichGroupReduceFunction<Tuple2<Integer, Integer>, Tuple2<Integer, Integer>>,

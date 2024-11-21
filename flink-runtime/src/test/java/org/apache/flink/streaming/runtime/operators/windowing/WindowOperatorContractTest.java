@@ -43,7 +43,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -83,7 +86,7 @@ import static org.mockito.hamcrest.MockitoHamcrest.argThat;
  *
  * <p>These tests document the implicit contract that exists between the windowing components.
  */
-abstract class WindowOperatorContractTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class WindowOperatorContractTest {
 
     private static final ValueStateDescriptor<String> valueStateDescriptor =
             new ValueStateDescriptor<>("string-state", StringSerializer.INSTANCE, null);

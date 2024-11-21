@@ -26,7 +26,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-/** Utility class for testing with HDFS FileSystem. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing with HDFS
+ * FileSystem.
+ */
 public class HDFSCluster {
 
     public final MiniDFSCluster miniCluster;

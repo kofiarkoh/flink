@@ -24,11 +24,16 @@ import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.metrics.MetricRegistry;
 import org.apache.flink.runtime.metrics.util.TestingMetricRegistry;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link InternalSplitEnumeratorMetricGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InternalSplitEnumeratorGroupTest {
 
     private static final MetricRegistry registry = TestingMetricRegistry.builder().build();

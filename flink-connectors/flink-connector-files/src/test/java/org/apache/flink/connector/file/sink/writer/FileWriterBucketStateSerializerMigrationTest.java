@@ -37,8 +37,11 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.legacy.Streaming
 import org.apache.flink.streaming.api.functions.sink.filesystem.rollingpolicies.DefaultRollingPolicy;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -66,6 +69,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * test. The generated test data from {@code BucketStateSerializerTest} has been copied to be reused
  * in this test to ensure we can restore the same bytes.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileWriterBucketStateSerializerMigrationTest {
 
     private static final int CURRENT_VERSION = 2;

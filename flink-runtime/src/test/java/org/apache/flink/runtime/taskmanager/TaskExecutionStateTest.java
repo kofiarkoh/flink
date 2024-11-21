@@ -22,7 +22,10 @@ import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.execution.ExecutionState;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -36,6 +39,8 @@ import static org.junit.Assert.fail;
  * Correctness tests for hash/equals and serialization for the {@link
  * org.apache.flink.runtime.taskmanager.TaskExecutionState}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskExecutionStateTest {
 
     @Test

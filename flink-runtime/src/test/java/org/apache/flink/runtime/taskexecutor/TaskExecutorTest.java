@@ -121,10 +121,13 @@ import org.apache.flink.util.function.TriConsumerWithException;
 import org.apache.flink.shaded.curator5.com.google.common.collect.Iterators;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
@@ -173,6 +176,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link TaskExecutor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TaskExecutorTest.class);
@@ -2889,7 +2894,8 @@ class TaskExecutorTest {
                 offerSlotsLatch);
     }
 
-    private class TaskExecutorTestingContext implements AutoCloseable {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TaskExecutorTestingContext
+            implements AutoCloseable {
         private final TestingJobMasterGateway jobMasterGateway;
         private final TaskSlotTable taskSlotTable;
         private final TestingTaskExecutor taskExecutor;

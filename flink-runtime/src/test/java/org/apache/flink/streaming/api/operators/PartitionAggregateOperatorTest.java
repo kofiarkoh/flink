@@ -25,7 +25,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.TestHarnessUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -34,6 +37,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link PartitionAggregateOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionAggregateOperatorTest {
 
     private static final int RECORD = 1;
@@ -75,7 +80,8 @@ class PartitionAggregateOperatorTest {
     }
 
     /** The test user implementation of {@link AggregateFunction}. */
-    private static class Aggregate extends RichAggregateFunction<Integer, TestAccumulator, String> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class Aggregate
+            extends RichAggregateFunction<Integer, TestAccumulator, String> {
 
         private final CompletableFuture<Object> openIdentifier;
 

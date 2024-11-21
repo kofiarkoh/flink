@@ -21,7 +21,13 @@ package org.apache.flink.runtime.state.ttl;
 import org.apache.flink.runtime.state.StateBackend;
 import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test suite for heap state TTL with asynchronous snapshotting. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HeapAsyncSnapshotTtlStateTest extends TtlStateTestBase {
     @Override
     protected StateBackendTestContext createStateBackendTestContext(TtlTimeProvider timeProvider) {

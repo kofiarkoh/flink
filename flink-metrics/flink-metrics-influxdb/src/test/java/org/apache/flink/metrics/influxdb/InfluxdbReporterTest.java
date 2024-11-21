@@ -25,8 +25,11 @@ import org.apache.flink.metrics.SimpleCounter;
 import org.apache.flink.metrics.util.TestMetricGroup;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.influxdb.InfluxDB;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.HashMap;
@@ -43,6 +46,8 @@ import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Integration test for {@link InfluxdbReporter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InfluxdbReporterTest {
     private static final String TEST_INFLUXDB_DB = "test-42";
     private static final String METRIC_HOSTNAME = "task-mgr-1";

@@ -21,7 +21,10 @@ package org.apache.flink.runtime.util;
 import org.apache.flink.runtime.testutils.TestJvmProcess;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * Test that verifies the behavior of blocking shutdown hooks and of the {@link
  * JvmShutdownSafeguard} that guards against it.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockingShutdownTest {
 
     @Test
@@ -143,7 +148,8 @@ class BlockingShutdownTest {
     //  Blocking Process Implementation
     // ------------------------------------------------------------------------
 
-    private static final class BlockingShutdownProcess extends TestJvmProcess {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class BlockingShutdownProcess extends TestJvmProcess {
 
         private final String tempFilePath;
         private final long selfKillDelay;

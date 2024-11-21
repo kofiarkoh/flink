@@ -31,7 +31,10 @@ import org.apache.flink.runtime.mailbox.SyncMailboxExecutor;
 import org.apache.flink.runtime.operators.testutils.DummyCheckpointInvokable;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -47,6 +50,8 @@ import java.util.stream.IntStream;
  * The test generates two random streams (input channels) which independently and randomly generate
  * checkpoint barriers. The two streams are very unaligned, putting heavy work on the BarrierBuffer.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AlignedCheckpointsMassiveRandomTest {
 
     private static final int PAGE_SIZE = 1024;

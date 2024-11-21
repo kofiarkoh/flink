@@ -25,8 +25,11 @@ import org.apache.flink.core.fs.FileStatus;
 import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +41,8 @@ import static org.apache.flink.core.fs.FileSystemTestUtils.checkPathEventualExis
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Abstract integration test class for implementations of hadoop file system. */
-public abstract class AbstractHadoopFileSystemITTest {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractHadoopFileSystemITTest {
 
     protected static FileSystem fs;
     protected static Path basePath;

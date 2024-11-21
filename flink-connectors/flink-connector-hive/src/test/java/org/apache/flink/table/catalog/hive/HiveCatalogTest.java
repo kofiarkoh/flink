@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.connector.datagen.table.DataGenTableSourceFactory;
 import org.apache.flink.table.api.DataTypes;
@@ -58,6 +63,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for HiveCatalog. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogTest {
 
     ResolvedSchema resolvedSchema =

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.legacy.table.sinks.StreamTableSink;
@@ -60,6 +65,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveTableFactory}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveTableFactoryTest {
     private static HiveCatalog catalog;
 

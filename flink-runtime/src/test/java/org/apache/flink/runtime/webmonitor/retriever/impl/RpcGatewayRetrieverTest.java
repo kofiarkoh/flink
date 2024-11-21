@@ -29,9 +29,12 @@ import org.apache.flink.runtime.rpc.RpcTimeout;
 import org.apache.flink.runtime.rpc.RpcUtils;
 import org.apache.flink.runtime.rpc.TestingRpcService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.UUID;
@@ -43,6 +46,8 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link RpcGatewayRetriever}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RpcGatewayRetrieverTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10L);

@@ -26,7 +26,10 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.net.URLClassLoader;
@@ -36,6 +39,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DeclineCheckpoint} message. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeclineCheckpointTest {
 
     @TempDir private java.nio.file.Path tempDir;

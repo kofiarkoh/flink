@@ -18,10 +18,13 @@
 
 package org.apache.flink.formats.avro.registry.confluent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.confluent.kafka.schemaregistry.client.MockSchemaRegistryClient;
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ConfluentSchemaRegistryCoder}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfluentSchemaRegistryCoderTest {
 
     @Test

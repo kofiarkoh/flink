@@ -23,7 +23,10 @@ import org.apache.flink.core.memory.DataOutputSerializer;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableList;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Tests for the {@link SimpleVersionedSerialization} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SimpleVersionedSerializationTest {
 
     @Test

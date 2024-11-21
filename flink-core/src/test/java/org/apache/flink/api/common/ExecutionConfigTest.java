@@ -33,7 +33,10 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -45,6 +48,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExecutionConfigTest {
 
     @Test
@@ -300,8 +305,8 @@ public class ExecutionConfigTest {
                 .isEqualTo(serialiers);
     }
 
-    private static class TestSerializer1 extends Serializer<ExecutionConfigTest>
-            implements Serializable {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestSerializer1
+            extends Serializer<ExecutionConfigTest> implements Serializable {
         @Override
         public void write(Kryo kryo, Output output, ExecutionConfigTest object) {}
 
@@ -311,8 +316,8 @@ public class ExecutionConfigTest {
         }
     }
 
-    private static class TestSerializer2 extends Serializer<TestSerializer1>
-            implements Serializable {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestSerializer2
+            extends Serializer<TestSerializer1> implements Serializable {
         @Override
         public void write(Kryo kryo, Output output, TestSerializer1 object) {}
 

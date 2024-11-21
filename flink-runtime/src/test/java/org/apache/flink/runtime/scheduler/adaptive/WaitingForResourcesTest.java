@@ -22,7 +22,10 @@ import org.apache.flink.core.testutils.ScheduledTask;
 import org.apache.flink.runtime.executiongraph.ExecutionGraph;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the WaitingForResources state. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WaitingForResourcesTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(WaitingForResourcesTest.class);

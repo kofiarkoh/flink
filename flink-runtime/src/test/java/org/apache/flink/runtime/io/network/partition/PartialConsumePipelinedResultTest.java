@@ -35,12 +35,17 @@ import org.apache.flink.runtime.testutils.InternalMiniClusterExtension;
 import org.apache.flink.runtime.testutils.MiniClusterResourceConfiguration;
 import org.apache.flink.testutils.TestingUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.nio.ByteBuffer;
 
 /** Test for consuming a pipelined result only partially. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartialConsumePipelinedResultTest {
 
     // Test configuration

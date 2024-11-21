@@ -46,7 +46,10 @@ import org.apache.flink.streaming.util.MockStreamTaskBuilder;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +59,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for stream operator chaining behaviour. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamOperatorChainingTest {
 
     // We have to use static fields because the sink functions will go through serialization

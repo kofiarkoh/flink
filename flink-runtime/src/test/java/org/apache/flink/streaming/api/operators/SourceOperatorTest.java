@@ -44,9 +44,12 @@ import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 import org.apache.flink.streaming.util.CollectorOutput;
 import org.apache.flink.util.CollectionUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -59,6 +62,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link SourceOperator}. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorTest {
 
     @Nullable private SourceOperatorTestContext context;

@@ -28,6 +28,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameter;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -48,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test {@link GSRecoverableWriterCommitter}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GSRecoverableWriterCommitterTest {
 
     @Parameter @Nullable private String temporaryBucketName;

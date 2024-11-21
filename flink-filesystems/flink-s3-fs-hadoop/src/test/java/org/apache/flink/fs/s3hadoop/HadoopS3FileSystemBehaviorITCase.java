@@ -25,8 +25,11 @@ import org.apache.flink.core.fs.FileSystemKind;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.testutils.s3.S3TestCredentials;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -34,6 +37,8 @@ import java.util.UUID;
 /**
  * An implementation of the {@link FileSystemBehaviorTestSuite} for the s3a-based S3 file system.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopS3FileSystemBehaviorITCase extends FileSystemBehaviorTestSuite {
 
     private static final String TEST_DATA_DIR = "tests-" + UUID.randomUUID();

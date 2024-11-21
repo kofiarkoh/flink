@@ -34,6 +34,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -47,6 +51,8 @@ import static org.apache.flink.util.Preconditions.checkState;
  * and watermarks into the operator. {@link java.util.Deque}s containing the emitted elements and
  * watermarks can be retrieved. You are free to modify these.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OneInputStreamOperatorTestHarness<IN, OUT>
         extends AbstractStreamOperatorTestHarness<OUT> {
 

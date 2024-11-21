@@ -29,11 +29,16 @@ import org.apache.flink.streaming.api.functions.co.KeyedBroadcastProcessFunction
 import org.apache.flink.streaming.api.functions.co.KeyedCoProcessFunction;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ProcessFunctionTestHarnesses}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProcessFunctionTestHarnessesTest {
 
     @Test

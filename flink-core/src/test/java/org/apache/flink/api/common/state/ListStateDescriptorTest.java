@@ -26,13 +26,18 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ListStateDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ListStateDescriptorTest {
 
     @Test

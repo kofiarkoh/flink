@@ -52,8 +52,8 @@ import java.util.concurrent.ExecutionException;
  *
  * <p>In contrast to the {@link org.apache.flink.api.connector.source.mocks.MockSplitEnumerator}
  * class which this largely copies, this class does not implement any source logic directly, like
- * split assignments, etc. This class simply captures which modifications happened to support test
- * assertions.
+ * split assignments, etc. This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class simply
+ * captures which modifications happened to support test assertions.
  */
 public class TestingSplitEnumerator<SplitT extends SourceSplit>
         implements SplitEnumerator<SplitT, Set<SplitT>>, SupportsBatchSnapshot {

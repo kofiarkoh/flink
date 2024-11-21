@@ -26,9 +26,15 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link VariableLengthByteKeyComparator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VariableLengthByteKeyComparatorTest
         extends ComparatorTestBase<Tuple2<byte[], StreamRecord<String>>> {
     @Override

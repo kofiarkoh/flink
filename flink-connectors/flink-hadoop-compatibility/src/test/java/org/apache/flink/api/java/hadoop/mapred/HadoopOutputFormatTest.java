@@ -22,6 +22,8 @@ import org.apache.flink.api.common.io.FinalizeOnMaster;
 import org.apache.flink.api.common.io.FirstAttemptInitializationContext;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configurable;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -35,6 +37,7 @@ import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.TaskAttemptContext;
 import org.apache.hadoop.util.Progressable;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 
@@ -50,6 +53,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link HadoopOutputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopOutputFormatTest {
 
     @Test

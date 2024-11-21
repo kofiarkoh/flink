@@ -34,9 +34,12 @@ import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 
 import org.apache.flink.shaded.guava32.com.google.common.base.Ticker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Matchers;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -53,6 +56,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link MemoryExecutionGraphInfoStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MemoryExecutionGraphInfoStoreTest extends TestLogger {
 
     @ClassRule

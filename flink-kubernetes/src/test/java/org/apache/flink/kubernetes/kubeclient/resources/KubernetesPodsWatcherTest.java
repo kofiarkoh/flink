@@ -21,11 +21,14 @@ package org.apache.flink.kubernetes.kubeclient.resources;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.TestingWatchCallbackHandler;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.StatusBuilder;
 import io.fabric8.kubernetes.client.KubernetesClientException;
 import io.fabric8.kubernetes.client.Watcher;
 import io.fabric8.kubernetes.client.WatcherException;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link KubernetesPodsWatcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesPodsWatcherTest {
 
     private final List<KubernetesPod> podAddedList = new ArrayList<>();

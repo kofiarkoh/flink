@@ -21,10 +21,16 @@ package org.apache.flink.runtime.leaderretrieval;
 import org.apache.flink.runtime.leaderelection.LeaderInformation;
 import org.apache.flink.runtime.leaderelection.TestingRetrievalBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * Test {@link LeaderRetrievalEventHandler} implementation which offers some convenience functions
  * for testing purposes.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingLeaderRetrievalEventHandler extends TestingRetrievalBase
         implements LeaderRetrievalEventHandler {
 

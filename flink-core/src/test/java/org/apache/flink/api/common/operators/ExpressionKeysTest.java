@@ -32,8 +32,11 @@ import org.apache.flink.api.java.typeutils.PojoTypeExtractionTest.ComplexNestedC
 import org.apache.flink.api.java.typeutils.TupleTypeInfo;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SuppressWarnings("unused")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExpressionKeysTest {
 
     @Test

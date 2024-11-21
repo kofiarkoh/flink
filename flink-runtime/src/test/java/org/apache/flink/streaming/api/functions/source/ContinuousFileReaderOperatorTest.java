@@ -28,11 +28,16 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.runtime.tasks.mailbox.Mail;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** {@link ContinuousFileReaderOperator} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ContinuousFileReaderOperatorTest {
 
     @Test

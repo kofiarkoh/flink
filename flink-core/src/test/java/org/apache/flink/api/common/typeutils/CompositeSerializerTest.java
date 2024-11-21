@@ -28,7 +28,10 @@ import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -40,6 +43,8 @@ import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 
 /** Test suite for {@link CompositeSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompositeSerializerTest {
     private static final SerializerConfigImpl serializerConf = new SerializerConfigImpl();
 
@@ -254,8 +259,8 @@ class CompositeSerializerTest {
         }
     }
 
-    private static class CompositeSerializerTestInstance
-            extends SerializerTestInstance<List<Object>> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class CompositeSerializerTestInstance extends SerializerTestInstance<List<Object>> {
         @SuppressWarnings("unchecked")
         CompositeSerializerTestInstance(
                 TypeSerializer<List<Object>> serializer, int length, List<Object>... testData) {

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.runtime.operators.hive.script;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

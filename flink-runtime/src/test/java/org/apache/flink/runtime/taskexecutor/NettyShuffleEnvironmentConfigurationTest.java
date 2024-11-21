@@ -25,13 +25,18 @@ import org.apache.flink.configuration.NettyShuffleEnvironmentOptions;
 import org.apache.flink.configuration.TaskManagerOptions;
 import org.apache.flink.runtime.taskmanager.NettyShuffleEnvironmentConfiguration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link NettyShuffleEnvironmentConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyShuffleEnvironmentConfigurationTest {
 
     private static final MemorySize MEM_SIZE_PARAM = new MemorySize(128L * 1024 * 1024);

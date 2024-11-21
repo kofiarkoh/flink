@@ -22,13 +22,18 @@ import org.apache.flink.cep.Event;
 import org.apache.flink.cep.nfa.NFA;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 /** Base method for IT tests of {@link NFA}. It provides utility methods. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NFATestUtilities {
 
     @Deprecated

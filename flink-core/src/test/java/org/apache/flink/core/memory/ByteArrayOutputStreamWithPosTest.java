@@ -20,8 +20,11 @@ package org.apache.flink.core.memory;
 
 import org.apache.flink.configuration.ConfigConstants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ByteArrayOutputStreamWithPos}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ByteArrayOutputStreamWithPosTest {
 
     private static final int BUFFER_SIZE = 32;

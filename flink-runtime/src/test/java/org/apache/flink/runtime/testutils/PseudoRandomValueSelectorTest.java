@@ -23,7 +23,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.runtime.util.EnvironmentInformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -40,6 +43,8 @@ import static org.junit.Assume.assumeNotNull;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
 /** Tests {@link PseudoRandomValueSelector}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PseudoRandomValueSelectorTest {
 
     /**

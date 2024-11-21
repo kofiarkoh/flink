@@ -20,9 +20,12 @@ package org.apache.flink.runtime.io.network.buffer;
 
 import org.apache.flink.core.memory.MemorySegment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests for the creation of {@link LocalBufferPool} instances from the {@link NetworkBufferPool}
  * factory.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferPoolFactoryTest {
 
     private static final int numBuffers = 1024;

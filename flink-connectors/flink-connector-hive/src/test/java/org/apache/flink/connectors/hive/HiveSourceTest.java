@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.connector.source.DynamicFilteringInfo;
@@ -60,6 +65,8 @@ import static org.apache.flink.table.factories.FactoryUtil.CONNECTOR;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link HiveSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveSourceTest {
 
     private static HiveCatalog hiveCatalog;

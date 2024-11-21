@@ -18,13 +18,18 @@
 
 package org.apache.flink.management.jmx;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.ServerSocket;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the singleton usage via {@link JMXService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JMXServiceTest {
 
     /** Verifies initialize with port range. */

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.functions.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.catalog.hive.client.HiveShim;
@@ -47,6 +52,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveSimpleUDF}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveSimpleUDFTest {
     private static HiveShim hiveShim = HiveShimLoader.loadHiveShim(HiveShimLoader.getHiveVersion());
 

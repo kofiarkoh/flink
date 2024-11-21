@@ -19,7 +19,10 @@ package org.apache.flink.runtime.checkpoint;
 
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.checkpoint.CheckpointFailureReason.CHECKPOINT_EXPIRED;
 import static org.apache.flink.runtime.checkpoint.CheckpointProperties.forCheckpoint;
@@ -27,6 +30,8 @@ import static org.apache.flink.runtime.checkpoint.CheckpointRetentionPolicy.NEVE
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the checkpoint failure manager. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointFailureManagerTest {
 
     @Test

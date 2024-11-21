@@ -20,8 +20,11 @@ package org.apache.flink.runtime.io.network.partition.hybrid.index;
 
 import org.apache.flink.runtime.io.network.partition.hybrid.TestingFileDataIndexSpilledRegionManager;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Files;
@@ -35,6 +38,8 @@ import static org.apache.flink.runtime.io.network.partition.hybrid.HybridShuffle
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FileDataIndexCache}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileDataIndexCacheTest {
     private FileDataIndexCache<TestingFileDataIndexRegion> indexCache;
 

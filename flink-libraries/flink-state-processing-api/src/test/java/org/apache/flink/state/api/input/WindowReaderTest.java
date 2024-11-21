@@ -55,8 +55,11 @@ import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -72,6 +75,8 @@ import static org.mockito.Mockito.mock;
 
 /** Tests reading window state. */
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class WindowReaderTest {
 
     private static final int MAX_PARALLELISM = 128;

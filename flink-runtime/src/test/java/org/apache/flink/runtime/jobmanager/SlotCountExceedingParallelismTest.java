@@ -37,8 +37,11 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.types.IntValue;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.BitSet;
@@ -49,6 +52,8 @@ import static org.apache.flink.configuration.ConfigurationUtils.getIntConfigOpti
  * Tests that Flink can execute jobs with a higher parallelism than available number of slots. This
  * effectively tests that Flink can execute jobs with blocking results in a staged fashion.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SlotCountExceedingParallelismTest extends TestLogger {
 
     // Test configuration

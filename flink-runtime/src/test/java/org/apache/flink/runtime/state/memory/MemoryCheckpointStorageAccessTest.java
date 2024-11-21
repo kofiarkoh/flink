@@ -31,7 +31,10 @@ import org.apache.flink.runtime.state.memory.MemCheckpointStreamFactory.MemoryCh
 import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link MemoryBackendCheckpointStorageAccess}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MemoryCheckpointStorageAccessTest extends AbstractFileCheckpointStorageAccessTestBase {
 
     private static final int DEFAULT_MAX_STATE_SIZE =

@@ -35,7 +35,10 @@ import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -62,6 +65,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>This test contains a framework for declaring vertex and edge states to then assert the
  * calculator behavior.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultCheckpointPlanCalculatorTest {
 
     @RegisterExtension

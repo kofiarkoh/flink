@@ -21,7 +21,10 @@ package org.apache.flink.runtime.executiongraph.failover;
 import org.apache.flink.runtime.executiongraph.failover.ExponentialDelayRestartBackoffTimeStrategy.ExponentialDelayRestartBackoffTimeStrategyFactory;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link ExponentialDelayRestartBackoffTimeStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExponentialDelayRestartBackoffTimeStrategyTest {
 
     private final Exception failure = new Exception();

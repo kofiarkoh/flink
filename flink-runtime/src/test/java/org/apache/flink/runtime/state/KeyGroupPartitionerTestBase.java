@@ -23,7 +23,10 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.core.memory.DataOutputViewStreamWrapper;
 import org.apache.flink.util.CollectionUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
@@ -46,7 +49,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Abstract test base for implementations of {@link KeyGroupPartitioner}. */
-public abstract class KeyGroupPartitionerTestBase<T> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class KeyGroupPartitionerTestBase<T> {
 
     private static final DataOutputView DUMMY_OUT_VIEW =
             new DataOutputViewStreamWrapper(new ByteArrayOutputStreamWithPos(0));

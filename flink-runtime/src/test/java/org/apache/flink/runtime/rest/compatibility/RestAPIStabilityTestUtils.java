@@ -30,7 +30,10 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonNode;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.node.ObjectNode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +45,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /** The util of stability test and snapshot generator for the REST API. */
-public final class RestAPIStabilityTestUtils {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class RestAPIStabilityTestUtils {
 
     private static final ObjectMapper OBJECT_MAPPER = JacksonMapperFactory.createObjectMapper();
 

@@ -25,7 +25,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.fs.FileInputSplit;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +40,8 @@ import static org.apache.flink.formats.csv.RowCsvInputFormatTest.createTempFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test split logic for {@link RowCsvInputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowCsvInputFormatSplitTest {
 
     @Test

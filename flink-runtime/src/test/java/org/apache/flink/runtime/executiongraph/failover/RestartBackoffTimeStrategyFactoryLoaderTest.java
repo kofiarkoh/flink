@@ -21,7 +21,10 @@ package org.apache.flink.runtime.executiongraph.failover;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.RestartStrategyOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.EXPONENTIAL_DELAY;
 import static org.apache.flink.configuration.RestartStrategyOptions.RestartStrategyType.FAILURE_RATE;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link RestartBackoffTimeStrategyFactoryLoader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestartBackoffTimeStrategyFactoryLoaderTest {
 
     @Test

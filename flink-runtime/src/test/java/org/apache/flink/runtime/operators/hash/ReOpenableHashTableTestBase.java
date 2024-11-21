@@ -36,9 +36,12 @@ import org.apache.flink.runtime.operators.testutils.TestData.TupleGenerator.KeyM
 import org.apache.flink.runtime.operators.testutils.TestData.TupleGenerator.ValueMode;
 import org.apache.flink.runtime.operators.testutils.TestData.TupleGeneratorIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,7 +52,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
-abstract class ReOpenableHashTableTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ReOpenableHashTableTestBase {
 
     protected static final int PAGE_SIZE = 8 * 1024;
     protected static final long MEMORY_SIZE = PAGE_SIZE * 1000; // 100 Pages.

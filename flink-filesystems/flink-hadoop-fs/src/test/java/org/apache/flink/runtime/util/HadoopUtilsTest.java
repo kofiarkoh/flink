@@ -18,6 +18,8 @@
 
 package org.apache.flink.runtime.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenIdentifier;
 import org.apache.hadoop.security.UserGroupInformation;
@@ -26,6 +28,7 @@ import org.apache.hadoop.security.token.Token;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import sun.security.krb5.KrbException;
 
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Unit tests for Hadoop utils. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopUtilsTest {
 
     @BeforeAll

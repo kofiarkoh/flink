@@ -27,9 +27,12 @@ import org.apache.flink.formats.avro.utils.DataInputDecoder;
 import org.apache.flink.formats.avro.utils.DataOutputEncoder;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.avro.reflect.ReflectDatumWriter;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -54,6 +57,8 @@ import static org.assertj.core.api.Assertions.fail;
 /**
  * Tests the {@link DataOutputEncoder} and {@link DataInputDecoder} classes for Avro serialization.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EncoderDecoderTest {
 
     @Test

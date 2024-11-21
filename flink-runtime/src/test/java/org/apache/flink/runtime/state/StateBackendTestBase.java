@@ -87,10 +87,13 @@ import org.apache.flink.shaded.guava32.com.google.common.base.Joiner;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -138,7 +141,8 @@ import static org.mockito.Mockito.verify;
  * <p>NOTE: Please ensure to close and dispose any created keyed state backend in tests.
  */
 @SuppressWarnings("serial")
-public abstract class StateBackendTestBase<B extends AbstractStateBackend> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class StateBackendTestBase<
+        B extends AbstractStateBackend> {
 
     @BeforeEach
     void before() throws Exception {
@@ -5602,13 +5606,15 @@ public abstract class StateBackendTestBase<B extends AbstractStateBackend> {
     }
 
     /** We throw this in our {@link ExceptionThrowingTestSerializer}. */
-    private static class ExpectedKryoTestException extends RuntimeException {}
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ExpectedKryoTestException extends RuntimeException {}
 
     /**
      * Kryo {@code Serializer} that throws an expected exception. We use this to ensure that the
      * state backend correctly uses a specified Kryo serializer.
      */
-    public static class ExceptionThrowingTestSerializer extends JavaSerializer {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ExceptionThrowingTestSerializer extends JavaSerializer {
         @Override
         public void write(Kryo kryo, Output output, Object object) {
             throw new ExpectedKryoTestException();
@@ -5628,7 +5634,8 @@ public abstract class StateBackendTestBase<B extends AbstractStateBackend> {
      * that state that was serialized without a registered {@code Serializer} is in fact not
      * restored with a {@code Serializer} that was later registered.
      */
-    public static class CustomKryoTestSerializer extends JavaSerializer {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CustomKryoTestSerializer
+            extends JavaSerializer {
         @Override
         public void write(Kryo kryo, Output output, Object object) {
             super.write(kryo, output, object);

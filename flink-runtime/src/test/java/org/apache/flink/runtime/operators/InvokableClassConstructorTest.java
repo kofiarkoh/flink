@@ -25,7 +25,10 @@ import org.apache.flink.runtime.iterative.task.IterationIntermediateTask;
 import org.apache.flink.runtime.iterative.task.IterationSynchronizationSinkTask;
 import org.apache.flink.runtime.iterative.task.IterationTailTask;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests that validate that stateless/stateful task implementations have the corresponding
  * constructors.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InvokableClassConstructorTest {
 
     private static final Class<?>[] STATELESS_TASKS = {

@@ -25,8 +25,11 @@ import org.apache.flink.runtime.leaderretrieval.SettableLeaderRetrievalService;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 
 import java.time.Duration;
@@ -52,6 +55,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /** Tests for the {@link DefaultJobLeaderIdService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultJobLeaderIdServiceTest {
 
     /** Tests adding a job and finding out its leader id. */

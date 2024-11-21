@@ -22,7 +22,10 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * PermanentBlobCache}. When new BLOBs are intended to be stored and the size limit exceeds, {@link
  * BlobCacheSizeTracker} will provide excess BLOBs for {@link PermanentBlobCache} to delete.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PermanentBlobCacheSizeLimitTest {
 
     private static final Random RANDOM = new Random();

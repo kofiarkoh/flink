@@ -29,9 +29,12 @@ import org.apache.flink.kubernetes.kubeclient.FlinkKubeClient;
 import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.runtime.clusterframework.BootstrapTools;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.client.NamespacedKubernetesClient;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -43,6 +46,8 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 
 /** Base test class for Kubernetes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTestBase {
     @RegisterExtension
     protected final MixedKubernetesServerExtension server =

@@ -48,6 +48,8 @@ import org.apache.flink.shaded.guava32.com.google.common.cache.RemovalListener;
 import org.apache.flink.shaded.guava32.com.google.common.cache.RemovalNotification;
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableSet;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -84,6 +86,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests for the {@link VertexThreadInfoTracker}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class VertexThreadInfoTrackerTest {
 
     private static final int REQUEST_ID = 0;

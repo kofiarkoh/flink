@@ -23,6 +23,8 @@ import org.apache.flink.runtime.rest.messages.RestResponseMarshallingTestBase;
 import org.apache.flink.runtime.rest.messages.job.metrics.IOMetricsInfo;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
@@ -31,6 +33,8 @@ import java.util.Random;
 
 /** Tests (un)marshalling of the {@link SubtaskExecutionAttemptDetailsInfo}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubtaskExecutionAttemptDetailsInfoTest
         extends RestResponseMarshallingTestBase<SubtaskExecutionAttemptDetailsInfo> {
 

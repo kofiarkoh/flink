@@ -22,7 +22,10 @@ import org.apache.flink.runtime.persistence.TestingLongStateHandleHelper;
 import org.apache.flink.runtime.state.StateObject;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * {@code StateHandleStoreUtilsTest} tests the utility classes collected in {@link
  * StateHandleStoreUtils}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateHandleStoreUtilsTest {
 
     @Test

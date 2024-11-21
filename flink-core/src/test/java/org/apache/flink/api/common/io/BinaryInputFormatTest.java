@@ -25,7 +25,10 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.Record;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -37,6 +40,8 @@ import static org.apache.flink.configuration.ConfigurationUtils.getLongConfigOpt
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Fail.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BinaryInputFormatTest {
 
     @TempDir private Path tempDir;

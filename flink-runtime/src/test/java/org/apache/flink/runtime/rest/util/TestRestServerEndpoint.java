@@ -40,7 +40,9 @@ public class TestRestServerEndpoint extends RestServerEndpoint {
     }
 
     /**
-     * TestRestServerEndpoint.Builder is a utility class for instantiating a TestRestServerEndPoint.
+     * TestRestServerEndpoint.Builder is a
+     * utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for instantiating a
+     * TestRestServerEndPoint.
      */
     public static class Builder {
 

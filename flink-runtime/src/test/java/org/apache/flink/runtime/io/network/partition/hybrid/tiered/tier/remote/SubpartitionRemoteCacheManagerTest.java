@@ -31,7 +31,10 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.Partitio
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.TestingPartitionFileWriter;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link SubpartitionRemoteCacheManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubpartitionRemoteCacheManagerTest {
 
     @Test

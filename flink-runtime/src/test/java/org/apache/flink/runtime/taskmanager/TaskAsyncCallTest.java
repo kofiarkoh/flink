@@ -60,9 +60,12 @@ import org.apache.flink.runtime.util.TestingUserCodeClassLoader;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
@@ -76,6 +79,8 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
 /** Testing asynchronous call of {@link Task}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskAsyncCallTest extends TestLogger {
 
     /** Number of expected checkpoints. */

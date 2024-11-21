@@ -23,7 +23,10 @@ import org.apache.flink.runtime.clusterframework.types.AllocationID;
 import org.apache.flink.runtime.clusterframework.types.ResourceProfile;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +42,8 @@ import static org.apache.flink.runtime.scheduler.SharedSlotTestingUtils.createEx
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test suite for {@link SharingPhysicalSlotRequestBulk}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SharingPhysicalSlotRequestBulkTest {
     private static final ExecutionVertexID EV1 = createRandomExecutionVertexId();
     private static final ExecutionVertexID EV2 = createRandomExecutionVertexId();

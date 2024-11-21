@@ -32,8 +32,11 @@ import org.apache.flink.util.Preconditions;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -45,7 +48,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Abstract test class base for {@link SlotSharingStrategy}. */
-abstract class AbstractSlotSharingStrategyTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AbstractSlotSharingStrategyTest {
 
     protected TestingSchedulingTopology topology;
 

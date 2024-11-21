@@ -40,7 +40,10 @@ import org.apache.flink.util.concurrent.Executors;
 
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nonnull;
@@ -57,6 +60,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DefaultCompletedCheckpointStore} with {@link ZooKeeperStateHandleStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperCompletedCheckpointStoreTest {
 
     @RegisterExtension

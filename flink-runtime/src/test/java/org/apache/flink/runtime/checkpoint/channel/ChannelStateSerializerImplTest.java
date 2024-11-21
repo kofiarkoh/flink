@@ -24,7 +24,10 @@ import org.apache.flink.runtime.io.network.buffer.BufferConsumer;
 import org.apache.flink.runtime.io.network.buffer.FreeingBufferRecycler;
 import org.apache.flink.runtime.io.network.buffer.NetworkBuffer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -38,6 +41,8 @@ import static org.apache.flink.runtime.checkpoint.channel.ChannelStateByteBuffer
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link ChannelStateSerializerImpl} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChannelStateSerializerImplTest {
 
     @Test

@@ -38,13 +38,18 @@ import org.apache.flink.streaming.api.operators.StreamMap;
 import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 /** Test writing keyed bootstrap state. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyedStateBootstrapOperatorTest {
 
     private static final ValueStateDescriptor<Long> descriptor =

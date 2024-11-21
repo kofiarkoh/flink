@@ -36,7 +36,10 @@ import org.apache.flink.runtime.operators.testutils.UnionIterator;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,6 +52,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Test that checks how the combiner handles very large records that are too large to be written
  * into a fresh sort buffer.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CombinerOversizedRecordsTest
         extends UnaryOperatorTestBase<
                 GroupCombineFunction<

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.functions.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.TableException;
 import org.apache.flink.table.expressions.Expression;

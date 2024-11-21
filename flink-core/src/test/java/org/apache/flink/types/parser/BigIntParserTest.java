@@ -18,8 +18,14 @@
 
 package org.apache.flink.types.parser;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.math.BigInteger;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BigIntParserTest extends ParserTestBase<BigInteger> {
 
     @Override

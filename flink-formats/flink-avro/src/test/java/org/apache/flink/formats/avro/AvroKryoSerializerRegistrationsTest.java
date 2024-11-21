@@ -26,8 +26,11 @@ import org.apache.flink.configuration.PipelineOptions;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Registration;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.generic.GenericData;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.fail;
  * verifies that we correctly register Avro types at the {@link KryoSerializer} when Avro is
  * present.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroKryoSerializerRegistrationsTest {
 
     /**

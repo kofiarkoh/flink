@@ -38,9 +38,12 @@ import org.apache.flink.runtime.taskexecutor.TaskExecutorGateway;
 import org.apache.flink.runtime.taskexecutor.TestingTaskExecutorGatewayBuilder;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.UUID;
@@ -54,6 +57,8 @@ import static org.apache.flink.runtime.resourcemanager.ResourceManagerPartitionL
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the interaction between the {@link ResourceManager} and the {@link JobMaster}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceManagerJobMasterTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10L);

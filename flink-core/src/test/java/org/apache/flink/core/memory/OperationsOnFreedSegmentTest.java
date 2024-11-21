@@ -18,7 +18,10 @@
 
 package org.apache.flink.core.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Various tests with freed memory segments for {@link MemorySegment} (in both heap and off-heap
  * modes).
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperationsOnFreedSegmentTest {
 
     private static final int PAGE_SIZE = (int) ((Math.random() * 10000) + 1000);

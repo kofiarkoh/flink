@@ -20,7 +20,10 @@ package org.apache.flink.runtime.state;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
@@ -32,6 +35,8 @@ import static org.apache.flink.util.concurrent.FutureUtils.completedExceptionall
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StateUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateUtilTest {
 
     @Test
@@ -102,7 +107,8 @@ class StateUtilTest {
         };
     }
 
-    private static class TestStateObject implements CompositeStateHandle {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestStateObject
+            implements CompositeStateHandle {
         private static final long serialVersionUID = -8070326169926626355L;
         private final int size;
         private final int checkpointedSize;

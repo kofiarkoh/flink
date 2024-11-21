@@ -31,7 +31,10 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,6 +47,8 @@ import static org.apache.flink.util.Preconditions.checkState;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link DefaultVertexParallelismAndInputInfosDecider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultVertexParallelismAndInputInfosDeciderTest {
 
     private static final long BYTE_256_MB = 256 * 1024 * 1024L;

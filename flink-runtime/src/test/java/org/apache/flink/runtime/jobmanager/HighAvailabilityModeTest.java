@@ -21,13 +21,18 @@ package org.apache.flink.runtime.jobmanager;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.HighAvailabilityOptions.HA_MODE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link HighAvailabilityMode}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HighAvailabilityModeTest extends TestLogger {
 
     // Default HA mode

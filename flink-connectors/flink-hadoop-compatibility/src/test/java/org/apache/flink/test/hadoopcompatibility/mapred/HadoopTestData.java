@@ -22,14 +22,19 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /** Test data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HadoopTestData {
 
     public static DataStream<Tuple2<IntWritable, Text>> getKVPairDataStream(

@@ -20,7 +20,10 @@ package org.apache.flink.docs.configuration;
 
 import org.apache.flink.docs.util.ConfigurationOptionLocator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>Note: This test doesn't really belong into flink-docs, but it contains the required utils and
  * depends on the right modules.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfigOptionsYamlSpecTest {
 
     @Test

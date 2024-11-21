@@ -33,8 +33,11 @@ import org.apache.flink.runtime.rest.messages.taskmanager.TaskManagerProfilingHe
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Path;
@@ -48,6 +51,8 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link TaskManagerProfilingHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerProfilingHandlerTest {
 
     private static final ResourceID EXPECTED_TASK_MANAGER_ID = ResourceID.generate();

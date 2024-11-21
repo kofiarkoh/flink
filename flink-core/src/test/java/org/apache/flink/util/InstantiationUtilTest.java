@@ -29,7 +29,10 @@ import org.apache.flink.types.DoubleValue;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link InstantiationUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InstantiationUtilTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

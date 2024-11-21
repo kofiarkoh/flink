@@ -25,7 +25,10 @@ import org.apache.flink.runtime.jobmaster.slotpool.SlotPool;
 import org.apache.flink.runtime.jobmaster.slotpool.SlotPoolUtils;
 import org.apache.flink.runtime.scheduler.strategy.PipelinedRegionSchedulingStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests for the factory method {@link DefaultSchedulerComponents#createSchedulerComponents(
  * JobType, boolean, Configuration, SlotPool, Duration)}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultSchedulerComponentsFactoryTest {
 
     @Test

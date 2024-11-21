@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.connectors.hive.read.HiveCompactReaderFactory;
@@ -53,6 +58,8 @@ import static org.junit.Assume.assumeTrue;
  * test is to make sure users get a clear message when that happens.
  */
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveDeserializeExceptionTest {
 
     @Parameterized.Parameters(name = "{1}")

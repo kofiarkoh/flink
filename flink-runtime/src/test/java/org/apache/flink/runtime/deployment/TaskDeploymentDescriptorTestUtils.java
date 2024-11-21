@@ -28,6 +28,10 @@ import org.apache.flink.runtime.deployment.TaskDeploymentDescriptorFactory.Shuff
 import org.apache.flink.runtime.shuffle.ShuffleDescriptor;
 import org.apache.flink.util.CompressedSerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +40,8 @@ import java.util.Map;
 /**
  * A collection of utility methods for testing the TaskDeploymentDescriptor and its related classes.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskDeploymentDescriptorTestUtils {
 
     public static ShuffleDescriptor[] deserializeShuffleDescriptors(

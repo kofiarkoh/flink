@@ -23,7 +23,10 @@ import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.configuration.ResourceManagerOptions;
 import org.apache.flink.runtime.resourcemanager.WorkerResourceSpec;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
 
 /** Tests for {@link SlotManagerConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotManagerConfigurationTest {
     @Test
     void testComputeMinTotalCpu() throws Exception {

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.functions.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.table.functions.ScalarFunction;
@@ -35,6 +40,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveFunctionWrapper}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveFunctionWrapperTest {
 
     @TempDir private static File tempFolder;

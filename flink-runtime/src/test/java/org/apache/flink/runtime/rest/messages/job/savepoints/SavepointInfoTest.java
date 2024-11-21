@@ -20,11 +20,16 @@ package org.apache.flink.runtime.rest.messages.job.savepoints;
 
 import org.apache.flink.util.SerializedThrowable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link SavepointInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SavepointInfoTest {
 
     @Test

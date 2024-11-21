@@ -25,6 +25,10 @@ import org.apache.flink.core.fs.RefCountedBufferingFileStream;
 import org.apache.flink.core.fs.RefCountedFileWithStream;
 import org.apache.flink.fs.osshadoop.writer.OSSRecoverableMultipartUpload;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +45,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** OSS test utility class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OSSTestUtils {
     private static final int BUFFER_SIZE = 10;
 

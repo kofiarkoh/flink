@@ -24,6 +24,8 @@ import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesTaskManagerTestBase;
 import org.apache.flink.kubernetes.utils.Constants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.ContainerPort;
 import io.fabric8.kubernetes.api.model.ContainerPortBuilder;
@@ -36,6 +38,7 @@ import io.fabric8.kubernetes.api.model.Quantity;
 import io.fabric8.kubernetes.api.model.ResourceRequirements;
 import io.fabric8.kubernetes.api.model.Toleration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,6 +52,8 @@ import static org.apache.flink.configuration.ConfigurationUtils.getLongConfigOpt
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link InitJobManagerDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InitTaskManagerDecoratorTest extends KubernetesTaskManagerTestBase {
 
     private static final String SERVICE_ACCOUNT_NAME = "service-test";

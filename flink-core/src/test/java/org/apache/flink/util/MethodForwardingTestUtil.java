@@ -18,6 +18,9 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.internal.util.MockUtil;
 
@@ -33,9 +36,11 @@ import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.spy;
 
 /**
- * Helper class with a method that attempts to automatically test method forwarding between a
- * delegate and a wrapper.
+ * Helper @ExtendWith(CTestJUnit5Extension.class) @CTestClass class with a method that attempts to
+ * automatically test method forwarding between a delegate and a wrapper.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MethodForwardingTestUtil {
 
     /**

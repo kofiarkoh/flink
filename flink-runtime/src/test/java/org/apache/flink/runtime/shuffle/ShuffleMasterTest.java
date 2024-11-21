@@ -32,8 +32,11 @@ import org.apache.flink.runtime.minicluster.MiniClusterConfiguration;
 import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -47,6 +50,8 @@ import static org.apache.flink.configuration.ConfigurationUtils.getBooleanConfig
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ShuffleMaster}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ShuffleMasterTest {
 
     private static final String STOP_TRACKING_PARTITION_KEY = "stop_tracking_partition_key";

@@ -33,6 +33,8 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.function.BiFunctionWithException;
 import org.apache.flink.util.function.FunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
@@ -48,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link FsCheckpointMetadataOutputStream}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FsCheckpointMetadataOutputStreamTest {
 
     @Parameters(name = "{0}")

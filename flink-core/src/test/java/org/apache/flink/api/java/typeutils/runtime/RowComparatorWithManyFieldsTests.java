@@ -27,13 +27,18 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.RowTypeInfo;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests {@link org.apache.flink.api.java.typeutils.runtime.RowComparator} for wide rows. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowComparatorWithManyFieldsTests extends ComparatorTestBase<Row> {
 
     private static final int numberOfFields = 10;

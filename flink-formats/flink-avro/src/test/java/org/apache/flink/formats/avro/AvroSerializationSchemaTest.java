@@ -25,7 +25,10 @@ import org.apache.flink.formats.avro.generated.UnionLogicalType;
 import org.apache.flink.formats.avro.utils.TestDataGenerator;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.generic.GenericRecord;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -37,6 +40,8 @@ import static org.apache.flink.formats.avro.utils.AvroTestUtils.writeRecord;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AvroDeserializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializationSchemaTest {
 
     private static final Address address = TestDataGenerator.generateRandomAddress(new Random());

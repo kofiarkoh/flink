@@ -28,7 +28,10 @@ import org.apache.flink.cep.pattern.conditions.SimpleCondition;
 import org.apache.flink.cep.pattern.conditions.SubtypeCondition;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -38,6 +41,8 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 /** Tests for constructing {@link Pattern}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PatternTest extends TestLogger {
 
     /** These test simply test that the pattern construction completes without failure. */

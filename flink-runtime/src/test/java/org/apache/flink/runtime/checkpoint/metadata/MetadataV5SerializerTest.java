@@ -19,8 +19,11 @@ package org.apache.flink.runtime.checkpoint.metadata;
 
 import org.apache.flink.runtime.checkpoint.OperatorState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.ByteArrayInputStream;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertThrows;
 
 /** {@link MetadataV5Serializer} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetadataV5SerializerTest {
 
     private static final MetadataSerializer INSTANCE = MetadataV5Serializer.INSTANCE;

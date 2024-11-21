@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive.client;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 /** Shim for Hive version 3.1.3. */
 public class HiveShimV313 extends HiveShimV312 {}

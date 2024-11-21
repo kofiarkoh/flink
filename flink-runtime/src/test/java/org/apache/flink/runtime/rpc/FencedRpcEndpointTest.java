@@ -24,9 +24,12 @@ import org.apache.flink.runtime.rpc.exceptions.FencingTokenException;
 import org.apache.flink.runtime.rpc.exceptions.RpcRuntimeException;
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.UUID;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Fail.fail;
 
 /** Tests for the FencedRpcEndpoint. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FencedRpcEndpointTest {
 
     private static final Duration timeout = Duration.ofSeconds(10L);
@@ -149,8 +154,8 @@ class FencedRpcEndpointTest {
         CompletableFuture<Acknowledge> triggerComputationLatch(@RpcTimeout Duration timeout);
     }
 
-    private static class FencedTestingEndpoint extends FencedRpcEndpoint<UUID>
-            implements FencedTestingGateway {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class FencedTestingEndpoint
+            extends FencedRpcEndpoint<UUID> implements FencedTestingGateway {
 
         private final OneShotLatch computationLatch;
 

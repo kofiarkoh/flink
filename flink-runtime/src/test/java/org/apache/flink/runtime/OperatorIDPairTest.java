@@ -20,11 +20,16 @@ package org.apache.flink.runtime;
 
 import org.apache.flink.runtime.jobgraph.OperatorID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertThrows;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorIDPairTest {
     @Test
     void testEmptyNameShouldThrowException() {

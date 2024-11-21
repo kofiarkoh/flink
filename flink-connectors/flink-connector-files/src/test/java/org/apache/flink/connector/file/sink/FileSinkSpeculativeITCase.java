@@ -40,8 +40,11 @@ import org.apache.flink.streaming.api.functions.source.legacy.RichParallelSource
 import org.apache.flink.streaming.api.operators.StreamSource;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -156,7 +159,8 @@ class FileSinkSpeculativeITCase {
     }
 
     /** A bounded batch source for testing. */
-    private static class BatchExecutionTestSource extends RichParallelSourceFunction<Integer> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class BatchExecutionTestSource extends RichParallelSourceFunction<Integer> {
 
         private final int numberOfRecords;
 

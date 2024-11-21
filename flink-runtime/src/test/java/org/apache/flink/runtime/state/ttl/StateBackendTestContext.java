@@ -40,6 +40,10 @@ import org.apache.flink.runtime.state.internal.InternalKvState;
 import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 import java.io.IOException;
@@ -49,8 +53,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.RunnableFuture;
 
-/** Base class for state backend test context. */
-public abstract class StateBackendTestContext {
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for state backend test context.
+ */
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class StateBackendTestContext {
     public static final int NUMBER_OF_KEY_GROUPS = 10;
 
     private final StateBackend stateBackend;

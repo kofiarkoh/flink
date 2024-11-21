@@ -23,7 +23,13 @@ import org.apache.flink.api.common.typeutils.ComparatorTestBase;
 import org.apache.flink.api.common.typeutils.TypeComparator;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
-abstract class PrimitiveArrayComparatorTestBase<T> extends ComparatorTestBase<T> {
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class PrimitiveArrayComparatorTestBase<
+                T>
+        extends ComparatorTestBase<T> {
     private final PrimitiveArrayTypeInfo<T> info;
 
     public PrimitiveArrayComparatorTestBase(PrimitiveArrayTypeInfo<T> info) {

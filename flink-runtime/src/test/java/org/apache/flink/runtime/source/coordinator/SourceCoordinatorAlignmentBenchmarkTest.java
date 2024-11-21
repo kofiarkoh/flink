@@ -18,9 +18,14 @@
 
 package org.apache.flink.runtime.source.coordinator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** The test for {@link SourceCoordinatorAlignmentBenchmark}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceCoordinatorAlignmentBenchmarkTest {
 
     @Test

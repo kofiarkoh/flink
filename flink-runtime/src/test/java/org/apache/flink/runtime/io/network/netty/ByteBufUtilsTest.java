@@ -21,11 +21,16 @@ package org.apache.flink.runtime.io.network.netty;
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 import org.apache.flink.shaded.netty4.io.netty.buffer.Unpooled;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the methods in {@link ByteBufUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ByteBufUtilsTest {
     private static final byte ACCUMULATION_BYTE = 0x7d;
     private static final byte NON_ACCUMULATION_BYTE = 0x23;

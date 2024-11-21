@@ -22,11 +22,16 @@ import org.apache.flink.api.connector.source.Boundedness;
 import org.apache.flink.api.connector.source.mocks.MockSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link DataStreamSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataStreamSourceTest {
 
     /** Test constructor for new Sources (FLIP-27). */

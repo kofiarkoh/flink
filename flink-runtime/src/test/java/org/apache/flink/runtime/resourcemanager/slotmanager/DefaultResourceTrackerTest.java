@@ -21,8 +21,11 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.clusterframework.types.ResourceProfile;
 import org.apache.flink.runtime.slots.ResourceRequirement;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>Note: The majority is of the tracking logic is covered by the {@link
  * JobScopedResourceTrackerTest}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultResourceTrackerTest {
 
     private static final JobID JOB_ID_1 = JobID.generate();

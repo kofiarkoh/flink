@@ -24,7 +24,10 @@ import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.runtime.jobgraph.topology.DefaultLogicalTopology;
 import org.apache.flink.runtime.jobgraph.topology.LogicalVertex;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -33,6 +36,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link LogicalPipelinedRegionComputeUtil}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LogicalPipelinedRegionComputeUtilTest {
     /**
      * Tests that the computation of the job graph with isolated vertices works correctly.

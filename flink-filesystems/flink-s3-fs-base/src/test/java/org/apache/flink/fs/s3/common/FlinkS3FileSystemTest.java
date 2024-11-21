@@ -25,12 +25,15 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.core.fs.PathsCopyingFileSystem.CopyRequest;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -59,6 +62,8 @@ import static org.apache.flink.fs.s3.common.AbstractS3FileSystemFactory.S5CMD_PA
 import static org.apache.flink.fs.s3.common.AbstractS3FileSystemFactory.SECRET_KEY;
 
 /** Unit tests for FlinkS3FileSystem. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FlinkS3FileSystemTest {
 
     @Test

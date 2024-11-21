@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.BatchExecutionOptions;
 import org.apache.flink.connector.file.table.FileSystemConnectorOptions;
@@ -1134,7 +1139,9 @@ public class HiveDialectQueryITCase {
         public void close() throws HiveException {}
     }
 
-    private static class QTest {
+    private static @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class QTest {
         final List<String> statements;
         final List<String> results;
         final boolean sortResults;

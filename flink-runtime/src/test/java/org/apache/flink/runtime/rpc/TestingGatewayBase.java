@@ -24,7 +24,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/** Utility base class for testing gateways. */
+/** Utility base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing gateways. */
 public abstract class TestingGatewayBase implements RpcGateway {
 
     private final ScheduledExecutorService executor;

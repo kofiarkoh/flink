@@ -28,7 +28,10 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * <p><b>Important:</b> This test only works if assertions are activated (-ea) on the JVM when
  * running tests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KryoSerializerConcurrencyTest {
 
     @Test

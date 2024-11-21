@@ -36,10 +36,13 @@ import org.apache.flink.runtime.util.LeaderRetrievalUtils;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -49,6 +52,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests which verify the cluster behaviour in case of leader changes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LeaderChangeClusterComponentsTest {
 
     private static final Duration TESTING_TIMEOUT = Duration.ofMinutes(2L);

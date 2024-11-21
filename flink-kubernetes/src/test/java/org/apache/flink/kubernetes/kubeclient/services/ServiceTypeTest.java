@@ -21,11 +21,16 @@ package org.apache.flink.kubernetes.kubeclient.services;
 import org.apache.flink.kubernetes.KubernetesClientTestBase;
 import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ServiceType}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ServiceTypeTest extends KubernetesClientTestBase {
 
     @Test

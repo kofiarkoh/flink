@@ -40,8 +40,11 @@ import org.apache.flink.util.function.CheckedSupplier;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.management.ObjectName;
 
@@ -61,6 +64,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the {@link MetricUtils} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricUtilsTest {
 
     /** Container for local objects to keep them from gc runs. */

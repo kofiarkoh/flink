@@ -21,6 +21,10 @@ package org.apache.flink.core.fs.local;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.core.fs.RecoverableFsDataOutputStream;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
 import java.io.FilterOutputStream;
@@ -38,6 +42,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /** Unit tests for {@link LocalRecoverableFsDataOutputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class LocalRecoverableFsDataOutputStreamTest
         extends AbstractRecoverableFsDataOutputStreamTest {
 

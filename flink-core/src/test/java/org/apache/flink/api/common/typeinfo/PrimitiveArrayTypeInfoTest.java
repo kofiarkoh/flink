@@ -20,7 +20,13 @@ package org.apache.flink.api.common.typeinfo;
 
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link PrimitiveArrayTypeInfoTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrimitiveArrayTypeInfoTest extends TypeInformationTestBase<PrimitiveArrayTypeInfo<?>> {
 
     @Override

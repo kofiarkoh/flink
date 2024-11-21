@@ -28,7 +28,10 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +42,8 @@ import static org.apache.flink.cep.utils.NFAUtils.compile;
 
 /** IT tests covering {@link IterativeCondition} usage. */
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IterativeConditionsITCase extends TestLogger {
 
     //////////////////////			Iterative BooleanConditions			/////////////////////////

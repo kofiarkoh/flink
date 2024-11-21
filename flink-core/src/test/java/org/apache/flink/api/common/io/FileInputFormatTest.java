@@ -31,7 +31,10 @@ import org.apache.flink.testutils.TestFileUtils;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.IntValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.BufferedOutputStream;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Fail.fail;
 
 /** Tests for the FileInputFormat */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileInputFormatTest {
 
     @TempDir private java.nio.file.Path temporaryFolder;

@@ -25,9 +25,12 @@ import org.apache.flink.runtime.io.network.partition.consumer.InputChannelID;
 
 import org.apache.flink.shaded.netty4.io.netty.channel.embedded.EmbeddedChannel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Random;
 
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the serialization and deserialization of the various {@link NettyMessage} sub-classes
  * sent from client side to server side.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyMessageServerSideSerializationTest {
 
     private final Random random = new Random();

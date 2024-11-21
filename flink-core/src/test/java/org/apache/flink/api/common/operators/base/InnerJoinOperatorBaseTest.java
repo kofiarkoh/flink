@@ -32,7 +32,10 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -45,6 +48,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** The test for inner join operator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InnerJoinOperatorBaseTest implements Serializable {
 
     @Test

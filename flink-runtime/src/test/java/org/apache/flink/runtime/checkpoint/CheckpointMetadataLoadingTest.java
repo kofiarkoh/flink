@@ -31,7 +31,10 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -53,6 +56,8 @@ import static org.mockito.Mockito.when;
  * A test that checks that checkpoint metadata loading works properly, including validation of
  * resumed state and dropped state.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointMetadataLoadingTest {
 
     private final ClassLoader cl = getClass().getClassLoader();

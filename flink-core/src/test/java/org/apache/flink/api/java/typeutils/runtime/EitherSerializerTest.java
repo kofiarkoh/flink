@@ -33,8 +33,11 @@ import org.apache.flink.types.Either;
 import org.apache.flink.types.LongValue;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -42,6 +45,8 @@ import static org.apache.flink.types.Either.Left;
 import static org.apache.flink.types.Either.Right;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EitherSerializerTest {
 
     @SuppressWarnings("unchecked")
@@ -224,7 +229,9 @@ class EitherSerializerTest {
      * arbitrarily create always create a Left instance we override this test.
      */
     @Nested
-    private class EitherSerializerTestInstance<T> extends SerializerTestInstance<T> {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class EitherSerializerTestInstance<
+                    T>
+            extends SerializerTestInstance<T> {
 
         public EitherSerializerTestInstance(
                 TypeSerializer<T> serializer, Class<T> typeClass, int length, T[] testData) {

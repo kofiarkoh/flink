@@ -18,6 +18,9 @@
 
 package org.apache.flink.runtime.leaderelection;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +30,8 @@ import java.util.UUID;
  * {@link LeaderContender} implementation which provides some convenience functions for testing
  * purposes.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingContender extends TestingLeaderBase implements LeaderContender {
     private static final Logger LOG = LoggerFactory.getLogger(TestingContender.class);
 

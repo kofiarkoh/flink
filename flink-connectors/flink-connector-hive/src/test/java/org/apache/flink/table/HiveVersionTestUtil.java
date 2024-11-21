@@ -16,10 +16,17 @@
  */
 
 package org.apache.flink.table;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.catalog.hive.client.HiveShimLoader;
 
 /** Util for testing different Hive versions. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveVersionTestUtil {
     public static final boolean HIVE_310_OR_LATER =
             HiveShimLoader.getHiveVersion().compareTo(HiveShimLoader.HIVE_VERSION_V3_1_0) >= 0;

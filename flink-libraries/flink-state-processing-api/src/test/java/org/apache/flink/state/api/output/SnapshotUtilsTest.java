@@ -32,9 +32,12 @@ import org.apache.flink.streaming.api.operators.StreamOperator;
 import org.apache.flink.streaming.api.operators.StreamTaskStateInitializer;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.util.ArrayList;
@@ -43,6 +46,8 @@ import java.util.Collections;
 import java.util.List;
 
 /** Tests that snapshot utils can properly snapshot an operator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SnapshotUtilsTest {
 
     private static final List<String> EXPECTED_CALL_OPERATOR_SNAPSHOT =

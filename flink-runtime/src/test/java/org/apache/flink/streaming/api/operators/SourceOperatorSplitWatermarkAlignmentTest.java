@@ -46,8 +46,11 @@ import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 import org.apache.flink.streaming.util.MockOutput;
 import org.apache.flink.streaming.util.MockStreamConfig;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -56,6 +59,8 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for split alignment in {@link SourceOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorSplitWatermarkAlignmentTest {
 
     @Test

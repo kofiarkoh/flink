@@ -18,7 +18,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URL;
 
@@ -26,6 +29,8 @@ import static org.apache.flink.util.FlinkUserCodeClassLoader.NOOP_EXCEPTION_HAND
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link TemporaryClassLoaderContext}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TemporaryClassLoaderContextTest {
 
     @Test

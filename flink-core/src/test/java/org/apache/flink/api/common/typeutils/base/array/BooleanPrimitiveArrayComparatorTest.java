@@ -19,8 +19,14 @@ package org.apache.flink.api.common.typeutils.base.array;
 
 import org.apache.flink.api.common.typeinfo.PrimitiveArrayTypeInfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BooleanPrimitiveArrayComparatorTest
         extends PrimitiveArrayComparatorTestBase<boolean[]> {
     public BooleanPrimitiveArrayComparatorTest() {

@@ -29,8 +29,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Base class which provides some convenience functions for testing purposes of {@link
- * LeaderRetrievalListener} and {@link
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class which provides some convenience
+ * functions for testing purposes of {@link LeaderRetrievalListener} and {@link
  * org.apache.flink.runtime.leaderretrieval.LeaderRetrievalEventHandler}.
  */
 public class TestingRetrievalBase {

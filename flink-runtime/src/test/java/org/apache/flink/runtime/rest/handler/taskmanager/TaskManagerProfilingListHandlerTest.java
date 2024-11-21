@@ -35,8 +35,11 @@ import org.apache.flink.util.concurrent.FutureUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -49,6 +52,8 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link TaskManagerProfilingListHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerProfilingListHandlerTest {
 
     private static final ResourceID EXPECTED_TASK_MANAGER_ID = ResourceID.generate();

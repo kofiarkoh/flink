@@ -23,9 +23,12 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailbox.MailboxClose
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link MailboxExecutorImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MailboxExecutorImplTest {
 
     public static final int DEFAULT_PRIORITY = 0;

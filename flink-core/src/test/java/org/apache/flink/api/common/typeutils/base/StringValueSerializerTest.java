@@ -22,7 +22,13 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** A test for the {@link StringValueSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StringValueSerializerTest extends SerializerTestBase<StringValue> {
 
     @Override

@@ -21,6 +21,10 @@ import org.apache.flink.api.common.operators.MailboxExecutor;
 import org.apache.flink.streaming.runtime.tasks.mailbox.MailboxExecutorImpl;
 import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailboxImpl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * A mock implementation of a {@code WriterInitContext} to be used in sink unit tests.
  *
@@ -32,6 +36,8 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailboxImpl;
  * <p>However, care must be taken to ensure deadlocks do not form in the test code, since we are
  * artificially allowing multiple mailbox threads, when only one is supposed to exist.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestSinkInitContextAnyThreadMailbox extends TestSinkInitContext {
     @Override
     public MailboxExecutor getMailboxExecutor() {

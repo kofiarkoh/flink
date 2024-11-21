@@ -48,7 +48,7 @@ import static org.apache.flink.runtime.checkpoint.StateHandleDummyUtil.createNew
 import static org.apache.flink.runtime.checkpoint.StateHandleDummyUtil.createNewResultSubpartitionStateHandle;
 import static org.apache.flink.runtime.checkpoint.StateObjectCollection.singleton;
 
-/** Class for common test utilities. */
+/** @ExtendWith(CTestJUnit5Extension.class) @CTestClass Class for common test utilities. */
 public class TestUtils {
 
     public static File createSavepointWithOperatorState(

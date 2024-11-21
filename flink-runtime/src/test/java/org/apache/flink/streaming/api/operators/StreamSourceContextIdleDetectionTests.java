@@ -28,6 +28,8 @@ import org.apache.flink.streaming.util.CollectorOutput;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -40,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StreamSource} awareness of source idleness. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamSourceContextIdleDetectionTests {
 
     /** The tests in this class will be parameterized with these enumerations. */

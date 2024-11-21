@@ -53,8 +53,11 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nullable;
@@ -80,6 +83,8 @@ import static org.apache.flink.shaded.guava32.com.google.common.collect.Iterable
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link AdaptiveBatchScheduler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AdaptiveBatchSchedulerTest {
 
     private static final int SOURCE_PARALLELISM_1 = 6;

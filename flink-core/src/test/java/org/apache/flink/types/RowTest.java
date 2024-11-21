@@ -19,7 +19,10 @@ package org.apache.flink.types;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link Row} and {@link RowUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowTest {
 
     @Test

@@ -29,9 +29,12 @@ import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.Reference;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -71,6 +74,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * <p>Successful GET requests are tested in conjunction wit the PUT requests by {@link
  * BlobServerPutTest}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobServerGetTest {
 
     private final Random rnd = new Random();

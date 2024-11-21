@@ -30,7 +30,10 @@ import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KubernetesUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesUtilsTest extends KubernetesTestBase {
 
     private static final FlinkPod EMPTY_POD = new FlinkPod.Builder().build();

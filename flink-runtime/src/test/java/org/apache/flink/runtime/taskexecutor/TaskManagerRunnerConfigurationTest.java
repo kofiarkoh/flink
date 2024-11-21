@@ -41,7 +41,10 @@ import org.apache.flink.util.concurrent.Executors;
 
 import org.apache.flink.shaded.guava32.com.google.common.net.InetAddresses;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.opentest4j.TestAbortedException;
 
@@ -71,6 +74,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * and verifies its content.
  */
 @NotThreadSafe
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerRunnerConfigurationTest {
 
     private static final RpcSystem RPC_SYSTEM = RpcSystem.load();

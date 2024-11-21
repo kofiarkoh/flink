@@ -20,11 +20,16 @@ package org.apache.flink.runtime.jobgraph;
 
 import org.apache.flink.core.execution.RecoveryClaimMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /** Tests for {@link SavepointRestoreSettings}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointRestoreSettingsTest {
 
     @Test

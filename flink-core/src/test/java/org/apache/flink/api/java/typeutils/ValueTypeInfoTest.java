@@ -24,13 +24,18 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.types.Record;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ListTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ValueTypeInfoTest extends TypeInformationTestBase<ValueTypeInfo<?>> {
 
     @Override

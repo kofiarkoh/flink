@@ -26,7 +26,10 @@ import org.apache.flink.runtime.rest.util.DocumentingRestEndpoint;
 import org.apache.flink.runtime.rest.versioning.RuntimeRestAPIVersion;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -34,6 +37,8 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link RestAPIDocGenerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestAPIDocGeneratorTest {
 
     @Test

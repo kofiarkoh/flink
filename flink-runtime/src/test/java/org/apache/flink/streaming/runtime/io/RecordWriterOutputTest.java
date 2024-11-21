@@ -32,6 +32,9 @@ import org.apache.flink.runtime.plugable.SerializationDelegate;
 import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -42,6 +45,8 @@ import java.util.Queue;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link RecordWriterOutput}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RecordWriterOutputTest {
 
     @ParameterizedTest

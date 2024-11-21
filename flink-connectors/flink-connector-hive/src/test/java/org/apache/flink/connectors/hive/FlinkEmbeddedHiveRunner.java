@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.util.Preconditions;
 
@@ -145,7 +150,9 @@ public class FlinkEmbeddedHiveRunner extends BlockJUnit4ClassRunner {
     }
 
     /**
-     * Traverses the test class annotations. Will inject a HiveShell in the test case that envelopes
+     * Traverses the test @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class annotations. Will inject a HiveShell in the test case that envelopes
      * the HiveServer.
      */
     private HiveShellContainer createHiveServerContainer(

@@ -46,7 +46,10 @@ import org.apache.flink.runtime.testutils.recordutils.RecordSerializerFactory;
 import org.apache.flink.types.Record;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +58,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Metrics related tests for batch task chains. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ChainedOperatorsMetricTest extends TaskTestBase {
 
     private static final int MEMORY_MANAGER_SIZE = 1024 * 1024 * 3;

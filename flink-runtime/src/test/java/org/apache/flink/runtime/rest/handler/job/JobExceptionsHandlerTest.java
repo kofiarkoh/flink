@@ -54,12 +54,15 @@ import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.SerializedThrowable;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.hamcrest.collection.IsEmptyIterable;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,6 +82,8 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.collection.IsIterableWithSize.iterableWithSize;
 
 /** Test for the {@link JobExceptionsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobExceptionsHandlerTest {
 
     private final JobExceptionsHandler testInstance =

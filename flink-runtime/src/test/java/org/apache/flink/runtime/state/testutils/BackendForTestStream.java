@@ -34,6 +34,10 @@ import org.apache.flink.runtime.state.filesystem.AbstractFsCheckpointStorageAcce
 import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.io.IOException;
@@ -43,6 +47,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /** A test backends that allows you to supply a specific test stream. */
 @SuppressWarnings({"serial"})
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BackendForTestStream extends HashMapStateBackend implements CheckpointStorage {
 
     private static final long serialVersionUID = 1L;

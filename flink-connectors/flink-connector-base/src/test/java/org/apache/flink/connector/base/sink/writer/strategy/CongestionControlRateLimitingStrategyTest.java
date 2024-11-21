@@ -17,12 +17,17 @@
 
 package org.apache.flink.connector.base.sink.writer.strategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Test class for {@link CongestionControlRateLimitingStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CongestionControlRateLimitingStrategyTest {
     @Test
     void testMaxInFlightRequestsRespected() {

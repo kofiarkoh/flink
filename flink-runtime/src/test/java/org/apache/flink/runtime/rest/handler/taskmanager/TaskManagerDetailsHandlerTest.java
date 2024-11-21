@@ -44,8 +44,11 @@ import org.apache.flink.util.jackson.JacksonMapperFactory;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -57,6 +60,8 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the {@link TaskManagerDetailsHandler} implementation. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerDetailsHandlerTest {
 
     private static final ResourceID TASK_MANAGER_ID = ResourceID.generate();

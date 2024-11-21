@@ -18,6 +18,8 @@
 
 package org.apache.flink.kubernetes;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.ContainerBuilder;
 import io.fabric8.kubernetes.api.model.PodSpec;
@@ -25,6 +27,7 @@ import io.fabric8.kubernetes.api.model.Volume;
 import io.fabric8.kubernetes.api.model.VolumeBuilder;
 import io.fabric8.kubernetes.api.model.VolumeMount;
 import io.fabric8.kubernetes.api.model.VolumeMountBuilder;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.net.URL;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * containers, sidecar containers, volumes which are specified in the
  * test-resources/testing-pod-template.yaml.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesPodTemplateTestUtils {
 
     public static final String TESTING_MAIN_CONTAINER_NAME = "testing-main-container";

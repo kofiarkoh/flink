@@ -22,6 +22,8 @@ import org.apache.flink.runtime.state.storage.FileSystemCheckpointStorage;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
@@ -31,6 +33,8 @@ import java.io.File;
  * HashMapStateBackend}.
  */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HashMapStateBackendWithFsStorageMigrationTest
         extends StateBackendMigrationTestBase<HashMapStateBackend> {
 

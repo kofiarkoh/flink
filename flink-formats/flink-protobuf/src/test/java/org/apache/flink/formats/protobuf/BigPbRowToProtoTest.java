@@ -28,7 +28,10 @@ import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +44,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Test for huge proto definition, which may trigger some special optimizations such as code
  * splitting.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BigPbRowToProtoTest {
 
     @Test

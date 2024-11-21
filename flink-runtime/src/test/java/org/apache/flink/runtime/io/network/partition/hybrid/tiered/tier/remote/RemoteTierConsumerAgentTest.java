@@ -30,8 +30,11 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.Partitio
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.TestingPartitionFileReader;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.storage.TieredStorageConsumerSpec;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -41,6 +44,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link RemoteTierConsumerAgent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RemoteTierConsumerAgentTest {
 
     @TempDir private File tempFolder;

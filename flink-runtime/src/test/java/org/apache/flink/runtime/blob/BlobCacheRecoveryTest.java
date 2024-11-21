@@ -23,10 +23,15 @@ import org.apache.flink.configuration.HighAvailabilityOptions;
 import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 /** Tests for the recovery of files of a {@link BlobCacheService} from a HA store. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BlobCacheRecoveryTest {
 
     @TempDir private java.nio.file.Path tempDir;

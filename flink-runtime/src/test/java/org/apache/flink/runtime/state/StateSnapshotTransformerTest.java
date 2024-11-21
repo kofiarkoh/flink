@@ -31,6 +31,10 @@ import org.apache.flink.runtime.state.internal.InternalValueState;
 import org.apache.flink.runtime.util.BlockerCheckpointStreamFactory;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.io.Serializable;
@@ -41,6 +45,8 @@ import java.util.Random;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateSnapshotTransformerTest {
     private final CheckpointableKeyedStateBackend<Integer> backend;
     private final BlockerCheckpointStreamFactory streamFactory;
@@ -101,7 +107,8 @@ class StateSnapshotTransformerTest {
         }
     }
 
-    private class TestValueState extends TestState {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestValueState
+            extends TestState {
         private final InternalValueState<Integer, VoidNamespace, String> state;
 
         private TestValueState() throws Exception {
@@ -119,7 +126,8 @@ class StateSnapshotTransformerTest {
         }
     }
 
-    private class TestListState extends TestState {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestListState
+            extends TestState {
         private final InternalListState<Integer, VoidNamespace, String> state;
 
         private TestListState() throws Exception {
@@ -143,7 +151,8 @@ class StateSnapshotTransformerTest {
         }
     }
 
-    private class TestMapState extends TestState {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestMapState
+            extends TestState {
         private final InternalMapState<Integer, VoidNamespace, String, String> state;
 
         private TestMapState() throws Exception {

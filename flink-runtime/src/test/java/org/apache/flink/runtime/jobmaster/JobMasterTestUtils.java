@@ -27,6 +27,10 @@ import org.apache.flink.runtime.taskmanager.LocalUnresolvedTaskManagerLocation;
 import org.apache.flink.runtime.taskmanager.UnresolvedTaskManagerLocation;
 import org.apache.flink.testutils.TestingUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.Duration;
 import java.util.Collection;
 import java.util.concurrent.ExecutionException;
@@ -34,6 +38,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /** JobMaster-related test utils. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobMasterTestUtils {
 
     public static void registerTaskExecutorAndOfferSlots(

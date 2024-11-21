@@ -26,7 +26,10 @@ import org.apache.flink.cep.utils.TestTimerService;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,6 +39,8 @@ import static org.apache.flink.cep.utils.NFATestHarness.forPattern;
 import static org.apache.flink.cep.utils.NFATestUtilities.comparePatterns;
 
 /** Tests for accessing time properties from {@link IterativeCondition}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NFAIterativeConditionTimeContextTest extends TestLogger {
 
     @Test

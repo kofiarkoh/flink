@@ -20,8 +20,11 @@ package org.apache.flink.runtime.io.network.netty;
 
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link NettyBufferPool} wrapper. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyBufferPoolTest {
 
     private final List<ByteBuf> needReleasing = new ArrayList<>();

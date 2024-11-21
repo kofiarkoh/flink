@@ -18,7 +18,10 @@
 
 package org.apache.flink.configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +31,8 @@ import static org.apache.flink.configuration.ConfigOptions.key;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the {@link ConfigUtils} methods. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ConfigUtilsTest {
 
     private static final ConfigOption<List<String>> TEST_OPTION =

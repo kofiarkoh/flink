@@ -24,7 +24,10 @@ import org.apache.flink.table.data.MapData;
 import org.apache.flink.table.data.RowData;
 
 import com.google.protobuf.ByteString;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -34,6 +37,8 @@ import static org.junit.Assert.assertTrue;
  * Test conversion of proto3 data to flink internal data. Default values after conversion is tested
  * especially.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class Pb3ToRowTest {
     @Test
     public void testDeserialization() throws Exception {

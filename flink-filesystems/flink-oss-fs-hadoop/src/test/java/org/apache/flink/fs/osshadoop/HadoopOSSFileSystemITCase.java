@@ -24,8 +24,11 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.runtime.fs.hdfs.AbstractHadoopFileSystemITTest;
 import org.apache.flink.testutils.oss.OSSTestCredentials;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for the OSS file system support via AliyunOSSFileSystem. These tests do actually read
  * from or write to OSS.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopOSSFileSystemITCase extends AbstractHadoopFileSystemITTest {
 
     private static final String TEST_DATA_DIR = "tests-" + UUID.randomUUID();

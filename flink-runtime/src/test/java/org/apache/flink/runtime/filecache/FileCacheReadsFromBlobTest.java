@@ -30,10 +30,13 @@ import org.apache.flink.util.InstantiationUtil;
 
 import org.apache.flink.shaded.guava32.com.google.common.io.Files;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -46,6 +49,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /** Tests that {@link FileCache} can read files from {@link BlobServer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileCacheReadsFromBlobTest {
 
     private static final String testFileContent =

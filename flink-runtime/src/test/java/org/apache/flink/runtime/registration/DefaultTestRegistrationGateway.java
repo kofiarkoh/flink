@@ -20,11 +20,17 @@ package org.apache.flink.runtime.registration;
 
 import org.apache.flink.util.FlinkException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiFunction;
 
 /** Default {@link TestRegistrationGateway} implementation. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DefaultTestRegistrationGateway implements TestRegistrationGateway {
     private final String address;
     private final String hostname;

@@ -18,10 +18,16 @@
 
 package org.apache.flink.runtime.io.network.partition;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.nio.file.Path;
 
 /** Tests that read the BoundedBlockingSubpartition with multiple threads in parallel. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MemoryMappedBoundedDataTest extends BoundedDataTestBase {
 
     @Override

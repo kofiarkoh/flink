@@ -46,6 +46,8 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
@@ -55,6 +57,7 @@ import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -74,6 +77,8 @@ import java.util.UUID;
 /**
  * Tests for the {@link ContinuousFileMonitoringFunction} and {@link ContinuousFileReaderOperator}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ContinuousFileProcessingTest {
 
     private static final int NO_OF_FILES = 5;

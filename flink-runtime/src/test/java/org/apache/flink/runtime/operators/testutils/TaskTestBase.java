@@ -38,12 +38,15 @@ import org.apache.flink.types.Record;
 import org.apache.flink.util.InstantiationUtil;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.util.List;
 
-public abstract class TaskTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TaskTestBase {
 
     @TempDir protected java.nio.file.Path tempFolder;
 

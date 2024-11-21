@@ -23,7 +23,10 @@ import org.apache.flink.connector.base.sink.writer.config.AsyncSinkWriterConfigu
 import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /** Test for timeout functionalities of {@link AsyncSinkWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterTimeoutTest {
 
     private final ExecutorService executorService = Executors.newFixedThreadPool(5);

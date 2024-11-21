@@ -23,9 +23,12 @@ import org.apache.flink.testutils.ClassLoaderUtils;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.TemporaryFolder;
 
@@ -38,6 +41,8 @@ import static org.hamcrest.Matchers.hasItemInArray;
 import static org.hamcrest.Matchers.hasProperty;
 
 /** Tests for classloader deserialize utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClassLoaderDeserializationTest extends TestLogger {
 
     @ClassRule public static TemporaryFolder temporaryFolder = new TemporaryFolder();

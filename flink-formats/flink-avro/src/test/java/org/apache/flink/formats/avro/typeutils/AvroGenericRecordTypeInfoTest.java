@@ -23,12 +23,17 @@ import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.formats.avro.utils.AvroTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.generic.GenericRecord;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link GenericRecordAvroTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroGenericRecordTypeInfoTest extends TypeInformationTestBase<GenericRecordAvroTypeInfo> {
 
     @Override

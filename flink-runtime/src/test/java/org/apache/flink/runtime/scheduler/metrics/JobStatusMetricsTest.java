@@ -23,7 +23,10 @@ import org.apache.flink.configuration.MetricOptions;
 import org.apache.flink.runtime.metrics.util.InterceptingOperatorMetricGroup;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Map;
@@ -32,6 +35,8 @@ import static org.apache.flink.runtime.scheduler.metrics.StateTimeMetricTest.ena
 import static org.apache.flink.runtime.scheduler.metrics.StateTimeMetricTest.extractMetrics;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobStatusMetricsTest {
 
     @Test

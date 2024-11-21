@@ -22,7 +22,10 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Random;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * A test for the {@link org.apache.flink.api.common.typeutils.base.array.StringArraySerializer}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StringArraySerializerTest extends SerializerTestBase<String[]> {
 
     @Override

@@ -33,10 +33,13 @@ import org.apache.flink.streaming.api.functions.sink.legacy.OutputFormatSinkFunc
 import org.apache.flink.streaming.api.legacy.io.TextInputFormat;
 import org.apache.flink.test.util.JavaProgramTestBaseJUnit4;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** IT cases for the {@link AvroOutputFormat}. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroOutputFormatITCase extends JavaProgramTestBaseJUnit4 {
 
     public static String outputPath1;

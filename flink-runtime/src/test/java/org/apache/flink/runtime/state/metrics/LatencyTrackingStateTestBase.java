@@ -41,14 +41,17 @@ import org.apache.flink.runtime.state.internal.InternalKvState;
 import org.apache.flink.runtime.state.ttl.TtlTimeProvider;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test base for latency tracking state. */
-abstract class LatencyTrackingStateTestBase<K> {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class LatencyTrackingStateTestBase<K> {
     protected static final int SAMPLE_INTERVAL = 10;
 
     protected AbstractKeyedStateBackend<K> createKeyedBackend(TypeSerializer<K> keySerializer)

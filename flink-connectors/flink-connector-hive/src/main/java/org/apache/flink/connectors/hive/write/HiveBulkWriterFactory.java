@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive.write;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.formats.hadoop.bulk.HadoopPathBasedBulkWriter;
 import org.apache.flink.table.data.RowData;

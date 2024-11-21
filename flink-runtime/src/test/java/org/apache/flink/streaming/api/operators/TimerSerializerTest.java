@@ -23,7 +23,13 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.common.typeutils.base.LongSerializer;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link TimerSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimerSerializerTest extends SerializerTestBase<TimerHeapInternalTimer<Long, TimeWindow>> {
 
     private static final TypeSerializer<Long> KEY_SERIALIZER = LongSerializer.INSTANCE;

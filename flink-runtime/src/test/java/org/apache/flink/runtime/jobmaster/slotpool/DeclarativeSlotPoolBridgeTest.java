@@ -28,6 +28,8 @@ import org.apache.flink.runtime.util.ResourceCounter;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -48,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DeclarativeSlotPoolBridge}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DeclarativeSlotPoolBridgeTest extends AbstractDeclarativeSlotPoolBridgeTest {
 
     @TestTemplate

@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.operators.coordination.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -27,6 +30,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link IncompleteFuturesTracker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class IncompleteFuturesTrackerTest {
 
     @Test

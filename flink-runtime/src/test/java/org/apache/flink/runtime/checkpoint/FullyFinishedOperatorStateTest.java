@@ -25,7 +25,10 @@ import org.apache.flink.runtime.state.ResultSubpartitionStateHandle;
 import org.apache.flink.runtime.state.StateObject;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests the properties of {@link FullyFinishedOperatorState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FullyFinishedOperatorStateTest {
 
     @Test

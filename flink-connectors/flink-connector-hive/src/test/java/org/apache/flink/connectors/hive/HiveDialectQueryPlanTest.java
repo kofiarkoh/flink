@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.SqlDialect;
 import org.apache.flink.table.api.TableEnvironment;
@@ -36,6 +41,8 @@ import static org.apache.flink.table.planner.utils.TableTestUtil.readFromResourc
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test hive query plan. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveDialectQueryPlanTest {
 
     private static HiveCatalog hiveCatalog;

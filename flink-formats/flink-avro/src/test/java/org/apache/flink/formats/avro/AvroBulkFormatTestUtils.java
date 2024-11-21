@@ -27,12 +27,17 @@ import org.apache.flink.table.runtime.typeutils.InternalTypeInfo;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.function.Function;
 
 /** Testing utils for tests related to {@link AbstractAvroBulkFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroBulkFormatTestUtils {
 
     public static final RowType ROW_TYPE =

@@ -409,6 +409,11 @@ TOK_BLOCKING;
 // Package headers
 @header {
 package org.apache.flink.table.planner.delegation.hive.parse;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import java.util.Arrays;
 import java.util.Collection;

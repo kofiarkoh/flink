@@ -1,185 +1,26 @@
-# Apache Flink
+## About This Project
+This repo is a fork of [Apache Flink](https://github.com/apache/flink) in which  [openctest](https://www.usenix.org/conference/osdi20/presentation/sun) configuration testing is applied using [cTest4j Tool](https://dl.acm.org/doi/10.1145/3663529.3663799)
 
-Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.
+## Runninng  Configuration Tests
 
-Learn more about Flink at [https://flink.apache.org/](https://flink.apache.org/)
-
-
-### Features
-
-* A streaming-first runtime that supports both batch processing and data streaming programs
-
-* Elegant and fluent APIs in Java
-
-* A runtime that supports very high throughput and low event latency at the same time
-
-* Support for *event time* and *out-of-order* processing in the DataStream API, based on the *Dataflow Model*
-
-* Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time)
-
-* Fault-tolerance with *exactly-once* processing guarantees
-
-* Natural back-pressure in streaming programs
-
-* Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming)
-
-* Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms
-
-* Compatibility layers for Apache Hadoop MapReduce
-
-* Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem
+> **NOTE:** The steps below have been run using **openjdk version 17.0.10** on **macOS Sequoia**.
 
 
-### Streaming Example
-```java
-// pojo class WordWithCount
-public class WordWithCount {
-    public String word;
-    public int count;
-
-    public WordWithCount() {}
-    
-    public WordWithCount(String word, int count) {
-        this.word = word;
-        this.count = count;
-    }
-}
-
-// main method
-StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-DataStreamSource<String> text = env.socketTextStream(host, port);
-DataStream<WordWithCount> windowCounts = text
-    .flatMap(
-        (FlatMapFunction<String, String>) (line, collector) 
-            -> Arrays.stream(line.split("\\s")).forEach(collector::collect)
-    ).returns(String.class)
-    .map(word -> new WordWithCount(word, 1)).returns(TypeInformation.of(WordWithCount.class))
-    .keyBy(wordWithCnt -> wordWithCnt.word)
-    .window(TumblingProcessingTimeWindows.of(Duration.ofSeconds(5)))
-    .sum("count").returns(TypeInformation.of(WordWithCount.class));
-
-windowCounts.print();
-env.execute();
-}
+For demonstration purposes, the steps below simulates testings configuration tests induced failures 
+using `TimeWindowTranslationTest` test class inside the `flink-runtime` submodule.
+- Clone the project by running the command `git clone git@github.com:kofiarkoh/flink.git`
+- Switch to the project directory by running `cd flink`
+- Run `mvn clean install -DskipTests  -Denforcer.skip=true` to build the project
+- Run the test below using default configuration values as specified in the test file. This test will PASS
 ```
-
-### Batch Example
-```java
-// pojo class WordWithCount
-public class WordWithCount {
-    public String word;
-    public int count;
-
-    public WordWithCount() {}
-
-    public WordWithCount(String word, int count) {
-        this.word = word;
-        this.count = count;
-    }
-}
-
-// main method
-StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-env.setRuntimeMode(RuntimeExecutionMode.BATCH);
-FileSource<String> source = FileSource.forRecordStreamFormat(new TextLineInputFormat(), new Path("MyInput.txt")).build();
-DataStreamSource<String> text = env.fromSource(source, WatermarkStrategy.noWatermarks(), "MySource");
-DataStream<WordWithCount> windowCounts = text
-        .flatMap((FlatMapFunction<String, String>) (line, collector) -> Arrays
-                .stream(line.split("\\s"))
-                .forEach(collector::collect)).returns(String.class)
-        .map(word -> new WordWithCount(word, 1)).returns(TypeInformation.of(WordWithCount.class))
-        .keyBy(wordWintCount -> wordWintCount.word)
-        .sum("count").returns(TypeInformation.of(WordWithCount.class));
-
-windowCounts.print();
-env.execute();
+ mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest"
 ```
-
-
-
-## Building Apache Flink from Source
-
-Prerequisites for building Flink:
-
-* Unix-like environment (we use Linux, Mac OS X, Cygwin, WSL)
-* Git
-* Maven (we require version 3.8.6)
-* Java 8 or 11 (Java 9 or 10 may work)
+- Now lets change one conguration value used in the tests (this value is a valid configuration value). This test will PASS
+```
+mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1"
+```
+- To simulate a configuration induced test. Run the command below. _For this step, we set `parallelism.default` to an invalid value `1s` because valid value must be an integer. This test will FAIL because an invalid configuration value is injected into the test case
+```
+ mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1s"
 
 ```
-git clone https://github.com/apache/flink.git
-cd flink
-./mvnw clean package -DskipTests # this will take up to 10 minutes
-```
-
-Flink is now installed in `build-target`.
-
-## Developing Flink
-
-The Flink committers use IntelliJ IDEA to develop the Flink codebase.
-We recommend IntelliJ IDEA for developing projects that involve Scala code.
-
-Minimal requirements for an IDE are:
-* Support for Java and Scala (also mixed projects)
-* Support for Maven with Java and Scala
-
-
-### IntelliJ IDEA
-
-The IntelliJ IDE supports Maven out of the box and offers a plugin for Scala development.
-
-* IntelliJ download: [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
-* IntelliJ Scala Plugin: [https://plugins.jetbrains.com/plugin/?id=1347](https://plugins.jetbrains.com/plugin/?id=1347)
-
-Check out our [Setting up IntelliJ](https://nightlies.apache.org/flink/flink-docs-master/flinkDev/ide_setup.html#intellij-idea) guide for details.
-
-### Eclipse Scala IDE
-
-**NOTE:** From our experience, this setup does not work with Flink
-due to deficiencies of the old Eclipse version bundled with Scala IDE 3.0.3 or
-due to version incompatibilities with the bundled Scala version in Scala IDE 4.4.1.
-
-**We recommend to use IntelliJ instead (see above)**
-
-## Support
-
-Don’t hesitate to ask!
-
-Contact the developers and community on the [mailing lists](https://flink.apache.org/community.html#mailing-lists) if you need any help.
-
-[Open an issue](https://issues.apache.org/jira/browse/FLINK) if you find a bug in Flink.
-
-
-## Documentation
-
-The documentation of Apache Flink is located on the website: [https://flink.apache.org](https://flink.apache.org)
-or in the `docs/` directory of the source code.
-
-
-## Fork and Contribute
-
-This is an active open-source project. We are always open to people who want to use the system or contribute to it.
-Contact us if you are looking for implementation tasks that fit your skills.
-This article describes [how to contribute to Apache Flink](https://flink.apache.org/contributing/how-to-contribute.html).
-
-## Externalized Connectors
-
-Most Flink connectors have been externalized to individual repos under the [Apache Software Foundation](https://github.com/apache):
-
-* [flink-connector-aws](https://github.com/apache/flink-connector-aws)
-* [flink-connector-cassandra](https://github.com/apache/flink-connector-cassandra)
-* [flink-connector-elasticsearch](https://github.com/apache/flink-connector-elasticsearch)
-* [flink-connector-gcp-pubsub](https://github.com/apache/flink-connector-gcp-pubsub)
-* [flink-connector-hbase](https://github.com/apache/flink-connector-hbase)
-* [flink-connector-jdbc](https://github.com/apache/flink-connector-jdbc)
-* [flink-connector-kafka](https://github.com/apache/flink-connector-kafka)
-* [flink-connector-mongodb](https://github.com/apache/flink-connector-mongodb)
-* [flink-connector-opensearch](https://github.com/apache/flink-connector-opensearch)
-* [flink-connector-prometheus](https://github.com/apache/flink-connector-prometheus)
-* [flink-connector-pulsar](https://github.com/apache/flink-connector-pulsar)
-* [flink-connector-rabbitmq](https://github.com/apache/flink-connector-rabbitmq)
-
-## About
-
-Apache Flink is an open source project of The Apache Software Foundation (ASF).
-The Apache Flink project originated from the [Stratosphere](http://stratosphere.eu) research project.

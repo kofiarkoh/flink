@@ -24,7 +24,10 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.runtime.fs.hdfs.AbstractHadoopFileSystemITTest;
 import org.apache.flink.testutils.s3.S3TestCredentials;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -39,6 +42,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel">consistency
  * guarantees</a> and what the {@link org.apache.hadoop.fs.s3a.S3AFileSystem} offers.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopS3FileSystemITCase extends AbstractHadoopFileSystemITTest {
 
     @BeforeAll

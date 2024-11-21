@@ -21,7 +21,10 @@ package org.apache.flink.runtime.registration;
 import org.apache.flink.configuration.ClusterOptions;
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -29,6 +32,8 @@ import static org.apache.flink.configuration.ClusterOptions.REFUSED_REGISTRATION
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link RetryingRegistrationConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RetryingRegistrationConfigurationTest {
 
     @Test

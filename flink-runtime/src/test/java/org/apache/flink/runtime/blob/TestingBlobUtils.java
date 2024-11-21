@@ -31,7 +31,9 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.file.Path;
 
-/** Utility class for testing methods for blobs. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing methods for blobs.
+ */
 class TestingBlobUtils {
     private TestingBlobUtils() {
         throw new UnsupportedOperationException(

@@ -32,7 +32,10 @@ import org.apache.flink.runtime.scheduler.exceptionhistory.ExceptionHistoryEntry
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
@@ -52,6 +55,8 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link CreatingExecutionGraph} state. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CreatingExecutionGraphTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(CreatingExecutionGraphTest.class);

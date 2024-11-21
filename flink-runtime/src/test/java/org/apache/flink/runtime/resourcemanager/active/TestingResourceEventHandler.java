@@ -62,7 +62,10 @@ public class TestingResourceEventHandler<WorkerType extends ResourceIDRetrievabl
         return new Builder<>();
     }
 
-    /** Builder class for {@link TestingResourceEventHandler}. */
+    /**
+     * Builder @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link
+     * TestingResourceEventHandler}.
+     */
     public static class Builder<WorkerType extends ResourceIDRetrievable> {
         private Consumer<Collection<WorkerType>> onPreviousAttemptWorkersRecoveredConsumer =
                 (ignore) -> {};

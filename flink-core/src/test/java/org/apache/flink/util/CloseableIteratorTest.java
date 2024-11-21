@@ -17,7 +17,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** {@link CloseableIterator} test. */
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CloseableIteratorTest {
 
     private static final String[] ELEMENTS = new String[] {"element-1", "element-2"};

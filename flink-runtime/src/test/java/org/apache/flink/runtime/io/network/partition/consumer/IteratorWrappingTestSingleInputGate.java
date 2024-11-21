@@ -31,6 +31,10 @@ import org.apache.flink.runtime.io.network.partition.consumer.TestInputChannel.B
 import org.apache.flink.util.InstantiationUtil;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Optional;
@@ -42,6 +46,8 @@ import static org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils.
  *
  * @param <T> type of the value to handle
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IteratorWrappingTestSingleInputGate<T extends IOReadableWritable>
         extends TestSingleInputGate {
 

@@ -25,8 +25,11 @@ import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.api.java.typeutils.runtime.WritableSerializerUpgradeTest.WritableName;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.Writable;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -36,6 +39,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link WritableSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WritableSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<WritableName, WritableName> {
 
@@ -52,7 +57,9 @@ class WritableSerializerUpgradeTest
         return testSpecifications;
     }
 
-    /** A dummy class that is used in this test. */
+    /**
+     * A dummy @ExtendWith(CTestJUnit5Extension.class) @CTestClass class that is used in this test.
+     */
     public static final class WritableName implements Writable {
 
         public static final long serialVersionUID = 1L;

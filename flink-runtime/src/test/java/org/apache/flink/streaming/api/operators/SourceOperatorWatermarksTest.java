@@ -25,9 +25,12 @@ import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.runtime.io.DataInputStatus;
 import org.apache.flink.streaming.util.MockOutput;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link SourceOperator} watermark alignment. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorWatermarksTest {
 
     @Nullable private SourceOperatorTestContext context;

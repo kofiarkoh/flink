@@ -18,8 +18,14 @@
 
 package org.apache.flink.types.parser;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.sql.Date;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlDateParserTest extends ParserTestBase<Date> {
 
     @Override

@@ -22,6 +22,8 @@ import org.apache.flink.api.common.io.FinalizeOnMaster;
 import org.apache.flink.api.common.io.FirstAttemptInitializationContext;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configurable;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.mapreduce.Job;
@@ -31,6 +33,7 @@ import org.apache.hadoop.mapreduce.OutputFormat;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 
 import java.io.IOException;
@@ -44,6 +47,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link HadoopOutputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopOutputFormatTest {
 
     private static final String MAPRED_OUTPUT_PATH = "an/ignored/file/";

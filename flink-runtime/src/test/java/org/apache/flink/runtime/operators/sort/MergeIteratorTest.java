@@ -24,14 +24,19 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.operators.testutils.TestData;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MergeIteratorTest {
 
     private TypeComparator<Tuple2<Integer, String>> comparator;

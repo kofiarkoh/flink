@@ -23,7 +23,10 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.memory.MemCheckpointStreamFactory.MemoryCheckpointOutputStream;
 import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link MemoryCheckpointOutputStream}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemoryCheckpointOutputStreamTest {
 
     @Test

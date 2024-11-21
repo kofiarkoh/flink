@@ -21,11 +21,16 @@ package org.apache.flink.kubernetes.kubeclient.factory;
 import org.apache.flink.kubernetes.KubernetesTestUtils;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Pod;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 
 /** General tests for the {@link KubernetesTaskManagerFactory} with pod template. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesTaskManagerFactoryWithPodTemplateTest
         extends KubernetesFactoryWithPodTemplateTestBase {
 

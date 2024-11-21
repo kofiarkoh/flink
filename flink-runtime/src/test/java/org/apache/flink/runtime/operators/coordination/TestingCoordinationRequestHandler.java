@@ -20,9 +20,15 @@ package org.apache.flink.runtime.operators.coordination;
 
 import org.apache.flink.runtime.jobgraph.OperatorID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.CompletableFuture;
 
 /** A simple testing implementation of the {@link CoordinationRequestHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingCoordinationRequestHandler extends TestingOperatorCoordinator
         implements CoordinationRequestHandler {
 

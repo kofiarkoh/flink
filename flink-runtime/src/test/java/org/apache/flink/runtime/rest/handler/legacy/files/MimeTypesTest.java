@@ -20,12 +20,17 @@ package org.apache.flink.runtime.rest.handler.legacy.files;
 
 import org.apache.flink.runtime.rest.handler.util.MimeTypes;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the MIME types map. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MimeTypesTest {
 
     @Test

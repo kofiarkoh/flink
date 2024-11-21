@@ -24,9 +24,12 @@ import org.apache.flink.util.MdcUtils.MdcCloseable;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.logging.log4j.core.LogEvent;
 import org.assertj.core.api.AbstractObjectAssert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.event.Level.DEBUG;
 
 /** Tests for the {@link MdcUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MdcUtilsTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(MdcUtilsTest.class);
     private static final Runnable LOGGING_RUNNABLE = () -> LOGGER.info("ignore");

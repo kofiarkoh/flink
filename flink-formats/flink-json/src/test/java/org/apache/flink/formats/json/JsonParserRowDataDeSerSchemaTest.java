@@ -33,7 +33,10 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMap
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.node.ArrayNode;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.node.ObjectNode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -53,6 +56,8 @@ import static org.apache.flink.table.api.DataTypes.TINYINT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link JsonParserRowDataDeserializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JsonParserRowDataDeSerSchemaTest {
 
     /**

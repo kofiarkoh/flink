@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.java.tuple.Tuple3;
@@ -61,6 +66,8 @@ import static org.apache.flink.table.data.StringData.fromString;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for HiveSourceDynamicFileEnumerator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveSourceDynamicFileEnumeratorTest {
 
     @Test

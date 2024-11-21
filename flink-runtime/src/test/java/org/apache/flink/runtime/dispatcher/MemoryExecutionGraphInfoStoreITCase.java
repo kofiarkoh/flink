@@ -30,12 +30,17 @@ import org.apache.flink.testutils.executor.TestExecutorResource;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ScheduledExecutorService;
 
 /** Tests for the {@link MemoryExecutionGraphInfoStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MemoryExecutionGraphInfoStoreITCase extends TestLogger {
 
     @ClassRule

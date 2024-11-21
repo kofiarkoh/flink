@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.asyncprocessing;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +29,8 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests for {@link ReferenceCounted}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ReferenceCountedTest {
     @Test
     void testRefCountReachedZero() {

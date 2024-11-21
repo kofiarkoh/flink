@@ -38,9 +38,12 @@ import org.apache.flink.runtime.metrics.scope.ScopeFormat;
 import org.apache.flink.runtime.metrics.util.DummyCharacterFilter;
 import org.apache.flink.runtime.metrics.util.TestReporter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 
@@ -49,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the {@link MetricGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MetricGroupTest {
 
     private static final MetricRegistryConfiguration defaultMetricRegistryConfiguration =

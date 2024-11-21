@@ -22,10 +22,15 @@ import org.apache.flink.api.common.state.State;
 import org.apache.flink.api.common.state.StateDescriptor;
 import org.apache.flink.runtime.state.internal.InternalKvState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Objects;
 
-/** Base class for state TTL test context. */
-public abstract class TtlStateTestContextBase<S extends InternalKvState<?, String, ?>, UV, GV> {
+/** Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for state TTL test context. */
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TtlStateTestContextBase<
+        S extends InternalKvState<?, String, ?>, UV, GV> {
     public S ttlState;
 
     public UV updateEmpty;

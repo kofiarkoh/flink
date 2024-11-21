@@ -20,7 +20,10 @@ package org.apache.flink.runtime.security.token;
 
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Map;
 
@@ -31,6 +34,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Test for {@link DelegationTokenContainer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DelegationTokenContainerTest {
     private static final String TOKEN_KEY = "TEST_TOKEN_KEY";
     private static final String TOKEN_VALUE = "TEST_TOKEN_VALUE";

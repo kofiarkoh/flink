@@ -21,11 +21,16 @@ package org.apache.flink.runtime.util.config.memory;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.runtime.jobmanager.JobManagerProcessSpec;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link JobManagerProcessSpec}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerProcessSpecTest {
     @Test
     void testEquals() {

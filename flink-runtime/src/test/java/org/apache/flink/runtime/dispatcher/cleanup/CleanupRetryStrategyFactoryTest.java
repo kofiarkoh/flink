@@ -25,7 +25,10 @@ import org.apache.flink.util.concurrent.ExponentialBackoffRetryStrategy;
 import org.apache.flink.util.concurrent.FixedRetryStrategy;
 import org.apache.flink.util.concurrent.RetryStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** {@code CleanupRetryStrategyFactoryTest} tests {@link CleanupRetryStrategyFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CleanupRetryStrategyFactoryTest {
 
     private static final CleanupRetryStrategyFactory TEST_INSTANCE =

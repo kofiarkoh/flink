@@ -50,8 +50,11 @@ import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,6 +67,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** IT test for writing savepoints. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointWriterITCase extends AbstractTestBaseJUnit4 {
 
     private static final String ACCOUNT_UID = "accounts";

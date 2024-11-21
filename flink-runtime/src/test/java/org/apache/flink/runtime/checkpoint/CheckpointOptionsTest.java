@@ -23,7 +23,10 @@ import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.checkpoint.CheckpointOptions.AlignmentType;
 import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Random;
 
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Tests for the {@link CheckpointOptions} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointOptionsTest {
 
     @Test

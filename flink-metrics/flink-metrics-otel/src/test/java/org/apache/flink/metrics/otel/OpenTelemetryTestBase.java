@@ -30,6 +30,8 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonNode;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.esotericsoftware.minlog.Log;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -49,6 +51,8 @@ import java.util.stream.Collectors;
 
 /** Tests for {@link OpenTelemetryMetricReporter}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OpenTelemetryTestBase {
     public static final Logger LOG = LoggerFactory.getLogger(OpenTelemetryTestBase.class);
 

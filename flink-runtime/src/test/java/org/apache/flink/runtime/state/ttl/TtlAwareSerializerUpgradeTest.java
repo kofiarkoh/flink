@@ -29,8 +29,11 @@ import org.apache.flink.core.memory.DataInputDeserializer;
 import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -42,6 +45,8 @@ import java.util.Objects;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Ttl state migration test for {@link TtlAwareSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TtlAwareSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<String, TtlValue<String>> {
 

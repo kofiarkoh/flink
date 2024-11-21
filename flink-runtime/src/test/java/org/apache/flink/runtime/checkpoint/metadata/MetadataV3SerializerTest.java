@@ -37,7 +37,10 @@ import org.apache.flink.runtime.state.changelog.ChangelogStateBackendHandle.Chan
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -56,6 +59,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Various tests for the version 3 format serializer of a checkpoint. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetadataV3SerializerTest {
 
     @TempDir private java.nio.file.Path temporaryFolder;

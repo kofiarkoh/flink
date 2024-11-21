@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.metrics.dump;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.metrics.dump.MetricDump.METRIC_CATEGORY_COUNTER;
 import static org.apache.flink.runtime.metrics.dump.MetricDump.METRIC_CATEGORY_GAUGE;
@@ -28,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
 /** Tests for the {@link MetricDump} classes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricDumpTest {
     @Test
     void testDumpedCounter() {

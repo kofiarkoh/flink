@@ -42,7 +42,10 @@ import org.apache.flink.testutils.TestingUtils;
 
 import org.apache.flink.shaded.netty4.io.netty.channel.Channel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
@@ -57,6 +60,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Tests {@link NettyMessage.PartitionRequest} before and after {@link ResultPartitionManager}
  * registers given {@link ResultPartition}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionRequestRegistrationTest {
 
     /**

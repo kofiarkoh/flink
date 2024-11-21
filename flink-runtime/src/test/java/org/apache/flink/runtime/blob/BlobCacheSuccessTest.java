@@ -25,7 +25,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.HighAvailabilityOptions;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -39,7 +42,12 @@ import static org.apache.flink.runtime.blob.BlobKey.BlobType.TRANSIENT_BLOB;
 import static org.apache.flink.runtime.blob.BlobServerPutTest.put;
 import static org.apache.flink.runtime.blob.BlobServerPutTest.verifyContents;
 
-/** This class contains unit tests for the {@link BlobCacheService}. */
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains unit tests for the {@link
+ * BlobCacheService}.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobCacheSuccessTest {
 
     @TempDir private Path tempDir;

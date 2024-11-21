@@ -43,7 +43,10 @@ import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.runtime.tasks.StreamTaskCancellationContext;
 import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -59,6 +62,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Tests for {@link BatchExecutionInternalTimeServiceManager} and {@link
  * BatchExecutionInternalTimeService}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchExecutionInternalTimeServiceTest {
     public static final IntSerializer KEY_SERIALIZER = new IntSerializer();
 

@@ -22,8 +22,9 @@ package org.apache.flink.streaming.runtime.operators.windowing;
  * A non-Pojo type used in {@link WindowOperatorMigrationTest} to test migration behaviours for
  * window operators that have a Kryo-serialized key.
  *
- * <p>NOTE: modifying this class would cause tests in {@link WindowOperatorMigrationTest} to fail,
- * since it is serialized in older version test savepoints.
+ * <p>NOTE: modifying this @ExtendWith(CTestJUnit5Extension.class) @CTestClass class would cause
+ * tests in {@link WindowOperatorMigrationTest} to fail, since it is serialized in older version
+ * test savepoints.
  */
 public class NonPojoType implements Comparable<NonPojoType> {
 

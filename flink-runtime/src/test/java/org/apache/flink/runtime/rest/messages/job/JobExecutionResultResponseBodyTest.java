@@ -28,6 +28,8 @@ import org.apache.flink.util.OptionalFailure;
 import org.apache.flink.util.SerializedThrowable;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
@@ -41,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link JobExecutionResultResponseBody}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobExecutionResultResponseBodyTest
         extends RestResponseMarshallingTestBase<JobExecutionResultResponseBody> {
 

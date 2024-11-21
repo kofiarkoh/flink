@@ -20,13 +20,18 @@ package org.apache.flink.runtime.state;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyGroupRangeOffsetTest {
 
     @Test

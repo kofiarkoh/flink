@@ -32,8 +32,11 @@ import org.apache.flink.kubernetes.kubeclient.parameters.KubernetesTaskManagerPa
 import org.apache.flink.kubernetes.kubeclient.resources.KubernetesPod;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.PodBuilder;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +46,8 @@ import static org.apache.flink.kubernetes.configuration.KubernetesConfigOptions.
 import static org.apache.flink.kubernetes.configuration.KubernetesConfigOptions.KUBERNETES_KERBEROS_MOUNT_DECORATOR_ENABLED;
 
 /** Utility class for constructing the TaskManager Pod on the JobManager. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesTaskManagerFactory {
 
     public static KubernetesPod buildTaskManagerKubernetesPod(

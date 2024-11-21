@@ -29,8 +29,11 @@ import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.Collections;
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 /** Tests for actions of {@link CheckpointCoordinator} on task failures. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FailoverStrategyCheckpointCoordinatorTest {
 
     @RegisterExtension

@@ -34,7 +34,10 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.netty.Testing
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.storage.TieredStorageResourceRegistry;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DiskTierProducerAgent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DiskTierProducerAgentTest {
 
     @TempDir private Path tempFolder;

@@ -20,7 +20,10 @@ package org.apache.flink.core.fs;
 
 import org.apache.flink.util.AbstractAutoCloseableRegistry;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for the {@link CloseableRegistry}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CloseableRegistryTest
         extends AbstractAutoCloseableRegistryTest<Closeable, Closeable, Object> {
 

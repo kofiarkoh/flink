@@ -18,11 +18,17 @@
 
 package org.apache.flink.core.fs;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Various utility functions for testing {@link FileSystem} implementations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSystemTestUtils {
 
     /**

@@ -21,7 +21,10 @@ package org.apache.flink.connector.file.src.impl;
 import org.apache.flink.connector.file.src.util.RecordAndPosition;
 import org.apache.flink.connector.file.src.util.SingletonResultIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for the {@link FileRecords} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileRecordsTest {
 
     @Test

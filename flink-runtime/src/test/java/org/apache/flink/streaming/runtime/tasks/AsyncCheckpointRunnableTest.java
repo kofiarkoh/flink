@@ -34,7 +34,10 @@ import org.apache.flink.runtime.state.TestTaskStateManager;
 import org.apache.flink.runtime.testutils.ExceptionallyDoneFuture;
 import org.apache.flink.streaming.api.operators.OperatorSnapshotFutures;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +45,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AsyncCheckpointRunnable}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncCheckpointRunnableTest {
 
     @Test

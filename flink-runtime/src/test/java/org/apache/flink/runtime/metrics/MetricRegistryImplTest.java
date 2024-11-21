@@ -45,7 +45,10 @@ import org.apache.flink.runtime.webmonitor.retriever.MetricQueryServiceGateway;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterators;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -62,6 +65,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link MetricRegistryImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MetricRegistryImplTest {
 
     private static final char GLOBAL_DEFAULT_DELIMITER = '.';
@@ -190,7 +195,8 @@ class MetricRegistryImplTest {
     }
 
     /** Reporter that exposes how often report() was called. */
-    private static class ReportCountingReporter extends TestReporter implements Scheduled {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ReportCountingReporter
+            extends TestReporter implements Scheduled {
         private int reportCount = 0;
 
         @Override
@@ -246,7 +252,8 @@ class MetricRegistryImplTest {
      * Reporter that exposes the name and metric instance of the last metric that was added or
      * removed.
      */
-    private static class NotificationCapturingReporter extends TestReporter {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class NotificationCapturingReporter extends TestReporter {
         @Nullable private Metric addedMetric;
         @Nullable private String addedMetricName;
 
@@ -451,7 +458,8 @@ class MetricRegistryImplTest {
     }
 
     /** Reporter that throws an exception when it is notified of an added or removed metric. */
-    private static class FailingReporter extends TestReporter {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class FailingReporter
+            extends TestReporter {
         @Override
         public void notifyOfAddedMetric(Metric metric, String metricName, MetricGroup group) {
             throw new RuntimeException();

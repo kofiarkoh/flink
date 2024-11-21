@@ -28,8 +28,11 @@ import org.apache.flink.runtime.scheduler.strategy.ResultPartitionState;
 import org.apache.flink.runtime.scheduler.strategy.SchedulingResultPartition;
 import org.apache.flink.util.IterableUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +43,8 @@ import static org.apache.flink.runtime.io.network.partition.ResultPartitionType.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link DefaultExecutionVertex}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionVertexTest {
 
     private final TestExecutionStateSupplier stateSupplier = new TestExecutionStateSupplier();

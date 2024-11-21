@@ -20,7 +20,10 @@ package org.apache.flink.core.memory;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -44,7 +47,7 @@ import static org.assertj.core.api.Assertions.within;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Tests for the access and transfer methods of the {@link MemorySegment}. */
-abstract class MemorySegmentTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MemorySegmentTestBase {
 
     private final Random random = new Random();
 

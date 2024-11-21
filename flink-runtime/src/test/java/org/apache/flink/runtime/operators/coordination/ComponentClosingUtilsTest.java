@@ -21,8 +21,11 @@ package org.apache.flink.runtime.operators.coordination;
 import org.apache.flink.core.testutils.ManuallyTriggeredScheduledExecutorService;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -33,6 +36,8 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** The unit test class for {@link ComponentClosingUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ComponentClosingUtilsTest {
     private ManualClock clock;
 

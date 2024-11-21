@@ -28,7 +28,10 @@ import org.apache.flink.runtime.scheduler.ExecutionGraphHandler;
 import org.apache.flink.runtime.scheduler.OperatorCoordinatorHandler;
 import org.apache.flink.runtime.scheduler.exceptionhistory.TestingAccessExecution;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,6 +40,8 @@ import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link Canceling} state of the {@link AdaptiveScheduler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CancelingTest {
 
     private static final Logger log = LoggerFactory.getLogger(CancelingTest.class);

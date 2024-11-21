@@ -20,13 +20,18 @@ package org.apache.flink.runtime.jobgraph;
 
 import org.apache.flink.api.common.JobID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobIdTest {
 
     @Test

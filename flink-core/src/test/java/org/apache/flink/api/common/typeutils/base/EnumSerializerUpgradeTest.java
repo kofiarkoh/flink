@@ -25,7 +25,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializerConditions;
 import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +37,8 @@ import java.util.Collection;
 import static org.apache.flink.api.common.typeutils.base.TestEnum.EMMA;
 
 /** Migration tests for {@link EnumSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EnumSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<TestEnum, TestEnum> {
     private static final String SPEC_NAME = "enum-serializer";
 

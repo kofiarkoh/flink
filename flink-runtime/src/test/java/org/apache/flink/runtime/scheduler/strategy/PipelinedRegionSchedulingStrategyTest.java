@@ -31,8 +31,11 @@ import org.apache.flink.runtime.jobgraph.tasks.AbstractInvokable;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -48,6 +51,8 @@ import static org.apache.flink.runtime.scheduler.strategy.StrategyTestUtil.asser
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link PipelinedRegionSchedulingStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PipelinedRegionSchedulingStrategyTest {
     @RegisterExtension
     private static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =

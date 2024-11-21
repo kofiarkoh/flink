@@ -21,8 +21,11 @@ package org.apache.flink.runtime.state;
 import org.apache.flink.core.fs.FSDataInputStream;
 import org.apache.flink.runtime.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -32,6 +35,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DuplicatingCheckpointOutputStreamTest {
 
     /**

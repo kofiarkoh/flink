@@ -47,8 +47,11 @@ import org.apache.flink.shaded.curator5.org.apache.curator.retry.ExponentialBack
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.CreateMode;
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.data.ACL;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
@@ -82,6 +85,8 @@ import static org.mockito.Mockito.when;
  * ZooKeeper. For the complicated tests(e.g. multiple leaders), we will use {@link
  * DefaultLeaderElectionService} with {@link TestingContender}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperLeaderElectionTest {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

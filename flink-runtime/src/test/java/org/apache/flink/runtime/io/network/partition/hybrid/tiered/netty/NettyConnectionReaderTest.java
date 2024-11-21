@@ -27,8 +27,11 @@ import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateBui
 import org.apache.flink.runtime.io.network.partition.consumer.TestInputChannel;
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -41,6 +44,8 @@ import static org.apache.flink.runtime.io.network.buffer.Buffer.DataType.NONE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link NettyConnectionReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyConnectionReaderTest {
 
     private static final int INPUT_CHANNEL_INDEX = 0;

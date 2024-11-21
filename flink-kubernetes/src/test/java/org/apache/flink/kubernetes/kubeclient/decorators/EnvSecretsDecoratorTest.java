@@ -22,14 +22,19 @@ import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesJobManagerTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.EnvVar;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link EnvSecretsDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EnvSecretsDecoratorTest extends KubernetesJobManagerTestBase {
 
     private static final String ENV_NAME = "MY_FOO";

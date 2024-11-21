@@ -39,7 +39,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.KeyedOneInputStreamOperatorTestHarness;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -63,6 +66,8 @@ import static org.mockito.Mockito.when;
  *
  * <p>These tests document the implicit contract that exists between the windowing components.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RegularWindowOperatorContractTest extends WindowOperatorContractTest {
 
     @Test

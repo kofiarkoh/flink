@@ -28,14 +28,19 @@ import org.apache.flink.state.api.runtime.OperatorIDGenerator;
 import org.apache.flink.state.api.runtime.SavepointLoader;
 import org.apache.flink.streaming.util.MockStreamingRuntimeContext;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.util.Collections;
 
 /** Test for writing output savepoint metadata. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointOutputFormatTest {
 
     @Rule public TemporaryFolder temporaryFolder = new TemporaryFolder();

@@ -21,7 +21,10 @@ package org.apache.flink.runtime.taskmanager;
 import org.apache.flink.runtime.clusterframework.types.ResourceID;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 
@@ -34,6 +37,8 @@ import static org.mockito.Mockito.when;
  * Tests for the TaskManagerLocation, which identifies the location and connection information of a
  * TaskManager.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerLocationTest {
 
     @Test

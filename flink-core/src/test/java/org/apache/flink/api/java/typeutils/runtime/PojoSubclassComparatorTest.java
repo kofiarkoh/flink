@@ -28,10 +28,16 @@ import org.apache.flink.api.common.typeutils.TypeComparator;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PojoSubclassComparatorTest extends ComparatorTestBase<PojoContainingTuple> {
     TypeInformation<PojoContainingTuple> type =
             TypeExtractor.getForClass(PojoContainingTuple.class);

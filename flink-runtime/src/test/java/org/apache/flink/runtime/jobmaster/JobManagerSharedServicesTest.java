@@ -27,7 +27,10 @@ import org.apache.flink.runtime.util.Hardware;
 import org.apache.flink.runtime.util.TestingFatalErrorHandler;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests auxiliary shared services created by {@link JobManagerSharedServices} and used by the
  * {@link JobMaster}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerSharedServicesTest {
 
     private static final int CPU_CORES = Hardware.getNumberCPUCores();

@@ -28,8 +28,11 @@ import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingResultPartit
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingTopology;
 import org.apache.flink.util.IterableUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.List;
@@ -38,6 +41,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link RegionPartitionGroupReleaseStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RegionPartitionGroupReleaseStrategyTest {
 
     private TestingSchedulingTopology testingSchedulingTopology;

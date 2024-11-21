@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.throughput;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.OptionalInt;
 
@@ -26,6 +29,8 @@ import static org.apache.flink.configuration.TaskManagerOptions.BUFFER_DEBLOAT_T
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BufferDebloater}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferDebloaterTest {
 
     @Test
@@ -213,7 +218,8 @@ class BufferDebloaterTest {
         return new BufferDebloaterTestBuilder();
     }
 
-    private static class BufferDebloaterTestBuilder {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class BufferDebloaterTestBuilder {
         private int numberOfBuffersInUse;
         private long throughput;
         private int minBufferSize;

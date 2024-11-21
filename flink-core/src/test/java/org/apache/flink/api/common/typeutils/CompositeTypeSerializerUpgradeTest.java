@@ -25,13 +25,18 @@ import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.api.java.typeutils.runtime.EitherSerializer;
 import org.apache.flink.types.Either;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link GenericArraySerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompositeTypeSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     public Collection<TestSpecification<?, ?>> createTestSpecifications(FlinkVersion flinkVersion)

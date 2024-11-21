@@ -22,11 +22,16 @@ import org.apache.flink.formats.protobuf.testproto.RepeatedTest;
 import org.apache.flink.table.data.ArrayData;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 
 /** Test conversion of proto list of primitive data to flink internal data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class RepeatedProtoToRowTest {
     @Test
     public void testRepeated() throws Exception {

@@ -22,15 +22,18 @@ import org.apache.flink.runtime.plugable.SerializationDelegate;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for different {@link StreamPartitioner} implementations. */
-abstract class StreamPartitionerTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class StreamPartitionerTest {
 
     final StreamPartitioner<Tuple> streamPartitioner = createPartitioner();
     final StreamRecord<Tuple> streamRecord = new StreamRecord<>(null);

@@ -26,7 +26,10 @@ import org.apache.flink.shaded.netty4.io.netty.bootstrap.Bootstrap;
 import org.apache.flink.shaded.netty4.io.netty.bootstrap.ServerBootstrap;
 import org.apache.flink.shaded.netty4.io.netty.channel.EventLoopGroup;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Field;
 import java.net.InetAddress;
@@ -34,6 +37,8 @@ import java.net.InetAddress;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Simple netty connection manager test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NettyConnectionManagerTest {
 
     /**

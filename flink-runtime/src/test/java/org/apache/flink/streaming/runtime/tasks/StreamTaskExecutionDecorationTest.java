@@ -32,9 +32,12 @@ import org.apache.flink.util.FatalExitExceptionHandler;
 import org.apache.flink.util.function.RunnableWithException;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Verifies that {@link StreamTask} {@link StreamTaskActionExecutor decorates execution} of actions
  * that potentially needs to be synchronized.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamTaskExecutionDecorationTest {
     private CountingStreamTaskActionExecutor decorator;
     private StreamTask<Object, StreamOperator<Object>> task;

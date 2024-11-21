@@ -40,10 +40,13 @@ import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 import org.apache.flink.shaded.guava32.com.google.common.base.Ticker;
 import org.apache.flink.shaded.guava32.com.google.common.cache.LoadingCache;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -64,6 +67,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for the {@link FileExecutionGraphInfoStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileExecutionGraphInfoStoreTest extends TestLogger {
 
     @ClassRule

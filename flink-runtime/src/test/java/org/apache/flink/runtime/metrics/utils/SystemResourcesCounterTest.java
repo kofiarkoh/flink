@@ -19,7 +19,10 @@ package org.apache.flink.runtime.metrics.utils;
 
 import org.apache.flink.runtime.metrics.util.SystemResourcesCounter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -27,6 +30,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
 /** Tests for {@link SystemResourcesCounter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SystemResourcesCounterTest {
 
     private static final double EPSILON = 0.01;

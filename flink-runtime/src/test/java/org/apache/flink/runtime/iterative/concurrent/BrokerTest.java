@@ -20,7 +20,10 @@ package org.apache.flink.runtime.iterative.concurrent;
 
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +38,8 @@ import java.util.concurrent.Future;
 import static org.junit.Assert.assertEquals;
 
 /** Tests for {@link Broker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BrokerTest {
 
     @Test

@@ -34,7 +34,10 @@ import org.apache.flink.testutils.serialization.types.SerializationTestTypeFacto
 import org.apache.flink.testutils.serialization.types.Util;
 import org.apache.flink.util.CloseableIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.ByteArrayOutputStream;
@@ -54,6 +57,8 @@ import static org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils.
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SpillingAdaptiveSpanningRecordDeserializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SpanningRecordSerializationTest {
     private static final Random RANDOM = new Random(42);
 

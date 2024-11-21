@@ -24,9 +24,14 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeutils.SerializerTestInstance;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** A serialization test for multidimensional arrays. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MultidimensionalArraySerializerTest {
 
     @Test

@@ -27,8 +27,11 @@ import org.apache.flink.runtime.jobmanager.scheduler.Locality;
 import org.apache.flink.runtime.jobmaster.SlotInfo;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.util.Arrays;
@@ -39,6 +42,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link LocationPreferenceSlotSelectionStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocationPreferenceSlotSelectionStrategyTest extends SlotSelectionStrategyTestBase {
 
     @BeforeEach

@@ -20,7 +20,10 @@ package org.apache.flink.runtime.fs.hdfs;
 
 import org.apache.flink.core.fs.FileSystemKind;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>This class needs to be in this package, because it accesses package private methods from the
  * HDFS file system wrapper class.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HdfsKindTest {
     @Test
     void testS3fileSystemSchemes() {

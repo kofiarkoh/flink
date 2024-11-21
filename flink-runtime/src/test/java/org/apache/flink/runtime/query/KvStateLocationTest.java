@@ -23,7 +23,10 @@ import org.apache.flink.queryablestate.KvStateID;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.KeyGroupRange;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -33,6 +36,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link KvStateLocation}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KvStateLocationTest {
 
     /** Simple test registering/unregistering state and looking it up again. */

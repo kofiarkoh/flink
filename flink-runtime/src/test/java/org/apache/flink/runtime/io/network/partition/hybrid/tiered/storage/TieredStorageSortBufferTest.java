@@ -27,7 +27,10 @@ import org.apache.flink.runtime.io.network.buffer.NetworkBufferPool;
 import org.apache.flink.runtime.io.network.partition.BufferWithSubpartition;
 import org.apache.flink.runtime.io.network.partition.SortBuffer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
@@ -41,6 +44,8 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TieredStorageSortBuffer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TieredStorageSortBufferTest {
 
     private static final int BUFFER_SIZE_BYTES = 1024;

@@ -30,7 +30,10 @@ import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -50,6 +53,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.offset;
 
 /** Tests for the {@link DefaultAllocatedSlotPool}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultAllocatedSlotPoolTest {
 
     @Test

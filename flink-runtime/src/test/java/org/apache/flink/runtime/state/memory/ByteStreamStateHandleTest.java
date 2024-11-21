@@ -21,8 +21,11 @@ package org.apache.flink.runtime.state.memory;
 import org.apache.flink.core.fs.FSDataInputStream;
 import org.apache.flink.runtime.state.StateObject;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link ByteStreamStateHandle}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ByteStreamStateHandleTest {
 
     @Test

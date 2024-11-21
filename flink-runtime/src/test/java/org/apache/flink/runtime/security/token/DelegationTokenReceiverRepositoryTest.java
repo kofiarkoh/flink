@@ -21,9 +21,12 @@ package org.apache.flink.runtime.security.token;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.SecurityOptions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.ConfigurationUtils.getBooleanConfigOption;
 import static org.apache.flink.core.security.token.DelegationTokenProvider.CONFIG_PREFIX;
@@ -33,6 +36,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Test for {@link DelegationTokenReceiverRepository}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DelegationTokenReceiverRepositoryTest {
 
     @BeforeEach

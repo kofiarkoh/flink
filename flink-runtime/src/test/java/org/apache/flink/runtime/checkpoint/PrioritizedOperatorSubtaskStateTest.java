@@ -27,8 +27,11 @@ import org.apache.flink.runtime.state.ResultSubpartitionStateHandle;
 import org.apache.flink.runtime.state.StateObject;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,6 +54,8 @@ import static org.apache.flink.runtime.checkpoint.StateObjectCollection.singleto
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link PrioritizedOperatorSubtaskState} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrioritizedOperatorSubtaskStateTest {
 
     private static final Random RANDOM = new Random(0x42);

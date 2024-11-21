@@ -21,7 +21,13 @@ package org.apache.flink.streaming.api.operators.sorted.state;
 import org.apache.flink.runtime.state.InternalPriorityQueue;
 import org.apache.flink.runtime.state.InternalPriorityQueueTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Tests for {@link BatchExecutionInternalPriorityQueueSet}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchExecutionInternalPriorityQueueSetTest extends InternalPriorityQueueTestBase {
     @Override
     protected InternalPriorityQueue<TestElement> newPriorityQueue(int initialCapacity) {

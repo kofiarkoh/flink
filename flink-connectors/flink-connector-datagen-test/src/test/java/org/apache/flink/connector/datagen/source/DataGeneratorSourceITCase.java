@@ -39,9 +39,12 @@ import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.List;
@@ -53,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 /** An integration test for {@code DataGeneratorSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataGeneratorSourceITCase extends TestLogger {
 
     private static final int PARALLELISM = 4;

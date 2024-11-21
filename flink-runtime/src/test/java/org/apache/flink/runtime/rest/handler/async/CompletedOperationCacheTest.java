@@ -22,8 +22,11 @@ import org.apache.flink.configuration.RestOptions;
 import org.apache.flink.runtime.rest.messages.TriggerId;
 import org.apache.flink.runtime.util.ManualTicker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Optional;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Tests for {@link CompletedOperationCache}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompletedOperationCacheTest {
 
     private static final OperationKey TEST_OPERATION_KEY = new OperationKey(new TriggerId());

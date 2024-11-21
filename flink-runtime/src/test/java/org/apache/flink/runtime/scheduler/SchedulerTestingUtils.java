@@ -60,6 +60,10 @@ import org.apache.flink.runtime.taskmanager.TaskExecutionState;
 import org.apache.flink.util.SerializedValue;
 import org.apache.flink.util.TernaryBoolean;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.io.IOException;
@@ -80,7 +84,12 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.fi
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
-/** A utility class to create {@link DefaultScheduler} instances for testing. */
+/**
+ * A utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to create {@link
+ * DefaultScheduler} instances for testing.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SchedulerTestingUtils {
 
     private static final long DEFAULT_CHECKPOINT_TIMEOUT_MS = 10 * 60 * 1000;

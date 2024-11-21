@@ -22,14 +22,17 @@ import org.apache.flink.runtime.io.PullingAsyncDataInput;
 import org.apache.flink.runtime.io.network.NettyShuffleEnvironment;
 import org.apache.flink.runtime.io.network.partition.ResultPartitionType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test base for {@link InputGate}. */
-abstract class InputGateTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class InputGateTestBase {
 
     int gateIndex;
 

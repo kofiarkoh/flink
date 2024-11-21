@@ -23,9 +23,15 @@ import org.apache.flink.runtime.state.KeyExtractorFunction;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.PriorityComparator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 /** Test for {@link KeyGroupPartitionedPriorityQueue}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KeyGroupPartitionedPriorityQueueTest extends InternalPriorityQueueTestBase {
 
     @Override

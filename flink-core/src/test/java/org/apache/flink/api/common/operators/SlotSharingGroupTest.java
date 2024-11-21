@@ -20,7 +20,10 @@ package org.apache.flink.api.common.operators;
 
 import org.apache.flink.configuration.MemorySize;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
@@ -28,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link SlotSharingGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotSharingGroupTest {
     @Test
     void testBuildSlotSharingGroupWithSpecificResource() {

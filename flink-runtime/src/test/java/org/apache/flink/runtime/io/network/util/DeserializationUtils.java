@@ -26,7 +26,10 @@ import java.util.ArrayDeque;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Utility class to help deserialization for testing. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to help deserialization for
+ * testing.
+ */
 public final class DeserializationUtils {
 
     /**

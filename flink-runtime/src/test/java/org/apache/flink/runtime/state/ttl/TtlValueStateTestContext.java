@@ -23,7 +23,13 @@ import org.apache.flink.api.common.state.StateDescriptor;
 import org.apache.flink.api.common.state.ValueStateDescriptor;
 import org.apache.flink.api.common.typeutils.base.LongSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test suite for {@link TtlValueState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlValueStateTestContext
         extends TtlStateTestContextBase<TtlValueState<?, String, Long>, Long, Long> {
     private static final Long TEST_VAL1 = 11L;

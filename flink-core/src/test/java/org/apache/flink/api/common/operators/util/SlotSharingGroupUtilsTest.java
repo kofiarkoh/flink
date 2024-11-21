@@ -22,11 +22,16 @@ import org.apache.flink.api.common.operators.ResourceSpec;
 import org.apache.flink.api.common.operators.SlotSharingGroup;
 import org.apache.flink.api.common.resources.ExternalResource;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SlotSharingGroupUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SlotSharingGroupUtilsTest {
     @Test
     void testCovertToResourceSpec() {

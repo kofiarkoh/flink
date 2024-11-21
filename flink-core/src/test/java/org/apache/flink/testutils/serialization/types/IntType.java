@@ -21,9 +21,15 @@ package org.apache.flink.testutils.serialization.types;
 import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Random;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IntType implements SerializationTestType {
 
     private int value;

@@ -18,8 +18,11 @@
 
 package org.apache.flink.runtime.rest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.helpers.NOPLogger;
 
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test cases for the {@link RestServerEndpoint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestServerEndpointTest {
 
     /** Tests that the REST handler URLs are properly sorted. */

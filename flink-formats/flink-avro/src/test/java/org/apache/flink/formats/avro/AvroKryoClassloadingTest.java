@@ -24,7 +24,10 @@ import org.apache.flink.formats.avro.utils.AvroKryoSerializerUtils;
 import org.apache.flink.util.FlinkUserCodeClassLoaders;
 
 import com.esotericsoftware.kryo.Kryo;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -58,6 +61,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  *     0x0000020: 57b1
  * </pre>
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroKryoClassloadingTest {
 
     @Test

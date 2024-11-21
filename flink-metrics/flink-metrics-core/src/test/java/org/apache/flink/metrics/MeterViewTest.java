@@ -18,13 +18,18 @@
 
 package org.apache.flink.metrics;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.metrics.View.UPDATE_INTERVAL_SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
 /** Tests for the MeterView. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MeterViewTest {
     @Test
     void testGetCount() {

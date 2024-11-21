@@ -23,11 +23,16 @@ import org.apache.flink.kubernetes.configuration.KubernetesConfigOptions;
 import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesJobManagerTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link MountSecretsDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MountSecretsDecoratorTest extends KubernetesJobManagerTestBase {
 
     private static final String SECRET_NAME = "test";

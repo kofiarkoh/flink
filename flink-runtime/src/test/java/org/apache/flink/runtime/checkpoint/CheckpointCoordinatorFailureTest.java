@@ -45,7 +45,10 @@ import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.Collections;
@@ -64,6 +67,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for failure of checkpoint coordinator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointCoordinatorFailureTest {
 
     @RegisterExtension

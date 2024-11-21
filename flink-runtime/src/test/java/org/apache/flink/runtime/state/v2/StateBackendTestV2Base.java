@@ -57,9 +57,12 @@ import org.apache.flink.runtime.testutils.statemigration.TestType;
 import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.IOUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -77,7 +80,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>NOTE: Please ensure to close and dispose any created keyed state backend in tests.
  */
 @SuppressWarnings("serial")
-public abstract class StateBackendTestV2Base<B extends AbstractStateBackend> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class StateBackendTestV2Base<
+        B extends AbstractStateBackend> {
 
     protected MockEnvironment env;
 

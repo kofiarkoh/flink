@@ -23,6 +23,8 @@ import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesJobManagerTestBase;
 import org.apache.flink.kubernetes.utils.Constants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.ConfigMap;
 import io.fabric8.kubernetes.api.model.ConfigMapVolumeSource;
 import io.fabric8.kubernetes.api.model.EnvVar;
@@ -31,6 +33,7 @@ import io.fabric8.kubernetes.api.model.KeyToPath;
 import io.fabric8.kubernetes.api.model.Volume;
 import io.fabric8.kubernetes.api.model.VolumeMount;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -41,6 +44,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link HadoopConfMountDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopConfMountDecoratorTest extends KubernetesJobManagerTestBase {
 
     private static final String EXISTING_HADOOP_CONF_CONFIG_MAP = "hadoop-conf";

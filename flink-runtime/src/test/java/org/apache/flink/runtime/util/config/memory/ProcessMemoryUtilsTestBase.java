@@ -25,9 +25,12 @@ import org.apache.flink.configuration.IllegalConfigurationException;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Base test suite for JM/TM memory calculations to test common methods in {@link
  * ProcessMemoryUtils}.
  */
-public abstract class ProcessMemoryUtilsTestBase<T extends ProcessMemorySpec> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class ProcessMemoryUtilsTestBase<T extends ProcessMemorySpec> {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
@@ -304,7 +308,8 @@ public abstract class ProcessMemoryUtilsTestBase<T extends ProcessMemorySpec> {
         return newOptionForLegacyHeapOption;
     }
 
-    private static class JvmArgTestingProcessMemorySpec implements ProcessMemorySpec {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class JvmArgTestingProcessMemorySpec implements ProcessMemorySpec {
         private static final long serialVersionUID = 2863985135320165745L;
 
         private final MemorySize heap;

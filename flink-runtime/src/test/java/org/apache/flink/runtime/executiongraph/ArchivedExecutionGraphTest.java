@@ -46,8 +46,11 @@ import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.io.IOException;
@@ -64,6 +67,8 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ArchivedExecutionGraph}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ArchivedExecutionGraphTest {
 
     @RegisterExtension

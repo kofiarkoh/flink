@@ -35,8 +35,11 @@ import org.apache.flink.runtime.testutils.TestingExecutionPlanStore;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * for both, the {@link GloballyCleanableResource} and {@link LocallyCleanableResource} of the
  * {@link org.apache.flink.runtime.dispatcher.Dispatcher}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherResourceCleanerFactoryTest {
 
     private static final JobID JOB_ID = new JobID();

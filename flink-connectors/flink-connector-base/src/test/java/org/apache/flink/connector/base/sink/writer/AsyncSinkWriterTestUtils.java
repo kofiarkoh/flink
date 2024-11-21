@@ -18,6 +18,10 @@
 
 package org.apache.flink.connector.base.sink.writer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.function.Function;
@@ -26,7 +30,12 @@ import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Utils class for {@link AsyncSinkWriter} related test. */
+/**
+ * Utils @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link AsyncSinkWriter}
+ * related test.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AsyncSinkWriterTestUtils {
 
     public static <T extends Serializable> BufferedRequestState<T> getTestState(

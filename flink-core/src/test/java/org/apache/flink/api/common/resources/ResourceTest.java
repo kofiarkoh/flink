@@ -18,7 +18,10 @@
 
 package org.apache.flink.api.common.resources;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
 
@@ -28,6 +31,8 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThatCompara
 
 /** Tests for {@link Resource}. */
 @SuppressWarnings("rawtypes")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceTest {
 
     @Test

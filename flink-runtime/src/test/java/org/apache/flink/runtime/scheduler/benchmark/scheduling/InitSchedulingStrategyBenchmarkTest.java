@@ -21,11 +21,16 @@ package org.apache.flink.runtime.scheduler.benchmark.scheduling;
 import org.apache.flink.runtime.scheduler.benchmark.JobConfiguration;
 import org.apache.flink.runtime.scheduler.strategy.PipelinedRegionSchedulingStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * The benchmark of initializing {@link PipelinedRegionSchedulingStrategy} in a STREAMING/BATCH job.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InitSchedulingStrategyBenchmarkTest {
 
     @Test

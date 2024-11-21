@@ -24,7 +24,10 @@ import org.apache.flink.api.common.resources.ExternalResource;
 import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Tests for the {@link ResourceProfile}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceProfileTest {
     private static final MemorySize TOO_LARGE_MEMORY =
             MAX_MEMORY_SIZE_TO_LOG.add(MemorySize.ofMebiBytes(10));

@@ -43,7 +43,10 @@ import org.apache.flink.runtime.state.internal.InternalAggregatingState;
 import org.apache.flink.runtime.state.internal.InternalListState;
 import org.apache.flink.runtime.state.internal.InternalReducingState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +69,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * queryable state etc. Moreover the tests had to be adjusted as the state backend assumes keys are
  * grouped.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BatchExecutionStateBackendTest {
 
     private <K> CheckpointableKeyedStateBackend<K> createKeyedBackend(

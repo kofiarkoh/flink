@@ -32,6 +32,8 @@ import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 import org.apache.flink.runtime.util.ResourceCounter;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -60,6 +62,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BlocklistDeclarativeSlotPool}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlocklistDeclarativeSlotPoolTest extends DefaultDeclarativeSlotPoolTestBase {
 
     private static final ResourceProfile RESOURCE_PROFILE =

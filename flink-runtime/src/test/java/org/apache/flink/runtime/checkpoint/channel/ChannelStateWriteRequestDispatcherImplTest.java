@@ -28,7 +28,10 @@ import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.CheckpointStorageLocationReference;
 import org.apache.flink.runtime.state.storage.JobManagerCheckpointStorage;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,8 @@ import static org.apache.flink.util.CloseableIterator.ofElements;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link ChannelStateWriteRequestDispatcherImpl} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChannelStateWriteRequestDispatcherImplTest {
 
     private static final JobID JOB_ID = new JobID();

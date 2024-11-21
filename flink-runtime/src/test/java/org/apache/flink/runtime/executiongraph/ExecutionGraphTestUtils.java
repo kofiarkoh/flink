@@ -38,6 +38,10 @@ import org.apache.flink.runtime.taskmanager.TaskExecutionState;
 import org.apache.flink.runtime.testtasks.NoOpInvokable;
 import org.apache.flink.runtime.testutils.DirectScheduledExecutorService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.lang.reflect.Field;
@@ -54,6 +58,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A collection of utility methods for testing the ExecutionGraph and its related classes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExecutionGraphTestUtils {
 
     // ------------------------------------------------------------------------

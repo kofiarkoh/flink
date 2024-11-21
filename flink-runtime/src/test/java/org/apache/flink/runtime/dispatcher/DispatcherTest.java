@@ -106,12 +106,15 @@ import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableMap;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -156,6 +159,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /** Test for the {@link Dispatcher} component. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherTest extends AbstractDispatcherTest {
 
     private JobGraph jobGraph;

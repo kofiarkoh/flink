@@ -22,7 +22,10 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.fs.gs.GSFileSystemOptions;
 import org.apache.flink.fs.gs.storage.GSBlobIdentifier;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.URI;
 import java.util.UUID;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test {@link BlobUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobUtilsTest {
 
     @Test

@@ -22,7 +22,13 @@ import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 import org.apache.flink.connector.file.sink.FileSinkCommittableSerializer;
 import org.apache.flink.connector.file.sink.utils.FileSinkTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link CompactorRequestTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompactorRequestTypeInfoTest extends TypeInformationTestBase<CompactorRequestTypeInfo> {
 
     @Override

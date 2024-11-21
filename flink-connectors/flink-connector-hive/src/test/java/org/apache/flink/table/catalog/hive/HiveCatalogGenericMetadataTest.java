@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.Schema;
@@ -53,6 +58,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for HiveCatalog on generic metadata. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveCatalogGenericMetadataTest extends HiveCatalogMetadataTestBase {
 
     TestSchemaResolver resolver = new TestSchemaResolver();

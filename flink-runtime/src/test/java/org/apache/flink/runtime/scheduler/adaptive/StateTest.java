@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.scheduler.adaptive;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.fail;
  * Tests for the default methods on the {@link State} interface, based on the {@link Created} state,
  * as it is a simple state.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(StateTest.class);

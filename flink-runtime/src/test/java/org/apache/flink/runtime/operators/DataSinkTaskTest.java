@@ -31,7 +31,10 @@ import org.apache.flink.runtime.testutils.recordutils.RecordComparatorFactory;
 import org.apache.flink.types.IntValue;
 import org.apache.flink.types.Record;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +51,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DataSinkTaskTest extends TaskTestBase {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataSinkTaskTest.class);

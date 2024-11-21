@@ -20,9 +20,15 @@ package org.apache.flink.runtime.state;
 
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.UUID;
 
 /** A simple test mock for a {@link StreamStateHandle}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingStreamStateHandle extends ByteStreamStateHandle
         implements DiscardRecordedStateObject {
     private static final long serialVersionUID = 1L;

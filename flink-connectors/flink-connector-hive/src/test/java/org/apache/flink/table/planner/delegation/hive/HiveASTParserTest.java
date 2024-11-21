@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.planner.delegation.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.catalog.hive.HiveTestUtils;
 import org.apache.flink.table.planner.delegation.hive.copy.HiveASTParseUtils;
@@ -29,6 +34,8 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the AST parser. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveASTParserTest {
 
     private static final HiveConf hiveConf = HiveTestUtils.createHiveConf();

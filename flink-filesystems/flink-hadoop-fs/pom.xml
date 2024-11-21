@@ -170,8 +170,13 @@ under the License.
 				</exclusion>
 			</exclusions>
 		</dependency>
+        <dependency>
+            <groupId>edu.illinois</groupId>
+            <artifactId>ctest4j-junit5</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>

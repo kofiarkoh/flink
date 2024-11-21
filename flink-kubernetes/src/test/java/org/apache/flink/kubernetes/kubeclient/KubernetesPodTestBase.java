@@ -20,10 +20,16 @@ package org.apache.flink.kubernetes.kubeclient;
 
 import org.apache.flink.kubernetes.KubernetesTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /** Base test class for the Kubernetes Pod. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KubernetesPodTestBase extends KubernetesTestBase {
 
     protected final Map<String, String> customizedEnvs =

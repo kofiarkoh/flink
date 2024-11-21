@@ -29,6 +29,9 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.github.dockerjava.api.command.InspectContainerResponse;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.HttpWaitStrategy;
 import org.testcontainers.utility.Base58;
@@ -40,6 +43,8 @@ import java.time.Duration;
 import java.util.Locale;
 
 /** {@code MinioTestContainer} provides a {@code Minio} test instance. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MinioTestContainer extends GenericContainer<MinioTestContainer> {
 
     private static final int DEFAULT_PORT = 9000;

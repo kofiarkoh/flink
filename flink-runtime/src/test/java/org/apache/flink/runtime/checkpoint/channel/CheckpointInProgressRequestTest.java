@@ -19,7 +19,10 @@ package org.apache.flink.runtime.checkpoint.channel;
 
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** {@link CheckpointInProgressRequest} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointInProgressRequestTest {
 
     /**

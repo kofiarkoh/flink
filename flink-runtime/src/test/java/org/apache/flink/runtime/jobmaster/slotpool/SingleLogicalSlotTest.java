@@ -34,7 +34,10 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,6 +52,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SingleLogicalSlot} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SingleLogicalSlotTest {
 
     @Test
@@ -256,7 +261,8 @@ class SingleLogicalSlotTest {
         }
     }
 
-    private static final class ManualTestingPayload implements LogicalSlot.Payload {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ManualTestingPayload implements LogicalSlot.Payload {
 
         private final CompletableFuture<?> failFuture;
 

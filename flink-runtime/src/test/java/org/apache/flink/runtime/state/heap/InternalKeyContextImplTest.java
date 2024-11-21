@@ -20,11 +20,16 @@ package org.apache.flink.runtime.state.heap;
 import org.apache.flink.runtime.state.InternalKeyContextImpl;
 import org.apache.flink.runtime.state.KeyGroupRange;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link InternalKeyContextImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InternalKeyContextImplTest {
 
     @Test

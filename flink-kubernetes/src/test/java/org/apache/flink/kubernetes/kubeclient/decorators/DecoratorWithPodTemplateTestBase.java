@@ -30,12 +30,15 @@ import org.apache.flink.kubernetes.kubeclient.KubernetesPodTestBase;
 import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.EnvVar;
 import io.fabric8.kubernetes.api.model.LocalObjectReference;
 import io.fabric8.kubernetes.api.model.Quantity;
 import io.fabric8.kubernetes.api.model.ResourceRequirements;
 import io.fabric8.kubernetes.api.model.Toleration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +53,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test base of merging and overwriting Kubernetes fields from {@link KubernetesConfigOptions} and
  * pod template for the {@link InitJobManagerDecorator} and {@link InitTaskManagerDecorator}.
  */
-public abstract class DecoratorWithPodTemplateTestBase extends KubernetesPodTestBase {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class DecoratorWithPodTemplateTestBase extends KubernetesPodTestBase {
 
     private static final String IMAGE = "test-image:v1";
     private static final String IMAGE_PULL_POLICY = "IfNotPresent";

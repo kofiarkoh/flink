@@ -25,7 +25,10 @@ import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.testutils.TestFileSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -34,6 +37,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FsCheckpointStateToolset}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FsCheckpointStateToolsetTest {
     @Test
     void testCanDuplicateNonFileStreamHandle() throws IOException {
@@ -92,8 +97,8 @@ class FsCheckpointStateToolsetTest {
                                 new Path("test-path", "test-file3"), "test-file3", 0));
     }
 
-    private static final class TestDuplicatingFileSystem extends TestFileSystem
-            implements PathsCopyingFileSystem {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestDuplicatingFileSystem extends TestFileSystem implements PathsCopyingFileSystem {
 
         @Override
         public boolean canCopyPaths(Path source, Path destination) throws IOException {

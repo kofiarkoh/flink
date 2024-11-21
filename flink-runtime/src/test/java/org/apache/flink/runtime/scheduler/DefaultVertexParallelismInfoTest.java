@@ -22,7 +22,10 @@ import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.runtime.state.KeyGroupRangeAssignment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 import java.util.function.Function;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DefaultVertexParallelismInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultVertexParallelismInfoTest {
     private static final Function<Integer, Optional<String>> ALWAYS_VALID =
             (max) -> Optional.empty();

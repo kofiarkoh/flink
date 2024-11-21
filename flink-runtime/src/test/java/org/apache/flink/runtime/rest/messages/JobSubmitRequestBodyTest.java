@@ -21,6 +21,8 @@ package org.apache.flink.runtime.rest.messages;
 import org.apache.flink.runtime.rest.messages.job.JobSubmitRequestBody;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
@@ -28,6 +30,8 @@ import java.util.Arrays;
 
 /** Tests for the {@link JobSubmitRequestBody}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobSubmitRequestBodyTest extends RestRequestMarshallingTestBase<JobSubmitRequestBody> {
 
     @Override

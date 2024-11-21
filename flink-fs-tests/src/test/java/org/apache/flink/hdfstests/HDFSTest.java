@@ -39,6 +39,8 @@ import org.apache.flink.streaming.examples.wordcount.WordCount;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
@@ -52,6 +54,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -67,6 +70,8 @@ import static org.junit.Assert.assertTrue;
  * already all dependencies required (flink-examples-streaming). Also, the ParallelismOneExecEnv is
  * here.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HDFSTest {
 
     protected String hdfsURI;

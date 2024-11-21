@@ -21,9 +21,12 @@ package org.apache.flink.runtime.taskexecutor;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.TaskManagerOptions.SystemOutMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -37,6 +40,8 @@ import static org.apache.flink.configuration.TaskManagerOptions.TASK_MANAGER_SYS
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link SystemOutRedirectionUtils} */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SystemOutRedirectionUtilsTest {
 
     private PrintStream originalOut;

@@ -36,7 +36,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/** A {@link Source} class for unit test of base implementation of source connector. */
+/**
+ * A {@link Source} @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for unit test of base
+ * implementation of source connector.
+ */
 public class MockBaseSource implements Source<Integer, MockSourceSplit, List<MockSourceSplit>> {
     private static final long serialVersionUID = 4445067705639284175L;
 

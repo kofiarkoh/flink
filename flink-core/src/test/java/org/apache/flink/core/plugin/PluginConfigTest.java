@@ -24,9 +24,12 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableMap;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -36,6 +39,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link PluginConfig} utility class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PluginConfigTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

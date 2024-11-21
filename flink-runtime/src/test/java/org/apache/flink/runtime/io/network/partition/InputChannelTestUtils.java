@@ -36,6 +36,9 @@ import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGate;
 import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateBuilder;
 import org.apache.flink.runtime.metrics.groups.UnregisteredMetricGroups;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -50,6 +53,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /** Some utility methods used for testing InputChannels and InputGates. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class InputChannelTestUtils {
     /**
      * Creates a result partition manager that ignores all IDs, and simply returns the given

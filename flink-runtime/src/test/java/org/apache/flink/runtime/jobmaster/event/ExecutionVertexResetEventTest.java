@@ -21,7 +21,10 @@ package org.apache.flink.runtime.jobmaster.event;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -29,6 +32,8 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ExecutionVertexResetEvent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionVertexResetEventTest {
 
     @Test

@@ -38,7 +38,10 @@ import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.SerializableObject;
 import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.Arrays;
@@ -57,6 +60,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /** Tests concerning the restoring of state from a checkpoint to the task executions. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointStateRestoreTest {
 
     @RegisterExtension

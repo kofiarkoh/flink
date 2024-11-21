@@ -20,9 +20,15 @@ package org.apache.flink.runtime.jobmaster.slotpool;
 
 import org.apache.flink.runtime.clusterframework.types.AllocationID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Map;
 
 /** Utils to create testing {@link FreeSlotTracker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FreeSlotTrackerTestUtils {
     /**
      * Create default free slot tracker for provided slots.

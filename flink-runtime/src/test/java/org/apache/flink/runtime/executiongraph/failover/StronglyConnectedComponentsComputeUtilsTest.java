@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.executiongraph.failover;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +36,8 @@ import static org.apache.flink.runtime.executiongraph.failover.StronglyConnected
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for {@link StronglyConnectedComponentsComputeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StronglyConnectedComponentsComputeUtilsTest {
 
     @Test

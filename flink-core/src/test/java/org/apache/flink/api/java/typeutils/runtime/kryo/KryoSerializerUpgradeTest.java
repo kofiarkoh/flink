@@ -30,7 +30,10 @@ import org.apache.flink.api.java.typeutils.runtime.kryo.KryoPojosForMigrationTes
 import org.apache.flink.api.java.typeutils.runtime.kryo.KryoPojosForMigrationTests.Parrot;
 
 import com.esotericsoftware.kryo.serializers.DefaultSerializers;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,6 +43,8 @@ import static org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatib
 
 /** Tests migrations for {@link KryoSerializerSnapshot}. */
 @SuppressWarnings("WeakerAccess")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KryoSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     public Collection<TestSpecification<?, ?>> createTestSpecifications(FlinkVersion flinkVersion)
@@ -258,9 +263,15 @@ class KryoSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Ob
         }
     }
 
-    /** Dummy class to be registered in the tests. */
+    /**
+     * Dummy @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to be registered in the
+     * tests.
+     */
     public static final class DummyClassOne {}
 
-    /** Dummy class to be registered in the tests. */
+    /**
+     * Dummy @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to be registered in the
+     * tests.
+     */
     public static final class DummyClassTwo {}
 }

@@ -33,7 +33,10 @@ import org.apache.flink.streaming.util.TestHarnessUtil;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -42,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests {@link LegacyKeyedProcessOperator}. */
 @Deprecated
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LegacyKeyedProcessOperatorTest {
 
     @Test

@@ -27,6 +27,12 @@ import org.apache.flink.api.common.typeutils.base.LongSerializer;
 import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.api.java.typeutils.runtime.tuple.base.TupleComparatorTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TupleComparatorILDX1Test extends TupleComparatorTestBase<Tuple3<Integer, Long, Double>> {
 
     @SuppressWarnings("unchecked")

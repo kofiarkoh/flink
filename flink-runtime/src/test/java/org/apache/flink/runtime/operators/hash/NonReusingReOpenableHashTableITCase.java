@@ -27,6 +27,10 @@ import org.apache.flink.runtime.operators.testutils.TestData;
 import org.apache.flink.runtime.operators.testutils.TestData.TupleGenerator;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -41,6 +45,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test specialized hash join that keeps the build side data (in memory and on hard disk) This is
  * used for iterative tasks.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NonReusingReOpenableHashTableITCase extends ReOpenableHashTableTestBase {
 
     protected void doTest(

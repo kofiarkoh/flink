@@ -60,7 +60,10 @@ import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 import org.apache.flink.util.CloseableIterable;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.Closeable;
 import java.util.Collections;
@@ -78,6 +81,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 /** Test for {@link StreamTaskStateInitializerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamTaskStateInitializerImplTest {
 
     @Test

@@ -30,6 +30,10 @@ import org.apache.flink.runtime.taskmanager.LocalTaskManagerLocation;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 import org.apache.flink.runtime.util.ResourceCounter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -38,7 +42,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /** Utilities for testing slot pool implementations. */
-public final class SlotPoolTestUtils {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SlotPoolTestUtils {
 
     private SlotPoolTestUtils() {
         throw new UnsupportedOperationException("This class should never be instantiated.");

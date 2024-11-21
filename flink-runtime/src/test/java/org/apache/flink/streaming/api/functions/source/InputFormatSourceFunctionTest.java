@@ -41,7 +41,10 @@ import org.apache.flink.streaming.api.operators.AbstractStreamOperator;
 import org.apache.flink.streaming.api.operators.StreamingRuntimeContext;
 import org.apache.flink.streaming.api.watermark.Watermark;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -49,6 +52,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link InputFormatSourceFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputFormatSourceFunctionTest {
 
     @Test
@@ -99,7 +104,8 @@ class InputFormatSourceFunctionTest {
         }
     }
 
-    private static class LifeCycleTestInputFormat extends RichInputFormat<Integer, InputSplit> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class LifeCycleTestInputFormat extends RichInputFormat<Integer, InputSplit> {
 
         private static final long serialVersionUID = 7408902249499583273L;
         private boolean isConfigured = false;

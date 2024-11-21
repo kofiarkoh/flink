@@ -30,7 +30,10 @@ import org.apache.flink.runtime.messages.checkpoint.AcknowledgeCheckpoint;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.TestStreamStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -47,6 +50,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for checkpoint messages. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointMessagesTest {
 
     @Test
@@ -91,7 +96,8 @@ class CheckpointMessagesTest {
         assertThat(copy).asString().isNotNull();
     }
 
-    private static class MyHandle implements TestStreamStateHandle {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MyHandle
+            implements TestStreamStateHandle {
 
         private static final long serialVersionUID = 8128146204128728332L;
 

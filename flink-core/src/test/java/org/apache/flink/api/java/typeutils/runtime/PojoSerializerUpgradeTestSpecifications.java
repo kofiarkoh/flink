@@ -28,13 +28,18 @@ import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A collection of test specifications for the {@link PojoSerializerUpgradeTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PojoSerializerUpgradeTestSpecifications {
 
     // ----------------------------------------------------------------------------------------------

@@ -25,12 +25,17 @@ import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** Migration test for {@link TimerSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimerSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<
                 TimerHeapInternalTimer<String, Integer>, TimerHeapInternalTimer<String, Integer>> {

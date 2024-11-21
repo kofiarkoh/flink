@@ -75,7 +75,10 @@ import java.util.function.Function;
 import static org.apache.flink.configuration.JobManagerOptions.HybridPartitionDataConsumeConstraint.ALL_PRODUCERS_FINISHED;
 import static org.apache.flink.runtime.scheduler.SchedulerBase.computeVertexParallelismStore;
 
-/** A builder to create {@link DefaultScheduler} or its subclass instances for testing. */
+/**
+ * A builder to create {@link DefaultScheduler} or its
+ * sub@ExtendWith(CTestJUnit5Extension.class) @CTestClass class instances for testing.
+ */
 public class DefaultSchedulerBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(DefaultSchedulerBuilder.class);
 

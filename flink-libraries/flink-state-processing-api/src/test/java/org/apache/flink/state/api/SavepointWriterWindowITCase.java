@@ -50,7 +50,10 @@ import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -66,6 +69,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /** IT Test for writing savepoints to the {@code WindowOperator}. */
 @SuppressWarnings("unchecked")
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SavepointWriterWindowITCase extends AbstractTestBaseJUnit4 {
 
     private static final String UID = "uid";

@@ -21,11 +21,15 @@ package org.apache.flink.runtime.state.ttl;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.state.internal.InternalMergingState;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-abstract class TtlMergingStateTestContext<
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TtlMergingStateTestContext<
                 S extends InternalMergingState<?, String, ?, ?, GV>, UV, GV>
         extends TtlStateTestContextBase<S, UV, GV> {
     static final Random RANDOM = new Random();
@@ -79,7 +83,8 @@ abstract class TtlMergingStateTestContext<
             List<Tuple2<String, UV>> finalUpdatesToMerge);
 
     @SuppressWarnings("unchecked")
-    abstract static class TtlIntegerMergingStateTestContext<
+    abstract static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TtlIntegerMergingStateTestContext<
                     S extends InternalMergingState<?, String, ?, ?, GV>, UV extends Number, GV>
             extends TtlMergingStateTestContext<S, UV, GV> {
         @Override

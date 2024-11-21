@@ -21,7 +21,10 @@ package org.apache.flink.runtime.security;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.IllegalConfigurationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.SecurityOptions.KERBEROS_LOGIN_KEYTAB;
 import static org.apache.flink.configuration.SecurityOptions.KERBEROS_LOGIN_PRINCIPAL;
@@ -29,6 +32,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** Tests for the {@link SecurityConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SecurityConfigurationTest {
 
     @Test

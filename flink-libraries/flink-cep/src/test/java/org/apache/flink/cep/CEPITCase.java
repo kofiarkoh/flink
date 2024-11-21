@@ -48,7 +48,10 @@ import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -65,6 +68,8 @@ import static org.junit.Assert.assertEquals;
 /** End to end tests of both CEP operators and {@link NFA}. */
 @SuppressWarnings("serial")
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CEPITCase extends AbstractTestBaseJUnit4 {
 
     @Parameterized.Parameter public Configuration envConfiguration;

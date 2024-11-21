@@ -35,7 +35,10 @@ import org.apache.flink.streaming.api.windowing.triggers.EventTimeTrigger;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
@@ -45,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * These tests verify that the api calls on {@link WindowedStream} that use the "time" shortcut
  * instantiate the correct window operator.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimeWindowTranslationTest {
 
     /**

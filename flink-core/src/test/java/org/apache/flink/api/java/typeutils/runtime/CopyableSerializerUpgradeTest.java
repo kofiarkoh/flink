@@ -28,8 +28,11 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.types.CopyableValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,6 +41,8 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link CopyableValueSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CopyableSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<SimpleCopyable, SimpleCopyable> {
 

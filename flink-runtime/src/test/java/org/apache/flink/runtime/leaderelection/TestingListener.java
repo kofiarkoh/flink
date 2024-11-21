@@ -20,6 +20,9 @@ package org.apache.flink.runtime.leaderelection;
 
 import org.apache.flink.runtime.leaderretrieval.LeaderRetrievalListener;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,6 +32,8 @@ import java.util.UUID;
  * Test {@link LeaderRetrievalListener} implementation which offers some convenience functions for
  * testing purposes.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingListener extends TestingRetrievalBase implements LeaderRetrievalListener {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestingListener.class);

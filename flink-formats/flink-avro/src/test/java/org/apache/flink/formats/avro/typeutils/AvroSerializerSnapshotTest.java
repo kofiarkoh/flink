@@ -28,11 +28,14 @@ import org.apache.flink.formats.avro.generated.Address;
 import org.apache.flink.formats.avro.generated.User;
 import org.apache.flink.formats.avro.utils.TestDataGenerator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
 import org.apache.avro.generic.GenericRecord;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -47,6 +50,8 @@ import static org.apache.flink.api.common.typeutils.TypeSerializerConditions.isI
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test {@link AvroSerializerSnapshot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializerSnapshotTest {
 
     private static final int[] PAST_VERSIONS = new int[] {2};

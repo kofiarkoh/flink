@@ -23,11 +23,17 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.types.IntValue;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DriverTestData {
 
     public static List<Tuple2<String, Integer>> createReduceImmutableData() {

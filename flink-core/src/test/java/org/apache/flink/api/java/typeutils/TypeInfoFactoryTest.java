@@ -29,7 +29,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -48,6 +51,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests for extracting {@link org.apache.flink.api.common.typeinfo.TypeInformation} from types
  * using a {@link org.apache.flink.api.common.typeinfo.TypeInfoFactory}
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TypeInfoFactoryTest {
 
     @Test

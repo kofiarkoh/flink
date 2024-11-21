@@ -18,8 +18,11 @@
 
 package org.apache.flink.runtime.io.network.partition.hybrid.index;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.channels.FileChannel;
@@ -38,6 +41,8 @@ import static org.apache.flink.runtime.io.network.partition.hybrid.index.Testing
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FileDataIndexSpilledRegionManagerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileDataIndexSpilledRegionManagerImplTest {
     private Path indexFilePath;
 

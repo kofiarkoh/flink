@@ -23,12 +23,17 @@ import org.apache.flink.table.data.MapData;
 import org.apache.flink.table.data.RowData;
 
 import com.google.protobuf.ByteString;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /** Test conversion of proto map data to flink internal data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class MapProtoToRowTest {
     @Test
     public void testMessage() throws Exception {

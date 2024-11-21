@@ -27,6 +27,8 @@ import org.apache.flink.core.plugin.TestingPluginManager;
 import org.apache.flink.runtime.concurrent.ComponentMainThreadExecutorServiceAdapter;
 import org.apache.flink.util.TestLoggerExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.collections.IteratorUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -48,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link FailureEnricherUtils} class. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FailureEnricherUtilsTest {
 
     @Test
@@ -297,7 +301,8 @@ class FailureEnricherUtilsTest {
         }
     }
 
-    private static class ThrowingEnricher extends TestEnricher {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class ThrowingEnricher
+            extends TestEnricher {
         ThrowingEnricher(String... outputKeys) {
             super(outputKeys);
         }
@@ -311,13 +316,15 @@ class FailureEnricherUtilsTest {
         }
     }
 
-    private static class AndAnotherTestEnricher extends TestEnricher {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AndAnotherTestEnricher
+            extends TestEnricher {
         AndAnotherTestEnricher(String... outputKeys) {
             super(outputKeys);
         }
     }
 
-    private static class AnotherTestEnricher extends TestEnricher {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AnotherTestEnricher
+            extends TestEnricher {
         AnotherTestEnricher(String... outputKeys) {
             super(outputKeys);
         }

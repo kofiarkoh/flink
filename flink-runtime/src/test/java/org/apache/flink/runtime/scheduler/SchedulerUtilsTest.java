@@ -45,7 +45,10 @@ import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,6 +64,8 @@ import static org.apache.flink.runtime.checkpoint.CheckpointRetentionPolicy.NEVE
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SchedulerUtils} utilities. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SchedulerUtilsTest {
 
     private static final Logger log = LoggerFactory.getLogger(SharedSlotTest.class);

@@ -34,8 +34,11 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.guava32.com.google.common.collect.Sets;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.ExpectedException;
 
 import java.time.Duration;
@@ -52,6 +55,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Tests for {@link NFACompiler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NFACompilerTest extends TestLogger {
 
     private static final SimpleCondition<Event> startFilter =

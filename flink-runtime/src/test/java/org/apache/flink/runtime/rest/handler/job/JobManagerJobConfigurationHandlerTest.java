@@ -28,13 +28,18 @@ import org.apache.flink.runtime.rest.messages.job.JobManagerJobConfigurationHead
 import org.apache.flink.runtime.webmonitor.TestingRestfulGateway;
 import org.apache.flink.testutils.TestingUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link JobManagerJobConfigurationHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobManagerJobConfigurationHandlerTest {
 
     @Test

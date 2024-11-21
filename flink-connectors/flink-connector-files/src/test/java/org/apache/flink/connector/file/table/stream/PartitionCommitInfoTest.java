@@ -22,11 +22,16 @@ import org.apache.flink.api.common.serialization.SerializerConfig;
 import org.apache.flink.api.common.serialization.SerializerConfigImpl;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /** Tests for partition commit info. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PartitionCommitInfoTest {
     @Test
     public void testPartitionCommitSerializer() {

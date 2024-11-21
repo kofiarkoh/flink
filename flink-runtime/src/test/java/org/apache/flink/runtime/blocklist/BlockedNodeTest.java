@@ -18,11 +18,16 @@
 
 package org.apache.flink.runtime.blocklist;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Test for {@link BlockedNode}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockedNodeTest {
 
     @Test

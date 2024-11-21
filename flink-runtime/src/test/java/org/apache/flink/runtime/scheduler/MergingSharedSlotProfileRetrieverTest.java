@@ -29,7 +29,10 @@ import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 import org.apache.flink.util.FlinkRuntimeException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -49,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Tests for {@link org.apache.flink.runtime.scheduler.MergingSharedSlotProfileRetrieverFactory}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MergingSharedSlotProfileRetrieverTest {
 
     private static final SyncPreferredLocationsRetriever EMPTY_PREFERRED_LOCATIONS_RETRIEVER =

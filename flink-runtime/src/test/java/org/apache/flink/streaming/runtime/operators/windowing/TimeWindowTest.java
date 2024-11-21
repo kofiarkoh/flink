@@ -20,13 +20,18 @@ package org.apache.flink.streaming.runtime.operators.windowing;
 
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TimeWindow}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TimeWindowTest {
     @Test
     void testGetWindowStartWithOffset() {

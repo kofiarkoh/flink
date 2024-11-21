@@ -26,13 +26,18 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.GenericTypeInfo;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the common/shared functionality of {@link StateDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateDescriptorTest {
 
     /**
@@ -118,7 +123,8 @@ class StateDescriptorTest {
         }
     }
 
-    private static class OtherTestStateDescriptor<T> extends StateDescriptor<T> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class OtherTestStateDescriptor<T> extends StateDescriptor<T> {
 
         private static final long serialVersionUID = 1L;
 

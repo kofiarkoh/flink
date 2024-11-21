@@ -24,6 +24,10 @@ import org.apache.flink.core.io.SimpleVersionedSerializer;
 import org.apache.flink.streaming.api.functions.sink.filesystem.BucketAssigner;
 import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.SimpleVersionedStringSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.File;
@@ -44,6 +48,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * The sinks expect multiple sources writing the same sequence onto the disk and the integers are
  * assigned to different buckets according to modulo.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class IntegerFileSinkTestDataUtils {
 
     /** Testing sink {@link Encoder} that writes integer with its binary representation. */

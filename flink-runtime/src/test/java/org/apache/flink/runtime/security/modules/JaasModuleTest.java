@@ -22,9 +22,12 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.CoreOptions;
 import org.apache.flink.runtime.security.SecurityConfiguration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -38,6 +41,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /** Test for {@link JaasModule}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JaasModuleTest {
     @Rule public TemporaryFolder folder = new TemporaryFolder();
 

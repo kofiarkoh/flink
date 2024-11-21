@@ -27,6 +27,10 @@ import org.apache.flink.runtime.state.Keyed;
 import org.apache.flink.runtime.state.PriorityComparable;
 import org.apache.flink.runtime.state.heap.AbstractHeapPriorityQueueElement;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 import java.io.IOException;
@@ -89,7 +93,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
     }
 
     /** A serializer that read / writes {@link TestType} in schema version 1. */
-    public static class V1TestTypeSerializer extends TestTypeSerializerBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class V1TestTypeSerializer
+            extends TestTypeSerializerBase {
         private static final long serialVersionUID = 5053346160938769779L;
 
         @Override
@@ -113,7 +118,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
      * A serializer that read / writes {@link TestType} in schema version 2. Migration is required
      * if the state was previously written with {@link V1TestTypeSerializer}.
      */
-    public static class V2TestTypeSerializer extends TestTypeSerializerBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class V2TestTypeSerializer
+            extends TestTypeSerializerBase {
 
         private static final long serialVersionUID = 7199590310936186578L;
 
@@ -147,7 +153,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
      * A serializer that is meant to be compatible with any of the serializers only ofter being
      * reconfigured as a new instance.
      */
-    public static class ReconfigurationRequiringTestTypeSerializer extends TestTypeSerializerBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ReconfigurationRequiringTestTypeSerializer extends TestTypeSerializerBase {
 
         private static final long serialVersionUID = -7254527815207212324L;
 
@@ -168,7 +175,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
             return new ReconfigurationRequiringTestTypeSerializerSnapshot();
         }
 
-        public static class ReconfigurationRequiringTestTypeSerializerSnapshot
+        public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+        class ReconfigurationRequiringTestTypeSerializerSnapshot
                 implements TypeSerializerSnapshot<TestType> {
 
             @Override
@@ -210,7 +218,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
     }
 
     /** A serializer that is meant to be incompatible with any of the serializers. */
-    public static class IncompatibleTestTypeSerializer extends TestTypeSerializerBase {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class IncompatibleTestTypeSerializer extends TestTypeSerializerBase {
 
         private static final long serialVersionUID = -2959080770523247215L;
 
@@ -231,8 +240,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
             return new IncompatibleTestTypeSerializerSnapshot();
         }
 
-        public static class IncompatibleTestTypeSerializerSnapshot
-                implements TypeSerializerSnapshot<TestType> {
+        public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+        class IncompatibleTestTypeSerializerSnapshot implements TypeSerializerSnapshot<TestType> {
 
             @Override
             public int getCurrentVersion() {
@@ -263,7 +272,8 @@ public class TestType extends AbstractHeapPriorityQueueElement
         }
     }
 
-    public abstract static class TestTypeSerializerBase extends TypeSerializer<TestType> {
+    public abstract static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestTypeSerializerBase extends TypeSerializer<TestType> {
 
         private static final long serialVersionUID = 256299937766275871L;
 

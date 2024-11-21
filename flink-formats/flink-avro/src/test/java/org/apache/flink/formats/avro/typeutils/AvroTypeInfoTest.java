@@ -24,11 +24,16 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.formats.avro.generated.Address;
 import org.apache.flink.formats.avro.generated.User;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link AvroTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroTypeInfoTest extends TypeInformationTestBase<AvroTypeInfo<?>> {
 
     @Override

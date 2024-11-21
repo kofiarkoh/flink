@@ -22,12 +22,17 @@ import org.apache.flink.api.common.typeinfo.TypeDescriptor;
 import org.apache.flink.api.common.typeinfo.TypeDescriptors;
 import org.apache.flink.types.BooleanValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ValueStateDeclaration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ValueStateDeclarationTest {
 
     private static TypeDescriptor<BooleanValue> booleanValueDescriptor;

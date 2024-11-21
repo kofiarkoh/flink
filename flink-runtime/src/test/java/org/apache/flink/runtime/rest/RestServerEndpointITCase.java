@@ -66,6 +66,8 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonPro
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.TooLongFrameException;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -912,7 +914,8 @@ public class RestServerEndpointITCase {
         }
     }
 
-    private static class FaultyTestParameters extends TestParameters {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class FaultyTestParameters
+            extends TestParameters {
         private final FaultyJobIDPathParameter faultyJobIDPathParameter =
                 new FaultyJobIDPathParameter();
 

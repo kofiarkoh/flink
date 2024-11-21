@@ -18,11 +18,16 @@
 
 package org.apache.flink.runtime.checkpoint;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link CheckpointMetrics} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointMetricsTest {
 
     @Test

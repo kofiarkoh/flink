@@ -25,6 +25,10 @@ import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.operators.MultipleInputStreamOperator;
 import org.apache.flink.streaming.api.operators.StreamOperatorFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * A test harness for testing a {@link MultipleInputStreamOperator}.
  *
@@ -32,6 +36,8 @@ import org.apache.flink.streaming.api.operators.StreamOperatorFactory;
  * and watermarks into the operator. {@link java.util.Deque}s containing the emitted elements and
  * watermarks can be retrieved. you are free to modify these.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyedMultiInputStreamOperatorTestHarness<KEY, OUT>
         extends MultiInputStreamOperatorTestHarness<OUT> {
 

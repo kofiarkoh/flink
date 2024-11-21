@@ -87,6 +87,10 @@ import org.apache.flink.util.OutputTag;
 import org.apache.flink.util.Preconditions;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -104,7 +108,12 @@ import static org.apache.flink.streaming.api.operators.StreamOperatorUtils.setPr
 import static org.apache.flink.streaming.api.operators.StreamOperatorUtils.setupStreamOperator;
 import static org.apache.flink.util.Preconditions.checkState;
 
-/** Base class for {@code AbstractStreamOperator} test harnesses. */
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@code AbstractStreamOperator}
+ * test harnesses.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractStreamOperatorTestHarness<OUT> implements AutoCloseable {
 
     protected StreamOperator<OUT> operator;

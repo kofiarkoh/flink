@@ -21,8 +21,11 @@ package org.apache.flink.runtime.io.network.partition.hybrid.tiered.file;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.TieredStorageSubpartitionId;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Path;
@@ -36,6 +39,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ProducerMergedPartitionFileIndex}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProducerMergedPartitionFileIndexTest {
 
     private Path indexFilePath;

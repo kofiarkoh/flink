@@ -36,6 +36,8 @@ import org.apache.flink.formats.avro.generated.User;
 import org.apache.flink.formats.avro.typeutils.AvroTypeInfo;
 import org.apache.flink.formats.avro.utils.AvroKryoSerializerUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
@@ -51,6 +53,7 @@ import org.apache.avro.util.Utf8;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -75,6 +78,8 @@ import static org.assertj.core.data.MapEntry.entry;
  * Test the avro input format. (The testcase is mostly the getting started tutorial of avro)
  * http://avro.apache.org/docs/current/gettingstartedjava.html
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroRecordInputFormatTest {
 
     public File testFile;

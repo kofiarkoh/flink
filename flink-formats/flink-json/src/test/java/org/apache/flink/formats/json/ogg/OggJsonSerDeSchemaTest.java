@@ -29,8 +29,11 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.utils.DataTypeUtils;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,6 +56,8 @@ import static org.apache.flink.table.api.DataTypes.STRING;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link OggJsonSerializationSchema} and {@link OggJsonDeserializationSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OggJsonSerDeSchemaTest {
 
     private static final DataType PHYSICAL_DATA_TYPE =

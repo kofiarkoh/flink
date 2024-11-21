@@ -26,7 +26,10 @@ import org.apache.flink.runtime.state.SharedStateRegistryImpl;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -42,7 +45,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /** Test for basic {@link CompletedCheckpointStore} contract. */
-abstract class CompletedCheckpointStoreTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class CompletedCheckpointStoreTest {
 
     /** Creates the {@link CompletedCheckpointStore} implementation to be tested. */
     protected abstract CompletedCheckpointStore createRecoveredCompletedCheckpointStore(

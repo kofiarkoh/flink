@@ -22,7 +22,10 @@ import org.apache.flink.api.common.JobStatus;
 import org.apache.flink.runtime.executiongraph.ArchivedExecutionGraph;
 import org.apache.flink.runtime.executiongraph.ExecutionGraph;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.Logger;
@@ -33,6 +36,8 @@ import javax.annotation.Nullable;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link Created} state. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CreatedTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(CreatedTest.class);

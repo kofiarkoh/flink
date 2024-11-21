@@ -44,7 +44,7 @@ import java.util.List;
  * expressions, we replace them here by generic type infos containing Utf8 classes (which are
  * comparable),
  *
- * <p>This class is checked by the AvroPojoTest.
+ * <p>This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class is checked by the AvroPojoTest.
  */
 public class AvroTypeInfo<T extends SpecificRecordBase> extends PojoTypeInfo<T> {
 

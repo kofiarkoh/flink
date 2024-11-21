@@ -22,10 +22,16 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.formats.avro.generated.UnionLogicalType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.Instant;
 import java.util.Random;
 
 /** Tests for the {@link AvroSerializer} that test specific avro types. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroUnionLogicalSerializerTest extends SerializerTestBase<UnionLogicalType> {
 
     @Override

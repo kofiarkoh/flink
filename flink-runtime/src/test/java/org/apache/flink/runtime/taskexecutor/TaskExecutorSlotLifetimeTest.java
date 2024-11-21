@@ -59,8 +59,11 @@ import org.apache.flink.util.Reference;
 import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.util.function.FunctionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -76,6 +79,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TaskExecutor TaskExecutor's} slot lifetime and its dependencies. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorSlotLifetimeTest {
 
     @RegisterExtension

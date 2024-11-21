@@ -18,7 +18,10 @@
 
 package org.apache.flink.core.memory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -31,6 +34,8 @@ import java.nio.ByteBuffer;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for undersized {@link MemorySegment} (in both heap and off-heap modes). */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemorySegmentUndersizedTest {
 
     @Test

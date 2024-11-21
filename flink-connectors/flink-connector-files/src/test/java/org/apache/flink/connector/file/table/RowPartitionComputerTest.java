@@ -20,12 +20,17 @@ package org.apache.flink.connector.file.table;
 
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.table.utils.PartitionPathUtils.generatePartitionPath;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link RowPartitionComputer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RowPartitionComputerTest {
 
     @Test

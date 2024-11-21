@@ -23,13 +23,18 @@ import org.apache.flink.connector.file.sink.utils.IntegerFileSinkTestDataUtils;
 import org.apache.flink.connector.file.sink.utils.PartSizeAndCheckpointRollingPolicy;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
 /** Tests for {@link FileSink}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSinkTest {
 
     @Test

@@ -18,8 +18,14 @@
 
 package org.apache.flink.runtime.operators.testutils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Standard Exception to be thrown as part of exception handling tests. Recognized by type. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExpectedTestException extends RuntimeException {
     public static final String MESSAGE = "Expected Test Exception";
 

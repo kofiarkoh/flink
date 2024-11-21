@@ -58,9 +58,12 @@ import org.apache.flink.util.concurrent.ManuallyTriggeredScheduledExecutor;
 import org.apache.flink.shaded.guava32.com.google.common.collect.ImmutableMap;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -88,6 +91,8 @@ import static org.apache.flink.runtime.scheduler.adaptivebatch.AdaptiveBatchSche
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AdaptiveBatchScheduler} with speculative execution enabled. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SpeculativeExecutionTest {
 
     @RegisterExtension

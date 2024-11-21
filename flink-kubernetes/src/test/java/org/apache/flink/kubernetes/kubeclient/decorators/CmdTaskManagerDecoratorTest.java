@@ -25,14 +25,19 @@ import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.EnvVarBuilder;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the{@link CmdTaskManagerDecorator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CmdTaskManagerDecoratorTest extends KubernetesTaskManagerTestBase {
 
     private String mainClassArgs;

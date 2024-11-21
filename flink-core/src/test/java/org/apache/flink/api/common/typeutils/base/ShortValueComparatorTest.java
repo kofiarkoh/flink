@@ -23,8 +23,14 @@ import org.apache.flink.api.common.typeutils.TypeComparator;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.types.ShortValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Random;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ShortValueComparatorTest extends ComparatorTestBase<ShortValue> {
 
     @Override

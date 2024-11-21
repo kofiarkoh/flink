@@ -30,6 +30,8 @@ import org.apache.flink.formats.avro.generated.User;
 import org.apache.flink.formats.avro.typeutils.AvroSerializerLargeGenericRecordTest;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
 import org.apache.avro.generic.GenericData;
@@ -39,6 +41,7 @@ import org.apache.avro.io.Encoder;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecord;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -57,7 +60,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /** Utilities for creating Avro Schemas. */
-public final class AvroTestUtils {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class AvroTestUtils {
 
     /** Tests all Avro data types as well as nested types for a specific record. */
     public static Tuple3<Class<? extends SpecificRecord>, SpecificRecord, Row>

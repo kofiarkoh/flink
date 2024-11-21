@@ -20,13 +20,18 @@ package org.apache.flink.runtime.memory;
 
 import org.apache.flink.core.memory.MemorySegment;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 /** Validate memory release under concurrent modification exceptions. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemoryManagerConcurrentModReleaseTest {
 
     @Test

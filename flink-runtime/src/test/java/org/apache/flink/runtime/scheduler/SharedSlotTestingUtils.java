@@ -21,6 +21,12 @@ package org.apache.flink.runtime.scheduler;
 import org.apache.flink.runtime.jobmanager.scheduler.SlotSharingGroup;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SharedSlotTestingUtils {
     private SharedSlotTestingUtils() {}
 

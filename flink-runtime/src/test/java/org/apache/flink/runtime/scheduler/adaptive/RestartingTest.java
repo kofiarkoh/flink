@@ -27,7 +27,10 @@ import org.apache.flink.runtime.scheduler.OperatorCoordinatorHandler;
 import org.apache.flink.runtime.scheduler.exceptionhistory.ExceptionHistoryEntry;
 import org.apache.flink.runtime.scheduler.exceptionhistory.RootExceptionHistoryEntry;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.Logger;
@@ -45,6 +48,8 @@ import static org.apache.flink.runtime.scheduler.adaptive.WaitingForResourcesTes
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link Restarting} state of the {@link AdaptiveScheduler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestartingTest {
     private static final Logger log = LoggerFactory.getLogger(RestartingTest.class);
 

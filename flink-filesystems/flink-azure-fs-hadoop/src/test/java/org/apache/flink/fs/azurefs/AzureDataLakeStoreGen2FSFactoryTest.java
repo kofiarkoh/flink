@@ -20,6 +20,9 @@ package org.apache.flink.fs.azurefs;
 
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -31,6 +34,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the ABFSAzureFSFactory. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AzureDataLakeStoreGen2FSFactoryTest {
 
     @ParameterizedTest(name = "Factory = {0}")

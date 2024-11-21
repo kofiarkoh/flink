@@ -24,12 +24,18 @@ import org.apache.flink.runtime.dispatcher.TestingJobManagerRunnerFactory;
 import org.apache.flink.runtime.jobmaster.JobResult;
 import org.apache.flink.runtime.jobmaster.TestingJobManagerRunner;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.concurrent.Executor;
 
 /**
  * {@code TestingCleanupRunnerFactory} implements {@link CleanupRunnerFactory} providing a factory
  * method usually used for {@link CheckpointResourcesCleanupRunner} creations.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TestingCleanupRunnerFactory extends TestingJobManagerRunnerFactory
         implements CleanupRunnerFactory {
 

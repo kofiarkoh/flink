@@ -21,7 +21,10 @@ package org.apache.flink.connector.file.table;
 import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.util.List;
@@ -31,6 +34,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link PartitionTempFileManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionTempFileManagerTest {
 
     @TempDir private java.nio.file.Path tmpPath;

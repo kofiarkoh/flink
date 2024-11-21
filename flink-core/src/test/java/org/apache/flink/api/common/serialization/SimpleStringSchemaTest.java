@@ -20,7 +20,10 @@ package org.apache.flink.api.common.serialization;
 
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -28,6 +31,8 @@ import java.nio.charset.StandardCharsets;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SimpleStringSchema}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SimpleStringSchemaTest {
 
     @Test

@@ -44,8 +44,11 @@ import org.apache.flink.util.clock.Clock;
 import org.apache.flink.util.clock.ManualClock;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -61,6 +64,8 @@ import static org.apache.flink.streaming.runtime.io.checkpointing.UnalignedCheck
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the behavior of the barrier tracker. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointBarrierTrackerTest {
 
     private static final int PAGE_SIZE = 512;

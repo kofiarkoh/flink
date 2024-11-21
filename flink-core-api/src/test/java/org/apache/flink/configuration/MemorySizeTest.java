@@ -20,7 +20,10 @@ package org.apache.flink.configuration;
 
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -30,6 +33,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Tests for the {@link MemorySize} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemorySizeTest {
 
     @Test

@@ -26,12 +26,18 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.InProgressFileWr
 import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.SimpleVersionedStringSerializer;
 import org.apache.flink.types.StringValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.function.Supplier;
 
 import static org.apache.flink.util.Preconditions.checkState;
 
 /** Utils for tests related to {@link FileSink}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSinkTestUtils {
     /** A type of testing {@link InProgressFileWriter.PendingFileRecoverable}. */
     public static class TestPendingFileRecoverable extends StringValue

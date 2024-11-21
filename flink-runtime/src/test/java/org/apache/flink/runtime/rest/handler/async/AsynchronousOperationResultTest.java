@@ -23,6 +23,8 @@ import org.apache.flink.runtime.rest.messages.TriggerId;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
@@ -33,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the marshalling of {@link AsynchronousOperationResult}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AsynchronousOperationResultTest
         extends RestResponseMarshallingTestBase<AsynchronousOperationResult<TriggerId>> {
 

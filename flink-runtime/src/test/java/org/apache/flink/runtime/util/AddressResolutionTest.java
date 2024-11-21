@@ -22,8 +22,11 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.runtime.rpc.AddressResolution;
 import org.apache.flink.runtime.rpc.RpcSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Unit tests for respecting {@link AddressResolution}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AddressResolutionTest {
 
     private static final RpcSystem RPC_SYSTEM = RpcSystem.load();

@@ -22,10 +22,16 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.metrics.dump.QueryScopeInfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /** Tests for {@link JobManagerOperatorMetricsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class JobManagerOperatorMetricsHandlerTest
         extends MetricsHandlerTestBase<JobManagerOperatorMetricsHandler> {
     private static final String TEST_JOB_ID = new JobID().toString();

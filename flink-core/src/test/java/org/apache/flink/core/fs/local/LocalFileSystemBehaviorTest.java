@@ -23,9 +23,14 @@ import org.apache.flink.core.fs.FileSystemBehaviorTestSuite;
 import org.apache.flink.core.fs.FileSystemKind;
 import org.apache.flink.core.fs.Path;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 /** Behavior tests for Flink's {@link LocalFileSystem}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalFileSystemBehaviorTest extends FileSystemBehaviorTestSuite {
 
     @TempDir private java.nio.file.Path tmp;

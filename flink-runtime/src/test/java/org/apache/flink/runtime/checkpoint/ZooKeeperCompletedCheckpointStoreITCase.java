@@ -37,7 +37,10 @@ import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFram
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.data.Stat;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -52,6 +55,8 @@ import static org.apache.flink.runtime.checkpoint.CheckpointRequestDeciderTest.r
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for basic {@link CompletedCheckpointStore} contract and ZooKeeper state handling. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperCompletedCheckpointStoreITCase extends CompletedCheckpointStoreTest {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

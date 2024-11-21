@@ -22,7 +22,12 @@ import org.apache.flink.api.common.eventtime.Watermark;
 import org.apache.flink.api.common.eventtime.WatermarkGenerator;
 import org.apache.flink.api.common.eventtime.WatermarkOutput;
 
-final class OnEventTestWatermarkGenerator<T> implements WatermarkGenerator<T> {
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class OnEventTestWatermarkGenerator<T>
+        implements WatermarkGenerator<T> {
 
     @Override
     public void onEvent(T event, long eventTimestamp, WatermarkOutput output) {

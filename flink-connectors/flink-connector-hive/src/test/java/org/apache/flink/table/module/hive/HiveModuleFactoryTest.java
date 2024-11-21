@@ -16,6 +16,11 @@
  */
 
 package org.apache.flink.table.module.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.table.factories.FactoryUtil;
@@ -28,6 +33,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveModuleFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveModuleFactoryTest {
     @Test
     public void test() {

@@ -27,7 +27,10 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,6 +38,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 /** State migration test for {@link RowSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ValueSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<
                 ValueSerializerUpgradeTest.NameValue, ValueSerializerUpgradeTest.NameValue> {
@@ -88,7 +93,7 @@ class ValueSerializerUpgradeTest
         }
     }
 
-    /** A dummy class used for this test. */
+    /** A dummy @ExtendWith(CTestJUnit5Extension.class) @CTestClass class used for this test. */
     public static final class NameValue implements Value {
 
         public static final long serialVersionUID = 2277251654485371327L;

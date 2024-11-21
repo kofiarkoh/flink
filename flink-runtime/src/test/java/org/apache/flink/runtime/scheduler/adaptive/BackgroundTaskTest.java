@@ -21,7 +21,10 @@ package org.apache.flink.runtime.scheduler.adaptive;
 import org.apache.flink.core.testutils.OneShotLatch;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link BackgroundTask}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BackgroundTaskTest {
 
     @RegisterExtension

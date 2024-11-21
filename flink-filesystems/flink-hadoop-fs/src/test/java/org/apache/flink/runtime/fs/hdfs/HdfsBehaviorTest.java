@@ -24,10 +24,13 @@ import org.apache.flink.core.fs.FileSystemKind;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.util.OperatingSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -35,6 +38,8 @@ import java.io.File;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Behavior tests for HDFS. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HdfsBehaviorTest extends FileSystemBehaviorTestSuite {
 
     private static MiniDFSCluster hdfsCluster;

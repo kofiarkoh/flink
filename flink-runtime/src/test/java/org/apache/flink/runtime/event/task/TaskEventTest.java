@@ -20,7 +20,10 @@ package org.apache.flink.runtime.event.task;
 
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -29,9 +32,11 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
- * This class contains serialization tests concerning task events derived from {@link
- * org.apache.flink.runtime.event.AbstractEvent}.
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains serialization tests
+ * concerning task events derived from {@link org.apache.flink.runtime.event.AbstractEvent}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskEventTest {
     /** This test checks the serialization/deserialization of {@link IntegerTaskEvent} objects. */
     @Test

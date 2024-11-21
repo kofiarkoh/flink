@@ -21,14 +21,17 @@ package org.apache.flink.runtime.io.network.partition;
 import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 import org.apache.flink.runtime.io.network.buffer.BufferConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils.createFilledFinishedBufferConsumer;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Basic subpartition behaviour tests. */
-abstract class SubpartitionTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SubpartitionTestBase {
 
     /** Return the subpartition to be tested. */
     abstract ResultSubpartition createSubpartition() throws Exception;

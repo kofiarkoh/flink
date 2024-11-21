@@ -32,7 +32,10 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 import org.apache.flink.streaming.runtime.watermarkstatus.WatermarkStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -50,6 +53,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests that validate correct handling of watermark generation in the {@link ReaderOutput} as
  * created by the {@link ProgressiveTimestampsAndWatermarks}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorEventTimeTest {
 
     @ParameterizedTest

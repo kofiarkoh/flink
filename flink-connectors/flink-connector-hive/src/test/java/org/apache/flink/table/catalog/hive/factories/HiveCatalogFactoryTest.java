@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive.factories;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.table.api.ValidationException;
@@ -51,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 /** Test for {@link HiveCatalog} created by {@link HiveCatalogFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveCatalogFactoryTest extends TestLogger {
 
     private static final URL CONF_DIR =

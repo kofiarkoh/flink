@@ -20,6 +20,8 @@ package org.apache.flink.runtime.rest.messages;
 
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
@@ -30,6 +32,8 @@ import java.util.Collections;
  * unmarshalled.
  */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobExceptionsInfoWithHistoryNoRootTest
         extends RestResponseMarshallingTestBase<JobExceptionsInfoWithHistory> {
     @Override

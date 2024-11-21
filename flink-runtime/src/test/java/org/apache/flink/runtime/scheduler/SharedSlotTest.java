@@ -29,7 +29,10 @@ import org.apache.flink.runtime.jobmaster.slotpool.PhysicalSlot;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.runtime.taskmanager.LocalTaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -43,6 +46,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test suite for {@link SharedSlot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SharedSlotTest {
     private static final ExecutionVertexID EV1 = createRandomExecutionVertexId();
     private static final ExecutionVertexID EV2 = createRandomExecutionVertexId();

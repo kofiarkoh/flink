@@ -21,7 +21,10 @@ package org.apache.flink.connector.base.source.utils;
 import org.apache.flink.connector.base.source.reader.mocks.TestingSourceSplit;
 import org.apache.flink.core.io.SimpleVersionedSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -33,6 +36,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link SerdeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SerdeUtilsTest {
 
     private static final int READER0 = 0;

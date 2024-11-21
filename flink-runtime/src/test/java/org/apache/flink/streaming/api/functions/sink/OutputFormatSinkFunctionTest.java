@@ -23,10 +23,15 @@ import org.apache.flink.api.common.io.OutputFormat;
 import org.apache.flink.api.common.io.RichOutputFormat;
 import org.apache.flink.streaming.api.functions.sink.legacy.OutputFormatSinkFunction;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 
 /** Tests for {@link OutputFormatSinkFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OutputFormatSinkFunctionTest {
 
     @Test

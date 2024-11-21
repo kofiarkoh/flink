@@ -37,7 +37,10 @@ import org.apache.flink.runtime.taskexecutor.exceptions.SlotAllocationException;
 import org.apache.flink.runtime.testutils.SystemExitTrackingSecurityManager;
 import org.apache.flink.util.function.FunctionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +55,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** IT Cases of {@link FineGrainedSlotManager}. */
-abstract class AbstractFineGrainedSlotManagerITCase extends FineGrainedSlotManagerTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractFineGrainedSlotManagerITCase extends FineGrainedSlotManagerTestBase {
 
     // ---------------------------------------------------------------------------------------------
     // Requirement declaration

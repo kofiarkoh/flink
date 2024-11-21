@@ -22,7 +22,10 @@ import org.apache.flink.api.common.resources.CPUResource;
 import org.apache.flink.api.common.resources.ExternalResource;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -31,6 +34,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests for ResourceSpec class, including its all public api: isValid, lessThanOrEqual, equals,
  * hashCode and merge.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceSpecTest {
     private static final String EXTERNAL_RESOURCE_NAME = "gpu";
 

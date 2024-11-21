@@ -21,12 +21,18 @@ package org.apache.flink.runtime.highavailability.nonha.embedded;
 import org.apache.flink.runtime.highavailability.JobResultStore;
 import org.apache.flink.runtime.highavailability.JobResultStoreContractTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 
 /**
  * Tests for the {@link EmbeddedJobResultStore} implementation of the {@link JobResultStore}'s
  * contracts.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class EmbeddedJobResultStoreContractTest implements JobResultStoreContractTest {
     @Override
     public JobResultStore createJobResultStore() throws IOException {

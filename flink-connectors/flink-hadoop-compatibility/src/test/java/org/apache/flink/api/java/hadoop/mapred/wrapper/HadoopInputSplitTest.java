@@ -20,6 +20,8 @@ package org.apache.flink.api.java.hadoop.mapred.wrapper;
 
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configurable;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -28,6 +30,7 @@ import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapred.JobConfigurable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -39,6 +42,8 @@ import java.util.function.Consumer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HadoopInputSplit}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopInputSplitTest {
 
     private JobConf conf;

@@ -18,7 +18,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -28,6 +31,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link IterableUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class IterableUtilsTest {
 
     private final Iterable<Integer> testIterable = Arrays.asList(1, 8, 5, 3, 8);

@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.catalog.CatalogFunction;
 import org.apache.flink.table.catalog.CatalogFunctionImpl;
@@ -28,8 +33,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assumptions.assumeThat;
 
-/** Base class for testing HiveCatalog. */
-public abstract class HiveCatalogMetadataTestBase extends CatalogTestBase {
+/** Base @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class for testing HiveCatalog. */
+public abstract @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class HiveCatalogMetadataTestBase extends CatalogTestBase {
 
     // ------ table and column stats ------
 

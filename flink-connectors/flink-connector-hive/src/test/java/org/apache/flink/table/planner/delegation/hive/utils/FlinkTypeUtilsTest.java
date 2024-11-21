@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.planner.delegation.hive.utils;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.planner.calcite.FlinkTypeFactory;
 import org.apache.flink.table.planner.calcite.FlinkTypeSystem;
@@ -47,6 +52,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link org.apache.flink.table.planner.utils.FlinkTypeUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkTypeUtilsTest {
     static Stream<LogicalType> testInternalToRelType() {
         return Stream.of(

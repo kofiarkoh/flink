@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.endpoint.hive.util;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.catalog.Column;
@@ -102,6 +107,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link ThriftObjectConversions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ThriftObjectConversionsTest {
 
     @Test

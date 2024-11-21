@@ -22,8 +22,14 @@ import org.apache.flink.api.common.typeutils.ComparatorTestBase;
 import org.apache.flink.api.common.typeutils.TypeComparator;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.sql.Time;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlTimeComparatorTest extends ComparatorTestBase<Time> {
 
     @SuppressWarnings("unchecked")

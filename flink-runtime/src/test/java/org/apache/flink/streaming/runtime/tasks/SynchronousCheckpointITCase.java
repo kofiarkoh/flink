@@ -65,8 +65,11 @@ import org.apache.flink.runtime.util.TestingTaskManagerRuntimeInfo;
 import org.apache.flink.streaming.runtime.tasks.mailbox.MailboxDefaultAction;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
@@ -128,7 +131,8 @@ class SynchronousCheckpointITCase {
      * A {@link StreamTask} which makes sure that the different phases of a synchronous checkpoint
      * are reflected in the {@link SynchronousCheckpointITCase#EVENT_QUEUE}.
      */
-    public static class SynchronousCheckpointTestingTask extends StreamTask {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class SynchronousCheckpointTestingTask extends StreamTask {
         // Flag to emit the first event only once.
         private boolean isRunning;
 

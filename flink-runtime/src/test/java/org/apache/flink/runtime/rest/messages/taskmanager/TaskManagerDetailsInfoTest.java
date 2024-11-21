@@ -24,6 +24,8 @@ import org.apache.flink.runtime.resourcemanager.TaskManagerInfoWithSlots;
 import org.apache.flink.runtime.rest.messages.RestResponseMarshallingTestBase;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
@@ -34,6 +36,8 @@ import java.util.UUID;
 
 /** Tests (un)marshalling of {@link TaskManagerDetailsInfo}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskManagerDetailsInfoTest extends RestResponseMarshallingTestBase<TaskManagerDetailsInfo> {
 
     private static final Random random = new Random();

@@ -23,11 +23,16 @@ import org.apache.flink.kubernetes.kubeclient.FlinkPod;
 import org.apache.flink.kubernetes.kubeclient.KubernetesJobManagerSpecification;
 import org.apache.flink.kubernetes.kubeclient.parameters.KubernetesJobManagerParameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.PodBuilder;
 import io.fabric8.kubernetes.api.model.PodTemplateSpec;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** General tests for the {@link KubernetesJobManagerFactory} with pod template. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesJobManagerFactoryWithPodTemplateTest
         extends KubernetesFactoryWithPodTemplateTestBase {
 

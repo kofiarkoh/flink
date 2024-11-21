@@ -54,8 +54,11 @@ import org.apache.flink.traces.SpanBuilder;
 import org.apache.flink.util.IterableUtils;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.Logger;
@@ -77,6 +80,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link DefaultExecutionGraphFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionGraphFactoryTest {
 
     private static final Logger log =

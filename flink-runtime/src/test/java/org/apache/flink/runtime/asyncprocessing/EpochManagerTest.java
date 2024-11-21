@@ -22,13 +22,18 @@ import org.apache.flink.runtime.asyncprocessing.EpochManager.Epoch;
 import org.apache.flink.runtime.asyncprocessing.EpochManager.EpochStatus;
 import org.apache.flink.runtime.asyncprocessing.EpochManager.ParallelMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Test for Epoch Manager. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class EpochManagerTest {
     @Test
     void testBasic() {

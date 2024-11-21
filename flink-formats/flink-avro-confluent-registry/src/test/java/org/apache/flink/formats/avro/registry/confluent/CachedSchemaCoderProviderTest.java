@@ -20,11 +20,14 @@ package org.apache.flink.formats.avro.registry.confluent;
 
 import org.apache.flink.mock.Whitebox;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.confluent.kafka.schemaregistry.client.CachedSchemaRegistryClient;
 import io.confluent.kafka.schemaregistry.client.rest.RestService;
 import io.confluent.kafka.schemaregistry.client.security.basicauth.BasicAuthCredentialProvider;
 import io.confluent.kafka.schemaregistry.client.security.bearerauth.BearerAuthCredentialProvider;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.net.ssl.SSLSocketFactory;
 
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for properties set by {@link RegistryAvroFormatFactory} in {@link
  * CachedSchemaCoderProvider}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CachedSchemaCoderProviderTest {
 
     @Test

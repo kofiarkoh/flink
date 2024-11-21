@@ -29,6 +29,8 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.formats.parquet.ParquetWriterFactory;
 import org.apache.flink.formats.parquet.generated.Address;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
@@ -36,6 +38,7 @@ import org.apache.avro.reflect.ReflectData;
 import org.apache.avro.specific.SpecificData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Unit test for {@link AvroParquetRecordFormat} and {@link
  * org.apache.flink.connector.file.src.reader.StreamFormat}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroParquetRecordFormatTest {
 
     private static final String USER_PARQUET_FILE = "user.parquet";

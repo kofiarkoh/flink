@@ -18,7 +18,10 @@
 
 package org.apache.flink.configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashSet;
 
@@ -28,6 +31,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Test that checks that all packages that need to be loaded 'parent-first' are also in the
  * parent-first patterns.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ParentFirstPatternsTest {
 
     private static final HashSet<String> PARENT_FIRST_PACKAGES =

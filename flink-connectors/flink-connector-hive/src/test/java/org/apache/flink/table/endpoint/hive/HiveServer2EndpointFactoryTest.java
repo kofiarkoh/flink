@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.endpoint.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.configuration.ConfigOption;
 import org.apache.flink.configuration.Configuration;
@@ -60,6 +65,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link HiveServer2EndpointFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveServer2EndpointFactoryTest {
 
     private final MockedSqlGatewayService service = new MockedSqlGatewayService();

@@ -30,7 +30,10 @@ import org.apache.flink.runtime.asyncprocessing.StateRequestType;
 import org.apache.flink.runtime.mailbox.SyncMailboxExecutor;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +44,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 /** Tests for {@link AbstractReducingState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractReducingStateTest extends AbstractKeyedStateTestBase {
 
     @Test

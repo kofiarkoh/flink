@@ -18,10 +18,15 @@
 
 package org.apache.flink.runtime.iterative.concurrent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for {@link SuperstepKickoffLatch}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SuperstepKickoffLatchTest {
 
     @Test

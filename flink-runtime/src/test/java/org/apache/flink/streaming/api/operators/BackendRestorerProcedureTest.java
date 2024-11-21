@@ -36,7 +36,10 @@ import org.apache.flink.runtime.util.BlockingFSDataInputStream;
 import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.FunctionWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -55,6 +58,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link BackendRestorerProcedure}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BackendRestorerProcedureTest {
 
     private final FunctionWithException<

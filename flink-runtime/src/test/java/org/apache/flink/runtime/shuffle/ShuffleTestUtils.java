@@ -20,7 +20,13 @@ package org.apache.flink.runtime.shuffle;
 
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Utils for shuffle related tests. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ShuffleTestUtils {
 
     public static final ShuffleMaster<?> DEFAULT_SHUFFLE_MASTER =

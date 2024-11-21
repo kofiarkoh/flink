@@ -42,7 +42,10 @@ import org.apache.flink.streaming.util.CollectorOutput;
 import org.apache.flink.streaming.util.MockStreamTask;
 import org.apache.flink.streaming.util.MockStreamTaskBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 /** Tests for the emission of latency markers by {@link StreamSource} operators. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamSourceOperatorLatencyMetricsTest {
 
     private static final long maxProcessingTime = 100L;

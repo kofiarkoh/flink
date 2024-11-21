@@ -27,13 +27,18 @@ import org.apache.flink.streaming.runtime.tasks.mailbox.MailboxProcessor;
 import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailbox;
 import org.apache.flink.streaming.runtime.tasks.mailbox.TaskMailboxImpl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** {@link BarrierAlignmentUtil} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BarrierAlignmentUtilTest {
 
     @Test

@@ -21,11 +21,16 @@ package org.apache.flink.datastream.impl.context;
 import org.apache.flink.datastream.api.context.JobInfo;
 import org.apache.flink.runtime.jobgraph.JobType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DefaultJobInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultJobInfoTest {
     @Test
     void testGetJobName() {

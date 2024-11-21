@@ -24,7 +24,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializerConditions;
 import org.apache.flink.api.common.typeutils.TypeSerializerSchemaCompatibility;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,6 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link MapSerializerSnapshot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MapSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<Map<Integer, String>, Map<Integer, String>> {
 

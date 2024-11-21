@@ -25,10 +25,13 @@ import org.apache.flink.kubernetes.kubeclient.KubernetesPodTestBase;
 import org.apache.flink.kubernetes.kubeclient.parameters.AbstractKubernetesParametersTest;
 import org.apache.flink.kubernetes.utils.Constants;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.Volume;
 import io.fabric8.kubernetes.api.model.VolumeMount;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,6 +40,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link KerberosMountDecoratorTest}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KerberosMountDecoratorTest extends KubernetesPodTestBase {
 
     private KerberosMountDecorator kerberosMountDecorator;

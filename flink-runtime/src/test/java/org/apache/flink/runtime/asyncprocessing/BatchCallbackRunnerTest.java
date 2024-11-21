@@ -22,7 +22,10 @@ import org.apache.flink.api.common.operators.MailboxExecutor;
 import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -31,6 +34,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link BatchCallbackRunner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchCallbackRunnerTest {
 
     private static final ThrowingRunnable<? extends Exception> DUMMY = () -> {};

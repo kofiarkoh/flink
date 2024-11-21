@@ -27,7 +27,10 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,6 +40,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for batch compact coordinator. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BatchCompactCoordinatorTest extends AbstractCompactTestBase {
 
     @Test

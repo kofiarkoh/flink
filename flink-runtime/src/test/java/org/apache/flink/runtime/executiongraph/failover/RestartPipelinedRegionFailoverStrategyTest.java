@@ -30,7 +30,10 @@ import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingExecutionVer
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingResultPartition;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingTopology;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -42,6 +45,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests the failure handling logic of the {@link RestartPipelinedRegionFailoverStrategy}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RestartPipelinedRegionFailoverStrategyTest {
 
     /**

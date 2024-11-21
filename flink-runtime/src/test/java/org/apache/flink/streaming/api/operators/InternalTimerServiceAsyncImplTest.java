@@ -36,12 +36,17 @@ import org.apache.flink.streaming.runtime.tasks.ProcessingTimeService;
 import org.apache.flink.streaming.runtime.tasks.StreamTaskCancellationContext;
 import org.apache.flink.streaming.runtime.tasks.TestProcessingTimeService;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link InternalTimerServiceAsyncImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InternalTimerServiceAsyncImplTest {
     private AsyncExecutionController<String> asyncExecutionController;
     private TestKeyContext keyContext;

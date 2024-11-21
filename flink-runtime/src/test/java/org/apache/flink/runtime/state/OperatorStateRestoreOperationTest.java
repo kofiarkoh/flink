@@ -27,6 +27,9 @@ import org.apache.flink.runtime.checkpoint.CheckpointOptions;
 import org.apache.flink.runtime.checkpoint.RoundRobinOperatorStateRepartitioner;
 import org.apache.flink.runtime.state.memory.MemCheckpointStreamFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.testcontainers.utility.ThrowingFunction;
@@ -45,6 +48,8 @@ import java.util.stream.IntStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link org.apache.flink.runtime.state.OperatorStateRestoreOperation}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OperatorStateRestoreOperationTest {
 
     private static ThrowingFunction<Collection<OperatorStateHandle>, OperatorStateBackend>

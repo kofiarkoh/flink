@@ -44,6 +44,9 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonCre
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -352,7 +355,8 @@ public class MultipartUploadExtension implements CustomExtension {
             return CompletableFuture.completedFuture(EmptyResponseBody.getInstance());
         }
 
-        private static final class MultipartJsonHeaders extends TestHeadersBase<TestRequestBody> {
+        private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+        class MultipartJsonHeaders extends TestHeadersBase<TestRequestBody> {
             private static final MultipartJsonHandler.MultipartJsonHeaders INSTANCE =
                     new MultipartJsonHandler.MultipartJsonHeaders();
 
@@ -400,7 +404,8 @@ public class MultipartUploadExtension implements CustomExtension {
         }
     }
 
-    private static class MultipartFileHeaders extends TestHeadersBase<EmptyRequestBody> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MultipartFileHeaders
+            extends TestHeadersBase<EmptyRequestBody> {
         static final MultipartFileHeaders INSTANCE = new MultipartFileHeaders();
 
         private MultipartFileHeaders() {}

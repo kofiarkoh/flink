@@ -19,6 +19,9 @@
 package org.apache.flink.metrics.otel;
 
 import com.github.dockerjava.api.command.InspectContainerResponse;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.images.builder.ImageFromDockerfile;
 import org.testcontainers.images.builder.dockerfile.DockerfileBuilder;
@@ -31,6 +34,8 @@ import java.nio.file.Paths;
 import java.util.Locale;
 
 /** {@link OtelTestContainer} provides an {@code Otel} test instance. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OtelTestContainer extends GenericContainer<OtelTestContainer> {
     private static final int DEFAULT_HTTP_PORT = 4318;
     private static final int DEFAULT_GRPC_PORT = 4317;

@@ -20,10 +20,16 @@ package org.apache.flink.runtime.state.ttl;
 
 import org.apache.flink.api.common.typeutils.base.IntSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Arrays;
 import java.util.Collections;
 
 /** Test suite for {@link TtlListState} with elements of fixed byte length in serialized form. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlFixedLenElemListStateTestContext extends TtlListStateTestContextBase<Integer> {
     TtlFixedLenElemListStateTestContext() {
         super(IntSerializer.INSTANCE);

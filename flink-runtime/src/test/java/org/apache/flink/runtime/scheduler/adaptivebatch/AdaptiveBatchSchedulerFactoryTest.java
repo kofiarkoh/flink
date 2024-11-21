@@ -27,7 +27,10 @@ import org.apache.flink.runtime.scheduler.strategy.DefaultInputConsumableDecider
 import org.apache.flink.runtime.scheduler.strategy.InputConsumableDecider;
 import org.apache.flink.runtime.scheduler.strategy.PartialFinishedInputConsumableDecider;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.JobManagerOptions.HybridPartitionDataConsumeConstraint.ALL_PRODUCERS_FINISHED;
 import static org.apache.flink.configuration.JobManagerOptions.HybridPartitionDataConsumeConstraint.ONLY_FINISHED_PRODUCERS;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link AdaptiveBatchSchedulerFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AdaptiveBatchSchedulerFactoryTest {
     @Test
     void testNotOnlyConsumeFinishedPartitionWithSpeculativeEnable() {

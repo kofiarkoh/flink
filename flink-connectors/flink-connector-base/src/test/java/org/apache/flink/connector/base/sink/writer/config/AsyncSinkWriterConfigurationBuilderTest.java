@@ -18,13 +18,18 @@
 
 package org.apache.flink.connector.base.sink.writer.config;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.connector.base.sink.writer.config.AsyncSinkWriterConfiguration.DEFAULT_FAIL_ON_TIMEOUT;
 import static org.apache.flink.connector.base.sink.writer.config.AsyncSinkWriterConfiguration.DEFAULT_REQUEST_TIMEOUT_MS;
 
 /** Tests for {@link AsyncSinkWriterConfiguration#builder()}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterConfigurationBuilderTest {
     @Test
     void testBuilderSetsValueForTimeoutAndFailOnTimeout() {

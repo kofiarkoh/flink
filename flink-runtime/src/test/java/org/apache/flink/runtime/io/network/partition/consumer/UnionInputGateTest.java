@@ -26,8 +26,11 @@ import org.apache.flink.runtime.io.network.partition.NoOpResultSubpartitionView;
 import org.apache.flink.runtime.io.network.partition.ResultPartitionID;
 import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateTest.TestingResultPartitionManager;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -36,6 +39,8 @@ import static org.apache.flink.runtime.util.NettyShuffleDescriptorBuilder.create
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link UnionInputGate}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class UnionInputGateTest extends InputGateTestBase {
 
     /**

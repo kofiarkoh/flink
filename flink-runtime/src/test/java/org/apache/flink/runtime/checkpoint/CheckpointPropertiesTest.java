@@ -21,11 +21,16 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.core.execution.SavepointFormatType;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the default checkpoint properties. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointPropertiesTest {
 
     /** Tests the external checkpoints properties. */

@@ -24,6 +24,8 @@ import org.apache.flink.runtime.rest.messages.job.SubtaskExecutionAttemptDetails
 import org.apache.flink.runtime.rest.messages.job.metrics.IOMetricsInfo;
 import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
@@ -35,6 +37,8 @@ import java.util.Random;
 
 /** Tests that the {@link JobVertexDetailsInfo} can be marshalled and unmarshalled. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobVertexDetailsInfoTest extends RestResponseMarshallingTestBase<JobVertexDetailsInfo> {
     @Override
     protected Class<JobVertexDetailsInfo> getTestResponseClass() {

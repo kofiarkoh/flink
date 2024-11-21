@@ -27,13 +27,17 @@ import org.apache.flink.runtime.jobmanager.slots.TaskManagerGateway;
 import org.apache.flink.runtime.scheduler.TestingPhysicalSlot;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 /** Test base for {@link SlotSelectionStrategy}. */
-abstract class SlotSelectionStrategyTestBase {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class SlotSelectionStrategyTestBase {
 
     protected final ResourceProfile resourceProfile = ResourceProfile.fromResources(2, 1024);
     protected final ResourceProfile biggerResourceProfile = ResourceProfile.fromResources(3, 1024);

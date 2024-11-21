@@ -21,10 +21,16 @@ package org.apache.flink.api.common.typeutils.base.array;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * A test for the {@link
  * org.apache.flink.api.common.typeutils.base.array.LongPrimitiveArraySerializer}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LongPrimitiveArraySerializerTest extends SerializerTestBase<long[]> {
 
     @Override

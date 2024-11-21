@@ -48,7 +48,10 @@ import static org.apache.flink.formats.hadoop.bulk.HadoopPathBasedPartFileWriter
 import static org.apache.flink.formats.hadoop.bulk.HadoopPathBasedPartFileWriter.HadoopPathBasedPendingFileRecoverableSerializer;
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Base class for testing writing data to the hadoop file system with different configurations. */
+/**
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for testing writing data to the
+ * hadoop file system with different configurations.
+ */
 @ExtendWith(MiniClusterExtension.class)
 class HadoopPathBasedPartFileWriterITCase {
 

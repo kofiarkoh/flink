@@ -32,7 +32,10 @@ import org.apache.flink.table.runtime.connector.source.ScanRuntimeProviderContex
 import org.apache.flink.table.runtime.typeutils.InternalTypeInfo;
 import org.apache.flink.table.types.logical.RowType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -46,6 +49,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /** Tests for {@link DebeziumAvroFormatFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DebeziumAvroFormatFactoryTest {
 
     private static final ResolvedSchema SCHEMA =

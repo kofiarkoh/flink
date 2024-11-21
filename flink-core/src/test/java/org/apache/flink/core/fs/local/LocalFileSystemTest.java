@@ -28,10 +28,13 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.ExecutorUtils;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -57,6 +60,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * This class tests the functionality of the {@link LocalFileSystem} class in its components. In
  * particular, file/directory access, creation, deletion, read, write is tested.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LocalFileSystemTest {
 
     @TempDir private static java.nio.file.Path tempFolder;

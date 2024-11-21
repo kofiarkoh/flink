@@ -21,11 +21,17 @@ package org.apache.flink.api.java.typeutils.runtime;
 import org.apache.flink.FlinkVersion;
 import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /** A {@link TypeSerializerUpgradeTestBase} for the {@link PojoSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PojoSerializerUpgradeTest extends TypeSerializerUpgradeTestBase<Object, Object> {
 
     @Override

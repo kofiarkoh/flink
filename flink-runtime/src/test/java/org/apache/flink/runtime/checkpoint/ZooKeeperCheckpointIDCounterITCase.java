@@ -27,7 +27,10 @@ import org.apache.flink.runtime.zookeeper.ZooKeeperExtension;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 import org.apache.flink.shaded.zookeeper3.org.apache.zookeeper.KeeperException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.concurrent.ExecutionException;
@@ -37,8 +40,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Unit tests for the {@link ZooKeeperCheckpointIDCounter}. The tests are inherited from the test
- * base class {@link CheckpointIDCounterTestBase}.
+ * base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class {@link
+ * CheckpointIDCounterTestBase}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperCheckpointIDCounterITCase extends CheckpointIDCounterTestBase {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

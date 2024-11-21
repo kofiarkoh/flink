@@ -31,8 +31,11 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.Either;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -49,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
  * Tests {@link ExecutionGraph} deployment when offloading job and task information into the BLOB
  * server.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionGraphDeploymentWithBlobServerTest
         extends DefaultExecutionGraphDeploymentTest {
 

@@ -36,7 +36,10 @@ import org.apache.flink.runtime.rpc.TestingRpcServiceExtension;
 import org.apache.flink.runtime.security.token.DelegationTokenManager;
 import org.apache.flink.runtime.util.TestingFatalErrorHandler;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -48,6 +51,8 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the Standalone Resource Manager. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StandaloneResourceManagerTest {
 
     @RegisterExtension

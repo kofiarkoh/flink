@@ -22,7 +22,10 @@ import org.apache.flink.runtime.state.SharedStateRegistry;
 import org.apache.flink.runtime.state.SharedStateRegistryImpl;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
@@ -30,6 +33,8 @@ import static org.apache.flink.runtime.checkpoint.CompletedCheckpointStoreTest.c
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link CheckpointsCleaner} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointsCleanerTest {
 
     @Test

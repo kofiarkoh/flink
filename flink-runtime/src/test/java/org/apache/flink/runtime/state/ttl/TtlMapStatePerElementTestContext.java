@@ -18,7 +18,13 @@
 
 package org.apache.flink.runtime.state.ttl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test suite for per element methods of {@link TtlMapState}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TtlMapStatePerElementTestContext extends TtlMapStateTestContext<String, String> {
     private static final int TEST_KEY = 1;
     private static final String TEST_VAL1 = "test value1";

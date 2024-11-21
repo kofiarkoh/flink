@@ -26,8 +26,11 @@ import org.apache.flink.runtime.fs.hdfs.AbstractHadoopFileSystemITTest;
 import org.apache.flink.testutils.s3.S3TestCredentials;
 
 import com.amazonaws.SdkClientException;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel">consistency
  * guarantees</a> and what the {@link com.facebook.presto.hive.s3.PrestoS3FileSystem} offers.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrestoS3FileSystemITCase extends AbstractHadoopFileSystemITTest {
 
     private static final String TEST_DATA_DIR = "tests-" + UUID.randomUUID();

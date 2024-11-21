@@ -44,7 +44,10 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.types.Either;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nonnull;
@@ -60,6 +63,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link TaskDeploymentDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskDeploymentDescriptorTest {
 
     @TempDir Path temporaryFolder;

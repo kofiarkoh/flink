@@ -20,7 +20,10 @@ package org.apache.flink.types;
 
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -36,6 +39,8 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the serialization of Strings through the StringValue class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StringSerializationTest {
 
     private final Random rnd = new Random(2093486528937460234L);

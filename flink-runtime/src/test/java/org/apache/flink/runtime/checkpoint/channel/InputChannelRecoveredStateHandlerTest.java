@@ -27,14 +27,19 @@ import org.apache.flink.runtime.io.network.partition.consumer.InputGate;
 import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGate;
 import org.apache.flink.runtime.io.network.partition.consumer.SingleInputGateBuilder;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test of different implementation of {@link InputChannelRecoveredStateHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class InputChannelRecoveredStateHandlerTest extends RecoveredChannelStateHandlerTest {
     private static final int preAllocatedSegments = 3;
     private NetworkBufferPool networkBufferPool;

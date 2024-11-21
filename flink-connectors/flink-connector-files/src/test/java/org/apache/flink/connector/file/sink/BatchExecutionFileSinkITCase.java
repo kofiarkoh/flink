@@ -33,6 +33,10 @@ import org.apache.flink.streaming.api.graph.StreamGraph;
 import org.apache.flink.streaming.api.operators.StreamSource;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Tests the functionality of the {@link FileSink} in BATCH mode. */
 class BatchExecutionFileSinkITCase extends FileSinkITBase {
 
@@ -87,7 +91,8 @@ class BatchExecutionFileSinkITCase extends FileSinkITBase {
      * to ensure that our sink (which is also in the pipeline) has the chance to commit the output
      * data.
      */
-    private static class BatchExecutionTestSource extends RichParallelSourceFunction<Integer> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class BatchExecutionTestSource extends RichParallelSourceFunction<Integer> {
 
         private final int numberOfRecords;
 

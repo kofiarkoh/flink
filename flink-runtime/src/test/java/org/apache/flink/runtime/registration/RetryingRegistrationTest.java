@@ -26,10 +26,13 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.concurrent.ScheduledExecutorServiceAdapter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.LoggerFactory;
 
@@ -54,6 +57,8 @@ import static org.mockito.Mockito.when;
  * Tests for the generic retrying registration class, validating the failure, retry, and back-off
  * behavior.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RetryingRegistrationTest {
 
     @RegisterExtension

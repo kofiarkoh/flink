@@ -23,8 +23,11 @@ import org.apache.flink.core.memory.DataInputViewStreamWrapper;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.core.memory.DataOutputViewStreamWrapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
@@ -35,6 +38,8 @@ import static org.assertj.core.api.Assertions.assertThatComparable;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.within;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PrimitiveDataTypeTest {
 
     private PipedInputStream in;

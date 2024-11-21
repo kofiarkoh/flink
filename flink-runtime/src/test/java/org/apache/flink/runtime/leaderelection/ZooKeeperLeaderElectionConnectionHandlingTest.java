@@ -32,8 +32,11 @@ import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFram
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.state.ConnectionState;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.state.ConnectionStateListener;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.time.Duration;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Test behaviors of {@link ZooKeeperLeaderElectionDriver} when losing the connection to ZooKeeper.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperLeaderElectionConnectionHandlingTest {
 
     @RegisterExtension

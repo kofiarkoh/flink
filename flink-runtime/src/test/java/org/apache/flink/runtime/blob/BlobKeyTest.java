@@ -22,7 +22,10 @@ import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -33,8 +36,11 @@ import static org.apache.flink.runtime.blob.BlobKey.BlobType.TRANSIENT_BLOB;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-/** This class contains unit tests for the {@link BlobKey} class. */
-final class BlobKeyTest {
+/**
+ * This @ExtendWith(CTestJUnit5Extension.class) @CTestClass class contains unit tests for the {@link
+ * BlobKey} class.
+ */
+final @ExtendWith(CTestJUnit5Extension.class) @CTestClass class BlobKeyTest {
     /** The first key array to be used during the unit tests. */
     private static final byte[] KEY_ARRAY_1 = new byte[BlobKey.SIZE];
 

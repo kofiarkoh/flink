@@ -17,7 +17,10 @@
  */
 package org.apache.flink.runtime.state.metainfo;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -25,6 +28,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * This test fixes the enum constants in {@link StateMetaInfoSnapshot} because any changes can break
  * backwards compatibility. Consider this before changing this test.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StateMetaInfoSnapshotEnumConstantsTest {
 
     @Test

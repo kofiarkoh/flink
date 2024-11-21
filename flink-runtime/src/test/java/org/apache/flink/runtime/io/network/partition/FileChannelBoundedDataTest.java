@@ -24,9 +24,12 @@ import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.runtime.io.network.partition.ResultSubpartition.BufferAndBacklog;
 import org.apache.flink.runtime.util.EnvironmentInformation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -37,6 +40,8 @@ import static org.apache.flink.runtime.io.network.partition.PartitionTestUtils.c
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that read the BoundedBlockingSubpartition with multiple threads in parallel. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileChannelBoundedDataTest extends BoundedDataTestBase {
 
     private static final String tempDir = EnvironmentInformation.getTemporaryFileDirectory();

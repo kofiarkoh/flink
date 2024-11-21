@@ -24,7 +24,10 @@ import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingExecutionVertex;
 import org.apache.flink.runtime.scheduler.strategy.TestingSchedulingPipelinedRegion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
@@ -32,6 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test for {@link PipelinedRegionExecutionView}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PipelinedRegionExecutionViewTest {
 
     private static final ExecutionVertexID TEST_EXECUTION_VERTEX_ID =

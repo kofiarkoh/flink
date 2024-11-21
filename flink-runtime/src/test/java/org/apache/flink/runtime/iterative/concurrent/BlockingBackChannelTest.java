@@ -22,7 +22,10 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.runtime.iterative.io.SerializedUpdateBuffer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
@@ -34,6 +37,8 @@ import java.util.concurrent.BlockingQueue;
 import static org.junit.Assert.assertEquals;
 
 /** Tests for {@link BlockingBackChannel}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BlockingBackChannelTest {
 
     private static final int NUM_ITERATIONS = 3;

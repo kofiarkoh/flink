@@ -18,12 +18,17 @@
 
 package org.apache.flink.api.common.accumulators;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.within;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AverageAccumulatorTest {
 
     @Test

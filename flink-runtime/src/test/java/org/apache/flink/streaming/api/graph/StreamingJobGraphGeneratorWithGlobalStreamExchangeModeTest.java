@@ -27,7 +27,10 @@ import org.apache.flink.streaming.api.transformations.StreamExchangeMode;
 import org.apache.flink.streaming.runtime.partitioner.ForwardPartitioner;
 import org.apache.flink.streaming.runtime.partitioner.RescalePartitioner;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for {@link StreamingJobGraphGenerator} on different {@link GlobalStreamExchangeMode}
  * settings.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamingJobGraphGeneratorWithGlobalStreamExchangeModeTest {
 
     @Test

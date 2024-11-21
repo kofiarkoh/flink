@@ -31,10 +31,13 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.types.Value;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,6 +57,8 @@ import static org.assertj.core.api.Assertions.fail;
  * public (or for every private field, there has to be a public getter/setter) everything else is a
  * generic type (that can't be used for field selection)
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PojoTypeExtractionTest {
 
     /** Simple test type that implements the {@link Value} interface. */

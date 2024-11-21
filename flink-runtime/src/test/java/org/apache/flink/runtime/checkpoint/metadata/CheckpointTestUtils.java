@@ -48,6 +48,10 @@ import org.apache.flink.runtime.state.filemerging.SegmentFileStateHandle;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.nio.charset.StandardCharsets;
@@ -70,6 +74,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * A collection of utility methods for testing the (de)serialization of checkpoint metadata for
  * persistence.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class CheckpointTestUtils {
 
     /**

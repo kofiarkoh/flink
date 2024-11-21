@@ -29,7 +29,10 @@ import org.apache.flink.connector.base.source.reader.synchronization.FutureCompl
 import org.apache.flink.core.testutils.CheckedThread;
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -46,6 +49,8 @@ import static org.apache.flink.test.util.TestUtils.waitUntil;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for {@link SplitFetcher}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitFetcherTest {
 
     @Test

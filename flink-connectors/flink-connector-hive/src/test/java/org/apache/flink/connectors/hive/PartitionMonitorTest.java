@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -48,6 +53,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ContinuousHiveSplitEnumerator.PartitionMonitor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PartitionMonitorTest {
 
     private ContinuousHiveSplitEnumerator.PartitionMonitor<Long> partitionMonitor;

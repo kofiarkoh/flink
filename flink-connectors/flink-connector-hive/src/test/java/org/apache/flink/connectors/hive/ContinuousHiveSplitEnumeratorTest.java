@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
@@ -43,6 +48,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit tests for the {@link ContinuousHiveSplitEnumerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ContinuousHiveSplitEnumeratorTest {
 
     @Test

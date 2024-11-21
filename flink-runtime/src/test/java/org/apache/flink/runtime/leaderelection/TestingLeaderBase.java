@@ -27,8 +27,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Base class which provides some convenience functions for testing purposes of {@link
- * LeaderContender}.
+ * Base @ExtendWith(CTestJUnit5Extension.class) @CTestClass class which provides some convenience
+ * functions for testing purposes of {@link LeaderContender}.
  */
 public class TestingLeaderBase {
     // The queues will be offered by subclasses

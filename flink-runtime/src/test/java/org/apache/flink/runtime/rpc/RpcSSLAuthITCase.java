@@ -24,7 +24,10 @@ import org.apache.flink.configuration.SecurityOptions;
 import org.apache.flink.runtime.rpc.exceptions.RpcConnectionException;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -140,7 +143,8 @@ class RpcSSLAuthITCase {
     }
 
     /** doc. */
-    public static class TestEndpoint extends RpcEndpoint implements TestGateway {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestEndpoint
+            extends RpcEndpoint implements TestGateway {
 
         public TestEndpoint(RpcService rpcService) {
             super(rpcService);

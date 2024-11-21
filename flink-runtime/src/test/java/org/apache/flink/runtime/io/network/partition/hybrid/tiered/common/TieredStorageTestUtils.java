@@ -23,10 +23,16 @@ import org.apache.flink.runtime.io.network.buffer.Buffer;
 import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.file.PartitionFileWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /** Test utils for tiered storage. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TieredStorageTestUtils {
 
     public static List<PartitionFileWriter.SubpartitionBufferContext> generateBuffersToWrite(

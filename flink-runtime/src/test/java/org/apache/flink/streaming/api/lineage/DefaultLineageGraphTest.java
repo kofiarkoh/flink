@@ -20,7 +20,10 @@ package org.apache.flink.streaming.api.lineage;
 
 import org.apache.flink.api.connector.source.Boundedness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Testing for lineage graph. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultLineageGraphTest {
     @Test
     void testLineageGraph() {
@@ -68,8 +73,8 @@ class DefaultLineageGraphTest {
     }
 
     /** Testing source lineage vertex. */
-    static class TestingSourceLineageVertex extends TestingLineageVertex
-            implements SourceLineageVertex {
+    static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestingSourceLineageVertex
+            extends TestingLineageVertex implements SourceLineageVertex {
 
         private TestingSourceLineageVertex(String id) {
             super(id);

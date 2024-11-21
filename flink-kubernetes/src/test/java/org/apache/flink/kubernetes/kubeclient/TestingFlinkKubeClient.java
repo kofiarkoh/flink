@@ -213,7 +213,10 @@ public class TestingFlinkKubeClient implements FlinkKubeClient {
         return new Builder();
     }
 
-    /** Builder class for {@link TestingFlinkKubeClient}. */
+    /**
+     * Builder @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for {@link
+     * TestingFlinkKubeClient}.
+     */
     public static class Builder {
         private Function<KubernetesPod, CompletableFuture<Void>> createTaskManagerPodFunction =
                 (ignore) -> FutureUtils.completedVoidFuture();

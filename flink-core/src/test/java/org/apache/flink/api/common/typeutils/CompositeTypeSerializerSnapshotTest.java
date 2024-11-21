@@ -24,7 +24,10 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputSerializer;
 import org.apache.flink.core.memory.DataOutputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -33,6 +36,8 @@ import static org.apache.flink.api.common.typeutils.CompositeTypeSerializerSnaps
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test suite for the {@link CompositeTypeSerializerSnapshot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompositeTypeSerializerSnapshotTest {
 
     // ------------------------------------------------------------------------------------------------
@@ -356,7 +361,10 @@ class CompositeTypeSerializerSnapshotTest {
         }
     }
 
-    /** Snapshot class for the {@link TestCompositeTypeSerializer}. */
+    /**
+     * Snapshot @ExtendWith(CTestJUnit5Extension.class) @CTestClass class for the {@link
+     * TestCompositeTypeSerializer}.
+     */
     public static class TestCompositeTypeSerializerSnapshot
             extends CompositeTypeSerializerSnapshot<String, TestCompositeTypeSerializer> {
 

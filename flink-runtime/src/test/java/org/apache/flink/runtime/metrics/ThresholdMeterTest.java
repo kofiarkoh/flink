@@ -21,8 +21,11 @@ package org.apache.flink.runtime.metrics;
 import org.apache.flink.runtime.metrics.ThresholdMeter.ThresholdExceedException;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.within;
 
 /** Tests for {@link ThresholdMeter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ThresholdMeterTest {
     private static final double THRESHOLD_LARGE = 1000.0;
     private static final double THRESHOLD_SMALL = 5.0;

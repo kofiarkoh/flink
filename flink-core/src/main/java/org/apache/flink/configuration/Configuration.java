@@ -28,6 +28,7 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.util.CollectionUtil;
 
+import edu.illinois.ConfigTracker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,6 +84,14 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
     /** Creates a new empty configuration. */
     public Configuration() {
         this.confData = new HashMap<>();
+        ConfigTracker.injectConfig(
+                (paramName, paramValue) -> {
+                    ConfigOption<String> c =
+                            ConfigOptions.key(paramName)
+                                    .stringType()
+                                    .defaultValue((String) paramValue);
+                    set(c, c.defaultValue());
+                });
     }
 
     /**
@@ -346,6 +355,7 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
      */
     @Override
     public <T> T get(ConfigOption<T> option) {
+        ConfigTracker.markParamAsUsed(option.key());
         return getOptional(option).orElseGet(option::defaultValue);
     }
 
@@ -360,7 +370,16 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
      */
     @PublicEvolving
     public <T> T get(ConfigOption<T> configOption, T overrideDefault) {
+        ConfigTracker.markParamAsUsed(configOption.key());
         return getOptional(configOption).orElse(overrideDefault);
+    }
+
+    @Override
+    public <T> Configuration set(ConfigOption<T> option, T value) {
+        final boolean canBePrefixMap = canBePrefixMap(option);
+        setValueInternal(option.key(), value, canBePrefixMap);
+        ConfigTracker.markParamAsSet(option.key());
+        return this;
     }
 
     @Override
@@ -383,13 +402,6 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
                                     rawValue.map(Object::toString).orElse(""), option.key()),
                     e);
         }
-    }
-
-    @Override
-    public <T> Configuration set(ConfigOption<T> option, T value) {
-        final boolean canBePrefixMap = canBePrefixMap(option);
-        setValueInternal(option.key(), value, canBePrefixMap);
-        return this;
     }
 
     // --------------------------------------------------------------------------------------------

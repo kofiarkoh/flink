@@ -20,7 +20,10 @@ package org.apache.flink.runtime.entrypoint;
 
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -28,6 +31,8 @@ import static org.junit.Assert.assertThat;
 /**
  * ClusterEntryPointExceptionUtilsTest checks whether the OOM message enrichment works as expected.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClusterEntryPointExceptionUtilsTest extends TestLogger {
 
     @Test

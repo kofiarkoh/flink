@@ -21,6 +21,10 @@ package org.apache.flink.runtime.io.network.buffer;
 import org.apache.flink.core.memory.MemorySegment;
 import org.apache.flink.core.memory.MemorySegmentFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.nio.ByteBuffer;
@@ -31,6 +35,8 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Utility class for create {@link BufferBuilder}, {@link BufferConsumer} and {@link Buffer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class BufferBuilderTestUtils {
     public static final int BUFFER_SIZE = 32 * 1024;
 

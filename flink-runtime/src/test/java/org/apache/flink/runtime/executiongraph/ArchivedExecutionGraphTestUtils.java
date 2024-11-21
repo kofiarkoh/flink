@@ -23,6 +23,10 @@ import org.apache.flink.runtime.execution.ExecutionState;
 import org.apache.flink.util.OptionalFailure;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,6 +37,8 @@ import java.util.Map.Entry;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ArchivedExecutionGraphTestUtils {
 
     private ArchivedExecutionGraphTestUtils() {}

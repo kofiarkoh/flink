@@ -29,8 +29,11 @@ import org.apache.flink.util.function.FunctionWithException;
 
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.annotation.Nullable;
@@ -51,6 +54,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the error handling in case of a suspended connection to the ZooKeeper instance when
  * retrieving the leader information.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ZooKeeperLeaderRetrievalConnectionHandlingTest {
 
     @RegisterExtension

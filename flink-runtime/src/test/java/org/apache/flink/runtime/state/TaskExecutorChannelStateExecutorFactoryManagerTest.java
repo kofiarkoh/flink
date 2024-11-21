@@ -21,12 +21,17 @@ package org.apache.flink.runtime.state;
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.checkpoint.channel.ChannelStateWriteRequestExecutorFactory;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link TaskExecutorChannelStateExecutorFactoryManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TaskExecutorChannelStateExecutorFactoryManagerTest {
 
     @Test

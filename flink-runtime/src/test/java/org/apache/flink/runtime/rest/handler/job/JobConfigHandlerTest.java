@@ -35,7 +35,10 @@ import org.apache.flink.runtime.rest.messages.JobMessageParameters;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,6 +47,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link JobConfigHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobConfigHandlerTest {
 
     @Test

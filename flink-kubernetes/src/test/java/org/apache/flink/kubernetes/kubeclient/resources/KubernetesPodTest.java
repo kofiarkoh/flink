@@ -18,14 +18,19 @@
 
 package org.apache.flink.kubernetes.kubeclient.resources;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.PodBuilder;
 import io.fabric8.kubernetes.api.model.PodStatusBuilder;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link KubernetesPod}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesPodTest {
 
     @Test

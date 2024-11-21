@@ -32,7 +32,10 @@ import org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader;
 import org.apache.flink.runtime.state.changelog.StateChangelogStorageView;
 import org.apache.flink.runtime.state.changelog.StateChangelogWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -43,6 +46,8 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TaskExecutorStateChangelogStoragesManager}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskExecutorStateChangelogStoragesManagerTest {
 
     @Test

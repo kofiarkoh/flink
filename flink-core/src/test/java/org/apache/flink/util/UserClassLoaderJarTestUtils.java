@@ -18,6 +18,10 @@
 
 package org.apache.flink.util;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.tools.DiagnosticCollector;
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
@@ -36,6 +40,8 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
 
 /** Mainly used for testing classloading. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class UserClassLoaderJarTestUtils {
 
     /** Private constructor to prevent instantiation. */

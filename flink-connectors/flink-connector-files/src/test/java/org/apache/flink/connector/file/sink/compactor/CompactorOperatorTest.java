@@ -44,8 +44,11 @@ import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.types.Either;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.ListAssert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -63,6 +66,8 @@ import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link CompactorOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CompactorOperatorTest extends AbstractCompactTestBase {
 
     @Test

@@ -22,14 +22,18 @@ import org.apache.flink.api.common.serialization.SerializerConfig;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Abstract test base for type information. */
-public abstract class TypeInformationTestBase<T extends TypeInformation<?>> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TypeInformationTestBase<
+        T extends TypeInformation<?>> {
 
     protected abstract T[] getTestData();
 

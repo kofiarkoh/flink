@@ -31,6 +31,9 @@ import org.apache.flink.connector.testutils.source.reader.TestingReaderOutput;
 import org.apache.flink.core.io.InputStatus;
 import org.apache.flink.core.testutils.CommonTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -53,6 +56,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests {@link SplitFetcher} integration to pause or resume {@link SplitReader} based on {@link
  * SourceReader} output.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitFetcherPauseResumeSplitReaderTest {
 
     /**
@@ -204,7 +209,8 @@ class SplitFetcherPauseResumeSplitReaderTest {
         }
     }
 
-    private static class SteppingSourceReaderTestHarness {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class SteppingSourceReaderTestHarness {
         private final MockSteppingSplitFetcherManager<int[], MockSourceSplit> fetcherManager;
         private final MockSourceReader sourceReader;
 

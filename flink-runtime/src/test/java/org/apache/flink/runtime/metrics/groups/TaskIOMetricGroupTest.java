@@ -26,7 +26,10 @@ import org.apache.flink.runtime.io.network.metrics.ResultPartitionBytesCounter;
 import org.apache.flink.runtime.jobgraph.IntermediateResultPartitionID;
 import org.apache.flink.util.clock.ManualClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Map;
@@ -34,6 +37,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link TaskIOMetricGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskIOMetricGroupTest {
     @Test
     void testTaskIOMetricGroup() throws InterruptedException {

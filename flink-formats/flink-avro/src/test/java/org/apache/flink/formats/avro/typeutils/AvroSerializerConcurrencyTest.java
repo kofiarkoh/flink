@@ -23,7 +23,10 @@ import org.apache.flink.core.memory.DataOutputView;
 import org.apache.flink.core.testutils.BlockerSync;
 import org.apache.flink.core.testutils.CheckedThread;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.fail;
  * <p><b>Important:</b> This test only works if assertions are activated (-ea) on the JVM when
  * running tests.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AvroSerializerConcurrencyTest {
 
     @Test

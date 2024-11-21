@@ -28,9 +28,12 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.tier.remote.R
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.FileUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -41,6 +44,8 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link TierFactoryInitializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class TierFactoryInitializerTest {
 
     private static Path tmpDir;
@@ -109,7 +114,8 @@ public class TierFactoryInitializerTest {
     }
 
     /** Testing implementation for {@link TierFactory} to init an external remote tier. */
-    public static class ExternalRemoteTierFactory extends TestingTierFactory {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ExternalRemoteTierFactory extends TestingTierFactory {
         @Override
         public void setup(Configuration configuration) {
             // noop

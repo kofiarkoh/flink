@@ -22,7 +22,10 @@ import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +33,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests concerning type extraction of Parametrized Pojo and its superclasses. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PojoParametrizedTypeExtractionTest {
     @Test
     void testDirectlyCreateTypeInfo() {

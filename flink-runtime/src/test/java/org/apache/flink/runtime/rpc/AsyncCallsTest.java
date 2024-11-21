@@ -21,9 +21,12 @@ package org.apache.flink.runtime.rpc;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.core.testutils.OneShotLatch;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.UUID;
@@ -36,6 +39,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncCallsTest {
 
     // ------------------------------------------------------------------------
@@ -205,7 +210,8 @@ class AsyncCallsTest {
         void anotherCall();
     }
 
-    private static class TestEndpoint extends RpcEndpoint implements TestGateway {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestEndpoint
+            extends RpcEndpoint implements TestGateway {
 
         private final ReentrantLock lock;
 
@@ -238,7 +244,8 @@ class AsyncCallsTest {
         }
     }
 
-    public static class FencedTestEndpoint extends FencedRpcEndpoint<UUID> implements TestGateway {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class FencedTestEndpoint
+            extends FencedRpcEndpoint<UUID> implements TestGateway {
 
         private final ReentrantLock lock;
         private final AtomicBoolean concurrentAccess;

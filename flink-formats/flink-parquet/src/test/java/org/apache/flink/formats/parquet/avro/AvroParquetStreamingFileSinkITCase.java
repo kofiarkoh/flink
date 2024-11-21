@@ -30,6 +30,8 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.
 import org.apache.flink.streaming.api.functions.sink.filesystem.legacy.StreamingFileSink;
 import org.apache.flink.test.junit5.MiniClusterExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
@@ -195,7 +197,8 @@ class AvroParquetStreamingFileSinkITCase {
         return results;
     }
 
-    private static class GenericTestDataCollection extends AbstractCollection<GenericRecord>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class GenericTestDataCollection extends AbstractCollection<GenericRecord>
             implements Serializable {
 
         @Override

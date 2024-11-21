@@ -24,6 +24,8 @@ import org.apache.flink.runtime.jobmaster.SlotRequestId;
 import org.apache.flink.runtime.scheduler.TestingPhysicalSlot;
 import org.apache.flink.util.TestLoggerExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -35,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link PreferredAllocationRequestSlotMatchingStrategy}. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PreferredAllocationRequestSlotMatchingStrategyTest {
 
     /**

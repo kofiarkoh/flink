@@ -28,8 +28,11 @@ import org.apache.flink.runtime.state.changelog.ChangelogStateBackendHandle.Chan
 import org.apache.flink.util.FlinkRuntimeException;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nonnull;
 
@@ -42,6 +45,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ChangelogTaskLocalStateStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChangelogTaskLocalStateStoreTest extends TaskLocalStateStoreImplTest {
 
     private LocalSnapshotDirectoryProvider localSnapshotDirectoryProvider;

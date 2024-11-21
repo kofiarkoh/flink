@@ -17,11 +17,16 @@
 
 package org.apache.flink.configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link SecurityOptions}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SecurityOptionsTest {
 
     /** Tests whether activation of internal / REST SSL evaluates the config flags correctly. */

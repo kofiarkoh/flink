@@ -38,8 +38,11 @@ import org.apache.flink.metrics.groups.UnregisteredMetricsGroup;
 import org.apache.flink.util.SimpleUserCodeClassLoader;
 import org.apache.flink.util.UserCodeClassLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -53,6 +56,8 @@ import static org.apache.flink.util.Preconditions.checkArgument;
  * This test simulates readers that just produce byte arrays very fast. The test is meant to check
  * that this does not break the system in terms of object allocations, etc.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSourceHeavyThroughputTest {
 
     /**

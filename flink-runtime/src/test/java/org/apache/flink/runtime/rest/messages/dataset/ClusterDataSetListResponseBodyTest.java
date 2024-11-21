@@ -24,6 +24,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.NoOpTestExtensi
 import org.apache.flink.util.AbstractID;
 import org.apache.flink.util.StringUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -35,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ClusterDataSetListResponseBody}. */
 @ExtendWith(NoOpTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ClusterDataSetListResponseBodyTest
         extends RestResponseMarshallingTestBase<ClusterDataSetListResponseBody> {
 

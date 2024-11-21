@@ -53,7 +53,10 @@ import org.apache.flink.table.types.logical.VarCharType;
 import org.apache.flink.table.utils.DateTimeUtils;
 import org.apache.flink.util.InstantiationUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -82,6 +85,8 @@ import static org.apache.flink.table.utils.PartitionPathUtils.generatePartitionP
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link ParquetColumnarRowInputFormat}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ParquetColumnarRowInputFormatTest {
 
     private static final LocalDateTime BASE_TIME = LocalDateTime.now();

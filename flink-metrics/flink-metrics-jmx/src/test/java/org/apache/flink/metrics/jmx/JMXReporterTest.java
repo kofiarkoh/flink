@@ -27,8 +27,11 @@ import org.apache.flink.metrics.util.TestHistogram;
 import org.apache.flink.metrics.util.TestMeter;
 import org.apache.flink.metrics.util.TestMetricGroup;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.management.MBeanAttributeInfo;
 import javax.management.MBeanInfo;
@@ -49,6 +52,8 @@ import static org.apache.flink.metrics.jmx.JMXReporter.JMX_DOMAIN_PREFIX;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the JMXReporter. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JMXReporterTest {
 
     private static final Map<String, String> variables;

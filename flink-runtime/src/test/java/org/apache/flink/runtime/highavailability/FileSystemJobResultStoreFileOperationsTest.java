@@ -29,6 +29,8 @@ import org.apache.flink.util.jackson.JacksonMapperFactory;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -47,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the internal {@link FileSystemJobResultStore} mechanisms. */
 @ExtendWith(TestLoggerExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FileSystemJobResultStoreFileOperationsTest {
 
     private static final ObjectMapper MAPPER = JacksonMapperFactory.createObjectMapper();

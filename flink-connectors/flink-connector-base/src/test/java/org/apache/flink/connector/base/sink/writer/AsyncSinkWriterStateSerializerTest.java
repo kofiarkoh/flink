@@ -18,7 +18,10 @@
 
 package org.apache.flink.connector.base.sink.writer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -29,6 +32,8 @@ import static org.apache.flink.connector.base.sink.writer.AsyncSinkWriterTestUti
 import static org.apache.flink.connector.base.sink.writer.AsyncSinkWriterTestUtils.getTestState;
 
 /** Test class for {@link AsyncSinkWriterStateSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsyncSinkWriterStateSerializerTest {
 
     @Test

@@ -21,7 +21,10 @@ package org.apache.flink.kubernetes.highavailability;
 import org.apache.flink.kubernetes.kubeclient.FlinkKubeClient;
 import org.apache.flink.kubernetes.kubeclient.resources.KubernetesConfigMap;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.UUID;
@@ -30,6 +33,8 @@ import static org.apache.flink.core.testutils.FlinkAssertions.assertThatChainOfC
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link KubernetesLeaderRetrievalDriver}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesLeaderRetrievalDriverTest extends KubernetesHighAvailabilityTestBase {
 
     @Test

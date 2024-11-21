@@ -23,6 +23,10 @@ import org.apache.flink.api.connector.source.mocks.MockSourceSplit;
 import org.apache.flink.util.ExceptionUtils;
 import org.apache.flink.util.function.ThrowingRunnable;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -34,7 +38,12 @@ import java.util.concurrent.ExecutionException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-/** A util class containing the helper methods for the coordinator tests. */
+/**
+ * A util @ExtendWith(CTestJUnit5Extension.class) @CTestClass class containing the helper methods
+ * for the coordinator tests.
+ */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CoordinatorTestUtils {
 
     /**

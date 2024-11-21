@@ -16,6 +16,11 @@
  */
 
 package org.apache.flink.table.module.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.HiveVersionTestUtil;
 import org.apache.flink.table.api.DataTypes;
@@ -42,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 /** Test for {@link HiveModule}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveModuleTest {
 
     @Rule public final LegacyRowResource usesLegacyRows = LegacyRowResource.INSTANCE;

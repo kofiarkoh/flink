@@ -23,7 +23,10 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.function.FutureTaskWithException;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Unit tests for {@link MailboxProcessor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TaskMailboxProcessorTest {
 
     private static final int DEFAULT_PRIORITY = 0;

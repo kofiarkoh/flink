@@ -25,7 +25,10 @@ import org.apache.flink.runtime.state.SharedStateRegistryImpl;
 import org.apache.flink.runtime.state.testutils.TestCompletedCheckpointStorageLocation;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -36,6 +39,8 @@ import static org.apache.flink.runtime.checkpoint.CheckpointRetentionPolicy.NEVE
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for basic {@link CompletedCheckpointStore} contract. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StandaloneCompletedCheckpointStoreTest extends CompletedCheckpointStoreTest {
 
     @Override

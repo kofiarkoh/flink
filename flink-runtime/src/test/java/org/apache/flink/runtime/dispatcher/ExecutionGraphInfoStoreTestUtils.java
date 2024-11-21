@@ -46,8 +46,11 @@ import org.apache.flink.util.concurrent.ScheduledExecutor;
 
 import org.apache.flink.shaded.guava32.com.google.common.base.Ticker;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -64,6 +67,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 /** Test utils class for {@link FileExecutionGraphInfoStore}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ExecutionGraphInfoStoreTestUtils {
 
     static final List<JobStatus> GLOBALLY_TERMINAL_JOB_STATUS =

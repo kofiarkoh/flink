@@ -35,8 +35,11 @@ import org.apache.flink.runtime.rest.messages.job.metrics.MetricCollectionRespon
 import org.apache.flink.runtime.rest.messages.job.metrics.MetricsFilterParameter;
 import org.apache.flink.runtime.webmonitor.retriever.GatewayRetriever;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -52,6 +55,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 /** Tests for {@link AbstractMetricsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractMetricsHandlerTest {
 
     private static final String TEST_METRIC_NAME = "test_counter";
@@ -175,7 +180,8 @@ class AbstractMetricsHandlerTest {
         assertThat(metricCollectionResponseBody.getMetrics()).isEmpty();
     }
 
-    private static class TestMetricsHandler extends AbstractMetricsHandler<TestMessageParameters> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestMetricsHandler
+            extends AbstractMetricsHandler<TestMessageParameters> {
 
         private boolean returnComponentMetricStore = true;
 
@@ -201,7 +207,8 @@ class AbstractMetricsHandlerTest {
         }
     }
 
-    private static class TestMetricsHeaders extends AbstractMetricsHeaders<TestMessageParameters> {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class TestMetricsHeaders
+            extends AbstractMetricsHeaders<TestMessageParameters> {
 
         @Override
         public TestMessageParameters getUnresolvedMessageParameters() {

@@ -34,7 +34,10 @@ import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.api.java.tuple.Tuple2;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Method;
 
@@ -46,6 +49,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * Tests the type extractor for lambda functions. Many tests only work if the compiler supports
  * lambdas properly otherwise a MissingTypeInfo is returned.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LambdaExtractionTest {
 
     private static final TypeInformation<Tuple2<Tuple1<Integer>, Boolean>>

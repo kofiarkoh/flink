@@ -21,6 +21,9 @@ package org.apache.flink.runtime.scheduler.benchmark.scheduling;
 import org.apache.flink.runtime.scheduler.benchmark.JobConfiguration;
 import org.apache.flink.runtime.scheduler.strategy.VertexwiseSchedulingStrategy;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -28,6 +31,8 @@ import org.junit.jupiter.params.provider.EnumSource;
  * The benchmark of scheduling downstream task in a BATCH job. The related method is {@link
  * VertexwiseSchedulingStrategy#onExecutionStateChange}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SchedulingDownstreamTasksInBatchJobBenchmarkTest {
 
     @ParameterizedTest

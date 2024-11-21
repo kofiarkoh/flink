@@ -20,11 +20,16 @@ package org.apache.flink.runtime.throwable;
 
 import org.apache.flink.runtime.execution.SuppressRestartsException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test {@link ThrowableClassifier}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ThrowableClassifierTest {
 
     @Test
@@ -114,5 +119,6 @@ class ThrowableClassifierTest {
     private static class TestPartitionDataMissingErrorSubException
             extends TestPartitionDataMissingErrorException {}
 
-    private static class TestRecoverableFailureSubException extends TestRecoverableErrorException {}
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class TestRecoverableFailureSubException extends TestRecoverableErrorException {}
 }

@@ -25,8 +25,11 @@ import org.apache.flink.runtime.blob.PermanentBlobCache;
 import org.apache.flink.runtime.blob.VoidBlobStore;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -35,6 +38,8 @@ import java.net.InetSocketAddress;
  * Tests {@link ExecutionGraph} deployment when offloading job and task information into the BLOB
  * server.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultExecutionGraphDeploymentWithBlobCacheTest
         extends DefaultExecutionGraphDeploymentWithBlobServerTest {
 

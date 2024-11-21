@@ -26,7 +26,10 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.TestHarnessUtil;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  *   <li>Watermarks are correctly forwarded
  * </ul>
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamFlatMapTest {
 
     private static final class MyFlatMap implements FlatMapFunction<Integer, Integer> {

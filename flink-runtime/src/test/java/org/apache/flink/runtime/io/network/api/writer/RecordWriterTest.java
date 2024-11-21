@@ -55,6 +55,8 @@ import org.apache.flink.testutils.serialization.types.Util;
 import org.apache.flink.types.IntValue;
 import org.apache.flink.util.XORShiftRandom;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
@@ -71,6 +73,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link RecordWriter}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RecordWriterTest {
 
     @Parameter public boolean isBroadcastWriter;

@@ -36,6 +36,10 @@ import org.apache.flink.table.types.logical.RowType;
 import org.apache.flink.table.types.utils.TypeConversions;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +48,8 @@ import java.util.Map;
 import static org.apache.flink.table.types.utils.TypeConversions.fromLogicalToDataType;
 
 /** Test helper class for protobuf format. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ProtobufTestHelper {
     public static RowData validateRow(RowData rowData, RowType rowType) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();

@@ -34,11 +34,14 @@ import org.apache.flink.runtime.rest.messages.job.metrics.MetricCollectionRespon
 import org.apache.flink.runtime.rest.util.NoOpExecutionGraphCache;
 import org.apache.flink.runtime.webmonitor.retriever.LeaderGatewayRetriever;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 
 import javax.annotation.Nullable;
@@ -56,6 +59,8 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 
 /** Tests for {@link JobVertexWatermarksHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JobVertexWatermarksHandlerTest {
 
     private static final JobID TEST_JOB_ID = new JobID();

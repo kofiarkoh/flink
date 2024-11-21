@@ -23,7 +23,10 @@ import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.netty.NettyPayload;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.netty.TestingNettyConnectionWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link MemoryTierSubpartitionProducerAgent}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class MemoryTierSubpartitionProducerAgentTest {
 
     @Test

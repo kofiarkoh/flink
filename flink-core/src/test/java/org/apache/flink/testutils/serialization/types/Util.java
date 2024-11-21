@@ -18,11 +18,18 @@
 
 package org.apache.flink.testutils.serialization.types;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
-/** Utility class to help serialization for testing. */
+/**
+ * Utility @ExtendWith(CTestJUnit5Extension.class) @CTestClass class to help serialization for
+ * testing.
+ */
 public final class Util {
 
     private static final long SEED = 64871654635745873L;
@@ -59,7 +66,8 @@ public final class Util {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    public abstract static class MockRecords implements Iterable<SerializationTestType> {
+    public abstract static @ExtendWith(CTestJUnit5Extension.class) @CTestClass class MockRecords
+            implements Iterable<SerializationTestType> {
 
         private int numRecords;
 

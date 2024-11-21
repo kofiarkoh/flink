@@ -22,8 +22,11 @@ package org.apache.flink.runtime.scheduler;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link ExecutionVertexVersioner}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionVertexVersionerTest {
 
     private static final ExecutionVertexID TEST_EXECUTION_VERTEX_ID1 =

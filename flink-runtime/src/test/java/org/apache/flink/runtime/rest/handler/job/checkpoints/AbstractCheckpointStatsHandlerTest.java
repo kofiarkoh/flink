@@ -42,7 +42,10 @@ import org.apache.flink.shaded.guava32.com.google.common.cache.Cache;
 import org.apache.flink.shaded.guava32.com.google.common.cache.CacheBuilder;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpResponseStatus;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 /** Test class for {@link AbstractCheckpointStatsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractCheckpointStatsHandlerTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(10);

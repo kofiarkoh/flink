@@ -28,9 +28,12 @@ import org.apache.flink.docs.rest.data.clash.top.pkg2.TestTopLevelNameClashingMe
 import org.apache.flink.runtime.rest.util.DocumentingRestEndpoint;
 import org.apache.flink.runtime.rest.versioning.RuntimeRestAPIVersion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.media.StringSchema;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.charset.StandardCharsets;
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Test class for {@link OpenApiSpecGenerator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OpenApiSpecGeneratorTest {
 
     @Test

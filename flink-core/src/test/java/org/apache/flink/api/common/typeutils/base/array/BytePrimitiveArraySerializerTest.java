@@ -21,9 +21,15 @@ package org.apache.flink.api.common.typeutils.base.array;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Random;
 
 /** A test for the {@link BytePrimitiveArraySerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BytePrimitiveArraySerializerTest extends SerializerTestBase<byte[]> {
 
     private final Random rnd = new Random(346283764872L);

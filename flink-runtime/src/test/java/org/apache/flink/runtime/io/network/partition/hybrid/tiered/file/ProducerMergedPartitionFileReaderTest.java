@@ -28,8 +28,11 @@ import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.Tiered
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.TieredStoragePartitionId;
 import org.apache.flink.runtime.io.network.partition.hybrid.tiered.common.TieredStorageSubpartitionId;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -43,6 +46,8 @@ import static org.apache.flink.runtime.io.network.partition.hybrid.tiered.common
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ProducerMergedPartitionFileReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ProducerMergedPartitionFileReaderTest {
 
     private static final int DEFAULT_NUM_SUBPARTITION = 1;

@@ -41,6 +41,8 @@ import org.apache.flink.util.OutputTag;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Iterables;
 import org.apache.flink.shaded.guava32.com.google.common.collect.Lists;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -55,6 +57,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link IntervalJoinOperator}. Those tests cover correctness and cleaning of state */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class IntervalJoinOperatorTest {
 
     private final boolean lhsFasterThanRhs;
@@ -708,7 +712,7 @@ class IntervalJoinOperatorTest {
                 lowerBound, lowerBoundInclusive, upperBound, upperBoundInclusive, null, null);
     }
 
-    private class JoinTestBuilder {
+    private @ExtendWith(CTestJUnit5Extension.class) @CTestClass class JoinTestBuilder {
 
         private IntervalJoinOperator<String, TestElem, TestElem, Tuple2<TestElem, TestElem>>
                 operator;

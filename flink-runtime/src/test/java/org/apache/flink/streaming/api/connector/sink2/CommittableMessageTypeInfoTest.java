@@ -20,7 +20,13 @@ package org.apache.flink.streaming.api.connector.sink2;
 
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link CommittableMessageTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CommittableMessageTypeInfoTest
         extends TypeInformationTestBase<CommittableMessageTypeInfo<?>> {
 

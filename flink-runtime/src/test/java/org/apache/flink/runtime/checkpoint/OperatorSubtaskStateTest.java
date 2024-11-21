@@ -26,7 +26,10 @@ import org.apache.flink.runtime.state.StateObject;
 import org.apache.flink.runtime.state.StreamStateHandle;
 import org.apache.flink.runtime.state.memory.ByteStreamStateHandle;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -40,6 +43,8 @@ import static org.apache.flink.runtime.checkpoint.CheckpointCoordinatorTestingUt
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** {@link OperatorSubtaskState} test. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorSubtaskStateTest {
 
     @Test
@@ -102,7 +107,8 @@ class OperatorSubtaskStateTest {
                 new InputChannelInfo(0, inputChannelIdx), delegate, singletonList(0L));
     }
 
-    private static class DiscardOnceStreamStateHandle extends ByteStreamStateHandle {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class DiscardOnceStreamStateHandle extends ByteStreamStateHandle {
         private static final long serialVersionUID = 1L;
 
         private boolean discarded = false;

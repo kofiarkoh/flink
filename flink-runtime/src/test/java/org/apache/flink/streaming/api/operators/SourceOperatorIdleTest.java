@@ -22,9 +22,12 @@ import org.apache.flink.api.connector.source.mocks.MockSourceSplit;
 import org.apache.flink.runtime.io.AvailabilityProvider;
 import org.apache.flink.streaming.api.operators.source.CollectingDataOutput;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.annotation.Nullable;
 
@@ -34,6 +37,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for idle {@link SourceOperator}. */
 @SuppressWarnings("serial")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceOperatorIdleTest {
 
     @Nullable private SourceOperatorTestContext context;

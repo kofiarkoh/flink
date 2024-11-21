@@ -25,7 +25,10 @@ import org.apache.flink.runtime.jobgraph.IntermediateResultPartitionID;
 import org.apache.flink.runtime.shuffle.ShuffleDescriptor;
 import org.apache.flink.runtime.taskexecutor.partition.ClusterPartitionReport;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +43,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for the {@link ResourceManagerPartitionTrackerImpl}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResourceManagerPartitionTrackerImplTest {
 
     private static final ClusterPartitionReport EMPTY_PARTITION_REPORT =

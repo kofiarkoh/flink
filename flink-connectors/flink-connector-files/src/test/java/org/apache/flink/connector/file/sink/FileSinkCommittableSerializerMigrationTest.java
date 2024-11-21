@@ -30,8 +30,11 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.OutputStreamBase
 import org.apache.flink.streaming.api.functions.sink.filesystem.OutputStreamBasedPartFileWriter.OutputStreamBasedPendingFileRecoverable;
 import org.apache.flink.streaming.api.functions.sink.filesystem.RowWiseBucketWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -47,6 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the {@link FileSinkCommittableSerializer} that verify we can still read the recoverable
  * serialized by the previous versions.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileSinkCommittableSerializerMigrationTest {
 
     private static final int CURRENT_VERSION = 1;

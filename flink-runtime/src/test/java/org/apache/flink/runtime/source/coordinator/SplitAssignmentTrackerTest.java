@@ -21,7 +21,10 @@ package org.apache.flink.runtime.source.coordinator;
 import org.apache.flink.api.connector.source.mocks.MockSourceSplit;
 import org.apache.flink.api.connector.source.mocks.MockSourceSplitSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,6 +37,8 @@ import static org.apache.flink.runtime.source.coordinator.CoordinatorTestUtils.v
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Unit test for @link {@link SplitAssignmentTracker}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SplitAssignmentTrackerTest {
 
     @Test

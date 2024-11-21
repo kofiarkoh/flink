@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.endpoint.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.api.common.RuntimeExecutionMode;
 import org.apache.flink.configuration.Configuration;
@@ -186,7 +191,9 @@ public class HiveServer2EndpointStatementITCase extends AbstractSqlGatewayStatem
         return DataTypes.ROW(fields);
     }
 
-    private static class HiveTestParameters extends TestParameters {
+    private static @ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
+class HiveTestParameters extends TestParameters {
 
         private final boolean resetEnvironment;
 

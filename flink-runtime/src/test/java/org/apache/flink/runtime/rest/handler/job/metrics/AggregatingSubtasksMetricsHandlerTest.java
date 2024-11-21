@@ -30,6 +30,10 @@ import org.apache.flink.runtime.rest.messages.job.metrics.AggregatedSubtaskMetri
 import org.apache.flink.runtime.webmonitor.RestfulGateway;
 import org.apache.flink.runtime.webmonitor.retriever.GatewayRetriever;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +44,8 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 
 /** Tests for the {@link AggregatingSubtasksMetricsHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AggregatingSubtasksMetricsHandlerTest
         extends AggregatingMetricsHandlerTestBase<
                 AggregatingSubtasksMetricsHandler, AggregatedSubtaskMetricsParameters> {

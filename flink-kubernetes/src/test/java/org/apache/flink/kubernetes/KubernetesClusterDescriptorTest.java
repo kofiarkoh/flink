@@ -40,11 +40,14 @@ import org.apache.flink.kubernetes.kubeclient.decorators.InternalServiceDecorato
 import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.EnvVar;
 import io.fabric8.kubernetes.api.model.Service;
 import io.fabric8.kubernetes.api.model.apps.Deployment;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -55,6 +58,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link KubernetesClusterDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesClusterDescriptorTest extends KubernetesClientTestBase {
     private static final String MOCK_SERVICE_HOST_NAME = "mock-host-name-of-service";
     private static final String MOCK_SERVICE_IP = "192.168.0.1";

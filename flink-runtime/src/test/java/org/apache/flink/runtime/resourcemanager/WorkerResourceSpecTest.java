@@ -26,12 +26,17 @@ import org.apache.flink.runtime.clusterframework.TaskExecutorProcessSpec;
 import org.apache.flink.runtime.clusterframework.TaskExecutorProcessUtils;
 import org.apache.flink.runtime.clusterframework.types.ResourceProfile;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.configuration.ConfigurationUtils.getLongConfigOption;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link WorkerResourceSpec}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WorkerResourceSpecTest {
     private static final String EXTERNAL_RESOURCE_NAME = "gpu";
 

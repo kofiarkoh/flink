@@ -31,7 +31,10 @@ import org.apache.flink.runtime.io.network.partition.consumer.InputChannelID;
 
 import org.apache.flink.shaded.netty4.io.netty.channel.embedded.EmbeddedChannel;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +42,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link PartitionRequestServerHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionRequestServerHandlerTest {
 
     @Test

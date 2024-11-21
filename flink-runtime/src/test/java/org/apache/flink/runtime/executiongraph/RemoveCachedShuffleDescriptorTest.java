@@ -40,9 +40,12 @@ import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.List;
@@ -63,6 +66,8 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
  * valid. Currently, there are two scenarios as illustrated in {@link
  * IntermediateResult#clearCachedInformationForPartitionGroup}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RemoveCachedShuffleDescriptorTest {
 
     private static final int PARALLELISM = 4;

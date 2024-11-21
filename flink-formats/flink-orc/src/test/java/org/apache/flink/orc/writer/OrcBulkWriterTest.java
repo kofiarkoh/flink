@@ -27,8 +27,11 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.legacy.Streaming
 import org.apache.flink.streaming.api.operators.StreamSink;
 import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -37,6 +40,8 @@ import java.util.List;
 import java.util.Properties;
 
 /** Unit test for the ORC BulkWriter implementation. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OrcBulkWriterTest {
 
     private final String schema = "struct<_col0:string,_col1:int>";

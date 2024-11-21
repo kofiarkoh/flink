@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.connectors.hive.read.HiveSourceSplit;
 
@@ -42,6 +47,8 @@ import java.util.Properties;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link HiveSourceFileEnumerator} . */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveSourceFileEnumeratorTest {
 
     @Rule public final TemporaryFolder temporaryFolder = new TemporaryFolder();

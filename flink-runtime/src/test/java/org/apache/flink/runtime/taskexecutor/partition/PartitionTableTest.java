@@ -20,7 +20,10 @@ package org.apache.flink.runtime.taskexecutor.partition;
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.io.network.partition.ResultPartitionID;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,6 +31,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link PartitionTable}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PartitionTableTest {
 
     private static final JobID JOB_ID = new JobID();

@@ -23,7 +23,10 @@ import org.apache.flink.runtime.io.network.buffer.BufferBuilderTestUtils;
 import org.apache.flink.runtime.io.network.partition.ResultSubpartition.BufferAndBacklog;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for the availability handling of the BoundedBlockingSubpartitions with not constant
  * availability.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BoundedBlockingSubpartitionAvailabilityTest {
 
     @TempDir private static Path tmpFolder;

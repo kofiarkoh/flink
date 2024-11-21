@@ -18,7 +18,10 @@
 
 package org.apache.flink.connector.file.table;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.List;
 
@@ -27,6 +30,8 @@ import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link BinPacking}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BinPackingTest {
 
     @Test

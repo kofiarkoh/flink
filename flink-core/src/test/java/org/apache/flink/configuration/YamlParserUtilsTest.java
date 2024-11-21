@@ -20,7 +20,10 @@ package org.apache.flink.configuration;
 
 import org.apache.flink.util.ExceptionUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.snakeyaml.engine.v2.exceptions.YamlEngineException;
 
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** A test for YamlParserUtils. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class YamlParserUtilsTest {
 
     @TempDir private File tmpDir;

@@ -24,7 +24,10 @@ import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 import org.apache.flink.runtime.leaderelection.LeaderElectionEvent;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ExecutionException;
 
@@ -33,6 +36,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link KubernetesCheckpointIDCounter} operations. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesCheckpointIDCounterTest extends KubernetesHighAvailabilityTestBase {
 
     @Test

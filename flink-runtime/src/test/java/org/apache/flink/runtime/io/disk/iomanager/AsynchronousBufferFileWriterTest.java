@@ -25,9 +25,12 @@ import org.apache.flink.runtime.io.network.buffer.FreeingBufferRecycler;
 import org.apache.flink.runtime.io.network.buffer.NetworkBuffer;
 import org.apache.flink.runtime.io.network.util.TestNotificationListener;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.concurrent.Callable;
@@ -41,6 +44,8 @@ import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 
 /** Tests for {@link AsynchronousBufferFileWriter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AsynchronousBufferFileWriterTest {
 
     private static final IOManager ioManager = new IOManagerAsync();

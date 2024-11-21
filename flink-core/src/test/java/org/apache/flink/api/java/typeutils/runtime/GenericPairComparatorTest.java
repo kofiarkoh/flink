@@ -30,6 +30,12 @@ import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.api.java.tuple.Tuple4;
 import org.apache.flink.api.java.typeutils.runtime.tuple.base.TuplePairComparatorTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class GenericPairComparatorTest
         extends TuplePairComparatorTestBase<
                 Tuple3<Integer, String, Double>, Tuple4<Integer, Float, Long, Double>> {

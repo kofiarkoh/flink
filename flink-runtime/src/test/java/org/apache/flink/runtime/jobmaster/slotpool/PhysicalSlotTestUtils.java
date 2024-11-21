@@ -27,7 +27,13 @@ import org.apache.flink.runtime.jobmaster.LogicalSlot;
 import org.apache.flink.runtime.jobmaster.SlotRequestId;
 import org.apache.flink.runtime.taskmanager.LocalTaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test utils of {@link PhysicalSlot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class PhysicalSlotTestUtils {
 
     public static PhysicalSlot createPhysicalSlot() {

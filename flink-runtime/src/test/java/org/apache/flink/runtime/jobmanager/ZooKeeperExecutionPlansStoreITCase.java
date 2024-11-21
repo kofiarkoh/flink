@@ -38,7 +38,10 @@ import org.apache.flink.util.concurrent.Executors;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.CuratorFramework;
 import org.apache.flink.shaded.curator5.org.apache.curator.framework.recipes.cache.PathChildrenCache;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -65,6 +68,8 @@ import static org.mockito.Mockito.verify;
  * ZooKeeperStateHandleStore}, {@link ZooKeeperExecutionPlanStoreWatcher}, {@link
  * ZooKeeperExecutionPlanStoreUtil}).
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ZooKeeperExecutionPlansStoreITCase extends TestLogger {
 
     private final ZooKeeperExtension zooKeeperExtension = new ZooKeeperExtension();

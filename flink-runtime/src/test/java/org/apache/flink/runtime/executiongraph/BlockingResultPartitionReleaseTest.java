@@ -33,9 +33,12 @@ import org.apache.flink.runtime.scheduler.SchedulerBase;
 import org.apache.flink.testutils.TestingUtils;
 import org.apache.flink.testutils.executor.TestExecutorExtension;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.ArrayList;
@@ -52,6 +55,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests that blocking result partitions are properly released. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlockingResultPartitionReleaseTest {
 
     @RegisterExtension

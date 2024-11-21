@@ -37,7 +37,10 @@ import org.apache.flink.streaming.api.graph.StreamGraph;
 import org.apache.flink.streaming.api.graph.StreamNode;
 import org.apache.flink.streaming.api.graph.StreamingJobGraphGenerator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -46,6 +49,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link StreamingJobGraphGenerator} with different attributes. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class StreamingJobGraphGeneratorWithAttributeTest {
 
     @Test

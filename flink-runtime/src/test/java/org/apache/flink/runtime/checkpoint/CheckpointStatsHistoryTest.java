@@ -18,7 +18,10 @@
 
 package org.apache.flink.runtime.checkpoint;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Iterator;
 
@@ -27,6 +30,8 @@ import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CheckpointStatsHistoryTest {
 
     /** Tests a checkpoint history with allowed size 0. */

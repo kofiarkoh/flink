@@ -74,7 +74,10 @@ import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.SerializedValue;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -90,6 +93,8 @@ import static org.assertj.core.api.Assumptions.assumeThat;
  * Test that verifies the behavior of blocking shutdown hooks and of the {@link
  * JvmShutdownSafeguard} that guards against it.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class JvmExitOnFatalErrorTest {
 
     @TempDir private java.nio.file.Path tempDir;
@@ -118,7 +123,8 @@ class JvmExitOnFatalErrorTest {
     //  Blocking Process Implementation
     // ------------------------------------------------------------------------
 
-    private static final class KillOnFatalErrorProcess extends TestJvmProcess {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class KillOnFatalErrorProcess extends TestJvmProcess {
 
         private final File temporaryFolder;
 

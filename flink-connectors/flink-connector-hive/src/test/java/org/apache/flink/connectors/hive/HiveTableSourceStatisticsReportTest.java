@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.SqlDialect;
 import org.apache.flink.table.catalog.hive.HiveCatalog;
@@ -43,6 +48,8 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for statistics functionality in {@link HiveTableSource}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HiveTableSourceStatisticsReportTest extends StatisticsReportTestBase {
 
     private static HiveCatalog hiveCatalog;

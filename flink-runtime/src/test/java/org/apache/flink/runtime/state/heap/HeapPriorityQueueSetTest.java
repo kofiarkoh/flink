@@ -17,7 +17,13 @@
  */
 package org.apache.flink.runtime.state.heap;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /** Test for {@link HeapPriorityQueueSet}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HeapPriorityQueueSetTest extends HeapPriorityQueueTest {
 
     @Override

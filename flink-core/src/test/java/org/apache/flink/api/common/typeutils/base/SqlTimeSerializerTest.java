@@ -21,9 +21,15 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.sql.Time;
 
 /** A test for the {@link SqlTimeSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SqlTimeSerializerTest extends SerializerTestBase<Time> {
 
     @Override

@@ -26,12 +26,17 @@ import org.apache.flink.api.common.typeutils.TypeSerializerUpgradeTestBase;
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
 import org.apache.flink.test.util.MigrationTest;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.assertj.core.api.Condition;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /** A {@link TypeSerializerUpgradeTestBase} for {@link Lockable.LockableTypeSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class LockableTypeSerializerUpgradeTest
         extends TypeSerializerUpgradeTestBase<Lockable<String>, Lockable<String>> {
 

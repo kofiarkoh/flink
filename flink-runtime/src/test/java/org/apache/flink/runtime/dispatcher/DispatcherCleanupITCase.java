@@ -53,12 +53,15 @@ import org.apache.flink.runtime.testutils.TestingExecutionPlanStore;
 import org.apache.flink.runtime.testutils.TestingJobResultStore;
 import org.apache.flink.util.concurrent.FutureUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.List;
@@ -77,6 +80,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertTrue;
 
 /** An integration test for various fail-over scenarios of the {@link Dispatcher} component. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class DispatcherCleanupITCase extends AbstractDispatcherTest {
 
     private final BlockingQueue<RpcEndpoint> toTerminate = new LinkedBlockingQueue<>();

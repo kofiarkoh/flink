@@ -21,11 +21,16 @@ package org.apache.flink.formats.protobuf;
 import org.apache.flink.formats.protobuf.testproto.TestSameOuterClassNameOuterClass;
 import org.apache.flink.table.data.RowData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.Assert.assertEquals;
 
 /** Test conversion of proto same outer class name data to flink internal data. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SameOuterClassNameProtoToRowTest {
 
     @Test

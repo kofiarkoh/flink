@@ -24,9 +24,12 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.
 import org.apache.flink.util.FlinkUserCodeClassLoader;
 import org.apache.flink.util.MutableURLClassLoader;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Constructor;
 import java.net.URL;
@@ -36,6 +39,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Tests the behaviors of {@link HadoopPathBasedBulkFormatBuilder}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopPathBasedBulkFormatBuilderTest {
 
     /**

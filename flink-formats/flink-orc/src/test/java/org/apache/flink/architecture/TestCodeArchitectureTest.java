@@ -24,6 +24,9 @@ import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.junit.ArchTests;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Architecture tests for test code. */
 @AnalyzeClasses(
@@ -33,6 +36,8 @@ import com.tngtech.archunit.junit.ArchTests;
             ImportOptions.ExcludeScalaImportOption.class,
             ImportOptions.ExcludeShadedImportOption.class
         })
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class TestCodeArchitectureTest {
 
     @ArchTest

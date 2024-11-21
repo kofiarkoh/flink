@@ -24,11 +24,16 @@ import org.apache.flink.runtime.scheduler.strategy.ExecutionVertexID;
 
 import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link ExecutionAttemptID}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ExecutionAttemptIDTest {
     private static final NettyBufferPool ALLOCATOR = new NettyBufferPool(1);
 

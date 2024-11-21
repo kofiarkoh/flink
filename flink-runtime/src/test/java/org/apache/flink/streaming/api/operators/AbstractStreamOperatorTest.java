@@ -45,10 +45,13 @@ import org.apache.flink.streaming.util.OneInputStreamOperatorTestHarness;
 import org.apache.flink.streaming.util.TestHarnessUtil;
 import org.apache.flink.util.Preconditions;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -67,6 +70,8 @@ import static org.assertj.core.api.HamcrestCondition.matching;
  * Tests for the facilities provided by {@link AbstractStreamOperator}. This mostly tests timers and
  * state and whether they are correctly checkpointed/restored with key-group reshuffling.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractStreamOperatorTest {
     protected KeyedOneInputStreamOperatorTestHarness<Integer, Tuple2<Integer, String>, String>
             createTestHarness() throws Exception {
@@ -617,7 +622,8 @@ public class AbstractStreamOperatorTest {
         }
     }
 
-    private static class WatermarkTestingOperator extends AbstractStreamOperator<Long>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class WatermarkTestingOperator extends AbstractStreamOperator<Long>
             implements TwoInputStreamOperator<Long, Long, Long>,
                     Triggerable<Integer, VoidNamespace> {
 
@@ -717,7 +723,8 @@ public class AbstractStreamOperatorTest {
     }
 
     /** Operator that writes arbitrary bytes to raw keyed state on snapshots. */
-    private static class CustomRawKeyedStateTestOperator extends AbstractStreamOperator<String>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class CustomRawKeyedStateTestOperator extends AbstractStreamOperator<String>
             implements OneInputStreamOperator<String, String> {
 
         private static final long serialVersionUID = 1L;

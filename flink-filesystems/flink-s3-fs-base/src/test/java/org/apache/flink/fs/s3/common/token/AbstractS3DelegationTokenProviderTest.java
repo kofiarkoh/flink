@@ -20,13 +20,18 @@ package org.apache.flink.fs.s3.common.token;
 
 import org.apache.flink.configuration.Configuration;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.apache.flink.core.security.token.DelegationTokenProvider.CONFIG_PREFIX;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link AbstractS3DelegationTokenProvider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractS3DelegationTokenProviderTest {
 
     private static final String REGION = "testRegion";

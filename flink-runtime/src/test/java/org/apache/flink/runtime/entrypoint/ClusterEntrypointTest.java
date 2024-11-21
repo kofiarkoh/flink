@@ -55,10 +55,13 @@ import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
@@ -77,6 +80,8 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 
 /** Tests for the {@link ClusterEntrypoint}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClusterEntrypointTest extends TestLogger {
 
     private static final long TIMEOUT_MS = 10000;

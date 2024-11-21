@@ -22,9 +22,15 @@ import org.apache.flink.configuration.ConfigConstants;
 import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.util.Random;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AsciiStringType implements SerializationTestType {
 
     private static final int MAX_LEN = 1500;

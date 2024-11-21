@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.connectors.hive;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.HiveVersionTestUtil;
 import org.apache.flink.table.api.EnvironmentSettings;
@@ -47,6 +52,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * 3.1.1. To run this test, please use mvn command: mvn test -Phive-3.1.1
  * -Dtest=org.apache.flink.connectors.hive.HiveTemporalJoinITCase
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HiveTemporalJoinITCase extends TableTestBase {
 
     private static TableEnvironment tableEnv;

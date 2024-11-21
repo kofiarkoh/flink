@@ -35,8 +35,11 @@ import org.apache.flink.streaming.api.functions.source.legacy.RichParallelSource
 import org.apache.flink.streaming.api.graph.StreamGraph;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 import java.util.Map;
@@ -103,7 +106,8 @@ class StreamingExecutionFileSinkITCase extends FileSinkITBase {
 
     // ------------------------ Streaming mode user functions ----------------------------------
 
-    private static class StreamingExecutionTestSource extends RichParallelSourceFunction<Integer>
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class StreamingExecutionTestSource extends RichParallelSourceFunction<Integer>
             implements CheckpointListener, CheckpointedFunction {
 
         private final String latchId;

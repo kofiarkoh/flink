@@ -20,9 +20,14 @@ package org.apache.flink.metrics.graphite;
 
 import org.apache.flink.metrics.util.MetricReporterTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Tests for loading {@link GraphiteReporterFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class GraphiteReporterFactoryTest {
 
     @Test

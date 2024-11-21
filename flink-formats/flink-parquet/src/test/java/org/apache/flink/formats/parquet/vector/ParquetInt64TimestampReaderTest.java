@@ -21,8 +21,11 @@ package org.apache.flink.formats.parquet.vector;
 import org.apache.flink.formats.parquet.vector.reader.TimestampColumnReader;
 import org.apache.flink.table.data.TimestampData;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.parquet.schema.LogicalTypeAnnotation;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -30,6 +33,8 @@ import java.time.ZonedDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link TimestampColumnReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ParquetInt64TimestampReaderTest {
     @Test
     public void testReadInt64TimestampMicros() {

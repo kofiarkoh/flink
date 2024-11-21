@@ -22,11 +22,16 @@ import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.formats.avro.utils.AvroTestUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.generic.GenericRecordBuilder;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /** Test for {@link AvroSerializer} that tests GenericRecord. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AvroSerializerLargeGenericRecordTest extends SerializerTestBase<GenericRecord> {
 
     private static final Schema SCHEMA = AvroTestUtils.getLargeSchema();

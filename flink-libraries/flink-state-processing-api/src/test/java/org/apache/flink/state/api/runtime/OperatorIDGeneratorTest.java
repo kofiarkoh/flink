@@ -25,8 +25,11 @@ import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.v2.DiscardingSink;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.stream.StreamSupport;
 
@@ -34,6 +37,8 @@ import java.util.stream.StreamSupport;
  * Test that {@code OperatorIDGenerator} creates ids from uids exactly the same as the job graph
  * generator.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OperatorIDGeneratorTest {
     private static final String UID = "uid";
 

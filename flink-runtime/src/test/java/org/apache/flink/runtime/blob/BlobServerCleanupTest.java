@@ -27,7 +27,10 @@ import org.apache.flink.util.FlinkException;
 import org.apache.flink.util.concurrent.FutureUtils;
 import org.apache.flink.util.function.TriConsumerWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import javax.annotation.Nullable;
@@ -64,6 +67,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.fail;
 
 /** A few tests for the cleanup of transient BLOBs at the {@link BlobServer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BlobServerCleanupTest {
 
     private static final Random RANDOM = new Random();

@@ -26,7 +26,10 @@ import org.apache.flink.connector.file.sink.utils.NoOpBucketWriter;
 import org.apache.flink.streaming.api.functions.sink.filesystem.BucketWriter;
 import org.apache.flink.streaming.api.functions.sink.filesystem.InProgressFileWriter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +42,8 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FileCommitter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class FileCommitterTest {
 
     @Test

@@ -30,6 +30,10 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameter;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.util.clock.SystemClock;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nonnull;
 
 import java.time.Duration;
@@ -39,7 +43,8 @@ import java.util.Collection;
 import static org.apache.flink.runtime.concurrent.ComponentMainThreadExecutorServiceAdapter.forMainThread;
 
 /** Test base class for {@link DeclarativeSlotPoolBridge}. */
-abstract class AbstractDeclarativeSlotPoolBridgeTest {
+abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class AbstractDeclarativeSlotPoolBridgeTest {
 
     protected static final Duration RPC_TIMEOUT = Duration.ofSeconds(20);
     protected static final JobID JOB_ID = new JobID();

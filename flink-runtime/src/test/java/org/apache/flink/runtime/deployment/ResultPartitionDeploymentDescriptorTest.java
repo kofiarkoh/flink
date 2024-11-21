@@ -32,7 +32,10 @@ import org.apache.flink.runtime.shuffle.PartitionDescriptor;
 import org.apache.flink.runtime.shuffle.ShuffleDescriptor;
 import org.apache.flink.runtime.shuffle.UnknownShuffleDescriptor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -41,6 +44,8 @@ import static org.apache.flink.runtime.executiongraph.ExecutionGraphTestUtils.cr
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link ResultPartitionDeploymentDescriptor}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ResultPartitionDeploymentDescriptorTest {
     private static final IntermediateDataSetID resultId = new IntermediateDataSetID();
     private static final int numberOfPartitions = 5;

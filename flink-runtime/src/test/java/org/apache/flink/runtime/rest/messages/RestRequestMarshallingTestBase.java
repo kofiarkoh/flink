@@ -23,19 +23,23 @@ import org.apache.flink.util.TestLogger;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Test base for verifying that marshalling / unmarshalling REST {@link RequestBody}s work properly.
  */
-public abstract class RestRequestMarshallingTestBase<R extends RequestBody> extends TestLogger {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class RestRequestMarshallingTestBase<R extends RequestBody> extends TestLogger {
 
     /**
-     * Returns the class of the test response.
+     * Returns the @ExtendWith(CTestJUnit5Extension.class) @CTestClass class of the test response.
      *
-     * @return class of the test response type
+     * @return @ExtendWith(CTestJUnit5Extension.class) @CTestClass class of the test response type
      */
     protected abstract Class<R> getTestRequestClass();
 

@@ -27,8 +27,11 @@ import org.apache.flink.configuration.GlobalConfiguration;
 import org.apache.flink.configuration.PipelineOptions;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -41,6 +44,8 @@ import static org.apache.flink.configuration.ConfigOptions.key;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link FlinkConfigLoader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class FlinkConfigLoaderTest {
 
     private static final String TEST_CONFIG_KEY = "test.key";

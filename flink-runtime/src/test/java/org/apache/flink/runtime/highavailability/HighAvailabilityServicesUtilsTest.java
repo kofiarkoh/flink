@@ -28,8 +28,11 @@ import org.apache.flink.runtime.rpc.RpcSystem;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.Executors;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.IOException;
@@ -41,6 +44,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 
 /** Tests for the {@link HighAvailabilityServicesUtils} class. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HighAvailabilityServicesUtilsTest extends TestLogger {
 
     @ClassRule public static TemporaryFolder temporaryFolder = new TemporaryFolder();

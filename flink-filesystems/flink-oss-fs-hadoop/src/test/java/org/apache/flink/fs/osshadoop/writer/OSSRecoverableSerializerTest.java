@@ -19,7 +19,10 @@
 package org.apache.flink.fs.osshadoop.writer;
 
 import com.aliyun.oss.model.PartETag;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +31,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link OSSRecoverableSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OSSRecoverableSerializerTest {
 
     private final OSSRecoverableSerializer serializer = OSSRecoverableSerializer.INSTANCE;

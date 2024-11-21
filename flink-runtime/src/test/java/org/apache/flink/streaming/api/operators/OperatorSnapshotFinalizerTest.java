@@ -30,7 +30,10 @@ import org.apache.flink.runtime.state.ResultSubpartitionStateHandle;
 import org.apache.flink.runtime.state.SnapshotResult;
 import org.apache.flink.runtime.state.StateObject;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +47,8 @@ import static org.apache.flink.runtime.state.SnapshotResult.withLocalState;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link OperatorSnapshotFinalizer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class OperatorSnapshotFinalizerTest {
 
     /** Test that the runnable futures are executed and the result is correctly extracted. */

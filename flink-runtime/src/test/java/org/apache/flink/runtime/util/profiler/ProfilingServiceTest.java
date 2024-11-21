@@ -24,11 +24,14 @@ import org.apache.flink.runtime.rest.messages.ProfilingInfo;
 import org.apache.flink.util.StringUtils;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -42,6 +45,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /** Unit tests for {@link ProfilingService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ProfilingServiceTest extends TestLogger {
     private static final String NO_ACCESS_TO_PERF_EVENTS = "No access to perf events.";
     private static final String NO_ALLOC_SYMBOL_FOUND = "No AllocTracer symbols found.";

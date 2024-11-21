@@ -25,11 +25,16 @@ import org.apache.flink.streaming.util.TestHarnessUtil;
 import org.apache.flink.streaming.util.TwoInputStreamOperatorTestHarness;
 import org.apache.flink.util.Collector;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /** Tests {@link CoProcessOperator}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class CoProcessOperatorTest {
 
     @Test

@@ -21,8 +21,11 @@ package org.apache.flink.formats.parquet;
 import org.apache.flink.table.planner.plan.stats.FlinkStatistic;
 import org.apache.flink.table.types.DataType;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -32,6 +35,8 @@ import java.util.concurrent.ExecutionException;
  * Test for statistics functionality in {@link ParquetFileFormatFactory} in the case of file system
  * source.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ParquetFileSystemStatisticsReportTest extends ParquetFormatStatisticsReportTest {
 
     @BeforeEach

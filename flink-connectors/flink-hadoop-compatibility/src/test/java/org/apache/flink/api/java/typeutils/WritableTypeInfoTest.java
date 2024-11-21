@@ -20,13 +20,18 @@ package org.apache.flink.api.java.typeutils;
 
 import org.apache.flink.api.common.typeutils.TypeInformationTestBase;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.io.Writable;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
 /** Test for {@link WritableTypeInfo}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class WritableTypeInfoTest extends TypeInformationTestBase<WritableTypeInfo<?>> {
 
     @Override

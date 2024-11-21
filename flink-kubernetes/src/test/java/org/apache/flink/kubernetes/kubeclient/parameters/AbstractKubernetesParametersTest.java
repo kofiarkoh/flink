@@ -26,7 +26,10 @@ import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.util.StringUtils;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Files;
@@ -44,6 +47,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** General tests for the {@link AbstractKubernetesParameters}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class AbstractKubernetesParametersTest {
 
     private final Configuration flinkConfig = new Configuration();

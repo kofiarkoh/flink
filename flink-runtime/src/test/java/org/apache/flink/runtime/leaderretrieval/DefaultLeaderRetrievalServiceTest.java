@@ -23,13 +23,18 @@ import org.apache.flink.runtime.leaderelection.LeaderInformation;
 import org.apache.flink.runtime.leaderelection.TestingListener;
 import org.apache.flink.util.function.RunnableWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link DefaultLeaderElectionService}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultLeaderRetrievalServiceTest {
 
     private static final String TEST_URL = "pekko://user/jobmanager";

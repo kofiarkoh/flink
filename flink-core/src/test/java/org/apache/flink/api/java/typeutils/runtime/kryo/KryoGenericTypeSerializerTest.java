@@ -25,7 +25,10 @@ import org.apache.flink.api.java.typeutils.runtime.AbstractGenericTypeSerializer
 import org.apache.flink.api.java.typeutils.runtime.TestDataOutputSerializer;
 
 import com.esotericsoftware.kryo.Kryo;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,6 +41,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SuppressWarnings("unchecked")
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KryoGenericTypeSerializerTest extends AbstractGenericTypeSerializerTest {
 
     SerializerConfigImpl serializerConfigImpl = new SerializerConfigImpl();

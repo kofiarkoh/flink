@@ -31,8 +31,11 @@ import org.apache.flink.util.OperatingSystem;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.util.concurrent.ScheduledExecutor;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
@@ -41,6 +44,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeTrue;
 
 /** Integration test to check exit behaviour for the {@link ClusterUncaughtExceptionHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClusterUncaughtExceptionHandlerITCase extends TestLogger {
 
     @Before
@@ -75,7 +80,8 @@ public class ClusterUncaughtExceptionHandlerITCase extends TestLogger {
         }
     }
 
-    private static class ClusterTestingEntrypoint extends ClusterEntrypoint {
+    private static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ClusterTestingEntrypoint extends ClusterEntrypoint {
 
         protected ClusterTestingEntrypoint(Configuration configuration) {
             super(configuration);
@@ -117,7 +123,8 @@ public class ClusterUncaughtExceptionHandlerITCase extends TestLogger {
         }
     }
 
-    private static final class ForcedJVMExitProcess extends TestJvmProcess {
+    private static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class ForcedJVMExitProcess extends TestJvmProcess {
         private final Class<?> entryPointName;
 
         private ForcedJVMExitProcess(Class<?> entryPointName) throws Exception {

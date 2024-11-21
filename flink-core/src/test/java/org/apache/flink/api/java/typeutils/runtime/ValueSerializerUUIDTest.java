@@ -21,8 +21,14 @@ package org.apache.flink.api.java.typeutils.runtime;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.UUID;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ValueSerializerUUIDTest extends SerializerTestBase<ValueID> {
     @Override
     protected TypeSerializer<ValueID> createSerializer() {

@@ -38,7 +38,10 @@ import org.apache.flink.runtime.metrics.dump.QueryScopeInfo;
 import org.apache.flink.runtime.metrics.scope.ScopeFormat;
 import org.apache.flink.runtime.metrics.util.TestingMetricRegistry;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,6 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link AbstractMetricGroup}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractMetricGroupTest {
     /**
      * Verifies that no {@link NullPointerException} is thrown when {@link

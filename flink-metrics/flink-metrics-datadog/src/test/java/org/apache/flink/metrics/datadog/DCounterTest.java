@@ -20,13 +20,18 @@ package org.apache.flink.metrics.datadog;
 import org.apache.flink.metrics.Counter;
 import org.apache.flink.metrics.SimpleCounter;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link DCounter}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DCounterTest {
 
     @Test

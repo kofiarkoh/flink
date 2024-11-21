@@ -18,7 +18,10 @@
 
 package org.apache.flink.testutils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.function.Supplier;
 
@@ -27,6 +30,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 
 /** Tests for the {@link ClassLoaderUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class ClassLoaderUtilsTest {
 
     @Test

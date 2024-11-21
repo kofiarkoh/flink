@@ -27,6 +27,8 @@ import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 import org.apache.flink.testutils.junit.utils.TempDirUtils;
 import org.apache.flink.util.function.SupplierWithException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -37,6 +39,8 @@ import java.util.List;
 
 /** Tests for the partitioned state part of {@link HashMapStateBackend}. */
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class HashMapStateBackendMigrationTest
         extends StateBackendMigrationTestBase<HashMapStateBackend> {
 

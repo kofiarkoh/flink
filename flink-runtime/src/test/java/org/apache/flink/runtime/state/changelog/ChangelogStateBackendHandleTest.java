@@ -20,12 +20,17 @@ package org.apache.flink.runtime.state.changelog;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.changelog.ChangelogStateBackendHandle.ChangelogStateBackendHandleImpl;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static java.util.Collections.emptyList;
 import static org.apache.flink.runtime.state.StateHandleID.randomStateHandleId;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class ChangelogStateBackendHandleTest {
 
     @Test

@@ -21,6 +21,8 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.testutils.junit.extensions.parameterized.ParameterizedTestExtension;
 import org.apache.flink.testutils.junit.extensions.parameterized.Parameters;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -30,6 +32,8 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(ParameterizedTestExtension.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DefaultFilterTest {
     @Parameters
     private static Collection<Object[]> data() {

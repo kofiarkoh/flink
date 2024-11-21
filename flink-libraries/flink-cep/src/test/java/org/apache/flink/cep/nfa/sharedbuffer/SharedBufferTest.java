@@ -24,7 +24,10 @@ import org.apache.flink.cep.nfa.DeweyNumber;
 import org.apache.flink.cep.utils.TestSharedBuffer;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -44,6 +47,8 @@ import static org.junit.Assert.assertTrue;
 
 /** Tests for {@link SharedBuffer}. */
 @RunWith(Parameterized.class)
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class SharedBufferTest extends TestLogger {
 
     @Parameterized.Parameter public SharedBufferCacheConfig cacheConfig;

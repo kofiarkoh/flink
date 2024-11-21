@@ -22,6 +22,10 @@ import org.apache.flink.runtime.state.RetrievableStateHandle;
 import org.apache.flink.util.function.FunctionWithException;
 import org.apache.flink.util.function.ThrowingConsumer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.function.Function;
@@ -36,7 +40,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  *
  * @param <T> type of the element to store
  */
-public final class TestingRetrievableStateStorageHelper<T extends Serializable>
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class TestingRetrievableStateStorageHelper<T extends Serializable>
         implements RetrievableStateStorageHelper<T> {
 
     private FunctionWithException<T, T, IOException> retrieveStateFunction = (state) -> state;

@@ -24,14 +24,19 @@ import org.apache.flink.core.fs.FileSystemKind;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.core.fs.local.LocalFileSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.RawLocalFileSystem;
 import org.apache.hadoop.util.VersionInfo;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import static org.assertj.core.api.Assumptions.assumeThat;
 
 /** Behavior tests for HDFS. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class HadoopLocalFileSystemBehaviorTest extends FileSystemBehaviorTestSuite {
 
     @TempDir private java.nio.file.Path tmp;

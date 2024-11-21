@@ -27,7 +27,10 @@ import org.apache.flink.cep.utils.NFATestHarness;
 import org.apache.flink.cep.utils.TestSharedBuffer;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /** Tests that check if we do not degrade NFA computation in case of State accesses. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class NFAStateAccessTest {
 
     @Test

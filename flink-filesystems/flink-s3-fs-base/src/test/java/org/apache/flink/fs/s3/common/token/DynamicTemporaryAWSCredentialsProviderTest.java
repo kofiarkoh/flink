@@ -22,15 +22,20 @@ import org.apache.flink.util.InstantiationUtil;
 
 import com.amazonaws.auth.BasicSessionCredentials;
 import com.amazonaws.services.securitytoken.model.Credentials;
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.fs.s3a.auth.NoAwsCredentialsException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for {@link DynamicTemporaryAWSCredentialsProvider}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class DynamicTemporaryAWSCredentialsProviderTest {
 
     private static final String ACCESS_KEY_ID = "testAccessKeyId";

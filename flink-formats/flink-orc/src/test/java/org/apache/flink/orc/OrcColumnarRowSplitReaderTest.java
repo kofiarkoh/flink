@@ -28,6 +28,8 @@ import org.apache.flink.table.data.TimestampData;
 import org.apache.flink.table.types.DataType;
 import org.apache.flink.types.Row;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.ql.exec.vector.DoubleColumnVector;
 import org.apache.hadoop.hive.ql.exec.vector.LongColumnVector;
@@ -38,6 +40,7 @@ import org.apache.orc.TypeDescription;
 import org.apache.orc.Writer;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -56,6 +59,8 @@ import static org.apache.flink.table.utils.DateTimeUtils.toSQLDate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Test for {@link OrcColumnarRowSplitReader}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class OrcColumnarRowSplitReaderTest {
 
     protected static final int BATCH_SIZE = 10;

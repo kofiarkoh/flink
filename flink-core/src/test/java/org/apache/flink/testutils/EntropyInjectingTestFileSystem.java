@@ -24,9 +24,15 @@ import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.FileSystemFactory;
 import org.apache.flink.core.fs.local.LocalFileSystem;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.net.URI;
 
 /** A test file system that implements {@link EntropyInjectingFileSystem}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class EntropyInjectingTestFileSystem extends LocalFileSystem
         implements EntropyInjectingFileSystem {
 
@@ -44,7 +50,8 @@ public class EntropyInjectingTestFileSystem extends LocalFileSystem
         return ENTROPY;
     }
 
-    public static class EntropyInjectingTestFileSystemFactory implements FileSystemFactory {
+    public static @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class EntropyInjectingTestFileSystemFactory implements FileSystemFactory {
 
         @Override
         public String getScheme() {

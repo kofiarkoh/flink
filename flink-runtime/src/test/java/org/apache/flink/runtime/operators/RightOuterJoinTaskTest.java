@@ -27,13 +27,18 @@ import org.apache.flink.runtime.operators.testutils.ExpectedTestException;
 import org.apache.flink.runtime.operators.testutils.InfiniteIntTupleIterator;
 import org.apache.flink.runtime.operators.testutils.UniformIntTupleGenerator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class RightOuterJoinTaskTest extends AbstractOuterJoinTaskTest {
 
     private static final long HASH_MEM = 6 * 1024 * 1024;

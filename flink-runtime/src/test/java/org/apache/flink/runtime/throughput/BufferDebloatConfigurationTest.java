@@ -23,13 +23,18 @@ import org.apache.flink.configuration.MemorySize;
 import org.apache.flink.configuration.TaskManagerOptions;
 import org.apache.flink.util.TestLogger;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /** Tests for validation of {@link BufferDebloatConfiguration}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BufferDebloatConfigurationTest extends TestLogger {
 
     @Test

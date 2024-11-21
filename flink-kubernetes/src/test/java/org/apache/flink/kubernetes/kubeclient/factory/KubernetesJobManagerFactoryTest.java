@@ -41,6 +41,8 @@ import org.apache.flink.kubernetes.utils.Constants;
 import org.apache.flink.kubernetes.utils.KubernetesUtils;
 import org.apache.flink.runtime.jobmanager.HighAvailabilityMode;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import io.fabric8.kubernetes.api.model.ConfigMap;
 import io.fabric8.kubernetes.api.model.Container;
 import io.fabric8.kubernetes.api.model.HasMetadata;
@@ -52,6 +54,7 @@ import io.fabric8.kubernetes.api.model.Service;
 import io.fabric8.kubernetes.api.model.apps.Deployment;
 import io.fabric8.kubernetes.api.model.apps.DeploymentSpec;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.util.Base64;
@@ -67,6 +70,8 @@ import static org.apache.flink.kubernetes.utils.Constants.CONFIG_FILE_LOGBACK_NA
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** General tests for the {@link KubernetesJobManagerFactory}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesJobManagerFactoryTest extends KubernetesJobManagerTestBase {
 
     private static final String SERVICE_ACCOUNT_NAME = "service-test";

@@ -21,10 +21,16 @@ package org.apache.flink.api.common.typeutils.base;
 import org.apache.flink.api.common.typeutils.SerializerTestBase;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.math.BigInteger;
 import java.util.Random;
 
 /** A test for the {@link BigIntSerializer}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class BigIntSerializerTest extends SerializerTestBase<BigInteger> {
 
     @Override

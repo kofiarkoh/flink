@@ -21,7 +21,10 @@ package org.apache.flink.kubernetes.kubeclient.resources;
 import org.apache.flink.kubernetes.KubernetesTestBase;
 import org.apache.flink.kubernetes.kubeclient.TestingFlinkKubeClient;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.UUID;
 
@@ -29,6 +32,8 @@ import static org.apache.flink.kubernetes.kubeclient.resources.KubernetesLeaderE
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link KubernetesLeaderElector}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class KubernetesLeaderElectorTest extends KubernetesTestBase {
 
     private String lockIdentity;

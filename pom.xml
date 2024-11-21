@@ -312,6 +312,11 @@ under the License.
 			<artifactId>log4j-1.2-api</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois</groupId>
+			<artifactId>ctest4j-junit5</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -922,6 +927,11 @@ under the License.
 				<artifactId>mockito-inline</artifactId>
 				<version>${mockito.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>edu.illinois</groupId>
+				<artifactId>ctest4j-junit5</artifactId>
+				<version>1.0.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -1761,6 +1771,11 @@ under the License.
 					</systemPropertyVariables>
 					<!-- This is picked up by IntelliJ -->
 					<argLine>${flink.surefire.baseArgLine}</argLine>
+<!--					<argLine>-->
+<!--						-javaagent:${project.basedir}/aspectjweaver-1.9.7.M2.jar-->
+<!--					</argLine>-->
+					<reuseForks>false</reuseForks>
+					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 				<executions>
 					<!--execute all the unit tests-->

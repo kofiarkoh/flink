@@ -48,6 +48,8 @@ import org.apache.flink.types.Record;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.MutableObjectIterator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -60,7 +62,9 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(ParameterizedTestExtension.class)
-public abstract class DriverTestBase<S extends Function> implements TaskContext<S, Record> {
+public abstract @ExtendWith(CTestJUnit5Extension.class) @CTestClass class DriverTestBase<
+                S extends Function>
+        implements TaskContext<S, Record> {
 
     protected static final long DEFAULT_PER_SORT_MEM = 16 * 1024 * 1024;
 

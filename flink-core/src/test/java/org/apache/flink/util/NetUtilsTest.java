@@ -20,7 +20,10 @@ package org.apache.flink.util;
 
 import org.apache.flink.configuration.IllegalConfigurationException;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -40,6 +43,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /** Tests for the {@link NetUtils}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class NetUtilsTest {
 
     @Test

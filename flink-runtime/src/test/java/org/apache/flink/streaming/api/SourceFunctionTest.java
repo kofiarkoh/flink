@@ -23,7 +23,10 @@ import org.apache.flink.streaming.api.functions.source.legacy.FromElementsFuncti
 import org.apache.flink.streaming.api.functions.source.legacy.SourceFunction;
 import org.apache.flink.streaming.util.SourceFunctionUtil;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +34,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link SourceFunction}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SourceFunctionTest {
 
     @Test

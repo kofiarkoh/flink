@@ -23,7 +23,10 @@ import org.apache.flink.runtime.clusterframework.types.SlotProfileTestingUtils;
 import org.apache.flink.runtime.jobmaster.SlotRequestId;
 import org.apache.flink.runtime.taskmanager.TaskManagerLocation;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.util.Collections;
@@ -37,6 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for {@link PhysicalSlotProviderImpl} using {@link
  * EvenlySpreadOutLocationPreferenceSlotSelectionStrategy}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class PhysicalSlotProviderImplWithSpreadOutStrategyTest {
 
     @RegisterExtension

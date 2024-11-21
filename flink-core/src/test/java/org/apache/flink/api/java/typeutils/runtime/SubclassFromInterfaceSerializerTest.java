@@ -25,7 +25,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.api.java.typeutils.runtime.kryo.KryoSerializer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Objects;
 import java.util.Random;
@@ -34,6 +37,8 @@ import java.util.Random;
  * Testing the serialization of classes which are subclasses of a class that implements an
  * interface.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class SubclassFromInterfaceSerializerTest
         extends SerializerTestBase<SubclassFromInterfaceSerializerTest.TestUserInterface> {
     private final TypeInformation<TestUserInterface> type =

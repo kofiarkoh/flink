@@ -24,6 +24,10 @@ import org.apache.flink.api.common.typeutils.TypeSerializerSnapshot;
 import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputView;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import javax.annotation.Nullable;
 
 import java.util.Objects;
@@ -38,8 +42,9 @@ import java.util.function.Function;
  * with a serializer and calling {@link TypeSerializer#snapshotConfiguration()} to obtain a snapshot
  * class.
  *
- * <p>To start from a snapshot, the class {@link SchemaCompatibilityTestingSnapshot} can be
- * configured to return a predefined {@link TypeSerializerSchemaCompatibility} result when {@link
+ * <p>To start from a snapshot, the @ExtendWith(CTestJUnit5Extension.class) @CTestClass class {@link
+ * SchemaCompatibilityTestingSnapshot} can be configured to return a predefined {@link
+ * TypeSerializerSchemaCompatibility} result when {@link
  * TypeSerializerSnapshot#resolveSchemaCompatibility(TypeSerializerSnapshot)} would be called, the
  * following static factory methods return a pre-configured snapshot class:
  *
@@ -75,7 +80,8 @@ import java.util.function.Function;
  * useful when testing composite serializers.
  */
 @SuppressWarnings({"WeakerAccess", "serial"})
-public final class SchemaCompatibilityTestingSerializer extends TypeSerializer<Integer> {
+public final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+class SchemaCompatibilityTestingSerializer extends TypeSerializer<Integer> {
 
     private static final long serialVersionUID = 2588814752302505240L;
 
@@ -196,8 +202,8 @@ public final class SchemaCompatibilityTestingSerializer extends TypeSerializer<I
 
     /** A configurable {@link TypeSerializerSnapshot} for this serializer. */
     @SuppressWarnings("WeakerAccess")
-    public static final class SchemaCompatibilityTestingSnapshot
-            implements TypeSerializerSnapshot<Integer> {
+    public static final @ExtendWith(CTestJUnit5Extension.class) @CTestClass
+    class SchemaCompatibilityTestingSnapshot implements TypeSerializerSnapshot<Integer> {
 
         public static SchemaCompatibilityTestingSnapshot thatIsCompatibleWithLastSerializer() {
             return thatIsCompatibleWithLastSerializer(null);

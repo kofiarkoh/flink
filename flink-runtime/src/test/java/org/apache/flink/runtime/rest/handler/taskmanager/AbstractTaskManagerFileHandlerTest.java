@@ -38,10 +38,13 @@ import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.DefaultFullHtt
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpMethod;
 import org.apache.flink.shaded.netty4.io.netty.handler.codec.http.HttpVersion;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
@@ -58,6 +61,8 @@ import java.util.concurrent.CompletableFuture;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for the {@link AbstractTaskManagerFileHandler}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 class AbstractTaskManagerFileHandlerTest {
 
     private static final ResourceID EXPECTED_TASK_MANAGER_ID = ResourceID.generate();

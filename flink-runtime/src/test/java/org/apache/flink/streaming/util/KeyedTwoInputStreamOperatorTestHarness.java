@@ -27,10 +27,16 @@ import org.apache.flink.runtime.state.heap.HeapKeyedStateBackend;
 import org.apache.flink.streaming.api.operators.AbstractStreamOperator;
 import org.apache.flink.streaming.api.operators.TwoInputStreamOperator;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
  * Extension of {@link TwoInputStreamOperatorTestHarness} that allows the operator to get a {@link
  * KeyedStateBackend}.
  */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KeyedTwoInputStreamOperatorTestHarness<K, IN1, IN2, OUT>
         extends TwoInputStreamOperatorTestHarness<IN1, IN2, OUT> {
 

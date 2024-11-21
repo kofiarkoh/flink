@@ -32,8 +32,11 @@ import org.apache.flink.core.memory.DataInputView;
 import org.apache.flink.core.memory.DataOutputSerializer;
 import org.apache.flink.testutils.ClassLoaderUtils;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -44,6 +47,8 @@ import static org.apache.flink.api.common.typeutils.TypeSerializerConditions.isI
 import static org.assertj.core.api.Assertions.assertThat;
 
 /** Tests for {@link KryoSerializerSnapshot}. */
+@ExtendWith(CTestJUnit5Extension.class)
+@CTestClass
 public class KryoSerializerSnapshotTest {
 
     private SerializerConfigImpl oldConfig;
