@@ -25,7 +25,7 @@ using `TimeWindowTranslationTest` test class inside the `flink-runtime` submodul
 ```
 mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1" -Drat.skip=true
 ```
-- To simulate a configuration induced test. Run the command below. _For this step, we set `parallelism.default` to an invalid value `1s` because valid value must be an integer. This test will FAIL because an invalid configuration value is injected into the test case
+- To simulate a configuration induced test failure. Run the command below. _For this step, we set `parallelism.default` to an invalid value `1s` because valid value must be an integer. This test will FAIL because an invalid configuration value is injected into the test case
 ```
  mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1s" -Drat.skip=true
 
