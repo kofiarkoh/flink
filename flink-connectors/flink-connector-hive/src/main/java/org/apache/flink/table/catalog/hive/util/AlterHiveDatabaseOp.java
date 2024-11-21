@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.catalog.hive.util;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 /** Type of ALTER DATABASE operation. */
 public enum AlterHiveDatabaseOp {

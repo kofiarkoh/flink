@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.planner.delegation.hive.operations;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.api.internal.TableResultInternal;
 import org.apache.flink.table.operations.ExecutableOperation;

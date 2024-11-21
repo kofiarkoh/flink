@@ -68,6 +68,11 @@ under the License.
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-test-utils-junit</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois</groupId>
+			<artifactId>ctest4j-junit5</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

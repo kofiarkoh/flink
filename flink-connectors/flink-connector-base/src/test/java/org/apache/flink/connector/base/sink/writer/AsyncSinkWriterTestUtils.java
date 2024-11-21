@@ -18,6 +18,10 @@
 
 package org.apache.flink.connector.base.sink.writer;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.function.Function;

@@ -312,6 +312,11 @@ under the License.
 			<artifactId>log4j-1.2-api</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois</groupId>
+			<artifactId>ctest4j-junit5</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -1767,7 +1772,7 @@ under the License.
 					<!-- This is picked up by IntelliJ -->
 					<argLine>${flink.surefire.baseArgLine}</argLine>
 					<argLine>
-						-javaagent:/Users/lithe/Downloads/aspectjweaver-1.9.7.M2.jar
+						-javaagent:${project.basedir}/aspectjweaver-1.9.7.M2.jar
 					</argLine>
 					<reuseForks>false</reuseForks>
 					<testFailureIgnore>true</testFailureIgnore>

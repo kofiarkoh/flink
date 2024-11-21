@@ -17,6 +17,11 @@
  */
 
 package org.apache.flink.table.planner.delegation.hive.copy;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import org.apache.flink.table.planner.delegation.hive.parse.HiveASTHintParser;
 import org.apache.flink.table.planner.delegation.hive.parse.HiveASTLexer;

@@ -22,6 +22,11 @@ import edu.illinois.CTestJUnit5Extension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 /** Counterpart of hive's org.apache.hadoop.hive.ql.parse.ASTNodeOrigin. */
 public class HiveParserASTNodeOrigin {

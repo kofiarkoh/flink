@@ -17,6 +17,11 @@
  */
 
 package org.apache.hadoop.hive.conf;
+import edu.illinois.CTestJUnit5Extension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import edu.illinois.CTestClass;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableSet;
