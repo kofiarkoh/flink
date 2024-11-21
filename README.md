@@ -1,6 +1,11 @@
 ## About This Project
 This repo is a fork of [Apache Flink](https://github.com/apache/flink) in which  [openctest](https://www.usenix.org/conference/osdi20/presentation/sun) configuration testing is applied using [cTest4j Tool](https://dl.acm.org/doi/10.1145/3663529.3663799)
 
+
+## System Requirement
+- Java installation. (This project has been test on Java 17 but can it may also be run on Java 11)
+- Maven must be installed. You may check by running `mvn -v` in your terminal. We have ran this against Maven 3.9
+
 ## Runninng  Configuration Tests
 
 > **NOTE:** The steps below have been run using **openjdk version 17.0.10** on **macOS Sequoia**.
