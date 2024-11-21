@@ -1771,9 +1771,9 @@ under the License.
 					</systemPropertyVariables>
 					<!-- This is picked up by IntelliJ -->
 					<argLine>${flink.surefire.baseArgLine}</argLine>
-					<argLine>
-						-javaagent:${project.basedir}/aspectjweaver-1.9.7.M2.jar
-					</argLine>
+<!--					<argLine>-->
+<!--						-javaagent:${project.basedir}/aspectjweaver-1.9.7.M2.jar-->
+<!--					</argLine>-->
 					<reuseForks>false</reuseForks>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
