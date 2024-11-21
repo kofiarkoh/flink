@@ -15,6 +15,7 @@ using `TimeWindowTranslationTest` test class inside the `flink-runtime` submodul
 ```
  mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest"
 ```
+![Failing Tests](./img/pass.png)
 - Now lets change one conguration value used in the tests (this value is a valid configuration value). This test will PASS
 ```
 mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1"
@@ -24,3 +25,4 @@ mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dm
  mvn surefire:test -pl flink-runtime -Denforcer.skip=true -Dctest.config.save -Dmaven.test.failure.ignore=true -Dtest="org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest" -Dconfig.inject.cli="parallelism.default=1s"
 
 ```
+![Failing Tests](./img/fail.png)
