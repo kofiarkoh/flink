@@ -13,7 +13,9 @@ This repo is a fork of [Apache Flink](https://github.com/apache/flink) in which 
 
 For demonstration purposes, the steps below simulates testing configuration tests induced failures 
 using `TimeWindowTranslationTest` test class inside the `flink-runtime` submodule _only_.
-- Clone the project by running the command `git clone git@github.com:kofiarkoh/flink.git`
+- Run `wget -O archive.zip https://zenodo.org/records/14347656/files/Archive.zip?download=1` . This is a huge file so expect some delay (about 7 mins)
+- Run `unzip archive.zip -d .m2`
+- Clone the project by running the command `git clone https://github.com/kofiarkoh/flink.git`
 - Switch to the project directory by running `cd flink/flink-runtime`
 - Run `mvn clean install -DskipTests  -Denforcer.skip=true -Drat.skip=true` to build the project
 - Run the test below using default configuration values as specified in the test file. This test will PASS
